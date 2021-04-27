@@ -1,0 +1,62 @@
+*{
+  margin: 0;
+  padding: 0;
+
+}
+
+body{
+  background-color:	#fffff4;
+
+}
+
+.title, h1{
+  color: #000000;
+  top: 50px;
+  left: 60px;
+  position: absolute;
+  font-family: "bodoniflfbold";
+  font-size: 3.5em;
+
+}
+
+.titlemedium, h2{
+  font-family: "bodoniflfbold";
+  font-size: 3em;
+  text-align: center;
+  margin-top: 80px;
+}
+
+.navbar{
+  top: 40%;
+  position: absolute;
+  left: 20%;
+
+}
+
+.navbar, h3{
+  font-family: "bodoniflf";
+  font-size: 1.8em;
+  color: black;
+  letter-spacing: 0.5px;
+
+}
+
+ul {
+  list-style-type: none;
+}
+
+li {
+  float: left;
+}
+
+li a {
+  display: block;
+  padding: 8px 40px;
+  text-decoration: none;
+  color: black;
+
+}
+
+li a:hover{
+    text-decoration: line-through;
+}

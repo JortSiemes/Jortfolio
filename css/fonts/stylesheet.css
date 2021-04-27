@@ -1,0 +1,38 @@
+@font-face {
+    font-family: 'bodoniflfbold_italic';
+    src: url('bodoniflf-bolditalic-webfont.woff2') format('woff2'),
+         url('bodoniflf-bolditalic-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+
+@font-face {
+    font-family: 'bodoniflfmedium_italic';
+    src: url('bodoniflf-italic-webfont.woff2') format('woff2'),
+         url('bodoniflf-italic-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+
+@font-face {
+    font-family: 'bodoniflfregular';
+    src: url('bodoniflf-roman-webfont.woff2') format('woff2'),
+         url('bodoniflf-roman-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+
+@font-face {
+    font-family: 'bodoniflfbold';
+    src: url('bodoniflf-bold-webfont.woff2') format('woff2'),
+         url('bodoniflf-bold-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+
+}
