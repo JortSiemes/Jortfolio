@@ -9,6 +9,23 @@ body{
 
 }
 
+.Headermarkup h1{
+  position: fixed;
+  writing-mode: vertical-rl;
+  text-orientation: mixed;
+  height: 100vh;
+  margin-left: 1%;
+  padding-right: 2%;
+  text-align: center;
+
+  color: white;
+  font-size: 2em;
+  font-style: normal;
+  font-weight: 900;
+
+  border-right: solid white;
+}
+
 .title, h1{
   color: #000000;
   top: 50px;
