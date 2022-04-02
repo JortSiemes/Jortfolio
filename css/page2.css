@@ -6,6 +6,7 @@ html, body, *{
 .content {
   overflow: auto;
   position: relative;
+  height: 100vh;
 }
 
 .content::before {
@@ -45,10 +46,8 @@ h1{
 	margin-top: 0vh;
 }
 
-h4{
+h2, h3, h4{
 	color: white;
-	text-align: right;
-	margin-top: 550px;
 }
 
 .title{
@@ -83,13 +82,6 @@ h4{
 .bovenkant{
 	margin-top: 25px;
 }
-
-
-
-
-
-
-
 
 .fixed{
 	position: fixed;
@@ -207,12 +199,50 @@ li a:hover:not(.active) {
 
 
 
-
-
-
-
-
 .pagebody{
   background-color: white;
-  height: 100vh;
+  height: 120vh;
+}
+
+
+.pagefooter{
+  background-color: black;
+  height: 30vh;
+}
+
+.footertitle h1{
+  color: white;
+  text-align: center;
+  font-size: 9vw;
+
+}
+
+.nav-bar-white{
+  width:100;
+  border-bottom: 1px solid rgba(255,255,255,.5);
+}
+
+.footertext h3{
+  font-size: 3em;
+  padding-top: 25px;
+}
+
+.footerlink a{
+  text-decoration: none;
+  color: white;
+}
+
+.footerlink a:hover{
+  text-decoration: line-through;
+}
+
+.footerlink{
+  text-align: center;
+}
+
+.copyright h4{
+  text-align: right;
+  padding-right: 10px;
+  padding-top: 20px;
+  font-size: 1em;
 }
