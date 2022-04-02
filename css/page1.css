@@ -1,0 +1,104 @@
+*{
+  margin: 0;
+  padding: 0;
+}
+
+body, html{
+  height: 100%;
+  overflow-x: hidden;
+  margin: 0;
+}
+
+.bg-image{
+  background-image: url("../Images/2by1dunes.jpg");
+  filter: blur(40px);
+  -webkit-filter: blur(40px);
+  height: 100vh;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  transform: scale(1.1);
+  overflow-x: hidden;
+}
+
+.bg-text{
+  color: white;
+  font-weight: bold;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 2;
+  width: 80%;
+  padding: 20px;
+  text-align: center;
+}
+
+.bg-text-2{
+  color: white;
+  font-size: 4em;
+  font-weight: bold;
+  letter-spacing: 0.15em;
+  position: absolute;
+  top: -100px;
+  left: 1%;
+  z-index: 2;
+}
+
+.center-img img{
+  width: 125vh;
+}
+
+.title, h1{
+  color: white;
+  top: 50px;
+  left: 60px;
+  position: absolute;
+  font-family: 'Roboto', sans-serif;
+  font-size: 3.5em;
+
+}
+
+.titlemedium, h2{
+  font-family: 'Roboto', sans-serif;
+  font-size: 3em;
+  text-align: center;
+  margin-top: 80px;
+}
+
+.navbar{
+  top: 40%;
+  position: absolute;
+  left: 20%;
+
+}
+
+.navbar, h3{
+  font-family: 'Roboto', sans-serif;
+  font-size: 1.8em;
+  color: black;
+  letter-spacing: 0.5px;
+
+}
+
+ul {
+  list-style-type: none;
+}
+
+/*
+.Headermarkup h1{
+  position: fixed;
+  writing-mode: vertical-rl;
+  text-orientation: mixed;
+  height: 100vh;
+  margin-left: 1%;
+  padding-right: 2%;
+  text-align: center;
+  color: white;
+  font-size: 2em;
+  font-style: normal;
+  font-weight: 900;
+
+  border-right: solid white;
+}
+*/
