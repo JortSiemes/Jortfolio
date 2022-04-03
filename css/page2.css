@@ -17,7 +17,7 @@ html, body, *{
   z-index: -1;
 
   display: block;
-  background-image: url("../Images/2by1dunes.jpg");
+  background-image: url("../Images/OneThousandAndOneNights.png");
   background-size:cover;
   width: 100%;
   height: 100%;
@@ -44,6 +44,11 @@ h1{
 	text-align: left;
 	font-size: 11vw;
 	margin-top: 0vh;
+}
+
+.image-center{
+  display: flex;
+  justify-content: center;
 }
 
 h2, h3, h4{
@@ -201,7 +206,7 @@ li a:hover:not(.active) {
 
 .pagebody{
   background-color: white;
-  height: 120vh;
+  height: 85vh;
 }
 
 
@@ -213,7 +218,7 @@ li a:hover:not(.active) {
 .footertitle h1{
   color: white;
   text-align: center;
-  font-size: 9vw;
+  font-size: 8vw;
 
 }
 
@@ -245,4 +250,16 @@ li a:hover:not(.active) {
   padding-right: 10px;
   padding-top: 20px;
   font-size: 1em;
+}
+
+.jumbo-title h1{
+  color: black;
+}
+
+.video-player{
+  margin-top: 20px;
+}
+
+.video-info{
+  margin-top: 20px;
 }
