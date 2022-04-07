@@ -1,61 +1,53 @@
-*{
+body {
+  background-color: #111111;
   margin: 0;
-  padding: 0;
-
+  overflow-x: hidden;
 }
 
-body{
-  background-color: black;
-
-}
-
-.Headermarkup h1{
-  position: fixed;
-  writing-mode: vertical-rl;
-  text-orientation: mixed;
-  height: 100vh;
-  margin-left: 1%;
-  padding-right: 2%;
-  text-align: center;
-  color: white;
-  font-size: 2em;
-  font-style: normal;
+h1{
+	color: white;
+	text-align: left;
   font-weight: 900;
-
-  border-right: solid white;
-}
-
-.title, h1{
-  color: white;
-  top: 50px;
-  left: 60px;
-  position: absolute;
-  font-family: "bodoniflfbold";
-  font-size: 3.5em;
-
-}
-
-.titlemedium, h2{
-  font-family: "bodoniflfbold";
-  font-size: 3em;
+	font-size: 13vw;
+	margin-top: 0vh;
+  margin-bottom: 0px;
+  padding-bottom: 0px;
   text-align: center;
-  margin-top: 80px;
 }
 
-.navbar{
-  top: 40%;
-  position: absolute;
-  left: 20%;
-
+h3{
+	color: white;
+	text-align: left;
+	font-size: 4vw;
+	margin-top: 0vh;
+  text-align: left;
 }
 
-.navbar, h3{
-  font-family: "bodoniflf";
-  font-size: 1.8em;
-  color: black;
-  letter-spacing: 0.5px;
-
+.bg {
+  position: fixed;
+  top: -50%;
+  left: -50%;
+  right: -50%;
+  bottom: -50%;
+  width: 200%;
+  height: 200vh;
+  background: transparent url('http://assets.iceable.com/img/noise-transparent.png') repeat 0 0;
+  background-repeat: repeat;
+  animation: bg-animation .2s infinite;
+  opacity: .9;
+  visibility: visible;
 }
 
-ul {
-  list-style-type: none;
+@keyframes bg-animation {
+    0% { transform: translate(0,0) }
+    10% { transform: translate(-5%,-5%) }
+    20% { transform: translate(-10%,5%) }
+    30% { transform: translate(5%,-10%) }
+    40% { transform: translate(-5%,15%) }
+    50% { transform: translate(-10%,5%) }
+    60% { transform: translate(15%,0) }
+    70% { transform: translate(0,10%) }
+    80% { transform: translate(-15%,0) }
+    90% { transform: translate(10%,5%) }
+    100% { transform: translate(5%,0) }
+}
