@@ -27,6 +27,11 @@ h3{
   text-align: left;
 }
 
+a{
+  text-decoration: none;
+  color: white;
+}
+
 #logos img{
  display: inline-block;
 }
