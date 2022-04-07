@@ -23,6 +23,10 @@ h3{
   text-align: left;
 }
 
+#logos img{
+ display: inline-block;
+}
+
 .bg {
   position: fixed;
   top: -50%;
