@@ -4,6 +4,10 @@ body {
   overflow-x: hidden;
 }
 
+article{
+  z-index: 1;
+}
+
 h1{
 	color: white;
 	text-align: left;
@@ -40,6 +44,7 @@ h3{
   animation: bg-animation .2s infinite;
   opacity: .9;
   visibility: visible;
+  z-index: -1;
 }
 
 @keyframes bg-animation {
