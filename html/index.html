@@ -1,0 +1,497 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>TEST 2022 | JORTFOLIO</title>
+    <link rel="stylesheet" type="text/css" href="../css/bootstrap/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="../css/index.css">
+    <link rel = "icon" href ="../Images/PortfolioIcon.png" type = "../Images/PortfolioIcon.png">
+  </head>
+  <body>
+
+
+<div class="div_area" id="a"></div>
+
+<div class="DisplayOS">
+
+  <div class="navbar">
+    <div class="left">
+      <div class="item submenu">
+        <button class="logo"></button>
+        <ul class="drop">
+          <li><a href="#" id="about" class="ga-ce" data-category="elements" data-action="click" data-label="about">About</a></li>
+          <li><a href="#" id="battery" class="ga-ce" data-category="elements" data-action="click" data-label="battery">Battery</a></li>
+          <li class="hide-on-ios"><a href="#" id="fullscreen">Toggle fullscreen</a></li>
+          <li><a href="#" id="restart">Restart</a></li>
+        </ul>
+      </div>
+      <div class="d-flex">
+        <div class="item submenu">
+          <button>FILE</button>
+        </div>
+        <div class="item submenu media-nav d-none">
+          <button>Media</button>
+          <ul class="drop">
+            <li><a href="#" id="pause">
+              <span class="off">Pause</span>
+              <span class="on">Play</span>
+            </a></li>
+            <li><a href="#" id="stop">Stop</a></li>
+          </ul>
+        </div>
+
+        <div class="item submenu">
+          <button>EDIT</button>
+        </div>
+        <div class="item submenu media-nav d-none">
+          <button>Media</button>
+          <ul class="drop">
+            <li><a href="#" id="pause">
+              <span class="off">Pause</span>
+              <span class="on">Play</span>
+            </a></li>
+            <li><a href="#" id="stop">Stop</a></li>
+          </ul>
+        </div>
+
+        <div class="item submenu">
+          <button>SPECIAL</button>
+          <ul class="drop">
+            <li><a href="https://www.youtube.com/playlist?list=PL-vfMvq9s6UebAGgYzPGAdOdGJl_X4Fnx" class="ga-ce" data-category="outbound" data-action="click" data-label="https://www.youtube.com/playlist?list=PL-vfMvq9s6UebAGgYzPGAdOdGJl_X4Fnx" target="_blank">Letterboxd</a></li>
+            <!-- <li><a href="https://toastydigital.bandcamp.com/album/2049-deluxe-edition" class="ga-ce" data-category="outbound" data-action="click" data-label="https://toastydigital.bandcamp.com/album/2049-deluxe-edition" target="_blank">Bandcamp</a></li> -->
+            <li><a href="https://soundcloud.com/toastydigital/sets/2049-deluxe-edition" class="ga-ce" data-category="outbound" data-action="click" data-label="https://soundcloud.com/toastydigital/sets/2049-deluxe-edition" target="_blank">Soundcloud</a></li>
+            <li><a href="https://www.patreon.com/toastydigital" class="ga-ce" data-category="outbound" data-action="click" data-label="https://www.patreon.com/toastydigital" target="_blank">Patreon</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="right">
+      <div class="item">
+        <span class="my-0"><h3>JORTFOLIO</h3></span>
+      </div>
+      <div class="item">
+        <span id="time" class="time"></span>
+      </div>
+    </div>
+  </div>
+
+<br>
+
+
+
+  <div class="ContentOS">
+    <a href="javascript:;" onclick="changeBackgroundImage()">Reset</a>
+    <a href="javascript:;" onclick="changeBackgroundImage1()">Dunes</a>
+    <a href="javascript:;" onclick="changeBackgroundImage2()">Italy</a>
+
+
+  <div class="div_area2" id="a2"></div>
+
+
+    <a href="javascript:;" onclick="changeBackgroundImage3()">Italy</a>
+
+    <button class="file folder folder1 ga-ce" data-category="elements" data-action="click" data-label="kanye2049" id="folder1">
+      <span>foto</span>
+    </button>
+
+  <img id="myImg" src="../Images/OneThousandAndOneNights.png" alt="Dunes" style="width:100%;max-width:300px">
+
+  </div>
+  </div>
+<!-- The Modal -->
+<div id="myModal" class="modal">
+  <span class="close">&times;</span>
+  <img class="modal-content" id="img01">
+</div>
+
+
+
+
+
+   <script type="text/javascript">
+
+     // backgrounds
+     function changeBackgroundImage(){
+      var el= document.getElementById('a').style.backgroundImage="url()";
+      }
+
+      function changeBackgroundImage1(){
+       var el= document.getElementById('a').style.backgroundImage="url(../Images/OneThousandAndOneNights.png)";
+       }
+
+       function changeBackgroundImage2(){
+        var el= document.getElementById('a').style.backgroundImage="url(../Images/Italy.jpg)";
+        }
+
+
+      // img difs
+        function changeBackgroundImage3(){
+         var el= document.getElementById('a2').style.backgroundImage="url(../Images/Italy.jpg)";
+         }
+
+
+
+       var modal = document.getElementById("myModal");
+
+// Get the image and insert it inside the modal - use its "alt" text as a caption
+var img = document.getElementById("myImg");
+var modalImg = document.getElementById("img01");
+var captionText = document.getElementById("caption");
+img.onclick = function(){
+  modal.style.display = "block";
+  modalImg.src = this.src;
+  captionText.innerHTML = this.alt;
+}
+
+// Get the <span> element that closes the modal
+var span = document.getElementsByClassName("close")[0];
+
+// When the user clicks on <span> (x), close the modal
+span.onclick = function() {
+  modal.style.display = "none";
+}
+   </script>
+
+
+ <style>
+   .div_area
+   {
+       background-color: black;
+       position: absolute;
+       background-size: cover;
+       height: 100vh;
+       width: 100vw;
+   }
+
+   .div_area2
+   {
+       background-color: black;
+       position: absolute;
+       background-size: cover;
+       height: 20vh;
+       min-height: 50px;
+       width: 20vw;
+       min-width: 50px;
+       border-style: solid;
+       border-width: 5px;
+       border-color: black;
+       cursor: pointer;
+       transition: 0.3s;
+   }
+
+ </style>
+
+
+    <script src="../js/test.js"></script>
+	  <script src="../js/jquery-3.6.0.slim.js"></script>
+    <script src="../js/bootstrap.min.js"></script>
+
+  </body>
+</html>
+
+
+
+<noscript>
+<div class="screen">
+      <div class="bios"></div>
+      <div class="login">
+        <div class="login-dialog">
+          <div class="login-dialog-content">
+            <p class="text-center mb-4">Welcome POTUS</p>
+          </div>
+        </div>
+      </div>
+      <div class="navbar">
+        <div class="left">
+          <div class="item submenu">
+            <button class="logo"></button>
+          </div>
+          <div class="d-flex">
+            <div class="item submenu">
+              <button>File</button>
+              <ul class="drop">
+                <li><a href="#" class="disabled">New</a></li>
+                <li><a href="#" class="disabled">Open</a></li>
+                <li><a href="#" class="switchfiles" id="switchfiles">
+                  <span class="off ga-ce" data-category="elements" data-action="click" data-label="ShowHiddenFiles">Show hidden files</span>
+                  <span class="on">Hide hidden files</span>
+                </a></li>
+                <li><a href="http://twitter.com/share?url=https%3A%2F%2Fkanye2049.com" class="share-popup ga-ce" data-category="elements" data-action="click" data-label="share(twitter)">Share (twitter)</a></li>
+                <li><a href="http://www.facebook.com/sharer.php?u=https%3A%2F%2Fkanye2049.com" class="share-popup ga-ce" data-category="elements" data-action="click" data-label="share(facebook)">Share (facebook)</a></li>
+              </ul>
+            </div>
+
+            <div class="item submenu media-nav d-none">
+              <button>Media</button>
+              <ul class="drop">
+                <li><a href="#" id="pause">
+                  <span class="off">Pause</span>
+                  <span class="on">Play</span>
+                </a></li>
+                <li><a href="#" id="stop">Stop</a></li>
+              </ul>
+            </div>
+
+            <div class="item submenu">
+              <button>Special</button>
+              <ul class="drop">
+                <li><a href="https://www.youtube.com/playlist?list=PL-vfMvq9s6UebAGgYzPGAdOdGJl_X4Fnx" class="ga-ce" data-category="outbound" data-action="click" data-label="https://www.youtube.com/playlist?list=PL-vfMvq9s6UebAGgYzPGAdOdGJl_X4Fnx" target="_blank">Youtube</a></li>
+                <!-- <li><a href="https://toastydigital.bandcamp.com/album/2049-deluxe-edition" class="ga-ce" data-category="outbound" data-action="click" data-label="https://toastydigital.bandcamp.com/album/2049-deluxe-edition" target="_blank">Bandcamp</a></li> -->
+                <li><a href="https://soundcloud.com/toastydigital/sets/2049-deluxe-edition" class="ga-ce" data-category="outbound" data-action="click" data-label="https://soundcloud.com/toastydigital/sets/2049-deluxe-edition" target="_blank">Soundcloud</a></li>
+                <li><a href="https://www.patreon.com/toastydigital" class="ga-ce" data-category="outbound" data-action="click" data-label="https://www.patreon.com/toastydigital" target="_blank">Patreon</a></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <div class="right">
+          <div class="item">
+            <span class="my-0">POTUS</span>
+          </div>
+          <div class="item">
+            <span id="time" class="time"></span>
+          </div>
+        </div>
+      </div>
+
+      <button class="file folder folder1 ga-ce" data-category="elements" data-action="click" data-label="kanye2049" id="folder1">
+        <span>KANYE 2049</span>
+      </button>
+
+      <button class="file folder folder2 ga-ce" data-category="elements" data-action="click" data-label="gktf-folder" id="folder2">
+        <span>GKTF</span>
+      </button>
+
+      <button class="file folder folder3 ga-ce" data-category="elements" data-action="click" data-label="blonda-folder" id="folder3">
+        <span>BLONDA</span>
+      </button>
+
+      <button class="file folder folder4 ga-ce" data-category="elements" data-action="click" data-label="yandhi" id="folder4">
+        <span>yandhi.zip</span>
+      </button>
+
+      <button class="file image lizard hidden ga-ce" data-category="elements" data-action="click" data-label="lizard" id="lizard">
+        <span>jeffery.gif</span>
+      </button>
+
+      <button class="file text earthtxt ga-ce" data-category="elements" data-action="click" data-label="earth" id="earththt">
+        <span><em>EARTH</em><wbr>.txt</span>
+      </button>
+
+
+      <div class="finder 2k49">
+        <header class="header">
+          <span class="title">KANYE 2049</span>
+          <button class="close">x</button>
+        </header>
+        <div class="body">
+          <div class="d-flex flex-wrap">
+            <button class="file text ga-ce" data-category="elements" data-action="click" data-label="readme" id="readme">
+              <span><em>readme</em><wbr>.txt</span>
+            </button>
+            <button class="file sound play-track ga-ce" data-category="tracks" data-action="click" data-label="Intro" data-sound="2049/01_INTRO_(CHARLIE_HEAT_VERSION).mp3" data-title="Intro (Charlie Heat Version)" data-album="KANYE2049" data-video="01_INTRO_(CHARLIE_HEAT_VERSION)">
+              <span><em>INTRO</em><wbr>.mp3</span>
+            </button>
+            <button class="file sound play-track ga-ce" data-category="tracks" data-action="click" data-label="Power" data-sound="2049/02_POWER.mp3" data-title="Power" data-album="KANYE2049"  data-video="02_POWER">
+              <span><em>POWER</em><wbr>.mp3</span>
+            </button>
+            <button class="file sound play-track hidden ga-ce" data-category="tracks" data-action="click" data-label="HoldMyLiquor" data-sound="2049/03_HOLD_MY_LIQUOR.mp3" data-title="Hold My Liquor" data-album="KANYE2049"  data-video="03_HOLD_MY_LIQUOR">
+              <span><em>HOLD MY LIQUOR</em><wbr>.mp3</span>
+            </button>
+            <button class="file sound play-track ga-ce" data-category="tracks" data-action="click" data-label="LiftYourself" data-sound="2049/04_LIFT_YOURSELF.mp3" data-title="Lift Yourself" data-album="KANYE2049" data-video="04_LIFT_YOURSELF">
+              <span><em>LIFT YOURSELF</em><wbr>.mp3</span>
+            </button>
+            <button class="file sound play-track ga-ce" data-category="tracks" data-action="click" data-label="JesusWalks" data-sound="2049/05_JESUS_WALKS.mp3" data-title="Jesus Walks" data-album="KANYE2049" data-video="05_JESUS_WALKS">
+              <span><em>JESUS WALKS</em><wbr>.mp3</span>
+            </button>
+            <button class="file sound play-track ga-ce" data-category="tracks" data-action="click" data-label="WolvesPt1" data-sound="2049/06_WOLVES_PT.1.mp3" data-title="Wolves Pt.1" data-album="KANYE2049" data-video="06_WOLVES_PT.1">
+              <span><em>WOLVES PT.1</em><wbr>.mp3</span>
+            </button>
+            <button class="file sound play-track ga-ce" data-category="tracks" data-action="click" data-label="WolvesPt2" data-sound="2049/07_WOLVES_PT.2.mp3" data-title="Wolves Pt.2" data-album="KANYE2049" data-video="07_WOLVES_PT.2">
+              <span><em>WOLVES PT.2</em><wbr>.mp3</span>
+            </button>
+            <button class="file sound play-track ga-ce" data-category="tracks" data-action="click" data-label="CantTellMeNothin" data-sound="2049/08_CANT_TELL_ME_NOTHIN.mp3" data-title="Can't Tell Me Nothin"  data-album="KANYE2049" data-video="08_CANT_TELL_ME_NOTHIN">
+              <span><em>CAN'T TELL ME NOTHIN</em><wbr>.mp3</span>
+            </button>
+            <button class="file sound play-track ga-ce" data-category="tracks" data-action="click" data-label="ILoveIt" data-sound="2049/09_I_LOVE_IT.mp3" data-title="I Love It" data-album="KANYE2049" data-video="09_I_LOVE_IT">
+              <span><em>I LOVE IT</em><wbr>.mp3</span>
+            </button>
+            <button class="file sound play-track hidden ga-ce" data-category="tracks" data-action="click" data-label="SayYouWill" data-sound="2049/10_SAY_YOU_WILL_(FREESTYLE).mp3" data-title="Say You Will (Freestyle)" data-album="KANYE2049" data-video="10_SAY_YOU_WILL_(FREESTYLE)">
+              <span><em>SAY YOU WILL (FREESTYLE)</em><wbr>.mp3</span>
+            </button>
+            <button class="file sound play-track ga-ce" data-category="tracks" data-action="click" data-label="AOTL" data-sound="11_AOTL.mp3" data-title="AOTL" data-album="KANYE2049" data-video="11_AOTL">
+              <span><em>AOTL</em><wbr>.mp3</span>
+            </button>
+            <button class="file sound play-track hidden ga-ce" data-category="tracks" data-action="click" data-label="BlackSkinhead" data-sound="2049/12_BLACK_SKINHEAD.mp3" data-title="Black Skinhead" data-album="KANYE2049" data-video="12_BLACK_SKINHEAD">
+              <span><em>BLACK SKINHEAD</em><wbr>.mp3</span>
+            </button>
+            <button class="file sound play-track ga-ce" data-category="tracks" data-action="click" data-label="FSMH" data-sound="2049/13_FSMH.mp3" data-title="FSMH" data-album="KANYE2049" data-video="13_FSMH">
+              <span><em>FSMH</em><wbr>.mp3</span>
+            </button>
+            <button class="file sound play-track hidden ga-ce" data-category="tracks" data-action="click" data-label="Homecoming" data-sound="2049/14_HOMECOMING.mp3" data-title="Homecoming" data-album="KANYE2049" data-video="14_HOMECOMING">
+              <span><em>HOMECOMING</em><wbr>.mp3</span>
+            </button>
+            <button class="file sound play-track ga-ce" data-category="tracks" data-action="click" data-label="Runaway" data-sound="2049/15_RUNAWAY.mp3" data-title="Runaway" data-album="KANYE2049" data-video="15_RUNAWAY">
+              <span><em>RUNAWAY</em><wbr>.mp3</span>
+            </button>
+            <button class="file sound play-track ga-ce" data-category="tracks" data-action="click" data-label="Bound2049" data-sound="2049/16_BOUND_2049.mp3" data-title="Bound 2049" data-album="KANYE2049" data-video="16_BOUND_2049">
+              <span><em>BOUND 2049</em><wbr>.mp3</span>
+            </button>
+            <button class="file sound play-track ga-ce" data-category="tracks" data-action="click" data-label="TouchTheSky" data-sound="2049/17_TOUCH_THE_SKY.mp3" data-title="Touch The Sky" data-album="KANYE2049" data-video="17_TOUCH_THE_SKY">
+              <span><em>TOUCH THE SKY</em><wbr>.mp3</span>
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <div class="finder gktfolder">
+        <header class="header">
+          <span class="title">GOOD KID TWISTED FANTASY</span>
+          <button class="close">x</button>
+        </header>
+        <div class="body">
+          <div class="d-flex flex-wrap">
+              <button class="file sound play-track ga-ce" data-category="tracks" data-action="click" data-label="GetMuchHigher" data-sound="GKTF/01_GET_MUCH_HIGHER.mp3" data-title="GET MUCH HIGHER" data-album="GKTF" data-video="GKTF">
+                <span><em>GET MUCH HIGHER</em><wbr>.mp3</span>
+              </button>
+              <button class="file sound play-track ga-ce" data-category="tracks" data-action="click" data-label="GoodKidTwistedFantasy" data-sound="GKTF/02_GOOD_KID_TWISTED_FANTASY.mp3" data-title="GOOD KID TWISTED FANTASY" data-album="GKTF" data-video="GKTF">
+                <span><em>GOOD KID TWISTED FANTASY</em><wbr>.mp3</span>
+              </button>
+              <button class="file sound play-track ga-ce" data-category="tracks" data-action="click" data-label="SacrificeYaLife" data-sound="GKTF/03_SACRIFICE_YA_LIFE.mp3" data-title="SACRIFICE YA LIFE (feat. Justin Vernon)" data-album="GKTF" data-video="GKTF">
+                <span><em>SACRIFICE YA LIFE</em><wbr>.mp3</span>
+              </button>
+              <button class="file sound play-track ga-ce" data-category="tracks" data-action="click" data-label="TheMoonSkit1" data-sound="GKTF/04_THE_MOON_SKIT_1.mp3" data-title="THE MOON SKIT 1 (feat. Gil Scott-Heron)" data-album="GKTF" data-video="GKTF">
+                <span><em>THE MOON SKIT 1</em><wbr>.mp3</span>
+              </button>
+              <button class="file sound play-track ga-ce" data-category="tracks" data-action="click" data-label="MaadWorld" data-sound="GKTF/05_MAAD_WORLD.mp3" data-title="MAAD WORLD" data-album="GKTF" data-video="GKTF">
+                <span><em>MAAD WORLD</em><wbr>.mp3</span>
+              </button>
+              <button class="file sound play-track ga-ce" data-category="tracks" data-action="click" data-label="MoneyPower" data-sound="GKTF/06_MONEY_POWER.mp3" data-title="MONEY POWER" data-album="GKTF" data-video="GKTF">
+                <span><em>MONEY POWER</em><wbr>.mp3</span>
+              </button>
+              <button class="file sound play-track ga-ce" data-category="tracks" data-action="click" data-label="DeadPoets" data-sound="GKTF/07_DEAD_POETS.mp3" data-title="DEAD POETS (feat. Rihanna)" data-album="GKTF" data-video="GKTF">
+                <span><em>DEAD POETS</em><wbr>.mp3</span>
+              </button>
+              <button class="file sound play-track ga-ce" data-category="tracks" data-action="click" data-label="TheMoonSkit2" data-sound="GKTF/08_THE_MOON_SKIT_2.mp3" data-title="THE MOON SKIT 2 (feat. Gil Scott-Heron)" data-album="GKTF" data-video="GKTF">
+                <span><em>THE MOON SKIT 2</em><wbr>.mp3</span>
+              </button>
+              <button class="file sound play-track ga-ce" data-category="tracks" data-action="click" data-label="SingAboutYe" data-sound="GKTF/09_SING_ABOUT_YE.mp3" data-title="SING ABOUT YE (feat. Pusha T)" data-album="GKTF" data-video="GKTF">
+                <span><em>SING ABOUT YE</em><wbr>.mp3</span>
+              </button>
+              <button class="file sound play-track ga-ce" data-category="tracks" data-action="click" data-label="RunawayBlackHippyFreestyle" data-sound="GKTF/10_RUNAWAY_BLACK_HIPPY_FREESTYLE.mp3" data-title="RUNAWAY (BLACK HIPPY FREESTYLE)" data-album="GKTF" data-video="GKTF">
+                <span><em>RUNAWAY (BLACK HIPPY FREESTYLE)</em><wbr>.mp3</span>
+              </button>
+              <button class="file sound play-track ga-ce" data-category="tracks" data-action="click" data-label="DevilInTheBackseat" data-sound="GKTF/11_DEVIL_IN_THE_BACKSEAT.mp3" data-title="DEVIL IN THE BACKSEAT" data-album="GKTF" data-video="GKTF">
+                <span><em>DEVIL IN THE BACKSEAT</em><wbr>.mp3</span>
+              </button>
+          </div>
+        </div>
+      </div>
+
+      <div class="finder blondafolder">
+        <header class="header">
+          <span class="title">BLONDA</span>
+          <button class="close">x</button>
+        </header>
+        <div class="body">
+          <div class="d-flex flex-wrap">
+              <button class="file sound play-track ga-ce" data-category="tracks" data-action="click" data-label="BlondaIntro" data-sound="BLONDA/01_INTRO.mp3" data-title="INTRO" data-album="BLONDA" data-video="BLONDA">
+                <span><em>INTRO</em><wbr>.mp3</span>
+              </button>
+              <button class="file sound play-track ga-ce" data-category="tracks" data-action="click" data-label="OnTheAir" data-sound="BLONDA/02_ON_THE_AIR.mp3" data-title="02 ON THE AIR (feat. Playboi Carti Fivio Foreign)" data-album="BLONDA" data-video="BLONDA">
+                <span><em>ON THE AIR</em><wbr>.mp3</span>
+              </button>
+              <button class="file sound play-track ga-ce" data-category="tracks" data-action="click" data-label="InTheDark" data-sound="BLONDA/03_IN_THE_DARK.mp3" data-title="IN THE DARK" data-album="BLONDA" data-video="BLONDA">
+                <span><em>IN THE DARK</em><wbr>.mp3</span>
+              </button>
+              <button class="file sound play-track ga-ce" data-category="tracks" data-action="click" data-label="YZYSpeed" data-sound="BLONDA/04_YZY_SPEED.mp3" data-title="YZY SPEED" data-album="BLONDA" data-video="BLONDA">
+                <span><em>YZY SPEED</em><wbr>.mp3</span>
+              </button>
+              <button class="file sound play-track ga-ce" data-category="tracks" data-action="click" data-label="Nightlife" data-sound="BLONDA/05_NIGHTLIFE.mp3" data-title="NIGHTLIFE (album version) (feat. Conway the Machine Westside Gunn)" data-album="BLONDA" data-video="BLONDA">
+                <span><em>NIGHTLIFE (album version)</em><wbr>.mp3</span>
+              </button>
+              <button class="file sound play-track ga-ce" data-category="tracks" data-action="click" data-label="2400" data-sound="BLONDA/06_2400.mp3" data-title="2400" data-album="BLONDA" data-video="BLONDA">
+                <span><em>2400</em><wbr>.mp3</span>
+              </button>
+              <button class="file sound play-track ga-ce" data-category="tracks" data-action="click" data-label="AbelsTrack" data-sound="BLONDA/07_ABELS_TRACK.mp3" data-title="ABEL'S TRACK (feat. The Weeknd)" data-album="BLONDA" data-video="BLONDA">
+                <span><em>ABEL'S TRACK</em><wbr>.mp3</span>
+              </button>
+              <button class="file sound play-track ga-ce" data-category="tracks" data-action="click" data-label="BlackFerrari" data-sound="BLONDA/08_BLACK_FERRARI.mp3" data-title="BLACK FERRARI (album version) (feat. JAY-Z Baby Keem)" data-album="BLONDA" data-video="BLONDA">
+                <span><em>BLACK FERRARI (album version)</em><wbr>.mp3</span>
+              </button>
+              <button class="file sound play-track ga-ce" data-category="tracks" data-action="click" data-label="SummerParty" data-sound="BLONDA/09_SUMMER_PARTY.mp3" data-title="SUMMER PARTY (feat. Andre 3000 Lil Baby)" data-album="BLONDA" data-video="BLONDA">
+                <span><em>SUMMER PARTY</em><wbr>.mp3</span>
+              </button>
+              <button class="file sound play-track ga-ce" data-category="tracks" data-action="click" data-label="AnotherLife" data-sound="BLONDA/10_ANOTHER_LIFE.mp3" data-title="ANOTHER LIFE" data-album="BLONDA" data-video="BLONDA">
+                <span><em>ANOTHER LIFE</em><wbr>.mp3</span>
+              </button>
+              <button class="file sound play-track ga-ce" data-category="tracks" data-action="click" data-label="BlondaOutro" data-sound="BLONDA/11_OUTRO.mp3" data-title="OUTRO" data-album="BLONDA" data-video="BLONDA">
+                <span><em>OUTRO</em><wbr>.mp3</span>
+              </button>
+          </div>
+        </div>
+      </div>
+
+      <div class="finder readme">
+        <header class="header">
+          <span class="title">readme.txt</span>
+          <button class="close">x</button>
+        </header>
+        <div class="body">
+          <div>
+            <p>It's 2049. Kanye West has been missing for nearly 30 years.</p>
+            <p>Rising global temperatures threaten to end human civilization as we know it.</p>
+            <p>Meanwhile, the president has just made contact with an alternate universe—a utopian version of earth that prevented its own global warming long ago.</p>
+            <p>Through time and space, the alternate universe has sent a mysterious gift: a leaked Kanye West album unlike any album we've heard before.</p>
+            <p>The president believes it may hold the secret to saving our planet.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="finder earth">
+        <header class="header">
+          <span class="title">EARTH.txt</span>
+          <button class="close">x</button>
+        </header>
+        <div class="body">
+          <div>
+            <p>THE EARTH IS DYING.<br />KANYE WON'T SAVE US.<br />BUT WE CAN SAVE OURSELVES.</p>
+            <p>READ:</p>
+            <p>- <a href="https://time.com/5824295/climate-change-future-possibilities/?ref=kanye2049.com" class="ga-ce" data-category="outbound" data-action="click" data-label="https://time.com/5824295/climate-change-future-possibilities/" target="_blank">How the world will look in 2050.</a></p>
+            <p>- <a href="https://www.bbc.com/future/article/20181102-what-can-i-do-about-climate-change?ref=kanye2049.com" class="ga-ce" data-category="outbound" data-action="click" data-label="https://www.bbc.com/future/article/20181102-what-can-i-do-about-climate-change" target="_blank">What you can do today.</a></p>
+            <p>DONATE:</p>
+            <p>- <a href="https://climateemergencyfund.org/?ref=kanye2049.com" class="ga-ce" data-category="outbound" data-action="click" data-label="https://climateemergencyfund.org/" target="_blank">The Climate Emergency Fund</a> provides support to individuals and organizations pressuring governments toward meaningful, immediate policy reform.</p>
+            <p>- <a href="https://climatejusticealliance.org/about/?ref=kanye2049.com" class="ga-ce" data-category="outbound" data-action="click" data-label="https://climatejusticealliance.org/about/" target="_blank">The Climate Justice Alliance</a> seeks to address climate change through both environmental justice and economic justice efforts.</p>
+            <p>- <a href="https://www.ienearth.org/about/?ref=kanye2049.com" class="ga-ce" data-category="outbound" data-action="click" data-label="https://www.ienearth.org/about/" target="_blank">The Indigenous Environmental Network</a> supports indigenous communities throughout North America and advocates for the protection of sacred sites and natural resources. </p>
+          </div>
+        </div>
+      </div>
+
+      <div class="finder fdl">
+        <header class="header">
+          <span class="title">jeffery.gif</span>
+          <button class="close">x</button>
+        </header>
+        <div class="body">
+          <video class="video2" id="video2" loop muted playsinline>
+            <source src="video/jeffrey.webm" type="video/webm">
+            <source src="video/jeffrey.mp4" type="video/mp4">
+          </video>
+        </div>
+      </div>
+
+      <div class="dialog"></div>
+    </div>
+    <div class="video-container">
+      <video class="video" id="video" loop muted playsinline>
+        <source src="" type="video/webm" class="webm">
+        <source src="" type="video/mp4" class="mpeg">
+      </video>
+    </div>
+
+    <img src="img/print.jpg" class="print-visual" alt="">
+
+    <script src="js/jquery/jquery-3.4.1.js"></script>
+    <script src="js/script.js?t=1643989200"></script>
+
+</div>
+</noscript>

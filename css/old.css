@@ -24,6 +24,12 @@ header .logo
   text-transform: uppercase;
   cursor: pointer;
 }
+
+.Pages{
+  margin: 3px;
+
+}
+
 .toggle
 {
   position: relative;
