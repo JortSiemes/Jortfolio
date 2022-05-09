@@ -40,6 +40,11 @@ h3{
         transform: scale(1.1);
       }
 
+.CloseIcon{
+  font-size: 2em;
+  font-family: 'VCR_OSD_MONO', monospace;
+  margin-left: 1vw;
+}
 
   .DisplayOS{
     background: #fff url(../Images/pixel.png) 0 0 repeat;
@@ -48,10 +53,10 @@ h3{
     left: 50%;
     -webkit-transform: translate(-50%, -50%);
     transform: translate(-50%, -50%);
-    width: 60vw;
-    height: 60vh;
-    min-width: 500px;
-    min-height: 400px;
+    width: 500px;
+    height: 450px;
+    min-width: 300px;
+    min-height: 200px;
     z-index: 0;
     border: 1px solid #000;
     border-radius: 10px;
