@@ -1,194 +1,175 @@
-@font-face{
-  font-family: "VCR_OSD_MONO";
-  src: url("../fonts/VCR_OSD_MONO_1.001.ttf") format("truetype");
+font-family: aw-conqueror-didot, serif;
+font-weight: 400;
+font-style: normal;
+
+font-family: freight-big-pro, serif;
+font-weight: 400;
+font-style: normal;
+
+font-family: aktiv-grotesk, sans-serif;
+font-weight: 400;
+font-style: normal;
+
+font-family: aktiv-grotesk-extended, sans-serif;
+font-weight: 400;
+font-style: normal;
+
+font-family: aktiv-grotesk-extended, sans-serif;
+font-weight: 800;
+font-style: normal;
+
+font-family: neue-haas-grotesk-display, sans-serif;
+font-weight: 500;
+font-style: normal;
+
+font-family: neue-haas-grotesk-display, sans-serif;
+font-weight: 600;
+font-style: normal;
+
+body{
+  height: 200vh;
+  background-color: white;
+  overflow-x: hidden;
 }
-  html, body, *{
-    margin: 0px;
-    padding: 0px;
-    overflow: hidden;
-  }
+
+h1{
+  font-family: aktiv-grotesk-extended, sans-serif;
+  font-weight: 800;
+  font-style: normal;
+}
+
+h2{
+  font-family: neue-haas-grotesk-display, sans-serif;
+  font-weight: 600;
+  font-style: normal;
+}
 
 h3{
-  font-family: 'VCR_OSD_MONO', monospace;
-  font-size: 1.7rem;
+  font-family: neue-haas-grotesk-display, sans-serif;
+  font-weight: 500;
+  font-style: normal;
+}
+
+h4{
+  font-family: aktiv-grotesk-extended, sans-serif;
   font-weight: 400;
+  font-style: normal;
 }
 
-  a {
-    background-color: #fff;
-    color: #000;
-    text-decoration: none; }
-    a:hover, a.active {
-      background-color: #000;
-      color: #fff; }
+h5{
+  font-family: aktiv-grotesk, sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
 
-      .div_area{
-        content: "";
-        position: fixed;
-        left: 0;
-        right: 0;
-        z-index: -1;
-        display: block;
-        background-size:cover;
-        width: 100%;
-        height: 100%;
-        -webkit-filter: blur(3px);
-        -moz-filter: blur(3px);
-        -o-filter: blur(3px);
-        -ms-filter: blur(3px);
-        filter: blur(3px);
-        transform: scale(1.1);
-      }
+h6{
+  font-family: aw-conqueror-didot, serif;
+  font-weight: 400;
+  font-style: normal;
+}
 
-.CloseIcon{
+p{
+  font-family: freight-big-pro, serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.info{
+  z-index: 1;
+  padding-left: 2vw;
+  padding-top: 2vh;
+  position: fixed;
+}
+
+.info h3,p{
+    font-size: 3em;
+}
+
+.infotitle a{
+  color: black;
+  text-decoration: none;
+  transition: 0.3s;
+}
+
+.infotitle a:hover{
+  color: black;
+  text-decoration: underline;
+  text-decoration-thickness: 2px;
+}
+
+.infonav a{
+  color: black;
+  text-decoration: none;
+  transition: 0.3s;
+}
+
+.infonav a:hover{
+  color: black;
+  font-weight: 600;
   font-size: 2em;
-  font-family: 'VCR_OSD_MONO', monospace;
-  margin-left: 1vw;
 }
 
-  .DisplayOS{
-    background: #fff url(../Images/pixel.png) 0 0 repeat;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    -webkit-transform: translate(-50%, -50%);
-    transform: translate(-50%, -50%);
-    width: 500px;
-    height: 450px;
-    min-width: 300px;
-    min-height: 200px;
-    z-index: 0;
-    border: 1px solid #000;
-    border-radius: 10px;
-    box-shadow: 0 0 100px rgb(0 0 0 / 70%);
-  }
+.gallery{
+  width: 35%;
+  min-width: 500px;
+  left: 25%;
+  position: relative;
+  overflow-wrap: break-word;
+}
 
-  .navbar {
-    background-color: #fff;
-    border-bottom: 1px solid #000;
-    display: flex;
-    justify-content: space-between;
-    left: 0;
-    position: absolute;
-    top: 0;
-    width: 100%;
-    z-index: 5; }
-    .navbar .left {
-      display: flex;
-      margin-left: 5px; }
-    .navbar .right {
-      display: flex; }
-    .navbar .default-nav {
-      display: flex; }
-    .navbar .media-nav {
-      display: flex; }
-    .navbar .item.submenu {
-      position: relative; }
-      .navbar .item.submenu.active .drop {
-        opacity: 1;
-        visibility: visible; }
-      .navbar .item.submenu.active .logo {
-        background-color: #000; }
-        .navbar .item.submenu.active .logo:before {
-          background: #000 url(../Images/Windows.png) 50% 100%/16px auto no-repeat; }
-      .navbar .item.submenu.active button {
-        background-color: #000;
-        color: #fff; }
-    .navbar .item .logo {
-      position: relative;
-      height: 28px;
-      width: 38px; }
-      .navbar .item .logo:before {
-        background: #fff url(../Images/Windows.png) 50% 0/16px auto no-repeat;
-        content: "";
-        position: absolute;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%);
-        height: 20px;
-        width: 20px; }
-      .navbar .item .logo:active, .navbar .item .logo.active {
-        background-color: #000; }
-        .navbar .item .logo:active:before, .navbar .item .logo.active:before {
-          background: #000 url(../Images/Windows.png) 50% 100%/16px auto no-repeat; }
-    .navbar .item button {
-      padding: 0;
-      border: none;
-      font: inherit;
-      color: inherit;
-      background-color: transparent;
-      cursor: pointer;
-      outline: none;
-      padding: 7px 5px;
-      font-family: 'VCR_OSD_MONO', monospace;
-      font-size: 0.875rem;
-      font-weight: 400;
-      line-height: 0.875rem; }
-      @media (min-width: 768px) {
-        .navbar .item button {
-          padding: 7px 10px; } }
-      .navbar .item button:active, .navbar .item button.active {
-        background-color: #000;
-        color: #fff; }
-    .navbar .item > span {
-      display: block;
-      padding: 3px 5px; }
-      @media (min-width: 768px) {
-        .navbar .item > span {
-          padding: 3px 10px; } }
-    .navbar .item .drop {
-      background-color: #fff;
-      border: 1px solid #000;
-      border-top: none;
-      left: 0;
-      list-style: none;
-      margin: 0;
-      opacity: 0;
-      padding: 0;
-      position: absolute;
-      top: calc(100% + 1px);
-      visibility: hidden;
-      width: 160px; }
-      .navbar .item .drop > li a {
-        display: block;
-        padding: 4px 10px; }
-        .navbar .item .drop > li a:hover {
-          background-color: #000;
-          color: #fff; }
-        .navbar .item .drop > li a.disabled {
-          opacity: .4; }
-          .navbar .item .drop > li a.disabled:hover {
-            background-color: #fff;
-            color: #000; }
-        .navbar .item .drop > li a.invert .off {
-          display: none; }
-        .navbar .item .drop > li a.invert .on {
-          display: block; }
-        .navbar .item .drop > li a .off {
-          padding: 0;
-          display: block; }
-        .navbar .item .drop > li a .on {
-          padding: 0;
-          display: none; }
-    .navbar .item .time {
-      white-space: nowrap; }
-      .navbar .item .time span {
-        display: none;
-        padding: 0; }
-        @media (min-width: 768px) {
-          .navbar .item .time span {
-            display: inline; } }
+.galleryitem{
+  padding: 2vh 0vh;
+}
+
+.galleryitem-text h2,p{
+  display: flex;
+  padding-right: 6px;
+}
+
+.galleryitem-text h2{
+  font-size: 2em;
+  display: inline;
+}
+
+.galleryitem-text p{
+  display: inline;
+  font-size: 2.5em;
+}
+
+.galleryitem img{
+  width: 100%;
+}
+
+.galleryhidden{
+  display: none;
+}
+
+.galleryitem:hover + .galleryhidden{
+  display: block;
+}
+
+.barcode{
+  border-style: solid;
+  margin: 10px;
+  padding: 10px 40px;
+  position: fixed;
+  right: 15px;
+  bottom: 15px;
+}
+
+.barcode img{
+  width: 20vw;
+  min-width: 350px;
+}
 
 
-#myImg {
-  border-style: double;
-  border-width: 5px;
-  border-color: black;
+#myImg, #myImg1, #myImg2, #myImg3, #myImg4, #myImg5, #myImg6, #myImg7, #myImg8{
+  border-radius: 5px;
   cursor: pointer;
   transition: 0.3s;
 }
 
-#myImg:hover {opacity: 0.8;}
+#myImg:hover, #myImg1:hover, #myImg2:hover, #myImg3:hover, #myImg4:hover, #myImg5:hover, #myImg6:hover, #myImg7:hover, #myImg8:hover{opacity: 0.7;}
 
 /* The Modal (background) */
 .modal {
@@ -207,11 +188,9 @@ h3{
 
 /* Modal Content (image) */
 .modal-content {
-  z-index: 5;
   margin: auto;
   display: block;
-  width: 80%;
-  max-width: 1000px;
+  width: 60%;
 }
 
 /* Caption of Modal Image */
@@ -263,8 +242,16 @@ h3{
 }
 
 /* 100% Image Width on Smaller Screens */
-@media only screen and (max-width: 900px){
+@media only screen and (max-width: 700px){
   .modal-content {
     width: 100%;
   }
+}
+
+.info h1, h2, h3, h4, h5, h6, p{
+  color: black;
+}
+
+li{
+  text-align: left;
 }
