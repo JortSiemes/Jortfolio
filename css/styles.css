@@ -112,7 +112,7 @@ p{
 .gallery{
   width: 35%;
   min-width: 500px;
-  left: 25%;
+  left: 35%;
   position: relative;
   overflow-wrap: break-word;
 }
