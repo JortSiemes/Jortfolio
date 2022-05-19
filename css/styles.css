@@ -1,188 +1,257 @@
-@import url('https://fonts.googleapis.com/css?family=Poppins:200,300,400,500,600,700,800,900&display=swap');
-*
-{
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  font-family: 'Poppins', sans-serif;
-}
-header
-{
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  padding: 40px 100px;
-  z-index: 1000;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-header .logo
-{
-  color: #fff;
-  text-transform: uppercase;
-  cursor: pointer;
-}
-.toggle
-{
-  position: relative;
-  width: 60px;
-  height: 60px;
-  background: url(https://i.ibb.co/HrfVRcx/menu.png);
-  background-repeat: no-repeat;
-  background-size: 30px;
-  background-position: center;
-  cursor: pointer;
-}
-.toggle.active
-{
-  background: url(https://i.ibb.co/rt3HybH/close.png);
-  background-repeat: no-repeat;
-  background-size: 25px;
-  background-position: center;
-  cursor: pointer;
-}
-.showcase
-{
-  position: absolute;
-  right: 0;
-  width: 100%;
-  min-height: 100vh;
-  padding: 100px;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  background: #111;
-  transition: 0.5s;
-  z-index: 2;
-}
-.showcase.active
-{
-  right: 300px;
+font-family: aw-conqueror-didot, serif;
+font-weight: 400;
+font-style: normal;
+
+font-family: freight-big-pro, serif;
+font-weight: 400;
+font-style: normal;
+
+font-family: aktiv-grotesk, sans-serif;
+font-weight: 400;
+font-style: normal;
+
+font-family: aktiv-grotesk-extended, sans-serif;
+font-weight: 400;
+font-style: normal;
+
+font-family: aktiv-grotesk-extended, sans-serif;
+font-weight: 800;
+font-style: normal;
+
+font-family: neue-haas-grotesk-display, sans-serif;
+font-weight: 500;
+font-style: normal;
+
+font-family: neue-haas-grotesk-display, sans-serif;
+font-weight: 600;
+font-style: normal;
+
+body{
+  height: 200vh;
+  background-color: white;
+  overflow-x: hidden;
 }
 
-.showcase video
-{
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  opacity: 0.8;
-}
-.overlay
-{
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  mix-blend-mode: overlay;
-}
-.text
-{
-  position: relative;
-  z-index: 10;
-}
-
-.text h2
-{
-  font-size: 8vw;
+h1{
+  font-family: aktiv-grotesk-extended, sans-serif;
   font-weight: 800;
-  color: #fff;
-  line-height: 1em;
-  text-transform: uppercase;
+  font-style: normal;
 }
-.text h3
-{
-  font-size: 4em;
-  font-weight: 700;
-  color: #fff;
-  line-height: 1em;
-  text-transform: uppercase;
+
+h2{
+  font-family: neue-haas-grotesk-display, sans-serif;
+  font-weight: 600;
+  font-style: normal;
 }
-.text p
-{
-  font-size: 1.1em;
-  color: #fff;
-  margin: 20px 0;
+
+h3{
+  font-family: neue-haas-grotesk-display, sans-serif;
+  font-weight: 500;
+  font-style: normal;
+}
+
+h4{
+  font-family: aktiv-grotesk-extended, sans-serif;
   font-weight: 400;
-  max-width: 700px;
+  font-style: normal;
 }
 
-.text a:hover
-{
-  letter-spacing: 6px;
-}
-.social
-{
-  position: absolute;
-  z-index: 10;
-  bottom: 20px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-.social li
-{
-  list-style: none;
-}
-.social li a
-{
-  display: inline-block;
-  margin-right: 20px;
-  transform: scale(0.5);
-  transition: 0.5s;
-}
-.social li a:hover
-{
-  transform: scale(0.5) translateY(-15px);
-}
-.menu
-{
-  position: absolute;
-  top: 0;
-  right: 0;
-  width: 300px;
-  height: 100%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-.menu ul
-{
-  position: relative;
-}
-.menu ul li
-{
-  list-style: none;
-}
-.menu ul li a
-{
-  text-decoration: none;
-  font-size: 24px;
-  color: #111;
-}
-.menu ul li a:hover
-{
-  color: #03a9f4;
+h5{
+  font-family: aktiv-grotesk, sans-serif;
+  font-weight: 400;
+  font-style: normal;
 }
 
-@media (max-width: 991px)
-{
-  .showcase,
-  .showcase header
-  {
-    padding: 40px;
-  }
-  .text h2
-  {
+h6{
+  font-family: aw-conqueror-didot, serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+p{
+  font-family: freight-big-pro, serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.info{
+  z-index: 1;
+  padding-left: 2vw;
+  padding-top: 2vh;
+  position: fixed;
+}
+
+.info h3,p{
     font-size: 3em;
+}
+
+.infotitle a{
+  color: black;
+  text-decoration: none;
+  transition: 0.3s;
+}
+
+.infotitle a:hover{
+  color: black;
+  text-decoration: underline;
+  text-decoration-thickness: 2px;
+}
+
+.infonav a{
+  color: black;
+  text-decoration: none;
+  transition: 0.3s;
+}
+
+.infonav a:hover{
+  color: black;
+  font-weight: 600;
+  font-size: 2em;
+}
+
+.gallery{
+  width: 35%;
+  min-width: 500px;
+  left: 25%;
+  position: relative;
+  overflow-wrap: break-word;
+}
+
+.galleryitem{
+  padding: 2vh 0vh;
+}
+
+.galleryitem-text h2,p{
+  display: flex;
+  padding-right: 6px;
+}
+
+.galleryitem-text h2{
+  font-size: 2em;
+  display: inline;
+}
+
+.galleryitem-text p{
+  display: inline;
+  font-size: 2.5em;
+}
+
+.galleryitem img{
+  width: 100%;
+}
+
+.galleryhidden{
+  display: none;
+}
+
+.galleryitem:hover + .galleryhidden{
+  display: block;
+}
+
+.barcode{
+  border-style: solid;
+  margin: 10px;
+  padding: 10px 40px;
+  position: fixed;
+  right: 15px;
+  bottom: 15px;
+}
+
+.barcode img{
+  width: 20vw;
+  min-width: 350px;
+}
+
+
+#myImg, #myImg1, #myImg2, #myImg3, #myImg4, #myImg5, #myImg6, #myImg7, #myImg8{
+  border-radius: 5px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+#myImg:hover, #myImg1:hover, #myImg2:hover, #myImg3:hover, #myImg4:hover, #myImg5:hover, #myImg6:hover, #myImg7:hover, #myImg8:hover{opacity: 0.7;}
+
+/* The Modal (background) */
+.modal {
+  display: none; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Sit on top */
+  padding-top: 100px; /* Location of the box */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: rgb(0,0,0); /* Fallback color */
+  background-color: rgba(0,0,0,0.9); /* Black w/ opacity */
+}
+
+/* Modal Content (image) */
+.modal-content {
+  margin: auto;
+  display: block;
+  width: 60%;
+}
+
+/* Caption of Modal Image */
+#caption {
+  margin: auto;
+  display: block;
+  width: 80%;
+  max-width: 700px;
+  text-align: center;
+  color: #ccc;
+  padding: 10px 0;
+  height: 150px;
+}
+
+/* Add Animation */
+.modal-content, #caption {
+  -webkit-animation-name: zoom;
+  -webkit-animation-duration: 0.6s;
+  animation-name: zoom;
+  animation-duration: 0.6s;
+}
+
+@-webkit-keyframes zoom {
+  from {-webkit-transform:scale(0)}
+  to {-webkit-transform:scale(1)}
+}
+
+@keyframes zoom {
+  from {transform:scale(0)}
+  to {transform:scale(1)}
+}
+
+/* The Close Button */
+.close {
+  position: absolute;
+  top: 15px;
+  right: 35px;
+  color: #f1f1f1;
+  font-size: 40px;
+  font-weight: bold;
+  transition: 0.3s;
+}
+
+.close:hover,
+.close:focus {
+  color: #bbb;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+/* 100% Image Width on Smaller Screens */
+@media only screen and (max-width: 700px){
+  .modal-content {
+    width: 100%;
   }
-  .text h3
-  {
-    font-size: 2em;
-  }
+}
+
+.info h1, h2, h3, h4, h5, h6, p{
+  color: black;
+}
+
+li{
+  text-align: left;
 }
