@@ -82,7 +82,7 @@ p{
 }
 
 .info h3,p{
-    font-size: 3em;
+    font-size: 2.5em;
 }
 
 .infotitle a{
@@ -111,7 +111,7 @@ p{
 
 .gallery{
   width: 35%;
-  min-width: 500px;
+  min-width: 200px;
   left: 35%;
   position: relative;
   overflow-wrap: break-word;
@@ -127,13 +127,13 @@ p{
 }
 
 .galleryitem-text h2{
-  font-size: 2em;
+  font-size: calc(12px + 1vw);
   display: inline;
 }
 
 .galleryitem-text p{
   display: inline;
-  font-size: 2.5em;
+  font-size: calc(12px + 1vw);
 }
 
 .galleryitem img{
