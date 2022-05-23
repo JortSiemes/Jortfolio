@@ -12,7 +12,7 @@
 
     <div class="info">
     <div class="infotitle">
-      <a href="#">
+      <a href="html/contact.html">
         <p>Jort Siemes.</p>
       </a>
     </div>
@@ -21,7 +21,7 @@
         <a href="#">
           <h3>ARCHIVE</h3>
         </a>
-        <a href="#">
+        <a href="html/info.html">
           <h3>INFORMATION</h3>
         </a>
         <a href="#">
@@ -33,43 +33,31 @@
 
     <div class="gallery">
 
-      <div class="galleryitem">
-        <div class="gallerystill">
-          <img src="Images/OneThousandAndOneNights.png" alt="<h1>Dunes</h1> <ul> <li>Inspiring Villeneuve since '22'</li>
-                        <li>Fully made in blender</li>
-                  <li>Milk</li>
-                </ul>" id="myImg">
-        </div>
-        <div class="galleryitem-text">
-          <h2>01-VFX.</h2><p>'OneThousandAndOneNights.png'</p>
-        </div>
-    </div>
+            <div class="galleryitem">
+              <div class="gallerystill">
+                <img src="Images/OneThousandAndOneNights.png" alt="<h1>Dunes</h1> <ul> <li>Inspiring Villeneuve since '22'</li>
+                              <li>Fully made in blender</li>
+                        <li>Milk</li>
+                      </ul>" id="myImg">
+              </div>
+              <div class="galleryitem-text">
+                <h2>01-VFX.</h2><p>'OneThousandAndOneNights.png'</p>
+              </div>
+          </div>
 
-    <div class="galleryitem">
-      <div class="gallerystill">
-        <img src="Images/Construction.gif" alt="<h1>Construction</h1> <ul>
-                      <li>Inspiring Villeneuve since '22'</li>
-                      <li>Fully made in blender</li>
-                <li>Milk</li>
-              </ul>" id="myImg1">
-      </div>
-      <div class="galleryitem-text">
-        <h2>02 GIF.</h2><p>'Construction.png'</p>
-      </div>
-  </div>
+                  <div class="galleryitem">
+                    <div class="gallerystill">
+                      <img src="Images/Construction.gif" alt="<h1>Construction</h1> <ul>
+                                    <li>Inspiring Villeneuve since '22'</li>
+                                    <li>Fully made in blender</li>
+                              <li>Milk</li>
+                            </ul>" id="myImg1">
+                    </div>
+                    <div class="galleryitem-text">
+                      <h2>02 GIF.</h2><p>'Construction.png'</p>
+                    </div>
+                </div>
 
-  <div class="galleryitem">
-    <div class="gallerystill">
-      <img src="Images/Logo_Twitter_W.png" alt="<h1>Dunes</h1> <ul>
-                    <li>Inspiring Villeneuve since '22'</li>
-                    <li>Fully made in blender</li>
-              <li>Milk</li>
-            </ul>" id="myImg2">
-    </div>
-    <div class="galleryitem-text">
-      <h2>01 VFX.</h2><p>'OneThousandAndOneNights.png'</p>
-    </div>
-</div>
 
 </div>
 
@@ -78,13 +66,6 @@
   <img class="modal-content" id="img01">
   <p id="caption"></p>
 </div>
-
-<noscript>
-  <h4>PleaseRespectOurNeighbors</h4>
-  <h5>PleaseRespectOurNeighbors</h5>
-  <h6>PleaseRespectOurNeighbors</h6>
-</noscript>
-
 
 
 
@@ -111,14 +92,6 @@ img.onclick = function(){
   captionText.innerHTML = this.alt;
 }
 
-var img = document.getElementById("myImg2");
-var modalImg = document.getElementById("img01");
-var captionText = document.getElementById("caption");
-img.onclick = function(){
-  modal.style.display = "block";
-  modalImg.src = this.src;
-  captionText.innerHTML = this.alt;
-}
 
 // Get the <span> element that closes the modal
 var span = document.getElementsByClassName("close")[0];
@@ -128,6 +101,11 @@ span.onclick = function() {
   modal.style.display = "none";
   console.log("jbisjosdjivoa");
 }
+
+$(".linkSource").click(function () {
+               $("#myCarousel").carousel();
+               $("#myModalvid").modal("show");
+           });
 
 </script>
 
