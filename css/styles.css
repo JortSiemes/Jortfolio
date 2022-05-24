@@ -115,8 +115,8 @@ p{
 
 .gallery{
   width: 28%;
-  min-width: 200px;
-  left: 35%;
+  min-width: 400px;
+  left: calc(-40px + 40vw);
   position: relative;
   overflow-wrap: break-word;
 }
@@ -285,7 +285,7 @@ li{
 
 .contactlist h1{
   text-align: center;
-  font-size: 12vh;
+  font-size: calc(6vh + 6vw);
   padding: 1vh 0vh
 }
 
