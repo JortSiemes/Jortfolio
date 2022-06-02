@@ -274,7 +274,7 @@ p{
 
 li{
   text-align: left;
-  font-size: 1.5em;
+  font-size: 2em;
 }
 
 .contactlist{
@@ -285,7 +285,7 @@ li{
 
 .contactlist h1{
   text-align: center;
-  font-size: calc(6vh + 6vw);
+  font-size: calc(4vh + 5vw);
   padding: 1vh 0vh
 }
 
