@@ -82,11 +82,11 @@ p{
 }
 
 .info h3{
-    font-size: 1em;
+    font-size: 1.5em;
 }
 
 .info p{
-  font-size: 1.2em;
+  font-size: 1.8em;
 }
 
 .infotitle a{
@@ -116,7 +116,7 @@ p{
 .gallery{
   width: 28%;
   min-width: 400px;
-  left: calc(-40px + 40vw);
+  left: calc(-40px + 30vw);
   position: relative;
   overflow-wrap: break-word;
 }
@@ -318,4 +318,12 @@ li{
 
 .info2 p{
   font-size: 2em;
+}
+
+.modal{
+  overflow: hidden;
+}
+
+.modal h1{
+  font-size: 8vh;
 }
