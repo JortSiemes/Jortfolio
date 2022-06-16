@@ -76,8 +76,8 @@ video.cover {
   width: 100vw;
   background-color: black;
   z-index: 3;
-  border-top: 8px solid white;
-  border-bottom: 8px solid white;
+  border-top: 5px solid white;
+  border-bottom: 5px solid white;
 }
 
 h4{
@@ -151,8 +151,8 @@ figure {
   width: 100vw;
   background-color: black;
   z-index: 3;
-  border-top: 8px solid white;
-  border-bottom: 8px solid white;
+  border-top: 5px solid white;
+  border-bottom: 5px solid white;
   text-align: center;
 }
 
@@ -229,6 +229,24 @@ video.cover2 {
   width: 100vw;
   background-color: black;
   z-index: 3;
+  padding-top: 2%;
+  line-height: normal;
+}
+
+footer h2{
+  color: white;
+  font-size: 3vw;
+    line-height: normal;
+}
+
+footer h5{
+  color: white;
+    line-height: normal;
+}
+
+footer p{
+  color: lightgrey;
+    line-height: normal;
 }
 
 *::-webkit-media-controls-panel {
