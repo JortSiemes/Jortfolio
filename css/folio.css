@@ -4,6 +4,9 @@
  overflow-x: hidden;
 }
 
+html{
+  scroll-behavior: smooth;
+}
 
 .seg1{
   height: 100vh;
@@ -231,6 +234,16 @@ video.cover2 {
   z-index: 3;
   padding-top: 2%;
   line-height: normal;
+}
+
+.seg6 a{
+    color: white;
+    text-decoration: none;
+}
+
+.seg6 a:hover{
+    color: white;
+    text-decoration: underline;
 }
 
 footer h2{
