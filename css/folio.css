@@ -8,6 +8,64 @@ html{
   scroll-behavior: smooth;
 }
 
+h1{
+  font-family: 'Founders_Grotesk', sans-serif;
+  text-transform: uppercase;
+}
+
+h2{
+  font-family: 'Founders_Grotesk', sans-serif;
+  font-size: calc(20px + 1vw);
+  text-transform: uppercase;
+  color: white;
+  mix-blend-mode: difference;
+}
+
+h4{
+    font-family: 'Founders_Grotesk', sans-serif;
+  color: #2a2a2a;
+  line-height: normal;
+  text-transform: uppercase;
+  text-align: left;
+  font-size: 3vw;
+  font-weight: bold;
+}
+
+h5{
+    font-family: 'Founders_Grotesk', sans-serif;
+    color: #2a2a2a;
+    line-height: normal;
+    text-transform: uppercase;
+    text-align: left;
+    font-size: 2vw;
+    font-weight: bold;
+}
+
+h6{
+    font-family: 'Founders_Grotesk', sans-serif;
+    color: #2a2a2a;
+    line-height: normal;
+    text-transform: uppercase;
+    text-align: left;
+    font-size: 1.5vw;
+    font-weight: bold;
+}
+
+p{
+  font-family: 'Founders_Grotesk', sans-serif;
+  color: #2a2a2a;
+  line-height: normal;
+  text-transform: uppercase;
+  text-align: left;
+  font-size: 16px;
+}
+
+a{
+    font-family: 'Founders_Grotesk', sans-serif;
+}
+
+
+
 .seg1{
   height: 100vh;
   width: 100vw;
@@ -46,12 +104,6 @@ html{
   line-height: normal;
 }
 
-h2{
-  font-size: calc(30px + 1vw);
-  color: white;
-  mix-blend-mode: difference;
-}
-
 header a :hover{
   text-decoration: underline;
   text-decoration-thickness: 5px;
@@ -72,20 +124,11 @@ video.cover {
   height: auto;
 }
 
-
-
 .seg2{
   position: relative;
   width: 100vw;
-  background-color: black;
+  background-color: white;
   z-index: 3;
-  border-top: 5px solid white;
-  border-bottom: 5px solid white;
-}
-
-h4{
-  color: white;
-  line-height: normal;
 }
 
 .box1{
@@ -106,12 +149,19 @@ h4{
   z-index: 1;
 }
 
+.gallery-line{
+  width: 100%;
+  height: 1px;
+  margin-top: 1vw;
+  background-color: #2a2a2a;
+}
 
-
-
+.galleryimg img{
+  border-radius: 8px;
+}
 
 .img-thumbnail{
-  background-color: black;
+  background-color: white;
   border: 0px;
   border-radius: 0.25rem;
 }
@@ -121,7 +171,23 @@ figure {
     }
 
     figcaption {
-      text-align: center;
+      text-align: left;
+      margin-top: 1vh;
+    }
+
+    .figtop p{
+      display: inline;
+    }
+
+    .figtags{
+      float: left;
+      text-align: left;
+      margin-top: 1vh;
+    }
+
+    .figyear{
+      text-align: right;
+      margin-top: 1vh;
     }
 
     .grayscale {
@@ -144,7 +210,7 @@ figure {
       left: 0;
       width: 100%;
       height: 100%;
-      border-radius: 5px;
+      border-radius: 8px;
     }
 
 
@@ -152,7 +218,7 @@ figure {
   position: relative;
   height: 70vh;
   width: 100vw;
-  background-color: black;
+  background-color: white;
   z-index: 3;
   border-top: 5px solid white;
   border-bottom: 5px solid white;
@@ -177,7 +243,7 @@ figure {
 }
 
 .contactlist h1:hover{
-  color: white;
+  color: black;
 }
 
 .seg4 a{
@@ -193,7 +259,7 @@ figure {
   position: relative;
   height: 40vh;
   width: 100vw;
-  background-color: black;
+  background-color: white;
   z-index: 3;
   text-align: center;
 }
@@ -230,35 +296,35 @@ video.cover2 {
   position: relative;
   height: 50vh;
   width: 100vw;
-  background-color: black;
+  background-color: white;
   z-index: 3;
   padding-top: 2%;
   line-height: normal;
 }
 
 .seg6 a{
-    color: white;
+    color: #2a2a2a;
     text-decoration: none;
 }
 
 .seg6 a:hover{
-    color: white;
+    color: #2a2a2a;
     text-decoration: underline;
 }
 
 footer h2{
-  color: white;
+  color: #2a2a2a;
   font-size: 3vw;
     line-height: normal;
 }
 
 footer h5{
-  color: white;
+  color: #2a2a2a;
     line-height: normal;
 }
 
 footer p{
-  color: lightgrey;
+  color: #2a2a2a;
     line-height: normal;
 }
 
@@ -288,4 +354,15 @@ footer p{
 
 video::-webkit-media-controls {
     display:none !important;
+}
+
+@font-face {
+  font-family: Founders_Grotesk;
+  src: url("../fonts/Founders_Grotesk/FoundersGrotesk-Regular.otf") format("opentype");
+}
+
+@font-face {
+  font-family: Founders_Grotesk;
+  font-weight: bold;
+  src: url("../fonts/Founders_Grotesk/FoundersGrotesk-Semibold.otf") format("opentype");
 }
