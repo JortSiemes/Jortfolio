@@ -8,10 +8,6 @@ html{
   scroll-behavior: smooth;
 }
 
-h1{
-  font-family: 'Founders_Grotesk', sans-serif;
-  text-transform: uppercase;
-}
 
 h2{
   font-family: 'Founders_Grotesk', sans-serif;
@@ -19,6 +15,7 @@ h2{
   text-transform: uppercase;
   color: white;
   mix-blend-mode: difference;
+  font-weight: bold;
 }
 
 h4{
@@ -64,6 +61,19 @@ a{
     font-family: 'Founders_Grotesk', sans-serif;
 }
 
+.title{
+  margin-top: 7%;
+}
+
+.title h1{
+  font-family: 'Founders_Grotesk', sans-serif;
+  text-transform: uppercase;
+  color: #2a2a2a;
+  line-height: normal;
+  text-align: left;
+  font-size: 5vw;
+  font-weight: bold;
+}
 
 
 .seg1{
@@ -234,16 +244,17 @@ figure {
 .seg4 h1, .seg4 h2{
   display: inline;
   line-height: normal;
+  font-size: 8vh;
   color: grey;
-  font-size: 7vh;
+  font-weight: Medium;
 }
 
 .contactlist{
-  margin-top: 3%;
+  margin-top: 6%;
 }
 
 .contactlist h1:hover{
-  color: black;
+  color: #2a2a2a;
 }
 
 .seg4 a{
@@ -313,7 +324,6 @@ video.cover2 {
 }
 
 footer h2{
-  color: #2a2a2a;
   font-size: 3vw;
     line-height: normal;
 }
@@ -358,6 +368,7 @@ video::-webkit-media-controls {
 
 @font-face {
   font-family: Founders_Grotesk;
+  font-weight: normal;
   src: url("../fonts/Founders_Grotesk/FoundersGrotesk-Regular.otf") format("opentype");
 }
 
@@ -365,4 +376,16 @@ video::-webkit-media-controls {
   font-family: Founders_Grotesk;
   font-weight: bold;
   src: url("../fonts/Founders_Grotesk/FoundersGrotesk-Semibold.otf") format("opentype");
+}
+
+@font-face {
+  font-family: Founders_Grotesk;
+  font-weight: medium;
+  src: url("../fonts/Founders_Grotesk/FoundersGrotesk-Medium.otf") format("opentype");
+}
+
+@font-face {
+  font-family: Founders_Grotesk;
+  font-weight: lighter;
+  src: url("../fonts/Founders_Grotesk/FoundersGrotesk-Light.otf") format("opentype");
 }
