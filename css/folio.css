@@ -139,6 +139,7 @@ video.cover {
   width: 100vw;
   background-color: white;
   z-index: 3;
+  padding-bottom: 10%;
 }
 
 .box1{
