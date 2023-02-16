@@ -316,7 +316,7 @@ li{
   position: absolute;
 }
 
-.info2 p{
+.info2 img{
   font-size: 2em;
 }
 
@@ -326,4 +326,26 @@ li{
 
 .modal h1{
   font-size: 8vh;
+}
+
+.archivebg img {
+  -webkit-filter: invert(.05);
+  filter: invert(.05);
+  }
+
+
+.navcontact a{
+  color: black;
+  text-decoration: underline;
+  text-decoration-thickness: 15px;
+}
+
+.header-left a{
+  position: fixed;
+  z-index: 4;
+  margin: auto;
+  top: 0;
+  left: 0;
+  margin: 1vw;
+  line-height: normal;
 }
