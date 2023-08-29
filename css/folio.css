@@ -8,14 +8,45 @@ html{
   scroll-behavior: smooth;
 }
 
+@font-face {
+  font-family: Mori;
+  src: url("../fonts/Mori/PPMori-Variable.ttf") format("truetype");
+}
+
+
+@font-face {
+  font-family: Founders_Grotesk;
+  font-weight: normal;
+  src: url("../fonts/Founders_Grotesk/FoundersGrotesk-Regular.otf") format("opentype");
+}
+
+@font-face {
+  font-family: Founders_Grotesk;
+  font-weight: bold;
+  src: url("../fonts/Founders_Grotesk/FoundersGrotesk-Semibold.otf") format("opentype");
+}
+
+@font-face {
+  font-family: Founders_Grotesk;
+  font-weight: medium;
+  src: url("../fonts/Founders_Grotesk/FoundersGrotesk-Medium.otf") format("opentype");
+}
+
+@font-face {
+  font-family: Founders_Grotesk;
+  font-weight: lighter;
+  src: url("../fonts/Founders_Grotesk/FoundersGrotesk-Light.otf") format("opentype");
+}
+
+
 
 h2{
-  font-family: 'Founders_Grotesk', sans-serif;
-  font-size: calc(20px + 1vw);
+  font-family: 'Mori', sans-serif;
+  font-size: calc(28px + 1vw);
   text-transform: uppercase;
   color: white;
   mix-blend-mode: difference;
-  font-weight: bold;
+  font-weight: 800;
 }
 
 h4{
@@ -86,11 +117,11 @@ a{
 .logo img{
   position: fixed;
   margin: auto;
-  top: 0;
+  top: 70vh;
   left: 0;
   right: 0;
   bottom: 0;
-  height: 85%;
+  height: 34.5vw;
   z-index: 2;
 }
 
@@ -367,26 +398,3 @@ video::-webkit-media-controls {
     display:none !important;
 }
 
-@font-face {
-  font-family: Founders_Grotesk;
-  font-weight: normal;
-  src: url("../fonts/Founders_Grotesk/FoundersGrotesk-Regular.otf") format("opentype");
-}
-
-@font-face {
-  font-family: Founders_Grotesk;
-  font-weight: bold;
-  src: url("../fonts/Founders_Grotesk/FoundersGrotesk-Semibold.otf") format("opentype");
-}
-
-@font-face {
-  font-family: Founders_Grotesk;
-  font-weight: medium;
-  src: url("../fonts/Founders_Grotesk/FoundersGrotesk-Medium.otf") format("opentype");
-}
-
-@font-face {
-  font-family: Founders_Grotesk;
-  font-weight: lighter;
-  src: url("../fonts/Founders_Grotesk/FoundersGrotesk-Light.otf") format("opentype");
-}

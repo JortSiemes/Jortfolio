@@ -1,3 +1,8 @@
+@font-face {
+  font-family: Mori;
+  src: url("../fonts/Mori/PPMori-Variable.ttf") format("truetype");
+}
+
 font-family: aw-conqueror-didot, serif;
 font-weight: 400;
 font-style: normal;
