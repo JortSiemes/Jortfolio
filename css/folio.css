@@ -42,7 +42,7 @@ html{
 
 h2{
   font-family: 'Mori', sans-serif;
-  font-size: calc(28px + 1vw);
+  font-size: calc(24px + 1vw);
   text-transform: uppercase;
   color: white;
   mix-blend-mode: difference;
@@ -117,11 +117,11 @@ a{
 .logo img{
   position: fixed;
   margin: auto;
-  top: 70vh;
+  top: 60vh;
   left: 0;
   right: 0;
   bottom: 0;
-  height: 34.5vw;
+  height: 21.5vw;
   z-index: 2;
 }
 
