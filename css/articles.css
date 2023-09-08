@@ -1,6 +1,66 @@
+/* kopieer dit hele stuk voor niew artikel */
+
+.art_content1 {
+  background-image: url('../Images/temple.jpg'); /* Replace 'path/to/your/image.jpg' with the actual path to your image */
+  background-size: cover; /* Cover the entire div with the background image */
+  background-repeat: no-repeat; /* Prevent the image from repeating */
+  background-position: center center; /* Center the background image both horizontally and vertically */
+  width: 70vw;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: space-between;
+  border-radius: 25px;
+  padding: 1%;
+  position: relative;
+}
+
+.art_content1 button {
+  position: absolute; /* Position absolutely within the parent div */
+  bottom: 20px; /* Adjust the distance from the bottom */
+  right: 50px; /* Adjust the distance from the right */
+  padding: 10px 20px; /* Add padding to increase button size */
+  font-size: 16px; /* Increase the font size */
+}
+
+/* einde van de artikel kopie */
+
+/* kopieer dit hele stuk voor niew artikel */
+
+.art_content2 {
+  background-image: url('../Images/desert.jpg'); /* Replace 'path/to/your/image.jpg' with the actual path to your image */
+  background-size: cover; /* Cover the entire div with the background image */
+  background-repeat: no-repeat; /* Prevent the image from repeating */
+  background-position: center center; /* Center the background image both horizontally and vertically */
+  width: 70vw;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: space-between;
+  border-radius: 25px;
+  padding: 1%;
+  position: relative;
+}
+
+.art_content2 button {
+  position: absolute; /* Position absolutely within the parent div */
+  bottom: 20px; /* Adjust the distance from the bottom */
+  right: 50px; /* Adjust the distance from the right */
+  padding: 10px 20px; /* Add padding to increase button size */
+  font-size: 16px; /* Increase the font size */
+}
+
+/* einde van de artikel kopie */
+
+
 @font-face {
   font-family: Mori;
   src: url("../fonts/Mori/PPMori-Variable.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: Gradient;
+  src: url("../fonts/Gradient_comic_Premium_SuperiorType/GradientComicPremium-Black-fa465abc47207167aee144d3c6fcf02c.ttf") format("truetype");
 }
 
 font-family: aw-conqueror-didot, serif;
@@ -117,55 +177,4 @@ h1{
   margin-left: 30px; /* Add margin to the left */
   margin-top: -20%; /* Align to the bottom */
   padding-top: 5px; /* Adjust the spacing between the two h3 elements */
-}
-
-
-/* kopieer dit hele stuk voor niew artikel */
-
-.art_content1 {
-  background-image: url('../Images/temple.jpg'); /* Replace 'path/to/your/image.jpg' with the actual path to your image */
-  background-size: cover; /* Cover the entire div with the background image */
-  background-repeat: no-repeat; /* Prevent the image from repeating */
-  background-position: center center; /* Center the background image both horizontally and vertically */
-  width: 70vw;
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  justify-content: space-between;
-  border-radius: 25px;
-  padding: 1%;
-  position: relative;
-}
-
-.art_content1 button {
-  position: absolute; /* Position absolutely within the parent div */
-  bottom: 20px; /* Adjust the distance from the bottom */
-  right: 50px; /* Adjust the distance from the right */
-  padding: 10px 20px; /* Add padding to increase button size */
-  font-size: 16px; /* Increase the font size */
-}
-
-/* einde van de artikel kopie */
-
-.art_content2 {
-  background-image: url('../Images/desert.jpg'); /* Replace 'path/to/your/image.jpg' with the actual path to your image */
-  background-size: cover; /* Cover the entire div with the background image */
-  background-repeat: no-repeat; /* Prevent the image from repeating */
-  background-position: center center; /* Center the background image both horizontally and vertically */
-  width: 70vw;
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  justify-content: space-between;
-  border-radius: 25px;
-  padding: 1%;
-  position: relative;
-}
-
-.art_content2 button {
-  position: absolute; /* Position absolutely within the parent div */
-  bottom: 20px; /* Adjust the distance from the bottom */
-  right: 50px; /* Adjust the distance from the right */
-  padding: 10px 20px; /* Add padding to increase button size */
-  font-size: 16px; /* Increase the font size */
 }
