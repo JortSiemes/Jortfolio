@@ -1,0 +1,125 @@
+@font-face {
+  font-family: Mori;
+  src: url("../fonts/Mori/PPMori-Variable.ttf") format("truetype");
+}
+
+font-family: aw-conqueror-didot, serif;
+font-weight: 400;
+font-style: normal;
+
+font-family: freight-big-pro, serif;
+font-weight: 400;
+font-style: normal;
+
+font-family: aktiv-grotesk, sans-serif;
+font-weight: 400;
+font-style: normal;
+
+font-family: aktiv-grotesk-extended, sans-serif;
+font-weight: 400;
+font-style: normal;
+
+font-family: aktiv-grotesk-extended, sans-serif;
+font-weight: 800;
+font-style: normal;
+
+font-family: neue-haas-grotesk-display, sans-serif;
+font-weight: 500;
+font-style: normal;
+
+font-family: neue-haas-grotesk-display, sans-serif;
+font-weight: 600;
+font-style: normal;
+
+body{
+  height: 200vh;
+  background-color: #111111;
+  overflow-x: hidden;
+}
+
+h1{
+  font-family: aktiv-grotesk-extended, sans-serif;
+  font-weight: 800;
+  font-style: normal;
+}
+
+
+.navcontact a{
+  color: black;
+  text-decoration: underline;
+  text-decoration-thickness: 15px;
+}
+
+.header-left a{
+  position: fixed;
+  z-index: 4;
+  margin: auto;
+  top: 0;
+  left: 0;
+  margin: 1vw;
+  line-height: normal;
+}
+
+.contactlist{
+  padding-top: 2%;
+}
+
+.contactlist h1{
+  text-align: center;
+  font-size: calc(4vh + 5vw);
+  padding: 1vh 0vh
+}
+
+.contactlist a{
+  text-decoration: none;
+  color: black;
+}
+
+.contactlist a:hover{
+  text-decoration: line-through;
+  text-decoration-thickness: 25px;
+}
+
+
+.flexbox{
+    display: flex;
+    justify-content: center;
+}
+
+
+.art_content1 {
+  background-color: aqua;
+  width: 70vw;
+  display: flex;
+  flex-direction: column; /* Set flex direction to column */
+  align-items: flex-start; /* Align items to the left */
+  justify-content: space-between; /* Add space between items vertically */
+  border-radius: 25px;
+  padding: 1%;
+  position: relative; /* Add relative positioning */
+}
+
+.art_content1 h2 {
+  color: white;
+  font-family: Mori;
+  font-weight: 700;
+  font-size: 40px;
+  margin: 0; /* Remove default margin for h2 */
+}
+
+.art_date h3 {
+  color: white; /* Set text color to white */
+  font-family: Mori;
+  font-weight: 700;
+  font-size: 24px; /* Adjust font size */
+  margin: 0; /* Remove default margin for h3 */
+}
+
+/* CSS for the button */
+.art_content1 button {
+  position: absolute; /* Position absolutely within the parent div */
+  bottom: 20px; /* Adjust the distance from the bottom */
+  right: 50px; /* Adjust the distance from the right */
+  padding: 10px 20px; /* Add padding to increase button size */
+  font-size: 16px; /* Increase the font size */
+}
