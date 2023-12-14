@@ -21,17 +21,36 @@
     </div>
 
 <div class="flexbox">
+        <div class="art_content2">
+          <div class="art_title">
+            <h2>Inflatie in de supermarkt</h2>
+          </div>
+          <br>
+          <div class="art_date">
+            <h3>14 December 2023</h3>
+          </div>
+          <br>
+          <div class="art_subject">
+            <h3>Pre-master Journalistiek en Nieuwe Media</h3>
+          </div>
+          <button type="button" id="downloadButton3" class="btn btn-outline-secondary" style="font-size: 20px; font-weight: 700; font-family: Mori; color: white; border-radius: 25px; border-color:  #ededed;">Download PDF</button>
+        </div>
+</div>
+
+<br>
+
+<div class="flexbox">
     <div class="art_content1">
       <div class="art_title">
-        <h2>content1</h2>
+        <h2>Nieuwsbericht Gemeente Leiden</h2>
       </div>
       <br>
       <div class="art_date">
-        <h3>18 September</h3>
+        <h3>07 November 2023</h3>
       </div>
       <br>
       <div class="art_subject">
-        <h3>content1</h3>
+        <h3>Pre-master Journalistiek en Nieuwe Media</h3>
       </div>
       <button type="button" id="downloadButton1" class="btn btn-outline-secondary" style="font-size: 20px; font-weight: 700; font-family: Mori; color: white; border-radius: 25px; border-color:  #ededed;">Download PDF</button>
     </div>
@@ -42,17 +61,17 @@
 <div class="flexbox">
     <div class="art_content2">
       <div class="art_title">
-        <h2>content1</h2>
+        <h2>Interview Vincent Icke</h2>
       </div>
       <br>
       <div class="art_date">
-        <h3>18 September</h3>
+        <h3>25 Oktober 2023</h3>
       </div>
       <br>
       <div class="art_subject">
-        <h3>content1</h3>
+        <h3>Pre-master Journalistiek en Nieuwe Media</h3>
       </div>
-      <button type="button" id="downloadButton1" class="btn btn-outline-secondary" style="font-size: 20px; font-weight: 700; font-family: Mori; color: white; border-radius: 25px; border-color:  #ededed;">Download PDF</button>
+      <button type="button" id="downloadButton2" class="btn btn-outline-secondary" style="font-size: 20px; font-weight: 700; font-family: Mori; color: white; border-radius: 25px; border-color:  #ededed;">Download PDF</button>
     </div>
 </div>
 
@@ -65,13 +84,13 @@
 
     document.getElementById("downloadButton1").addEventListener("click", function() {
       // Replace 'path/to/your/pdf.pdf' with the actual path to your PDF file.
-      var pdfPath = '../pdf/Toelating_Besluit.pdf';
+      var pdfPath = '../pdf/Nieuwbericht_Jort Siemes_4028198.pdf';
 
       // Create an anchor element to trigger the download.
       var link = document.createElement('a');
       link.href = pdfPath;
       link.target = '_blank'; // Open the link in a new tab (optional).
-      link.download = '../pdf/Toelating_Besluit.pdf'; // Specify the download filename.
+      link.download = '../pdf/Nieuwbericht_Jort Siemes_4028198.pdf'; // Specify the download filename.
 
       // Programmatically trigger a click event on the anchor element.
       if (document.createEvent) {
@@ -87,13 +106,13 @@
 
     document.getElementById("downloadButton2").addEventListener("click", function() {
       // Replace 'path/to/your/pdf.pdf' with the actual path to your PDF file.
-      var pdfPath = '../pdf/Toelating_Besluit.pdf';
+      var pdfPath = '../pdf/V2_JortSiemes_4028198_Artikel_Wetenschapper_Opmaak.pdf';
 
       // Create an anchor element to trigger the download.
       var link = document.createElement('a');
       link.href = pdfPath;
       link.target = '_blank'; // Open the link in a new tab (optional).
-      link.download = '../pdf/Toelating_Besluit.pdf'; // Specify the download filename.
+      link.download = '../pdf/V2_JortSiemes_4028198_Artikel_Wetenschapper_Opmaak.pdf'; // Specify the download filename.
 
       // Programmatically trigger a click event on the anchor element.
       if (document.createEvent) {
@@ -107,13 +126,13 @@
 
     document.getElementById("downloadButton3").addEventListener("click", function() {
       // Replace 'path/to/your/pdf.pdf' with the actual path to your PDF file.
-      var pdfPath = '../pdf/Toelating_Besluit.pdf';
+      var pdfPath = '../pdf/Achtergrondartikel_JortSiemes_4028198_104_InflatieInDeSupermarkt.pdf';
 
       // Create an anchor element to trigger the download.
       var link = document.createElement('a');
       link.href = pdfPath;
       link.target = '_blank'; // Open the link in a new tab (optional).
-      link.download = '../pdf/Toelating_Besluit.pdf'; // Specify the download filename.
+      link.download = '../pdf/Achtergrondartikel_JortSiemes_4028198_104_InflatieInDeSupermarkt.pdf'; // Specify the download filename.
 
       // Programmatically trigger a click event on the anchor element.
       if (document.createEvent) {

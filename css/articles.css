@@ -1,7 +1,7 @@
 /* kopieer dit hele stuk voor niew artikel */
 
 .art_content1 {
-  background-image: url('../Images/temple.jpg'); /* Replace 'path/to/your/image.jpg' with the actual path to your image */
+  background-image: url('../Images/Leiden.jpg'); /* Replace 'path/to/your/image.jpg' with the actual path to your image */
   background-size: cover; /* Cover the entire div with the background image */
   background-repeat: no-repeat; /* Prevent the image from repeating */
   background-position: center center; /* Center the background image both horizontally and vertically */
@@ -28,7 +28,7 @@
 /* kopieer dit hele stuk voor niew artikel */
 
 .art_content2 {
-  background-image: url('../Images/desert.jpg'); /* Replace 'path/to/your/image.jpg' with the actual path to your image */
+  background-image: url('../Images/Hubble.jpg'); /* Replace 'path/to/your/image.jpg' with the actual path to your image */
   background-size: cover; /* Cover the entire div with the background image */
   background-repeat: no-repeat; /* Prevent the image from repeating */
   background-position: center center; /* Center the background image both horizontally and vertically */
