@@ -1,35 +1,72 @@
 @font-face {
-  font-family: Mori;
-  src: url("../fonts/Mori/PPMori-Variable.ttf") format("truetype");
+  font-family: 'EuclidCircularA';
+  src: url('../fonts/Euclid/EuclidCircularA-Bold-WebTrial.woff') format('woff');
+  font-weight: bold;
+  font-style: normal;
 }
 
-font-family: aw-conqueror-didot, serif;
-font-weight: 400;
-font-style: normal;
+@font-face {
+  font-family: 'EuclidCircularA';
+  src: url('../fonts/Euclid/EuclidCircularA-BoldItalic-WebTrial.woff') format('woff');
+  font-weight: bold;
+  font-style: italic;
+}
 
-font-family: freight-big-pro, serif;
-font-weight: 400;
-font-style: normal;
+@font-face {
+  font-family: 'EuclidCircularA';
+  src: url('../fonts/Euclid/EuclidCircularA-Light-WebTrial.woff') format('woff');
+  font-weight: lighter;
+  font-style: normal;
+}
 
-font-family: aktiv-grotesk, sans-serif;
-font-weight: 400;
-font-style: normal;
+@font-face {
+  font-family: 'EuclidCircularA';
+  src: url('../fonts/Euclid/EuclidCircularA-LightItalic-WebTrial.woff') format('woff');
+  font-weight: lighter;
+  font-style: italic;
+}
 
-font-family: aktiv-grotesk-extended, sans-serif;
-font-weight: 400;
-font-style: normal;
+@font-face {
+  font-family: 'EuclidCircularA';
+  src: url('../fonts/Euclid/EuclidCircularA-Regular-WebTrial.woff') format('woff');
+  font-weight: 400; /* Use the appropriate numerical value for medium weight */
+  font-style: normal;
+}
 
-font-family: aktiv-grotesk-extended, sans-serif;
-font-weight: 800;
-font-style: normal;
+@font-face {
+  font-family: 'EuclidCircularA';
+  src: url('../fonts/Euclid/EuclidCircularA-RegularItalic-WebTrial.woff') format('woff');
+  font-weight: 400; /* Use the appropriate numerical value for medium weight */
+  font-style: italic;
+}
 
-font-family: neue-haas-grotesk-display, sans-serif;
-font-weight: 500;
-font-style: normal;
+@font-face {
+  font-family: 'EuclidCircularA';
+  src: url('../fonts/Euclid/EuclidCircularA-Medium-WebTrial.woff') format('woff');
+  font-weight: 500; /* Use the appropriate numerical value for medium weight */
+  font-style: normal;
+}
 
-font-family: neue-haas-grotesk-display, sans-serif;
-font-weight: 600;
-font-style: normal;
+@font-face {
+  font-family: 'EuclidCircularA';
+  src: url('../fonts/Euclid/EuclidCircularA-MediumItalic-WebTrial.woff') format('woff');
+  font-weight: 500; /* Use the appropriate numerical value for medium weight */
+  font-style: italic;
+}
+
+@font-face {
+  font-family: 'EuclidCircularA';
+  src: url('../fonts/Euclid/EuclidCircularA-Semibold-WebTrial.woff') format('woff');
+  font-weight: 600; /* Use the appropriate numerical value for medium weight */
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'EuclidCircularA';
+  src: url('../fonts/Euclid/EuclidCircularA-SemiboldItalic-WebTrial.woff') format('woff');
+  font-weight: 600; /* Use the appropriate numerical value for medium weight */
+  font-style: italic;
+}
 
 body{
   height: 200vh;
@@ -38,46 +75,47 @@ body{
 }
 
 h1{
-  font-family: aktiv-grotesk-extended, sans-serif;
-  font-weight: 800;
+  font-family: 'EuclidCircularA', sans-serif;
+  font-weight: bold;
   font-style: normal;
 }
 
 h2{
-  font-family: neue-haas-grotesk-display, sans-serif;
+  font-family: 'EuclidCircularA', sans-serif;
   font-weight: 600;
   font-style: normal;
 }
 
 h3{
-  font-family: neue-haas-grotesk-display, sans-serif;
+  font-family: 'EuclidCircularA', sans-serif;
   font-weight: 500;
   font-style: normal;
 }
 
 h4{
-  font-family: aktiv-grotesk-extended, sans-serif;
+  font-family: 'EuclidCircularA', sans-serif;
   font-weight: 400;
   font-style: normal;
 }
 
 h5{
-  font-family: aktiv-grotesk, sans-serif;
-  font-weight: 400;
+  font-family: 'EuclidCircularA', sans-serif;
+  font-weight: bold;
   font-style: normal;
 }
 
 h6{
-  font-family: aw-conqueror-didot, serif;
-  font-weight: 400;
+  font-family: 'EuclidCircularA', sans-serif;
+  font-weight: bold;
   font-style: normal;
 }
 
 p{
-  font-family: freight-big-pro, serif;
-  font-weight: 400;
+  font-family: 'EuclidCircularA', sans-serif;
+  font-weight: bold;
   font-style: normal;
 }
+
 
 .info{
   z-index: 1;

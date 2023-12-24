@@ -1,3 +1,73 @@
+@font-face {
+  font-family: 'EuclidCircularA';
+  src: url('../fonts/Euclid/EuclidCircularA-Bold-WebTrial.woff') format('woff');
+  font-weight: bold;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'EuclidCircularA';
+  src: url('../fonts/Euclid/EuclidCircularA-BoldItalic-WebTrial.woff') format('woff');
+  font-weight: bold;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: 'EuclidCircularA';
+  src: url('../fonts/Euclid/EuclidCircularA-Light-WebTrial.woff') format('woff');
+  font-weight: lighter;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'EuclidCircularA';
+  src: url('../fonts/Euclid/EuclidCircularA-LightItalic-WebTrial.woff') format('woff');
+  font-weight: lighter;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: 'EuclidCircularA';
+  src: url('../fonts/Euclid/EuclidCircularA-Regular-WebTrial.woff') format('woff');
+  font-weight: 400; /* Use the appropriate numerical value for medium weight */
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'EuclidCircularA';
+  src: url('../fonts/Euclid/EuclidCircularA-RegularItalic-WebTrial.woff') format('woff');
+  font-weight: 400; /* Use the appropriate numerical value for medium weight */
+  font-style: italic;
+}
+
+@font-face {
+  font-family: 'EuclidCircularA';
+  src: url('../fonts/Euclid/EuclidCircularA-Medium-WebTrial.woff') format('woff');
+  font-weight: 500; /* Use the appropriate numerical value for medium weight */
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'EuclidCircularA';
+  src: url('../fonts/Euclid/EuclidCircularA-MediumItalic-WebTrial.woff') format('woff');
+  font-weight: 500; /* Use the appropriate numerical value for medium weight */
+  font-style: italic;
+}
+
+@font-face {
+  font-family: 'EuclidCircularA';
+  src: url('../fonts/Euclid/EuclidCircularA-Semibold-WebTrial.woff') format('woff');
+  font-weight: 600; /* Use the appropriate numerical value for medium weight */
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'EuclidCircularA';
+  src: url('../fonts/Euclid/EuclidCircularA-SemiboldItalic-WebTrial.woff') format('woff');
+  font-weight: 600; /* Use the appropriate numerical value for medium weight */
+  font-style: italic;
+}
+
 *{
  margin: 0;
  padding: 0;
@@ -8,79 +78,54 @@ html{
   scroll-behavior: smooth;
 }
 
-@font-face {
-  font-family: Mori;
-  src: url("../fonts/Mori/PPMori-Variable.ttf") format("truetype");
-}
-
-
-@font-face {
-  font-family: Founders_Grotesk;
-  font-weight: normal;
-  src: url("../fonts/Founders_Grotesk/FoundersGrotesk-Regular.otf") format("opentype");
-}
-
-@font-face {
-  font-family: Founders_Grotesk;
-  font-weight: bold;
-  src: url("../fonts/Founders_Grotesk/FoundersGrotesk-Semibold.otf") format("opentype");
-}
-
-@font-face {
-  font-family: Founders_Grotesk;
-  font-weight: medium;
-  src: url("../fonts/Founders_Grotesk/FoundersGrotesk-Medium.otf") format("opentype");
-}
-
-@font-face {
-  font-family: Founders_Grotesk;
-  font-weight: lighter;
-  src: url("../fonts/Founders_Grotesk/FoundersGrotesk-Light.otf") format("opentype");
-}
-
-
 
 h2{
-  font-family: 'Mori', sans-serif;
+  font-family: 'EuclidCircularA', sans-serif;
+  font-weight: bold;
+  font-style: normal;
   font-size: calc(24px + 1vw);
   text-transform: uppercase;
   color: white;
   mix-blend-mode: difference;
-  font-weight: 800;
 }
 
 h4{
-    font-family: 'Founders_Grotesk', sans-serif;
+  font-family: 'EuclidCircularA', sans-serif;
+  font-weight: bold;
+  font-style: normal;
   color: #2a2a2a;
   line-height: normal;
   text-transform: uppercase;
   text-align: left;
   font-size: 3vw;
-  font-weight: bold;
 }
 
 h5{
-    font-family: 'Founders_Grotesk', sans-serif;
-    color: #2a2a2a;
-    line-height: normal;
-    text-transform: uppercase;
-    text-align: left;
-    font-size: 2vw;
-    font-weight: bold;
+  font-family: 'EuclidCircularA', sans-serif;
+  font-weight: bold;
+  font-style: normal;
+  color: #2a2a2a;
+  line-height: normal;
+  text-transform: uppercase;
+  text-align: left;
+  font-size: 2vw;
 }
 
 h6{
-    font-family: 'Founders_Grotesk', sans-serif;
+  font-family: 'EuclidCircularA', sans-serif;
+  font-weight: bold;
+  font-style: normal;
     color: #2a2a2a;
     line-height: normal;
     text-transform: uppercase;
     text-align: left;
     font-size: 1.5vw;
-    font-weight: bold;
 }
 
 p{
-  font-family: 'Founders_Grotesk', sans-serif;
+  font-family: 'EuclidCircularA', sans-serif;
+  font-weight: bold;
+  font-style: normal;
   color: #2a2a2a;
   line-height: normal;
   text-transform: uppercase;
@@ -89,7 +134,9 @@ p{
 }
 
 a{
-    font-family: 'Founders_Grotesk', sans-serif;
+  font-family: 'EuclidCircularA', sans-serif;
+  font-weight: bold;
+  font-style: normal;
 }
 
 .title{
@@ -97,13 +144,14 @@ a{
 }
 
 .title h1{
-  font-family: 'Founders_Grotesk', sans-serif;
+  font-family: 'EuclidCircularA', sans-serif;
+  font-weight: bold;
+  font-style: normal;
   text-transform: uppercase;
   color: #2a2a2a;
   line-height: normal;
   text-align: left;
   font-size: 5vw;
-  font-weight: bold;
 }
 
 
@@ -397,4 +445,3 @@ footer p{
 video::-webkit-media-controls {
     display:none !important;
 }
-
