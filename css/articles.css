@@ -121,6 +121,20 @@
   position: relative;
 }
 
+.art_content4 {
+  background-image: url('../Images/Unsplash_Sergio Alves Santos_HALFTONE.png'); /* Replace 'path/to/your/image.jpg' with the actual path to your image */
+  background-size: cover; /* Cover the entire div with the background image */
+  background-repeat: no-repeat; /* Prevent the image from repeating */
+  background-position: center center; /* Center the background image both horizontally and vertically */
+  width: 70vw;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: space-between;
+  border-radius: 25px;
+  padding: 1%;
+  position: relative;
+}
 
 button {
   position: absolute; /* Position absolutely within the parent div */
