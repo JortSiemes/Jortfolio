@@ -392,3 +392,8 @@ li{
   margin: 1vw;
   line-height: normal;
 }
+
+.prikkieborder img{
+  border: 0px;
+  border-radius: 25px;
+}
