@@ -20,6 +20,26 @@
     <h1>Articles</h1>
     </div>
 
+    <div class="flexbox">
+            <div class="art_content6">
+              <div class="art_title">
+                <h2>Heeft Nederland een troef met nieuwe supersnelle computerchips?<br>Fotonica</h2>
+              </div>
+              <br>
+              <div class="art_date">
+                <h3>15 April 2024</h3>
+              </div>
+              <br>
+              <div class="art_subject">
+                <h3>Pre-master Journalistiek en Nieuwe Media</h3>
+              </div>
+              <a href="http://www.kijkopkennis.nl/wp/2024/04/heeft-nederland-een-troef-met-nieuwe-supersnelle-computerchips/" target="_blank">
+              <button type="button" class="btn btn-outline-secondary" style="font-size: 20px;   font-family: 'EuclidCircularA', sans-serif;  font-weight: 500; font-style: normal; color: white; border-radius: 25px; border-color:  #ededed;">Open article</button></a>
+              </div>
+
+          </div>
+  <br>
+
 <<<<<<< Updated upstream
     <div class="flexbox">
             <div class="art_content5">
@@ -124,6 +144,28 @@
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.min.js" integrity="sha384-QJHtvGhmr9XOIpI6YVutG+2QOK9T+ZnN4kzFN1RtK3zEFEIsxhlmWl5/YESvpZ13" crossorigin="anonymous"></script>
 
   <script>
+
+  // kopieer dit voor nieuw artikel.
+
+    document.getElementById("downloadButton5").addEventListener("click", function() {
+      // Replace 'path/to/your/pdf.pdf' with the actual path to your PDF file.
+      var pdfPath = '../pdf/Nieuwsbericht_Definitief_JortSiemes_4028198_Pentagon.pdf';
+
+      // Create an anchor element to trigger the download.
+      var link = document.createElement('a');
+      link.href = pdfPath;
+      link.target = '_blank'; // Open the link in a new tab (optional).
+      link.download = '../pdf/Nieuwbericht_Jort Siemes_4028198.pdf'; // Specify the download filename.
+
+      // Programmatically trigger a click event on the anchor element.
+      if (document.createEvent) {
+        var event = document.createEvent('MouseEvents');
+        event.initEvent('click', true, true);
+        link.dispatchEvent(event);
+      } else {
+        link.click(); // For older browsers.
+      }
+    });
 
   // kopieer dit voor nieuw artikel.
 
