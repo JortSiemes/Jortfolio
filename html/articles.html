@@ -33,8 +33,7 @@
               <div class="art_subject">
                 <h3>Pre-master Journalistiek en Nieuwe Media</h3>
               </div>
-              <a href="https://journalistiekennieuwemedia.nl/jnm/2024/04/15/de-chinese-huizenmarkt-is-ingestort-hoe-ziet-dit-er-uit/?preview_id=24402&preview_nonce=d2c48208cf&preview=true" target="_blank">
-              <button type="button" class="btn btn-outline-secondary" style="font-size: 20px;   font-family: 'EuclidCircularA', sans-serif;  font-weight: 500; font-style: normal; color: white; border-radius: 25px; border-color:  #ededed;">Open article</button></a>
+              <button type="button" id="downloadButton6" class="btn btn-outline-secondary" style="font-size: 20px;   font-family: 'EuclidCircularA', sans-serif;  font-weight: 500; font-style: normal; color: white; border-radius: 25px; border-color:  #ededed;">Download PDF</button>
               </div>
 
           </div>
@@ -207,7 +206,7 @@
 
   // kopieer dit voor nieuw artikel.
 
-    document.getElementById("downloadButton4").addEventListener("click", function() {
+    document.getElementById("downloadButton5").addEventListener("click", function() {
       // Replace 'path/to/your/pdf.pdf' with the actual path to your PDF file.
       var pdfPath = '../pdf/Nieuwsbericht_Definitief_JortSiemes_4028198_Pentagon.pdf';
 
@@ -215,7 +214,7 @@
       var link = document.createElement('a');
       link.href = pdfPath;
       link.target = '_blank'; // Open the link in a new tab (optional).
-      link.download = '../pdf/Nieuwbericht_Jort Siemes_4028198.pdf'; // Specify the download filename.
+      link.download = '../pdf/Nieuwbericht_Definitief_JortSiemes_4028198_Pentagon.pdf'; // Specify the download filename.
 
       // Programmatically trigger a click event on the anchor element.
       if (document.createEvent) {
@@ -228,6 +227,28 @@
     });
 
   // kopieer dit voor nieuw artikel.
+
+  document.getElementById("downloadButton6").addEventListener("click", function() {
+    // Replace 'path/to/your/pdf.pdf' with the actual path to your PDF file.
+    var pdfPath = '../pdf/xenotransplantatie.pdf';
+
+    // Create an anchor element to trigger the download.
+    var link = document.createElement('a');
+    link.href = pdfPath;
+    link.target = '_blank'; // Open the link in a new tab (optional).
+    link.download = '../pdf/xenotransplantatie.pdf'; // Specify the download filename.
+
+    // Programmatically trigger a click event on the anchor element.
+    if (document.createEvent) {
+      var event = document.createEvent('MouseEvents');
+      event.initEvent('click', true, true);
+      link.dispatchEvent(event);
+    } else {
+      link.click(); // For older browsers.
+    }
+  });
+
+// kopieer dit voor nieuw artikel.
 
     document.getElementById("downloadButton1").addEventListener("click", function() {
       // Replace 'path/to/your/pdf.pdf' with the actual path to your PDF file.
