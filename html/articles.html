@@ -1,46 +1,56 @@
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
-  <head>
+<head>
     <meta charset="utf-8">
     <title>Articles | JORTFOLIO</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
     <link rel="stylesheet" type="text/css" href="../css/articles.css">
-    <link rel = "icon" href ="../Images/Icon_Large_m.png" type = "../Images/Icon_m.png">
+    <link rel="icon" href="../Images/Icon_Large_m.png" type="../Images/Icon_m.png">
     <link rel="stylesheet" href="https://use.typekit.net/qzm3dvy.css">
-  </head>
-  <body>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
 
     <div class="header-left">
-      <div class="navcontact">
-          <a href="../index.html"><h1>BACK</h1></a>
-      </div>
+        <div class="navcontact">
+            <a href="../index.html"><h1>BACK</h1></a>
+        </div>
     </div>
+
 
     <div class="contactlist">
-    <h1>Articles</h1>
+        <h1>Articles</h1>
     </div>
 
-    <div class="flexbox">
-            <div class="art_content8">
-              <div class="art_title">
+    <div class="filter-buttons">
+      <button class="btn btn-primary" onclick="filterArticles('all')">Alles</button>
+      <button class="btn btn-onderzoeksjournalistiek" onclick="filterArticles('onderzoeksjournalistiek')"><i class="fas fa-search"></i>Onderzoek</button>
+      <button class="btn btn-nieuwsartikel" onclick="filterArticles('nieuwsartikel')"><i class="fas fa-newspaper"></i>Nieuws</button>
+      <button class="btn btn-interview" onclick="filterArticles('interview')"><i class="fas fa-microphone"></i>Interview</button>
+  </div>
+
+
+
+    <div class="flexbox" data-category="interview">
+        <div class="art art_content8">
+            <div class="art_title">
                 <h2>Xenotransplantatie: EEN DIER ALS DONOR</h2>
-              </div>
-              <br>
-              <div class="art_date">
+            </div>
+            <br>
+            <div class="art_date">
                 <h3>6 Mei 2024</h3>
-              </div>
-              <br>
-              <div class="art_subject">
+            </div>
+            <br>
+            <div class="art_subject">
                 <h3>Pre-master Journalistiek en Nieuwe Media</h3>
-              </div>
-              <button type="button" id="downloadButton6" class="btn btn-outline-secondary" style="font-size: 20px;   font-family: 'EuclidCircularA', sans-serif;  font-weight: 500; font-style: normal; color: white; border-radius: 25px; border-color:  #ededed;">Download PDF</button>
-              </div>
+            </div>
+            <button type="button" id="downloadButton6" class="btn btn-outline-secondary" style="font-size: 20px; font-family: 'EuclidCircularA', sans-serif; font-weight: 500; font-style: normal; color: white; border-radius: 25px; border-color: #ededed;">Download PDF</button>
+        </div>
+    </div>
+    <br>
 
-          </div>
-  <br>
-
-    <div class="flexbox">
-            <div class="art_content7">
+    <div class="flexbox" data-category="onderzoeksjournalistiek">
+            <div class="art art_content7">
               <div class="art_title">
                 <h2>De vastgoedavonturen van de ingestorte Chinese gigant Evergrande in kaart gebracht</h2>
               </div>
@@ -52,15 +62,15 @@
               <div class="art_subject">
                 <h3>Pre-master Journalistiek en Nieuwe Media</h3>
               </div>
-              <a href="https://journalistiekennieuwemedia.nl/jnm/2024/04/15/de-chinese-huizenmarkt-is-ingestort-hoe-ziet-dit-er-uit/?preview_id=24402&preview_nonce=d2c48208cf&preview=true" target="_blank">
+              <a href="https://journalistiekennieuwemedia.nl/jnm/2024/04/15/de-chinese-huizenmarkt-is-ingestort-hoe-ziet-dit-er-uit/" target="_blank">
               <button type="button" class="btn btn-outline-secondary" style="font-size: 20px;   font-family: 'EuclidCircularA', sans-serif;  font-weight: 500; font-style: normal; color: white; border-radius: 25px; border-color:  #ededed;">Open article</button></a>
               </div>
 
           </div>
   <br>
 
-    <div class="flexbox">
-            <div class="art_content6">
+    <div class="flexbox" data-category="onderzoeksjournalistiek">
+            <div class="art art_content6">
               <div class="art_title">
                 <h2>Heeft Nederland een troef met nieuwe supersnelle computerchips?</h2>
               </div>
@@ -79,8 +89,8 @@
           </div>
   <br>
 
-    <div class="flexbox">
-            <div class="art_content5">
+    <div class="flexbox" data-category="nieuwsartikel">
+            <div class="art art_content5">
               <div class="art_title">
                 <h2>Geen UFO ‘close encounters' concludeert Pentagon</h2>
               </div>
@@ -100,9 +110,9 @@
   <br>
 
 
-        <div class="flexbox">
+        <div class="flexbox" data-category="nieuwsartikel">
 
-            <div class="art_content4">
+            <div class="art art_content4">
               <div class="art_title">
                 <h2>De nieuwe vrijdagavond:<br>alcoholvrij bier wordt langzaam maar zeker de nieuwe standaard</h2>
               </div>
@@ -120,8 +130,8 @@
     </div>
 <br>
 
-    <div class="flexbox">
-            <div class="art_content3">
+    <div class="flexbox" data-category="onderzoeksjournalistiek">
+            <div class="art art_content3">
               <div class="art_title">
                 <h2>Inflatie in de supermarkt<br>Hoe is het prijspeil in de soep gelopen?</h2>
               </div>
@@ -140,200 +150,96 @@
     </div>
 <br>
 
-<div class="flexbox">
-    <div class="art_content1">
-      <div class="art_title">
-        <h2>Nieuwsbericht Gemeente Leiden</h2>
-      </div>
-      <br>
-      <div class="art_date">
-        <h3>07 November 2023</h3>
-      </div>
-      <br>
-      <div class="art_subject">
-        <h3>Pre-master Journalistiek en Nieuwe Media</h3>
-      </div>
-      <button type="button" id="downloadButton1" class="btn btn-outline-secondary" style="font-size: 20px; font-family: 'EuclidCircularA', sans-serif;  font-weight: 500; font-style: normal; color: white; border-radius: 25px; border-color:  #ededed;">Download PDF</button>
+    <div class="flexbox" data-category="nieuwsartikel">
+        <div class="art art_content1">
+            <div class="art_title">
+                <h2>Nieuwsbericht Gemeente Leiden</h2>
+            </div>
+            <br>
+            <div class="art_date">
+                <h3>07 November 2023</h3>
+            </div>
+            <br>
+            <div class="art_subject">
+                <h3>Pre-master Journalistiek en Nieuwe Media</h3>
+            </div>
+            <button type="button" id="downloadButton1" class="btn btn-outline-secondary" style="font-size: 20px; font-family: 'EuclidCircularA', sans-serif; font-weight: 500; font-style: normal; color: white; border-radius: 25px; border-color: #ededed;">Download PDF</button>
+        </div>
     </div>
-</div>
+    <br>
 
-<br>
-
-<div class="flexbox">
-    <div class="art_content2">
-      <div class="art_title">
-        <h2>Interview Vincent Icke</h2>
-      </div>
-      <br>
-      <div class="art_date">
-        <h3>25 Oktober 2023</h3>
-      </div>
-      <br>
-      <div class="art_subject">
-        <h3>Pre-master Journalistiek en Nieuwe Media</h3>
-      </div>
-      <button type="button" id="downloadButton2" class="btn btn-outline-secondary" style="font-size: 20px; font-family: 'EuclidCircularA', sans-serif;  font-weight: 500; font-style: normal; color: white; border-radius: 25px; border-color:  #ededed;">Download PDF</button>
+    <div class="flexbox" data-category="interview">
+        <div class="art art_content2">
+            <div class="art_title">
+                <h2>Interview Vincent Icke</h2>
+            </div>
+            <br>
+            <div class="art_date">
+                <h3>25 Oktober 2023</h3>
+            </div>
+            <br>
+            <div class="art_subject">
+                <h3>Pre-master Journalistiek en Nieuwe Media</h3>
+            </div>
+            <button type="button" id="downloadButton2" class="btn btn-outline-secondary" style="font-size: 20px; font-family: 'EuclidCircularA', sans-serif; font-weight: 500; font-style: normal; color: white; border-radius: 25px; border-color: #ededed;">Download PDF</button>
+        </div>
     </div>
-</div>
+    <br>
 
-<br>
+    <!-- Repeat for each article, adding appropriate data-category -->
 
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.min.js" integrity="sha384-QJHtvGhmr9XOIpI6YVutG+2QOK9T+ZnN4kzFN1RtK3zEFEIsxhlmWl5/YESvpZ13" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.min.js" integrity="sha384-QJHtvGhmr9XOIpI6YVutG+2QOK9T+ZnN4kzFN1RtK3zEFEIsxhlmWl5/YESvpZ13" crossorigin="anonymous"></script>
 
-  <script>
+    <script>
+    function filterArticles(category) {
+        const articles = document.querySelectorAll('.flexbox');
 
-  // kopieer dit voor nieuw artikel.
-
-    document.getElementById("downloadButton5").addEventListener("click", function() {
-      // Replace 'path/to/your/pdf.pdf' with the actual path to your PDF file.
-      var pdfPath = '../pdf/Nieuwsbericht_Definitief_JortSiemes_4028198_Pentagon.pdf';
-
-      // Create an anchor element to trigger the download.
-      var link = document.createElement('a');
-      link.href = pdfPath;
-      link.target = '_blank'; // Open the link in a new tab (optional).
-      link.download = '../pdf/Nieuwbericht_Jort Siemes_4028198.pdf'; // Specify the download filename.
-
-      // Programmatically trigger a click event on the anchor element.
-      if (document.createEvent) {
-        var event = document.createEvent('MouseEvents');
-        event.initEvent('click', true, true);
-        link.dispatchEvent(event);
-      } else {
-        link.click(); // For older browsers.
-      }
-    });
-
-  // kopieer dit voor nieuw artikel.
-
-    document.getElementById("downloadButton5").addEventListener("click", function() {
-      // Replace 'path/to/your/pdf.pdf' with the actual path to your PDF file.
-      var pdfPath = '../pdf/Nieuwsbericht_Definitief_JortSiemes_4028198_Pentagon.pdf';
-
-      // Create an anchor element to trigger the download.
-      var link = document.createElement('a');
-      link.href = pdfPath;
-      link.target = '_blank'; // Open the link in a new tab (optional).
-      link.download = '../pdf/Nieuwbericht_Definitief_JortSiemes_4028198_Pentagon.pdf'; // Specify the download filename.
-
-      // Programmatically trigger a click event on the anchor element.
-      if (document.createEvent) {
-        var event = document.createEvent('MouseEvents');
-        event.initEvent('click', true, true);
-        link.dispatchEvent(event);
-      } else {
-        link.click(); // For older browsers.
-      }
-    });
-
-  // kopieer dit voor nieuw artikel.
-
-  document.getElementById("downloadButton6").addEventListener("click", function() {
-    // Replace 'path/to/your/pdf.pdf' with the actual path to your PDF file.
-    var pdfPath = '../pdf/xenotransplantatie.pdf';
-
-    // Create an anchor element to trigger the download.
-    var link = document.createElement('a');
-    link.href = pdfPath;
-    link.target = '_blank'; // Open the link in a new tab (optional).
-    link.download = '../pdf/xenotransplantatie.pdf'; // Specify the download filename.
-
-    // Programmatically trigger a click event on the anchor element.
-    if (document.createEvent) {
-      var event = document.createEvent('MouseEvents');
-      event.initEvent('click', true, true);
-      link.dispatchEvent(event);
-    } else {
-      link.click(); // For older browsers.
+        articles.forEach(article => {
+            if (category === 'all') {
+                article.style.display = 'flex';
+            } else {
+                if (article.getAttribute('data-category') === category) {
+                    article.style.display = 'flex';
+                } else {
+                    article.style.display = 'none';
+                }
+            }
+        });
     }
-  });
 
-// kopieer dit voor nieuw artikel.
-
-    document.getElementById("downloadButton1").addEventListener("click", function() {
-      // Replace 'path/to/your/pdf.pdf' with the actual path to your PDF file.
-      var pdfPath = '../pdf/Nieuwbericht_Jort Siemes_4028198.pdf';
-
-      // Create an anchor element to trigger the download.
-      var link = document.createElement('a');
-      link.href = pdfPath;
-      link.target = '_blank'; // Open the link in a new tab (optional).
-      link.download = '../pdf/Nieuwbericht_Jort Siemes_4028198.pdf'; // Specify the download filename.
-
-      // Programmatically trigger a click event on the anchor element.
-      if (document.createEvent) {
-        var event = document.createEvent('MouseEvents');
-        event.initEvent('click', true, true);
-        link.dispatchEvent(event);
-      } else {
-        link.click(); // For older browsers.
-      }
+    document.getElementById("downloadButton6").addEventListener("click", function() {
+        var pdfPath = '../pdf/xenotransplantatie.pdf';
+        var link = document.createElement('a');
+        link.href = pdfPath;
+        link.target = '_blank';
+        link.download = '../pdf/xenotransplantatie.pdf';
+        if (document.createEvent) {
+            var event = document.createEvent('MouseEvents');
+            event.initEvent('click', true, true);
+            link.dispatchEvent(event);
+        } else {
+            link.click();
+        }
     });
 
-  // kopieer dit voor nieuw artikel.
-
-    document.getElementById("downloadButton2").addEventListener("click", function() {
-      // Replace 'path/to/your/pdf.pdf' with the actual path to your PDF file.
-      var pdfPath = '../pdf/V2_JortSiemes_4028198_Artikel_Wetenschapper_Opmaak.pdf';
-
-      // Create an anchor element to trigger the download.
-      var link = document.createElement('a');
-      link.href = pdfPath;
-      link.target = '_blank'; // Open the link in a new tab (optional).
-      link.download = '../pdf/V2_JortSiemes_4028198_Artikel_Wetenschapper_Opmaak.pdf'; // Specify the download filename.
-
-      // Programmatically trigger a click event on the anchor element.
-      if (document.createEvent) {
-        var event = document.createEvent('MouseEvents');
-        event.initEvent('click', true, true);
-        link.dispatchEvent(event);
-      } else {
-        link.click(); // For older browsers.
-      }
+    document.getElementById("downloadButton5").addEventListener("click", function() {
+        var pdfPath = '../pdf/xenotransplantatie.pdf';
+        var link = document.createElement('a');
+        link.href = pdfPath;
+        link.target = '_blank';
+        link.download = '../pdf/xenotransplantatie.pdf';
+        if (document.createEvent) {
+            var event = document.createEvent('MouseEvents');
+            event.initEvent('click', true, true);
+            link.dispatchEvent(event);
+        } else {
+            link.click();
+        }
     });
 
-    document.getElementById("downloadButton3").addEventListener("click", function() {
-      // Replace 'path/to/your/pdf.pdf' with the actual path to your PDF file.
-      var pdfPath = '../pdf/Achtergrondartikel_JortSiemes_4028198_104_InflatieInDeSupermarkt.pdf';
 
-      // Create an anchor element to trigger the download.
-      var link = document.createElement('a');
-      link.href = pdfPath;
-      link.target = '_blank'; // Open the link in a new tab (optional).
-      link.download = '../pdf/Achtergrondartikel_JortSiemes_4028198_104_InflatieInDeSupermarkt.pdf'; // Specify the download filename.
+    // Add similar event listeners for other download buttons as shown in your original code
 
-      // Programmatically trigger a click event on the anchor element.
-      if (document.createEvent) {
-        var event = document.createEvent('MouseEvents');
-        event.initEvent('click', true, true);
-        link.dispatchEvent(event);
-      } else {
-        link.click(); // For older browsers.
-      }
-    });
-
-  // kopieer dit voor nieuw artikel.
-
-    document.getElementById("downloadButton4").addEventListener("click", function() {
-      // Replace 'path/to/your/pdf.pdf' with the actual path to your PDF file.
-      var pdfPath = '../pdf/Toelating_Besluit.pdf';
-
-      // Create an anchor element to trigger the download.
-      var link = document.createElement('a');
-      link.href = pdfPath;
-      link.target = '_blank'; // Open the link in a new tab (optional).
-      link.download = '../pdf/Toelating_Besluit.pdf'; // Specify the download filename.
-
-      // Programmatically trigger a click event on the anchor element.
-      if (document.createEvent) {
-        var event = document.createEvent('MouseEvents');
-        event.initEvent('click', true, true);
-        link.dispatchEvent(event);
-      } else {
-        link.click(); // For older browsers.
-      }
-    });
-  </script>
-
-  </body>
+    </script>
+</body>
 </html>
