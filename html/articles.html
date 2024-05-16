@@ -222,12 +222,12 @@
         }
     });
 
-    document.getElementById("downloadButton5").addEventListener("click", function() {
-        var pdfPath = '../pdf/xenotransplantatie.pdf';
+    document.getElementById("downloadButton4").addEventListener("click", function() {
+        var pdfPath = '../pdf/Nieuwsbericht_Definitief_JortSiemes_4028198_Pentagon.pdf';
         var link = document.createElement('a');
         link.href = pdfPath;
         link.target = '_blank';
-        link.download = '../pdf/xenotransplantatie.pdf';
+        link.download = '../pdf/Nieuwsbericht_Definitief_JortSiemes_4028198_Pentagon.pdf';
         if (document.createEvent) {
             var event = document.createEvent('MouseEvents');
             event.initEvent('click', true, true);
@@ -237,6 +237,50 @@
         }
     });
 
+    document.getElementById("downloadButton3").addEventListener("click", function() {
+        var pdfPath = '../pdf/Achtergrondartikel_JortSiemes_4028198_104_InflatieInDeSupermarkt.pdf';
+        var link = document.createElement('a');
+        link.href = pdfPath;
+        link.target = '_blank';
+        link.download = '../pdf/Achtergrondartikel_JortSiemes_4028198_104_InflatieInDeSupermarkt.pdf';
+        if (document.createEvent) {
+            var event = document.createEvent('MouseEvents');
+            event.initEvent('click', true, true);
+            link.dispatchEvent(event);
+        } else {
+            link.click();
+        }
+    });
+
+    document.getElementById("downloadButton2").addEventListener("click", function() {
+        var pdfPath = '../pdf/V2_JortSiemes_4028198_Artikel_Wetenschapper_Opmaak.pdf';
+        var link = document.createElement('a');
+        link.href = pdfPath;
+        link.target = '_blank';
+        link.download = '../pdf/V2_JortSiemes_4028198_Artikel_Wetenschapper_Opmaak.pdf';
+        if (document.createEvent) {
+            var event = document.createEvent('MouseEvents');
+            event.initEvent('click', true, true);
+            link.dispatchEvent(event);
+        } else {
+            link.click();
+        }
+    });
+
+    document.getElementById("downloadButton1").addEventListener("click", function() {
+        var pdfPath = '../pdf/Nieuwbericht_Jort Siemes_4028198.pdf';
+        var link = document.createElement('a');
+        link.href = pdfPath;
+        link.target = '_blank';
+        link.download = '../pdf/Nieuwbericht_Jort Siemes_4028198.pdf';
+        if (document.createEvent) {
+            var event = document.createEvent('MouseEvents');
+            event.initEvent('click', true, true);
+            link.dispatchEvent(event);
+        } else {
+            link.click();
+        }
+    });
 
     // Add similar event listeners for other download buttons as shown in your original code
 
