@@ -149,9 +149,58 @@
   border-radius: 25px;
   padding: 1%;
   position: relative;
+  background-color: black;
 }
 
-button {
+.art_content6 {
+  background-image: url('../Images/HighresPurple.jpg'); /* Replace 'path/to/your/image.jpg' with the actual path to your image */
+  background-size: cover; /* Cover the entire div with the background image */
+  background-repeat: no-repeat; /* Prevent the image from repeating */
+  background-position: center center; /* Center the background image both horizontally and vertically */
+  width: 70vw;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: space-between;
+  border-radius: 25px;
+  padding: 1%;
+  position: relative;
+  background-color: black;
+}
+
+.art_content7 {
+  background-image: url('../Images/Evergrande.png'); /* Replace 'path/to/your/image.jpg' with the actual path to your image */
+  background-size: cover; /* Cover the entire div with the background image */
+  background-repeat: no-repeat; /* Prevent the image from repeating */
+  background-position: center center; /* Center the background image both horizontally and vertically */
+  width: 70vw;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: space-between;
+  border-radius: 25px;
+  padding: 1%;
+  position: relative;
+  background-color: black;
+}
+
+.art_content8 {
+  background-image: url('../Images/Pigheart2.png'); /* Replace 'path/to/your/image.jpg' with the actual path to your image */
+  background-size: cover; /* Cover the entire div with the background image */
+  background-repeat: no-repeat; /* Prevent the image from repeating */
+  background-position: center center; /* Center the background image both horizontally and vertically */
+  width: 70vw;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: space-between;
+  border-radius: 25px;
+  padding: 1%;
+  position: relative;
+  background-color: black;
+}
+
+.art button {
   position: absolute; /* Position absolutely within the parent div */
   bottom: 20px; /* Adjust the distance from the bottom */
   right: 50px; /* Adjust the distance from the right */
@@ -217,12 +266,6 @@ h1{
   text-decoration-thickness: 25px;
 }
 
-
-.flexbox{
-    display: flex;
-    justify-content: center;
-}
-
 .art_title h2 {
   color: white;
   font-family: 'EuclidCircularA', sans-serif;
@@ -258,3 +301,71 @@ h1{
   margin-top: -20%; /* Align to the bottom */
   padding-top: 5px; /* Adjust the spacing between the two h3 elements */
 }
+
+
+.btn {
+    padding: 10px 20px;
+    font-size: 16px;
+}
+
+.filter-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+.filter-buttons .btn {
+    margin-bottom: 0;
+}
+
+.filter-buttons .btn i {
+       margin-right: 8px; /* Adjust the margin to control the space */
+   }
+
+.btn-primary {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.btn-primary:hover {
+    background-color: #0056b3;
+}
+
+.flexbox {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto;
+}
+
+.art_content {
+    width: 100%;
+    max-width: 600px;
+    margin-bottom: 20px;
+}
+
+.btn-primary {
+            background-color: #0C0F0A;
+            font-weight: bold;
+        }
+
+        .btn-onderzoeksjournalistiek {
+            background-color: #FF206E; /* Vibrant orange */
+                font-weight: bold;
+
+        }
+
+        .btn-nieuwsartikel {
+            background-color: #FBFF12; /* Vibrant blue */
+                font-weight: bold;
+        }
+
+        .btn-interview {
+            background-color: #41EAD4; /* Vibrant green */
+    font-weight: bold;
+        }
