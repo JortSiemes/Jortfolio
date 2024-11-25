@@ -1,0 +1,466 @@
+/* fonts */
+@font-face {
+  font-family: 'EuclidCircularA';
+  src: url('../fonts/Euclid/EuclidCircularA-Bold-WebTrial.woff') format('woff');
+  font-weight: bold;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'EuclidCircularA';
+  src: url('../fonts/Euclid/EuclidCircularA-BoldItalic-WebTrial.woff') format('woff');
+  font-weight: bold;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: 'EuclidCircularA';
+  src: url('../fonts/Euclid/EuclidCircularA-Light-WebTrial.woff') format('woff');
+  font-weight: lighter;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'EuclidCircularA';
+  src: url('../fonts/Euclid/EuclidCircularA-LightItalic-WebTrial.woff') format('woff');
+  font-weight: lighter;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: 'EuclidCircularA';
+  src: url('../fonts/Euclid/EuclidCircularA-Regular-WebTrial.woff') format('woff');
+  font-weight: 400; /* Use the appropriate numerical value for medium weight */
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'EuclidCircularA';
+  src: url('../fonts/Euclid/EuclidCircularA-RegularItalic-WebTrial.woff') format('woff');
+  font-weight: 400; /* Use the appropriate numerical value for medium weight */
+  font-style: italic;
+}
+
+@font-face {
+  font-family: 'EuclidCircularA';
+  src: url('../fonts/Euclid/EuclidCircularA-Medium-WebTrial.woff') format('woff');
+  font-weight: 500; /* Use the appropriate numerical value for medium weight */
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'EuclidCircularA';
+  src: url('../fonts/Euclid/EuclidCircularA-MediumItalic-WebTrial.woff') format('woff');
+  font-weight: 500; /* Use the appropriate numerical value for medium weight */
+  font-style: italic;
+}
+
+@font-face {
+  font-family: 'EuclidCircularA';
+  src: url('../fonts/Euclid/EuclidCircularA-Semibold-WebTrial.woff') format('woff');
+  font-weight: 600; /* Use the appropriate numerical value for medium weight */
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'EuclidCircularA';
+  src: url('../fonts/Euclid/EuclidCircularA-SemiboldItalic-WebTrial.woff') format('woff');
+  font-weight: 600; /* Use the appropriate numerical value for medium weight */
+  font-style: italic;
+}
+
+
+/* kopieer dit hele stuk voor niew artikel */
+
+.art_content1 {
+  background-image: url('../Images/Leiden.jpg'); /* Replace 'path/to/your/image.jpg' with the actual path to your image */
+  background-size: cover; /* Cover the entire div with the background image */
+  background-repeat: no-repeat; /* Prevent the image from repeating */
+  background-position: center center; /* Center the background image both horizontally and vertically */
+  width: 70vw;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: space-between;
+  border-radius: 25px;
+  padding: 1%;
+  position: relative;
+}
+
+/* einde van de artikel kopie */
+
+/* kopieer dit hele stuk voor niew artikel */
+
+.art_content2 {
+  background-image: url('../Images/Hubble.jpg'); /* Replace 'path/to/your/image.jpg' with the actual path to your image */
+  background-size: cover; /* Cover the entire div with the background image */
+  background-repeat: no-repeat; /* Prevent the image from repeating */
+  background-position: center center; /* Center the background image both horizontally and vertically */
+  width: 70vw;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: space-between;
+  border-radius: 25px;
+  padding: 1%;
+  position: relative;
+}
+
+.art_content3 {
+  background-image: url('../Images/ECBbuilding2_PIXELATED.png'); /* Replace 'path/to/your/image.jpg' with the actual path to your image */
+  background-size: cover; /* Cover the entire div with the background image */
+  background-repeat: no-repeat; /* Prevent the image from repeating */
+  background-position: center center; /* Center the background image both horizontally and vertically */
+  width: 70vw;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: space-between;
+  border-radius: 25px;
+  padding: 1%;
+  position: relative;
+}
+
+.art_content4 {
+  background-image: url('../Images/Unsplash_Sergio Alves Santos_HALFTONE.png'); /* Replace 'path/to/your/image.jpg' with the actual path to your image */
+  background-size: cover; /* Cover the entire div with the background image */
+  background-repeat: no-repeat; /* Prevent the image from repeating */
+  background-position: center center; /* Center the background image both horizontally and vertically */
+  width: 70vw;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: space-between;
+  border-radius: 25px;
+  padding: 1%;
+  position: relative;
+}
+
+.art_content5 {
+  background-image: url('../Images/UfoSS.png'); /* Replace 'path/to/your/image.jpg' with the actual path to your image */
+  background-size: cover; /* Cover the entire div with the background image */
+  background-repeat: no-repeat; /* Prevent the image from repeating */
+  background-position: center center; /* Center the background image both horizontally and vertically */
+  width: 70vw;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: space-between;
+  border-radius: 25px;
+  padding: 1%;
+  position: relative;
+  background-color: black;
+}
+
+.art_content6 {
+  background-image: url('../Images/HighresPurple.jpg'); /* Replace 'path/to/your/image.jpg' with the actual path to your image */
+  background-size: cover; /* Cover the entire div with the background image */
+  background-repeat: no-repeat; /* Prevent the image from repeating */
+  background-position: center center; /* Center the background image both horizontally and vertically */
+  width: 70vw;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: space-between;
+  border-radius: 25px;
+  padding: 1%;
+  position: relative;
+  background-color: black;
+}
+
+.art_content7 {
+  background-image: url('../Images/Evergrande.png'); /* Replace 'path/to/your/image.jpg' with the actual path to your image */
+  background-size: cover; /* Cover the entire div with the background image */
+  background-repeat: no-repeat; /* Prevent the image from repeating */
+  background-position: center center; /* Center the background image both horizontally and vertically */
+  width: 70vw;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: space-between;
+  border-radius: 25px;
+  padding: 1%;
+  position: relative;
+  background-color: black;
+}
+
+.art_content8 {
+  background-image: url('../Images/Pigheart2.png'); /* Replace 'path/to/your/image.jpg' with the actual path to your image */
+  background-size: cover; /* Cover the entire div with the background image */
+  background-repeat: no-repeat; /* Prevent the image from repeating */
+  background-position: center center; /* Center the background image both horizontally and vertically */
+  width: 70vw;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: space-between;
+  border-radius: 25px;
+  padding: 1%;
+  position: relative;
+  background-color: black;
+}
+
+.art_content9 {
+  background-image: url('../Images/Amsterdam.webp'); /* Replace 'path/to/your/image.jpg' with the actual path to your image */
+  background-size: cover; /* Cover the entire div with the background image */
+  background-repeat: no-repeat; /* Prevent the image from repeating */
+  background-position: center center; /* Center the background image both horizontally and vertically */
+  width: 70vw;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: space-between;
+  border-radius: 25px;
+  padding: 1%;
+  position: relative;
+  background-color: black;
+}
+
+
+.art button {
+  position: absolute; /* Position absolutely within the parent div */
+  bottom: 20px; /* Adjust the distance from the bottom */
+  right: 50px; /* Adjust the distance from the right */
+  padding: 10px 20px; /* Add padding to increase button size */
+  font-size: 16px; /* Increase the font size */
+}
+
+
+
+/* einde van de artikel kopie */
+
+body{
+  height: 200vh;
+  background-color: black;
+  overflow-x: hidden;
+}
+
+h1{
+  font-family: 'EuclidCircularA', sans-serif;
+  font-weight: bold;
+  font-style: normal;
+  color: #ccc;
+}
+
+h6{
+  font-family: 'EuclidCircularA', sans-serif;
+  font-weight: bold;
+  font-style: normal;
+  color: #ccc;
+}
+
+.navcontact a{
+  color: black;
+  text-decoration: none;
+}
+
+.navcontact a:hover{
+  color: black;
+  text-decoration: underline;
+  text-decoration-thickness: 15px;
+}
+
+.header-left a{
+  position: fixed;
+  z-index: 4;
+  margin: auto;
+  top: 0;
+  left: 0;
+  margin: 1vw;
+  line-height: normal;
+}
+
+.contactlist{
+  padding-top: 2%;
+}
+
+.contactlist h1{
+  text-align: center;
+  font-size: calc(4vh + 5vw);
+  padding: 1vh 0vh
+}
+
+.contactlist a{
+  text-decoration: none;
+  color: black;
+}
+
+.contactlist a:hover{
+  text-decoration: line-through;
+  text-decoration-thickness: 25px;
+}
+
+.art_title h2 {
+  color: white;
+  font-family: 'EuclidCircularA', sans-serif;
+  font-weight: 500;
+  font-style: normal;
+  font-size: 30px;
+  margin: 0; /* Remove default margin for h2 */
+  margin-left: 30px; /* Add margin to the left */
+  margin-top: 5px;
+  margin-bottom: 20vh;
+}
+
+.art_date h3 {
+  color: white;
+  font-family: 'EuclidCircularA', sans-serif;
+  font-weight: lighter;
+  font-style: normal;
+  font-size: 24px;
+  margin: 0; /* Remove default margin for h3 */
+  margin-left: 30px; /* Add margin to the left */
+  margin-top: auto; /* Align to the bottom */
+  padding-top: 5px; /* Adjust the spacing between the two h3 elements */
+}
+
+.art_subject h3 {
+  color: #ededed;
+  font-family: 'EuclidCircularA', sans-serif;
+  font-weight: lighter;
+  font-style: normal;
+  font-size: 24px;
+  margin: 0; /* Remove default margin for h3 */
+  margin-left: 30px; /* Add margin to the left */
+  margin-top: -20%; /* Align to the bottom */
+  padding-top: 5px; /* Adjust the spacing between the two h3 elements */
+}
+
+
+.btn {
+    padding: 10px 20px;
+    font-size: 16px;
+}
+
+.filter-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+.filter-buttons .btn {
+    margin-bottom: 0;
+}
+
+.filter-buttons .btn i {
+       margin-right: 8px; /* Adjust the margin to control the space */
+   }
+
+.btn-primary {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.btn-primary:hover {
+    background-color: #0056b3;
+}
+
+.flexbox {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto;
+}
+
+.art_content {
+    width: 100%;
+    max-width: 600px;
+    margin-bottom: 20px;
+}
+
+.btn-primary {
+            background-color: #0C0F0A;
+            font-weight: bold;
+        }
+
+        .btn-onderzoeksjournalistiek {
+            background-color: #FF206E; /* Vibrant orange */
+                font-weight: bold;
+
+        }
+
+        .btn-nieuwsartikel {
+            background-color: #FBFF12; /* Vibrant blue */
+                font-weight: bold;
+        }
+
+        .btn-interview {
+            background-color: #41EAD4; /* Vibrant green */
+    font-weight: bold;
+        }
+
+
+        article {
+          max-width: 800px; /* Limit the width of the article */
+          margin: 0 auto; /* Center the article horizontally */
+          padding: 20px; /* Add some padding around the article */
+          text-align: left; /* Center-align text */
+          border-radius: 8px; /* Optional: Rounded corners */
+      }
+
+
+      article h2 {
+          margin-bottom: 20px; /* Add space below the header */
+          color: #ccc;
+      }
+
+      h6{
+        font-family: 'EuclidCircularA', sans-serif;
+        font-weight: bold;
+        font-style: normal;
+        color: #ccc;
+      }
+
+    article h3 {
+      font-family: 'EuclidCircularA', sans-serif;
+      font-weight: bold;
+      font-style: normal;
+        font-size: 1.5em;
+        color: #ccc;
+        margin-bottom: 10px;
+
+    }
+
+    article p {
+        font-size: 1em;
+        line-height: 1.6;
+        color: #ccc;
+        margin-bottom: 20px;
+        text-align: justify;
+    }
+
+      blockquote.twitter-tweet {
+        max-width: 100%; /* Make the blockquote span the full width of its container */
+        margin: 20px auto; /* Center the blockquote within the article */
+        padding: 10px; /* Add some padding for spacing inside the blockquote */
+        box-sizing: border-box; /* Ensure padding doesn't affect total width */
+        background-color: #f1f1f1; /* Optional: Add a subtle background color */
+        border-left: 4px solid #ccc; /* Optional: Add a left border for emphasis */
+        border-radius: 4px; /* Optional: Rounded corners for the blockquote */
+    }
+
+    .image-container {
+      position: relative; /* Set relative positioning for the container */
+      width: 100%; /* Ensure the container spans full width */
+  }
+
+  .image-container img {
+      width: 100%; /* Make the image responsive */
+      display: block; /* Remove any gaps below the image */
+  }
+
+  .image-source {
+      position: absolute; /* Position the text relative to the container */
+      bottom: 10px; /* Position the text 10px from the bottom */
+      right: 10px; /* Position the text 10px from the right */
+      color: white; /* Set text color to white */
+      padding: 5px 10px; /* Add padding around the text */
+      border-radius: 4px; /* Optional: Rounded corners */
+      font-size: 12px; /* Set a smaller font size */
+      font-family: Arial, sans-serif; /* Optional: Set font */
+  }
