@@ -100,7 +100,15 @@ body {
   width: 100%;
   height: 100%; /* You can adjust the height if needed */
   object-fit: cover; /* Ensures the image covers the entire area */
+  animation: fade-out linear forwards;
+  animation-timeline: view();
+  animation-range: exit 200px;
 }
+
+@keyframes fade-out{
+  to {opacity: 0;}
+}
+
 
 /* Title style to overlay on top of the image */
 .title {
