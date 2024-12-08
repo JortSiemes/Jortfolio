@@ -70,6 +70,20 @@
 }
 
 
+/* Hide the scrollbar for Webkit browsers (Chrome, Safari) */
+/* Hide the scrollbar but still allow scrolling */
+body {
+  overflow: hidden;  /* Hide scrollbars */
+}
+
+body::-webkit-scrollbar {
+  display: none;  /* For Webkit browsers */
+}
+
+body {
+  overflow-y: scroll;  /* Still allow scrolling */
+}
+
 /* kopieer dit hele stuk voor niew artikel */
 
 .art_content1 {
@@ -339,62 +353,6 @@ h6{
     margin-bottom: 20px;
 }
 
-.filter-buttons .btn {
-    margin-bottom: 0;
-}
-
-.filter-buttons .btn i {
-       margin-right: 8px; /* Adjust the margin to control the space */
-   }
-
-.btn-primary {
-    background-color: #007bff;
-    color: white;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-}
-
-.btn-primary:hover {
-    background-color: #0056b3;
-}
-
-.flexbox {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    margin: 0 auto;
-}
-
-.art_content {
-    width: 100%;
-    max-width: 600px;
-    margin-bottom: 20px;
-}
-
-.btn-primary {
-            background-color: #0C0F0A;
-            font-weight: bold;
-        }
-
-        .btn-onderzoeksjournalistiek {
-            background-color: #FF206E; /* Vibrant orange */
-                font-weight: bold;
-
-        }
-
-        .btn-nieuwsartikel {
-            background-color: #FBFF12; /* Vibrant blue */
-                font-weight: bold;
-        }
-
-        .btn-interview {
-            background-color: #41EAD4; /* Vibrant green */
-    font-weight: bold;
-        }
-
-
         article {
           max-width: 800px; /* Limit the width of the article */
           margin: 0 auto; /* Center the article horizontally */
@@ -464,3 +422,118 @@ h6{
       font-size: 12px; /* Set a smaller font size */
       font-family: Arial, sans-serif; /* Optional: Set font */
   }
+
+section {
+  display: grid;
+  place-items: center;
+  align-content: center;
+  min-height: 10vh;
+}
+
+.hidden {
+  opacity: 0;
+  filter: blur (5px);
+  transform: translateX(-100%);
+  transition: all 1s;
+}
+
+@media(prefers-reduced-motion) {
+  .hidden {
+    transition: none;
+  }
+}
+
+.show {
+  opacity: 1;
+  filter: blur(0);
+  transform: translateX(0);
+}
+
+.logos {
+  display: flex;
+}
+
+.logo img {
+  width: 100px; 
+  height: 100px; 
+  margin: 5px;
+  border-radius: 50%; /* Makes the image round */
+  object-fit: cover; /* Ensures the image scales properly without distortion */
+  transition: border 0.1s ease; /* Smooth transition for the border change */
+}
+
+.logo img:hover {
+    border: 6px solid white; /* Add a white border on hover */
+}
+
+.logo:nth-child(2) {
+  transition-delay: 200ms;
+}
+
+.logo:nth-child(3) {
+  transition-delay: 400ms;
+}
+
+.logo:nth-child(4) {
+  transition-delay: 600ms;
+}
+
+.logo:nth-child(5) {
+  transition-delay: 800ms;
+}
+
+
+
+.timeline-container {
+  position: fixed;
+  z-index: -1;
+  left: 0;
+  top: 30vh;
+  height: 100vh;
+  width: 200px;
+  padding: 20px;
+  overflow-y: auto;
+}
+
+.timeline {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.timeline li {
+  margin: 20px 0;
+  font-size: 1vw;
+  color: #8f9194;
+  transition: color 0.3s;
+}
+
+.timeline li.active {
+  color: white;
+  font-weight: bold;
+}
+
+.datum h1{
+  margin-left: -10vw;
+  margin-top: 10vh;
+  color;
+  font-size: 4vw;
+}
+
+.scroll-watcher {
+  width: 10px;
+  height: 100%;
+  position: fixed;
+  left: 0;
+  z-index: -1;
+  background-color: white;
+  scale: 1 0;
+  transform-origin: top;
+
+  animation: scroll-watcher linear;
+  animation-timeline: scroll();
+}
+
+@keyframes scroll-watcher {
+  to { scale: 1 1;}
+}
