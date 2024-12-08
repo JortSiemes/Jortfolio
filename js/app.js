@@ -4,8 +4,6 @@ const observer = new IntersectionObserver((entries) => {
         console.log(entry)
         if (entry.isIntersecting) {
             entry.target.classList.add('show');
-        } else {
-            entry.target.classList.remove('show');
         }
     });
 });
@@ -46,3 +44,11 @@ document.addEventListener("DOMContentLoaded", () => {
 });
 
 
+document.getElementById("bounceSVG").addEventListener("click", function() {
+    // Scroll to 200vh and 200vw with smooth behavior
+    window.scrollTo({
+      top: window.innerHeight * 1,  // 200vh
+      left: window.innerWidth * 1,  // 200vw
+      behavior: 'smooth'  // Enables smooth scrolling
+    });
+  });

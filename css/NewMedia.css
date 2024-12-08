@@ -86,148 +86,65 @@ body {
 
 /* kopieer dit hele stuk voor niew artikel */
 
-.art_content1 {
-  background-image: url('../Images/Leiden.jpg'); /* Replace 'path/to/your/image.jpg' with the actual path to your image */
-  background-size: cover; /* Cover the entire div with the background image */
-  background-repeat: no-repeat; /* Prevent the image from repeating */
-  background-position: center center; /* Center the background image both horizontally and vertically */
-  width: 70vw;
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  justify-content: space-between;
-  border-radius: 25px;
-  padding: 1%;
+.image-container {
   position: relative;
+  width: 100%;
+  height: 100vh; /* Makes the container take full viewport height */
 }
 
-/* einde van de artikel kopie */
-
-/* kopieer dit hele stuk voor niew artikel */
-
-.art_content2 {
-  background-image: url('../Images/Hubble.jpg'); /* Replace 'path/to/your/image.jpg' with the actual path to your image */
-  background-size: cover; /* Cover the entire div with the background image */
-  background-repeat: no-repeat; /* Prevent the image from repeating */
-  background-position: center center; /* Center the background image both horizontally and vertically */
-  width: 70vw;
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  justify-content: space-between;
-  border-radius: 25px;
-  padding: 1%;
-  position: relative;
+/* Image style to position it at the top of the page and take full width */
+.image-container img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%; /* You can adjust the height if needed */
+  object-fit: cover; /* Ensures the image covers the entire area */
 }
 
-.art_content3 {
-  background-image: url('../Images/ECBbuilding2_PIXELATED.png'); /* Replace 'path/to/your/image.jpg' with the actual path to your image */
-  background-size: cover; /* Cover the entire div with the background image */
-  background-repeat: no-repeat; /* Prevent the image from repeating */
-  background-position: center center; /* Center the background image both horizontally and vertically */
-  width: 70vw;
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  justify-content: space-between;
-  border-radius: 25px;
-  padding: 1%;
-  position: relative;
+/* Title style to overlay on top of the image */
+.title {
+  position: absolute;
+  top: 30%; 
+  left:50%;
+  text-align: center;/* Centers the title vertically */
+  transform: translate(-50%, -50%); /* Centers the title exactly */
+  color: white; /* White text for contrast, adjust as necessary */
+  z-index: 1; /* Ensure the title appears above the image */
+  white-space: nowrap;
+  overflow: hidden;
+  max-width: 90%;
 }
 
-.art_content4 {
-  background-image: url('../Images/Unsplash_Sergio Alves Santos_HALFTONE.png'); /* Replace 'path/to/your/image.jpg' with the actual path to your image */
-  background-size: cover; /* Cover the entire div with the background image */
-  background-repeat: no-repeat; /* Prevent the image from repeating */
-  background-position: center center; /* Center the background image both horizontally and vertically */
-  width: 70vw;
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  justify-content: space-between;
-  border-radius: 25px;
-  padding: 1%;
-  position: relative;
+.arrowwdwn img{
+  position: absolute;
+  top: 48%; 
+  left:48%;
+  text-align: center;/* Centers the title vertically */
+  transform: translate(-50%, -50%); /* Centers the title exactly */
+  color: white; /* White text for contrast, adjust as necessary */
+  z-index: 1; /* Ensure the title appears above the image */
+  white-space: nowrap;
+  overflow: hidden;
+  max-width: 90%;
+  animation: bounce 1s ease-in-out infinite;
+  cursor: pointer; /* Change cursor to indicate it can be clicked */
 }
 
-.art_content5 {
-  background-image: url('../Images/UfoSS.png'); /* Replace 'path/to/your/image.jpg' with the actual path to your image */
-  background-size: cover; /* Cover the entire div with the background image */
-  background-repeat: no-repeat; /* Prevent the image from repeating */
-  background-position: center center; /* Center the background image both horizontally and vertically */
-  width: 70vw;
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  justify-content: space-between;
-  border-radius: 25px;
-  padding: 1%;
-  position: relative;
-  background-color: black;
+@keyframes bounce {
+  0% {
+    transform: translateY(0); /* Start at the original position */
+  }
+  50% {
+    transform: translateY(-8px); /* Move up 10px */
+  }
+  100% {
+    transform: translateY(0); /* Return to original position */
+  }
 }
 
-.art_content6 {
-  background-image: url('../Images/HighresPurple.jpg'); /* Replace 'path/to/your/image.jpg' with the actual path to your image */
-  background-size: cover; /* Cover the entire div with the background image */
-  background-repeat: no-repeat; /* Prevent the image from repeating */
-  background-position: center center; /* Center the background image both horizontally and vertically */
-  width: 70vw;
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  justify-content: space-between;
-  border-radius: 25px;
-  padding: 1%;
-  position: relative;
-  background-color: black;
-}
-
-.art_content7 {
-  background-image: url('../Images/Evergrande.png'); /* Replace 'path/to/your/image.jpg' with the actual path to your image */
-  background-size: cover; /* Cover the entire div with the background image */
-  background-repeat: no-repeat; /* Prevent the image from repeating */
-  background-position: center center; /* Center the background image both horizontally and vertically */
-  width: 70vw;
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  justify-content: space-between;
-  border-radius: 25px;
-  padding: 1%;
-  position: relative;
-  background-color: black;
-}
-
-.art_content8 {
-  background-image: url('../Images/Pigheart2.png'); /* Replace 'path/to/your/image.jpg' with the actual path to your image */
-  background-size: cover; /* Cover the entire div with the background image */
-  background-repeat: no-repeat; /* Prevent the image from repeating */
-  background-position: center center; /* Center the background image both horizontally and vertically */
-  width: 70vw;
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  justify-content: space-between;
-  border-radius: 25px;
-  padding: 1%;
-  position: relative;
-  background-color: black;
-}
-
-.art_content9 {
-  background-image: url('../Images/Amsterdam.webp'); /* Replace 'path/to/your/image.jpg' with the actual path to your image */
-  background-size: cover; /* Cover the entire div with the background image */
-  background-repeat: no-repeat; /* Prevent the image from repeating */
-  background-position: center center; /* Center the background image both horizontally and vertically */
-  width: 70vw;
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  justify-content: space-between;
-  border-radius: 25px;
-  padding: 1%;
-  position: relative;
-  background-color: black;
+.subtitle h2{
+  margin-bottom: 50px;
 }
 
 
@@ -244,7 +161,6 @@ body {
 /* einde van de artikel kopie */
 
 body{
-  height: 200vh;
   background-color: black;
   overflow-x: hidden;
 }
@@ -253,7 +169,7 @@ h1{
   font-family: 'EuclidCircularA', sans-serif;
   font-weight: bold;
   font-style: normal;
-  color: #ccc;
+  color: white;
 }
 
 h6{
@@ -290,7 +206,7 @@ h6{
 
 .contactlist h1{
   text-align: center;
-  font-size: calc(4vh + 5vw);
+  font-size: 5vw;
   padding: 1vh 0vh
 }
 
@@ -338,19 +254,6 @@ h6{
   margin-left: 30px; /* Add margin to the left */
   margin-top: -20%; /* Align to the bottom */
   padding-top: 5px; /* Adjust the spacing between the two h3 elements */
-}
-
-
-.btn {
-    padding: 10px 20px;
-    font-size: 16px;
-}
-
-.filter-buttons {
-    display: flex;
-    justify-content: center;
-    gap: 10px;
-    margin-bottom: 20px;
 }
 
         article {
@@ -504,7 +407,7 @@ section {
 .timeline li {
   margin: 20px 0;
   font-size: 1vw;
-  color: #8f9194;
+  color: black;
   transition: color 0.3s;
 }
 
@@ -537,3 +440,4 @@ section {
 @keyframes scroll-watcher {
   to { scale: 1 1;}
 }
+
