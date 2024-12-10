@@ -431,9 +431,9 @@ section {
 }
 
 .timeline li {
-  margin: 20px 0;
+  margin: 0;
   font-size: 1vw;
-  color: green;
+  color: #121212;
   transition: color 0.3s;
 }
 
