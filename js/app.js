@@ -52,3 +52,24 @@ document.getElementById("bounceSVG").addEventListener("click", function() {
       behavior: 'smooth'  // Enables smooth scrolling
     });
   });
+
+  function typeText() {
+    const text = "komt zowel op de linker- als rechterzijde van het politieke spectrum voor. Linkse populisten leggen de nadruk op economische ongelijkheid en strijden tegen machtige bedrijven en elites, terwijl rechtse populisten zich vooral richten op culturele kwesties zoals immigratie en nationale identiteit. Beide vormen hebben gemeen dat ze complexe problemen reduceren tot eenvoudige verklaringen en vaak directe, drastische oplossingen voorstellen.";
+    const target = document.getElementById("folding-text");
+  
+    // Avoid re-typing if text is already displayed
+    if (target.textContent.length > 0) return;
+  
+    let index = 0;
+  
+    function type() {
+      if (index < text.length) {
+        target.textContent += text[index];
+        index++;
+        setTimeout(type, 2); // Adjust the speed by changing the timeout value
+      }
+    }
+  
+    type();
+  }
+  

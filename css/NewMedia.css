@@ -180,6 +180,13 @@ h1{
   color: white;
 }
 
+h3 {
+  font-family: 'EuclidCircularA', sans-serif;
+  font-weight: bold;
+  font-style: normal;
+  color: white;
+}
+
 h6{
   font-family: 'EuclidCircularA', sans-serif;
   font-weight: bold;
@@ -365,8 +372,8 @@ section {
 }
 
 .logo img {
-  width: 100px; 
-  height: 100px; 
+  width: 70px; 
+  height: 70px; 
   margin: 5px;
   border-radius: 50%; /* Makes the image round */
   object-fit: cover; /* Ensures the image scales properly without distortion */
@@ -392,6 +399,9 @@ section {
 .logo:nth-child(5) {
   transition-delay: 800ms;
 }
+
+
+
 
 
 
@@ -448,4 +458,18 @@ section {
 @keyframes scroll-watcher {
   to { scale: 1 1;}
 }
+
+.Uitklap1 {
+  background-color: #538b01; 
+  border-radius: 10%;
+  font-weight: bold;  
+  padding: 0px 8px;
+  text-align: center;
+  display: inline-block;
+  margin: 0px 2px;
+  cursor: pointer;
+  border-radius: 16px;
+}
+
+
 
