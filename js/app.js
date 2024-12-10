@@ -53,12 +53,15 @@ document.getElementById("bounceSVG").addEventListener("click", function() {
     });
   });
 
-  function typeText() {
-    const text = "komt zowel op de linker- als rechterzijde van het politieke spectrum voor. Linkse populisten leggen de nadruk op economische ongelijkheid en strijden tegen machtige bedrijven en elites, terwijl rechtse populisten zich vooral richten op culturele kwesties zoals immigratie en nationale identiteit. Beide vormen hebben gemeen dat ze complexe problemen reduceren tot eenvoudige verklaringen en vaak directe, drastische oplossingen voorstellen.";
-    const target = document.getElementById("folding-text");
+  function toggleText(spanElement, text) {
+    const targetId = spanElement.getAttribute('data-target');
+    const target = document.getElementById(targetId);
   
-    // Avoid re-typing if text is already displayed
-    if (target.textContent.length > 0) return;
+    // Clear text if it is already displayed
+    if (target.textContent.length > 0) {
+      target.textContent = '';
+      return;
+    }
   
     let index = 0;
   
@@ -66,10 +69,27 @@ document.getElementById("bounceSVG").addEventListener("click", function() {
       if (index < text.length) {
         target.textContent += text[index];
         index++;
-        setTimeout(type, 2); // Adjust the speed by changing the timeout value
+        setTimeout(type, 10); // Adjust the speed by changing the timeout value
       }
     }
   
     type();
   }
   
+  window.twttr = (function(d, s, id) {
+    var js, fjs = d.getElementsByTagName(s)[0],
+        t = window.twttr || {};
+    if (d.getElementById(id)) return t;
+    js = d.createElement(s);
+    js.id = id;
+    js.src = "https://platform.twitter.com/widgets.js";
+    fjs.parentNode.insertBefore(js, fjs);
+
+    t._e = [];
+    t.ready = function(f) {
+        t._e.push(f);
+    };
+
+    return t;
+}(document, "script", "twitter-wjs"));
+

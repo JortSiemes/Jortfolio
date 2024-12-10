@@ -433,7 +433,7 @@ section {
 .timeline li {
   margin: 20px 0;
   font-size: 1vw;
-  color: #121212;
+  color: #646464;
   transition: color 0.3s;
 }
 
@@ -469,14 +469,45 @@ section {
 .Uitklap1 {
   background-color: #538b01; 
   border-radius: 10%;
-  font-weight: bold;  
   padding: 0px 8px;
   text-align: center;
   display: inline-block;
   margin: 0px 2px;
   cursor: pointer;
   border-radius: 16px;
+  transition: background-color 0.3s, color 0.3s; /* Smooth transition effect */
 }
 
+.Uitklap2 {
+  background-color: #26a7de; 
+  text-decoration: none;
+  border-radius: 10%;
+  font-weight: bold;
+  padding: 0px 8px;
+  text-align: center;
+  display: inline-block;
+  margin: 0px 2px;
+  cursor: pointer;
+  border-radius: 16px;
+  transition: background-color 0.3s, color 0.3s; /* Smooth transition effect */
+}
+
+.Uitklap2 a{
+  color: white;
+  text-decoration: none;
+  }
+
+.Uitklap1:hover {
+  color: #121212;
+}
+
+.Uitklap2:hover a{
+  color: #121212;
+}
+
+#folding-text1, #folding-text2, #folding-text3, #folding-text4, #folding-text5, #folding-text6 {
+  text-decoration: underline;
+  text-decoration-color:#538b01;
+}
 
 
