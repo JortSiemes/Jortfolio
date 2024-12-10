@@ -433,7 +433,7 @@ section {
 .timeline li {
   margin: 20px 0;
   font-size: 1vw;
-  color: #646464;
+  color: green;
   transition: color 0.3s;
 }
 
@@ -511,11 +511,13 @@ section {
 .Uitklap2 a{
   color: white;
   text-decoration: none;
+  transition: background-color 0.3s, color 0.3s;
   }
 
 .Uitklap3 a{
     color: white;
     text-decoration: none;
+    transition: background-color 0.3s, color 0.3s;
 }
 
 .Uitklap1:hover {
@@ -530,7 +532,7 @@ section {
   color: #121212;
 }
 
-#folding-text1, #folding-text2, #folding-text3, #folding-text4, #folding-text5, #folding-text6 {
+#folding-text1, #folding-text2, #folding-text3, #folding-text4, #folding-text5, #folding-text6, #folding-text7, #folding-text8 {
   text-decoration: underline;
   text-decoration-color:#538b01;
 }
