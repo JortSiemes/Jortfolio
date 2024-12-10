@@ -69,7 +69,7 @@ document.getElementById("bounceSVG").addEventListener("click", function() {
       if (index < text.length) {
         target.textContent += text[index];
         index++;
-        setTimeout(type, 10); // Adjust the speed by changing the timeout value
+        setTimeout(type, 5); // Adjust the speed by changing the timeout value
       }
     }
   
