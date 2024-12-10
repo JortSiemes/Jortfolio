@@ -153,6 +153,14 @@ body {
 
 .subtitle h2{
   margin-bottom: 50px;
+  font-size: 25px;
+  text-align: left;
+  color: white;
+}
+
+.subtitle {
+    max-width: 900px; /* Limit the width of the article */
+    margin: 50px auto; /* Center the article horizontally */
 }
 
 
@@ -169,7 +177,7 @@ body {
 /* einde van de artikel kopie */
 
 body{
-  background-color: black;
+  background-color: #121212;
   overflow-x: hidden;
 }
 
@@ -200,7 +208,7 @@ h6{
 }
 
 .navcontact a:hover{
-  color: black;
+  color: white;
   text-decoration: underline;
   text-decoration-thickness: 15px;
 }
@@ -221,7 +229,7 @@ h6{
 
 .contactlist h1{
   text-align: center;
-  font-size: 5vw;
+  font-size: 4vw;
   padding: 1vh 0vh
 }
 
@@ -425,7 +433,7 @@ section {
 .timeline li {
   margin: 20px 0;
   font-size: 1vw;
-  color: black;
+  color: #121212;
   transition: color 0.3s;
 }
 
@@ -434,11 +442,10 @@ section {
   font-weight: bold;
 }
 
-.datum h1{
-  margin-left: -10vw;
+.datum h2{
   margin-top: 10vh;
   color;
-  font-size: 4vw;
+  font-size: 40px;
 }
 
 .scroll-watcher {
