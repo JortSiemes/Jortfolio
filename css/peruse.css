@@ -1,6 +1,261 @@
+@font-face {
+    font-family: 'Euclid CircularA';
+    src: url('../fonts/CircularA/EuclidCircularA-Regular-WebXL.woff2') format('woff2');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Euclid CircularA';
+    src: url('../fonts/CircularA/EuclidCircularA-RegularItalic-WebXL.woff2') format('woff2');
+    font-weight: normal;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: 'Euclid CircularA';
+    src: url('../fonts/CircularA/EuclidCircularA-Light-WebXL.woff2') format('woff2');
+    font-weight: 300;
+    font-style: normal;
+}
+
+
+@font-face {
+    font-family: 'Euclid CircularA';
+    src: url('../fonts/CircularA/EuclidCircularA-LightItalic-WebXL.woff2') format('woff2');
+    font-weight: 300;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: 'Euclid CircularA';
+    src: url('../fonts/CircularA/EuclidCircularA-Medium-WebXL.woff2') format('woff2');
+    font-weight: 500;
+    font-style: normal;
+}
+
+
+@font-face {
+    font-family: 'Euclid CircularA';
+    src: url('../fonts/CircularA/EuclidCircularA-MediumItalic-WebXL.woff2') format('woff2');
+    font-weight: 500;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: 'Euclid CircularA';
+    src: url('../fonts/CircularA/EuclidCircularA-Semibold-WebXL.woff2') format('woff2');
+    font-weight: 600;
+    font-style: normal;
+}
+
+
+@font-face {
+    font-family: 'Euclid CircularA';
+    src: url('../fonts/CircularA/EuclidCircularA-SemiboldItalic-WebXL.woff2') format('woff2');
+    font-weight: 600;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: 'Euclid CircularA';
+    src: url('../fonts/CircularA/EuclidCircularA-Bold-WebXL.woff2') format('woff2');
+    font-weight: bold;
+    font-style: normal;
+}
+
+
+@font-face {
+    font-family: 'Euclid CircularA';
+    src: url('../fonts/CircularA/EuclidCircularA-BoldItalic-WebXL.woff2') format('woff2');
+    font-weight: bold;
+    font-style: italic;
+}
+
+/* Circular B */
+
+@font-face {
+    font-family: 'Euclid CircularB';
+    src: url('../fonts/CircularB/EuclidCircularB-Regular-WebXL.woff2') format('woff2');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Euclid CircularB';
+    src: url('../fonts/CircularB/EuclidCircularB-RegularItalic-WebXL.woff2') format('woff2');
+    font-weight: normal;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: 'Euclid CircularB';
+    src: url('../fonts/CircularB/EuclidCircularB-Light-WebXL.woff2') format('woff2');
+    font-weight: 300;
+    font-style: normal;
+}
+
+
+@font-face {
+    font-family: 'Euclid CircularB';
+    src: url('../fonts/CircularB/EuclidCircularB-LightItalic-WebXL.woff2') format('woff2');
+    font-weight: 300;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: 'Euclid CircularB';
+    src: url('../fonts/CircularB/EuclidCircularB-Medium-WebXL.woff2') format('woff2');
+    font-weight: 500;
+    font-style: normal;
+}
+
+
+@font-face {
+    font-family: 'Euclid CircularB';
+    src: url('../fonts/CircularB/EuclidCircularB-MediumItalic-WebXL.woff2') format('woff2');
+    font-weight: 500;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: 'Euclid CircularB';
+    src: url('../fonts/CircularB/EuclidCircularB-Semibold-WebXL.woff2') format('woff2');
+    font-weight: 600;
+    font-style: normal;
+}
+
+
+@font-face {
+    font-family: 'Euclid CircularB';
+    src: url('../fonts/CircularB/EuclidCircularB-SemiboldItalic-WebXL.woff2') format('woff2');
+    font-weight: 600;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: 'Euclid CircularB';
+    src: url('../fonts/CircularB/EuclidCircularB-Bold-WebXL.woff2') format('woff2');
+    font-weight: bold;
+    font-style: normal;
+}
+
+
+@font-face {
+    font-family: 'Euclid CircularB';
+    src: url('../fonts/CircularB/EuclidCircularB-BoldItalic-WebXL.woff2') format('woff2');
+    font-weight: bold;
+    font-style: italic;
+}
+
+/* Flex */
+
+@font-face {
+    font-family: 'Euclid Flex';
+    src: url('../fonts/Flex/EuclidFlex-Regular-WebXL.woff2') format('woff2');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Euclid Flex';
+    src: url('../fonts/Flex/EuclidFlex-RegularItalic-WebXL.woff2') format('woff2');
+    font-weight: normal;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: 'Euclid Flex';
+    src: url('../fonts/Flex/EuclidFlex-Thin-WebXL.woff2') format('woff2');
+    font-weight: 100;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Euclid Flex';
+    src: url('../fonts/Flex/EuclidFlex-ThinItalic-WebXL.woff2') format('woff2');
+    font-weight: 100;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: 'Euclid Flex';
+    src: url('../fonts/Flex/EuclidFlex-Ultralight-WebXL.woff2') format('woff2');
+    font-weight: 200;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: 'Euclid Flex';
+    src: url('../fonts/Flex/EuclidFlex-UltralightItalic-WebXL.woff2') format('woff2');
+    font-weight: 200;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: 'Euclid Flex';
+    src: url('../fonts/Flex/EuclidFlex-Light-WebXL.woff2') format('woff2');
+    font-weight: 300;
+    font-style: normal;
+}
+
+
+@font-face {
+    font-family: 'Euclid Flex';
+    src: url('../fonts/Flex/EuclidFlex-LightItalic-WebXL.woff2') format('woff2');
+    font-weight: 300;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: 'Euclid Flex';
+    src: url('../fonts/Flex/EuclidFlex-Medium-WebXL.woff2') format('woff2');
+    font-weight: 500;
+    font-style: normal;
+}
+
+
+@font-face {
+    font-family: 'Euclid Flex';
+    src: url('../fonts/Flex/EuclidFlex-MediumItalic-WebXL.woff2') format('woff2');
+    font-weight: 500;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: 'Euclid Flex';
+    src: url('../fonts/Flex/EuclidFlex-Semibold-WebXL.woff2') format('woff2');
+    font-weight: 600;
+    font-style: normal;
+}
+
+
+@font-face {
+    font-family: 'Euclid Flex';
+    src: url('../fonts/Flex/EuclidFlex-SemiboldItalic-WebXL.woff2') format('woff2');
+    font-weight: 600;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: 'Euclid Flex';
+    src: url('../fonts/Flex/EuclidFlex-Bold-WebXL.woff2') format('woff2');
+    font-weight: bold;
+    font-style: normal;
+}
+
+
+@font-face {
+    font-family: 'Euclid Flex';
+    src: url('../fonts/Flex/EuclidFlex-BoldItalic-WebXL.woff2') format('woff2');
+    font-weight: bold;
+    font-style: italic;
+}
+
+
+
 /* General Styles */
 body {
-    font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
     background-color: #000; /* Black background */
@@ -15,12 +270,13 @@ body {
     align-items: center;
     position: relative;
     padding: 16px;
+    margin-top: 20px;
 }
 
 .burger-menu {
     position: absolute;
     right: 16px;
-    font-size: 24px;
+    font-size: 32px;
     background: none;
     border: none;
     color: #fff;
@@ -30,6 +286,26 @@ body {
 .logo {
     height: 40px;
     max-width: 100%;
+}
+
+.articleSectionTitle{
+    text-align: center;
+    margin-top: 10px;
+}
+
+.articleSectionTitle h1 {
+    color: #aaa;
+    font-family: 'Euclid Flex', sans-serif;
+    font-weight: 200;
+    font-size: 7vw;
+    margin: 0 0 8px;
+}
+
+/* For mobile or smaller screens */
+@media (max-width: 768px) {
+    .article-content h2 {
+        font-size: 6rem; /* Use rem for mobile, ensuring the title stays large */
+    }
 }
 
 /* Grid Container */
@@ -54,9 +330,7 @@ body {
 
 /* Article Card */
 .article {
-
     overflow: hidden;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
 }
 
 .article-image {
@@ -68,30 +342,59 @@ body {
     border-radius: 50px;
 }
 
-/* Article body - Flexbox for alignment */
 .article-body {
     display: flex;
-    padding: 16px;
-    gap: 16px; /* Space between the info and the text */
+    padding: 3px;
+    padding-left: 20px;
+    gap: 10px; /* Space between the info and the meta section */
+    flex-wrap: wrap; /* Allow items to wrap on smaller screens */
 }
+
+/* Responsive behavior */
+@media {
+    .article-body {
+        flex-direction: row; /* Keep items in a row on mobile */
+        align-items: flex-start; /* Align items to the left */
+    }
+
+    .article-content {
+        flex: 1; /* Take up 80% of the available space */
+    }
+
+    .meta {
+        flex: 0 0 20%; /* Take up 20% of the available space */
+        text-align: right; /* Align text inside the meta box to the right */
+        padding: 8px 10px;
+    }
+}
+
 
 /* Meta Information */
 .meta {
     display: flex;
     flex-direction: column; /* Stack items vertically */
-    gap: 4px; /* Space between each item */
+    align-items: flex-end; /* Align items to the right */
+    gap: 8px; /* Space between each item */
     font-size: 12px;
+    padding-right: 10px;
 }
 
 .metabubbles {
     display: flex;
-    flex-direction: row;
-    gap: 4px;
+    flex-direction: row; /* Keep bubbles next to each other */
+    justify-content: flex-end; /* Align bubbles to the right */
+    gap: 4px; /* Space between the bubbles */
+}
+
+.read-time,
+.date {
+    text-align: right; /* Align text to the right */
+    margin: 0; /* Remove margin for consistency */
 }
 
 .tag {
-    padding: 4px 8px;
-    border-radius: 12px;
+    padding: 4px 10px;
+    border-radius: 14px;
     font-size: 10px;
     text-transform: uppercase;
     color: #fff;
@@ -99,16 +402,15 @@ body {
 }
 
 .finance {
-    background-color: #e91e63; /* Pink tag */
+    background-color: #e91e63;
 }
 
 .feature {
-    background-color: aqua;
-    width: 20%;
+    background-color: #4EBFAC;
 }
 
 .feature img{
-    width: 100%;
+    width: 15px;
 }
 
 .tech {
@@ -117,23 +419,31 @@ body {
 
 .read-time {
     color: #aaa;
-    text-align: right;
 }
 
 .date {
-    font-size: 10px;
     color: #777; /* Make the date lighter */
-    text-align: right;
 }
 
 /* Article content */
 .article-content {
-    flex: 1; /* Allow text to grow and fill available space */
+    padding-left: 2vw;
+    flex: 1; /* Allow content to take available space */
+    min-width: 0; /* Prevent content from stretching awkwardly */
 }
 
 .article-content h2 {
-    font-size: 18px;
+    font-family: 'Euclid CircularA', sans-serif;
+    font-weight: 600;
+    font-size: 1.8vw;
     margin: 0 0 8px;
+}
+
+/* For mobile or smaller screens */
+@media (max-width: 768px) {
+    .article-content h2 {
+        font-size: 6rem; /* Use rem for mobile, ensuring the title stays large */
+    }
 }
 
 .article-content p {
