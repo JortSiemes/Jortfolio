@@ -1,0 +1,184 @@
+/* General Styles */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #000; /* Black background */
+    color: #fff; /* White text */
+    position: relative; /* Ensure content doesn't overlap fixed footer */
+}
+
+/* Header */
+.header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    padding: 16px;
+}
+
+.burger-menu {
+    position: absolute;
+    right: 16px;
+    font-size: 24px;
+    background: none;
+    border: none;
+    color: #fff;
+    cursor: pointer;
+}
+
+.logo {
+    height: 40px;
+    max-width: 100%;
+}
+
+/* Grid Container */
+.grid-container {
+    display: grid;
+    gap: 32px;
+    padding: 32px;
+    margin-bottom: 60px; /* Add bottom spacing to avoid overlapping footer */
+}
+
+@media (min-width: 701px) {
+    .grid-container {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 700px) {
+    .grid-container {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* Article Card */
+.article {
+
+    overflow: hidden;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+.article-image {
+    width: 100%;
+    min-height: 150px;
+    height: 20vw;
+    max-height: 300px; /* Set a max height */
+    object-fit: cover; /* Maintain aspect ratio and crop if necessary */
+    border-radius: 50px;
+}
+
+/* Article body - Flexbox for alignment */
+.article-body {
+    display: flex;
+    padding: 16px;
+    gap: 16px; /* Space between the info and the text */
+}
+
+/* Meta Information */
+.meta {
+    display: flex;
+    flex-direction: column; /* Stack items vertically */
+    gap: 4px; /* Space between each item */
+    font-size: 12px;
+}
+
+.metabubbles {
+    display: flex;
+    flex-direction: row;
+    gap: 4px;
+}
+
+.tag {
+    padding: 4px 8px;
+    border-radius: 12px;
+    font-size: 10px;
+    text-transform: uppercase;
+    color: #fff;
+    margin-bottom: 4px; /* Add space below the tag */
+}
+
+.finance {
+    background-color: #e91e63; /* Pink tag */
+}
+
+.feature {
+    background-color: aqua;
+    width: 20%;
+}
+
+.feature img{
+    width: 100%;
+}
+
+.tech {
+    background-color: #3f51b5; /* Blue tag */
+}
+
+.read-time {
+    color: #aaa;
+    text-align: right;
+}
+
+.date {
+    font-size: 10px;
+    color: #777; /* Make the date lighter */
+    text-align: right;
+}
+
+/* Article content */
+.article-content {
+    flex: 1; /* Allow text to grow and fill available space */
+}
+
+.article-content h2 {
+    font-size: 18px;
+    margin: 0 0 8px;
+}
+
+.article-content p {
+    font-size: 14px;
+    margin: 0;
+}
+
+
+a {
+    text-decoration: none; /* Removes the underline */
+    color: inherit; /* Inherits the color from the parent element */
+    font-weight: bold; /* Example: Make the text bold */
+}
+
+a:hover {
+    text-decoration: none; /* Underline on hover */
+    color: inherit; /* Example: Change color on hover */
+}
+
+a:focus,
+a:active {
+    outline: none; /* Remove the focus outline */
+    color: inherit;
+    text-decoration: none; /* Customize if needed */
+}
+
+/* Footer */
+.footerdiv {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background-color: #111; /* Dark footer background */
+    color: #fff;
+    text-align: center;
+    padding: 8px 16px;
+    z-index: 1000; /* Ensure it's always on top */
+}
+
+.footer a {
+    color: #fff;
+    text-decoration: none;
+}
+
+.footer h4 {
+    text-align: right;
+    margin-right: 5%;
+}
