@@ -335,9 +335,9 @@ body {
 
 .article-image {
     width: 100%;
-    min-height: 150px;
+    min-height: 170px;
     height: 20vw;
-    max-height: 300px; /* Set a max height */
+    max-height: 500px; /* Set a max height */
     object-fit: cover; /* Maintain aspect ratio and crop if necessary */
     border-radius: 50px;
 }
@@ -427,7 +427,7 @@ body {
 
 /* Article content */
 .article-content {
-    padding-left: 2vw;
+    padding-left: 0vw;
     flex: 1; /* Allow content to take available space */
     min-width: 0; /* Prevent content from stretching awkwardly */
 }
@@ -442,15 +442,23 @@ body {
 /* For mobile or smaller screens */
 @media (max-width: 768px) {
     .article-content h2 {
-        font-size: 6rem; /* Use rem for mobile, ensuring the title stays large */
+        font-size: 1.1rem; /* Use rem for mobile, ensuring the title stays large */
     }
 }
 
 .article-content p {
-    font-size: 14px;
-    margin: 0;
+    color: #aaa;
+    font-family: 'Euclid CircularA', sans-serif;
+    font-weight: 300;
+    font-size: 1vw;
 }
 
+/* For mobile or smaller screens */
+@media (max-width: 768px) {
+    .article-content p {
+        font-size: 0.7rem; /* Use rem for mobile, ensuring the title stays large */
+    }
+}
 
 a {
     text-decoration: none; /* Removes the underline */
