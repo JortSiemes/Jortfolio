@@ -260,9 +260,21 @@ body {
     padding: 0;
     background-color: #000; /* Black background */
     color: #fff; /* White text */
-    position: relative; /* Ensure content doesn't overlap fixed footer */
+    position: relative; /* Ensure content doesn't overlap fixed footer */    
 }
 
+body {
+    overflow: hidden;  /* Hide scrollbars */
+  }
+  
+  body::-webkit-scrollbar {
+    display: none;  /* For Webkit browsers */
+  }
+  
+  body {
+    overflow-y: scroll;  /* Still allow scrolling */
+  }
+  
 /* Header */
 .header {
     display: flex;
@@ -484,10 +496,10 @@ a:active {
     bottom: 0;
     left: 0;
     width: 100%;
-    background-color: #111; /* Dark footer background */
+    background-color: black; /* Dark footer background */
     color: #fff;
     text-align: center;
-    padding: 8px 16px;
+    padding: 0px 16px;
     z-index: 1000; /* Ensure it's always on top */
 }
 
@@ -499,4 +511,19 @@ a:active {
 .footer h4 {
     text-align: right;
     margin-right: 5%;
+}
+
+.scrollwatcher {
+    height: 10px;
+    position: fixed;
+    background-color: white;
+    width: 100%;
+    scale: 0 1;
+    transform-origin: left;
+    animation: scrollwatcher linear;
+    animation-timeline: scroll();
+}
+
+@keyframes scrollwatcher {
+    to {scale: 1 1; }
 }
