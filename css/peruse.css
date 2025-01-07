@@ -258,6 +258,7 @@ body {
     background-color: #000; 
     color: #fff; 
     position: relative; 
+    font-family: 'Euclid CircularA';
 }
 
 body {
@@ -346,6 +347,19 @@ body {
     max-height: 500px; 
     object-fit: cover; 
     border-radius: 50px;
+}
+
+.img-hover-zoom{
+    overflow: hidden;
+    border-radius: 50px;
+}
+
+.img-hover-zoom img{
+    transition: transform 1s ease;
+}
+
+.img-hover-zoom:hover img{
+    transform: scale(1.1);
 }
 
 .article-body {
@@ -464,12 +478,11 @@ body {
 a {
     text-decoration: none;
     color: inherit;
-    font-weight: bold;
 }
 
 a:hover {
-    text-decoration: none;
     color: inherit;
+    text-decoration: none;
 }
 
 a:focus,
@@ -497,13 +510,30 @@ a:active {
     text-decoration: none;
 }
 
+.footer a:hover {
+    color: #fff;
+    text-decoration: line-through;
+    text-decoration-thickness: 4px;
+}
+
 .footer h4 {
+    color: #aaa;
+    font-family: 'Euclid CircularA', sans-serif;
+    font-weight: 500;
+    font-size: 25px;
     text-align: right;
     margin-right: 5%;
+    margin-bottom:10px;
+}
+
+@media (max-width: 768px) {
+    .footer h4 {
+        font-size: 16px;
+    }
 }
 
 .scrollwatcher {
-    height: 10px;
+    height: 8px;
     position: fixed;
     background-color: white;
     width: 100%;
