@@ -252,30 +252,26 @@
     font-style: italic;
 }
 
-
-
-/* General Styles */
 body {
     margin: 0;
     padding: 0;
-    background-color: #000; /* Black background */
-    color: #fff; /* White text */
-    position: relative; /* Ensure content doesn't overlap fixed footer */    
+    background-color: #000; 
+    color: #fff; 
+    position: relative; 
 }
 
 body {
-    overflow: hidden;  /* Hide scrollbars */
+    overflow: hidden;
   }
   
   body::-webkit-scrollbar {
-    display: none;  /* For Webkit browsers */
+    display: none;
   }
   
   body {
-    overflow-y: scroll;  /* Still allow scrolling */
+    overflow-y: scroll; 
   }
   
-/* Header */
 .header {
     display: flex;
     justify-content: center;
@@ -313,19 +309,18 @@ body {
     margin: 0 0 8px;
 }
 
-/* For mobile or smaller screens */
+
 @media (max-width: 768px) {
     .article-content h2 {
-        font-size: 6rem; /* Use rem for mobile, ensuring the title stays large */
+        font-size: 6rem;
     }
 }
 
-/* Grid Container */
 .grid-container {
     display: grid;
     gap: 32px;
     padding: 32px;
-    margin-bottom: 60px; /* Add bottom spacing to avoid overlapping footer */
+    margin-bottom: 60px;
 }
 
 @media (min-width: 701px) {
@@ -340,7 +335,6 @@ body {
     }
 }
 
-/* Article Card */
 .article {
     overflow: hidden;
 }
@@ -349,8 +343,8 @@ body {
     width: 100%;
     min-height: 170px;
     height: 20vw;
-    max-height: 500px; /* Set a max height */
-    object-fit: cover; /* Maintain aspect ratio and crop if necessary */
+    max-height: 500px; 
+    object-fit: cover; 
     border-radius: 50px;
 }
 
@@ -358,50 +352,48 @@ body {
     display: flex;
     padding: 3px;
     padding-left: 20px;
-    gap: 10px; /* Space between the info and the meta section */
-    flex-wrap: wrap; /* Allow items to wrap on smaller screens */
+    gap: 10px; 
+    flex-wrap: wrap; 
 }
 
-/* Responsive behavior */
 @media {
     .article-body {
-        flex-direction: row; /* Keep items in a row on mobile */
-        align-items: flex-start; /* Align items to the left */
+        flex-direction: row; 
+        align-items: flex-start; 
     }
 
     .article-content {
-        flex: 1; /* Take up 80% of the available space */
+        flex: 1; 
     }
 
     .meta {
-        flex: 0 0 20%; /* Take up 20% of the available space */
-        text-align: right; /* Align text inside the meta box to the right */
+        flex: 0 0 20%; 
+        text-align: right; 
         padding: 8px 10px;
     }
 }
 
 
-/* Meta Information */
 .meta {
     display: flex;
-    flex-direction: column; /* Stack items vertically */
-    align-items: flex-end; /* Align items to the right */
-    gap: 8px; /* Space between each item */
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 8px;
     font-size: 12px;
     padding-right: 10px;
 }
 
 .metabubbles {
     display: flex;
-    flex-direction: row; /* Keep bubbles next to each other */
-    justify-content: flex-end; /* Align bubbles to the right */
-    gap: 4px; /* Space between the bubbles */
+    flex-direction: row;
+    justify-content: flex-end;
+    gap: 4px; 
 }
 
 .read-time,
 .date {
-    text-align: right; /* Align text to the right */
-    margin: 0; /* Remove margin for consistency */
+    text-align: right; 
+    margin: 0; 
 }
 
 .tag {
@@ -410,7 +402,7 @@ body {
     font-size: 10px;
     text-transform: uppercase;
     color: #fff;
-    margin-bottom: 4px; /* Add space below the tag */
+    margin-bottom: 4px;
 }
 
 .finance {
@@ -426,7 +418,7 @@ body {
 }
 
 .tech {
-    background-color: #3f51b5; /* Blue tag */
+    background-color: #3f51b5; 
 }
 
 .read-time {
@@ -434,14 +426,13 @@ body {
 }
 
 .date {
-    color: #777; /* Make the date lighter */
+    color: #777;
 }
 
-/* Article content */
 .article-content {
     padding-left: 0vw;
-    flex: 1; /* Allow content to take available space */
-    min-width: 0; /* Prevent content from stretching awkwardly */
+    flex: 1; 
+    min-width: 0;
 }
 
 .article-content h2 {
@@ -451,10 +442,9 @@ body {
     margin: 0 0 8px;
 }
 
-/* For mobile or smaller screens */
 @media (max-width: 768px) {
     .article-content h2 {
-        font-size: 1.1rem; /* Use rem for mobile, ensuring the title stays large */
+        font-size: 1.1rem;
     }
 }
 
@@ -465,29 +455,28 @@ body {
     font-size: 1vw;
 }
 
-/* For mobile or smaller screens */
 @media (max-width: 768px) {
     .article-content p {
-        font-size: 0.7rem; /* Use rem for mobile, ensuring the title stays large */
+        font-size: 0.7rem;
     }
 }
 
 a {
-    text-decoration: none; /* Removes the underline */
-    color: inherit; /* Inherits the color from the parent element */
-    font-weight: bold; /* Example: Make the text bold */
+    text-decoration: none;
+    color: inherit;
+    font-weight: bold;
 }
 
 a:hover {
-    text-decoration: none; /* Underline on hover */
-    color: inherit; /* Example: Change color on hover */
+    text-decoration: none;
+    color: inherit;
 }
 
 a:focus,
 a:active {
-    outline: none; /* Remove the focus outline */
+    outline: none;
     color: inherit;
-    text-decoration: none; /* Customize if needed */
+    text-decoration: none;
 }
 
 /* Footer */
@@ -496,11 +485,11 @@ a:active {
     bottom: 0;
     left: 0;
     width: 100%;
-    background-color: black; /* Dark footer background */
+    background-color: black;
     color: #fff;
     text-align: center;
     padding: 0px 16px;
-    z-index: 1000; /* Ensure it's always on top */
+    z-index: 1000;
 }
 
 .footer a {
@@ -518,12 +507,7 @@ a:active {
     position: fixed;
     background-color: white;
     width: 100%;
-    scale: 0 1;
     transform-origin: left;
-    animation: scrollwatcher linear;
-    animation-timeline: scroll();
-}
-
-@keyframes scrollwatcher {
-    to {scale: 1 1; }
+    transform: scaleY(0);
+    transition: transform 0.1s ease-out; /* Smooth updates */
 }
