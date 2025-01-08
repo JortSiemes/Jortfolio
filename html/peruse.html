@@ -24,25 +24,59 @@
     <body>
         <header class="header">
             <img src="../Images/Peruse/PERUSE.png" alt="Peruse Logo" class="logo">
-            <button class="burger-menu">☰</button>
+            
+                <button href="javascript:void(0);" class="icon burger-menu" onclick="myFunction()">☰</button>
         </header>
 
-        <div class="articleSectionTitle">
-            <h1>ARTICLES</h1>
+        <div class="topnav">
+            <div id="myLinks">
+                <a href="#news" id="toggle-visibility"><h3>Unhide</h3></a>
+                <a href="#contact"><h3>Contact</h3></a>
+                <a href="#about"><h3>About</h3></a>
+            </div>
         </div>
+
+    <div class="horizontalscroller">
+        <div class="scroll" style="--time:60s">
+            <div>
+                <span>This is an experiment</span>
+                <span>This is an experiment</span>
+                <span>This is an experiment</span>
+                <span>This is an experiment</span>
+                <span>This is an experiment</span>
+                <span>This is an experiment</span>
+                <span>This is an experiment</span>
+                <span>This is an experiment</span>
+                <span>This is an experiment</span>
+                <span>This is an experiment</span>
+            </div>
+            <div>
+                <span>This is an experiment</span>
+                <span>This is an experiment</span>
+                <span>This is an experiment</span>
+                <span>This is an experiment</span>
+                <span>This is an experiment</span>
+                <span>This is an experiment</span>
+                <span>This is an experiment</span>
+                <span>This is an experiment</span>
+                <span>This is an experiment</span>
+                <span>This is an experiment</span>
+            </div>
+        </div>
+    </div>
 
         <main class="grid-container">
             <!-- Example Article -->
 
-            <div class="article">
-                <a href="articles/article1.html" class="article-link">
+            <div id="A1" class="hidden article">
+                <a href="../articles/article1.html" class="article-link">
                     <div class="img-hover-zoom">
                         <img src="../Images/Peruse/nature-silhouette-sky-sunrise-sunset-sunlight-1129460-pxhere.com_.png" alt="Oil reserves" class="article-image">
                     </div>
                     <div class="article-body">
                         
                         <div class="article-content">
-                            <h2>Saudi’s running out of oil, Oil reserve data</h2>
+                            <h2>Saudi’s running out of oil, Oil reserve data 1</h2>
                             <p>Recordings and interviews reveal he felt a growing discontent with american society and was increasingly isolated even with his local muslim community</p>
                         </div>
                         <div class="meta">
@@ -57,7 +91,7 @@
                 </a>
             </div>
             
-            <div class="article">
+            <div id="A2" class="hidden article">
                 <a href="articles/article1.html" class="article-link">
                     <div class="img-hover-zoom">
                         <img src="../Images/Peruse/nature-silhouette-sky-sunrise-sunset-sunlight-1129460-pxhere.com_.png" alt="Oil reserves" class="article-image">
@@ -65,7 +99,7 @@
                     <div class="article-body">
                         
                         <div class="article-content">
-                            <h2>Saudi’s running out of oil, Oil reserve data</h2>
+                            <h2>Saudi’s running out of oil, Oil reserve data 2</h2>
                             <p>Recordings and interviews reveal he felt a growing discontent with american society and was increasingly isolated even with his local muslim community</p>
                         </div>
                         <div class="meta">
@@ -80,7 +114,7 @@
                 </a>
             </div>
 
-            <div class="article">
+            <div id="A3" class="hidden article">
                 <a href="articles/article1.html" class="article-link">
                     <div class="img-hover-zoom">
                         <img src="../Images/Peruse/nature-silhouette-sky-sunrise-sunset-sunlight-1129460-pxhere.com_.png" alt="Oil reserves" class="article-image">
@@ -88,30 +122,7 @@
                     <div class="article-body">
                         
                         <div class="article-content">
-                            <h2>Saudi’s running out of oil, Oil reserve data</h2>
-                            <p>Recordings and interviews reveal he felt a growing discontent with american society and was increasingly isolated even with his local muslim community</p>
-                        </div>
-                        <div class="meta">
-                            <div class="metabubbles">
-                                <span class="tag finance">Finance</span>
-                                <span class="tag feature"><img src="../Images/Peruse/Map.png" alt=""></span>
-                            </div>
-                            <span class="read-time">4 min read</span>
-                            <span class="date">28 Sept 2024</span>
-                        </div>
-                    </div>
-                </a>
-            </div>
-            
-            <div class="article">
-                <a href="articles/article1.html" class="article-link">
-                    <div class="img-hover-zoom">
-                        <img src="../Images/Peruse/nature-silhouette-sky-sunrise-sunset-sunlight-1129460-pxhere.com_.png" alt="Oil reserves" class="article-image">
-                    </div>
-                    <div class="article-body">
-                        
-                        <div class="article-content">
-                            <h2>Saudi’s running out of oil, Oil reserve data</h2>
+                            <h2>Saudi’s running out of oil, Oil reserve data 3</h2>
                             <p>Recordings and interviews reveal he felt a growing discontent with american society and was increasingly isolated even with his local muslim community</p>
                         </div>
                         <div class="meta">
@@ -126,7 +137,30 @@
                 </a>
             </div>
 
-            <div class="article">
+            <div id="A4" class="hidden article">
+                <a href="articles/article1.html" class="article-link">
+                    <div class="img-hover-zoom">
+                        <img src="../Images/Peruse/nature-silhouette-sky-sunrise-sunset-sunlight-1129460-pxhere.com_.png" alt="Oil reserves" class="article-image">
+                    </div>
+                    <div class="article-body">
+                        
+                        <div class="article-content">
+                            <h2>Saudi’s running out of oil, Oil reserve data 4</h2>
+                            <p>Recordings and interviews reveal he felt a growing discontent with american society and was increasingly isolated even with his local muslim community</p>
+                        </div>
+                        <div class="meta">
+                            <div class="metabubbles">
+                                <span class="tag finance">Finance</span>
+                                <span class="tag feature"><img src="../Images/Peruse/Map.png" alt=""></span>
+                            </div>
+                            <span class="read-time">4 min read</span>
+                            <span class="date">28 Sept 2024</span>
+                        </div>
+                    </div>
+                </a>
+            </div>
+
+            <div id="B" class="article">
                 <a href="articles/article1.html" class="article-link">
                     <div class="img-hover-zoom">
                         <img src="../Images/Peruse/nature-silhouette-sky-sunrise-sunset-sunlight-1129460-pxhere.com_.png" alt="Oil reserves" class="article-image">
@@ -148,29 +182,7 @@
                     </div>
                 </a>
             </div>
-             
-            <div class="article">
-                <a href="articles/article1.html" class="article-link">
-                    <div class="img-hover-zoom">
-                        <img src="../Images/Peruse/nature-silhouette-sky-sunrise-sunset-sunlight-1129460-pxhere.com_.png" alt="Oil reserves" class="article-image">
-                    </div>
-                    <div class="article-body">
-                        
-                        <div class="article-content">
-                            <h2>Saudi’s running out of oil, Oil reserve data</h2>
-                            <p>Recordings and interviews reveal he felt a growing discontent with american society and was increasingly isolated even with his local muslim community</p>
-                        </div>
-                        <div class="meta">
-                            <div class="metabubbles">
-                                <span class="tag finance">Finance</span>
-                                <span class="tag feature"><img src="../Images/Peruse/Map.png" alt=""></span>
-                            </div>
-                            <span class="read-time">4 min read</span>
-                            <span class="date">28 Sept 2024</span>
-                        </div>
-                    </div>
-                </a>
-            </div>
+           
         </main>
         <footer class="footer">
             <div class="footerdiv">
@@ -181,14 +193,76 @@
         </footer>
 
         <script>
+
+document.addEventListener("DOMContentLoaded", function () {
+            const options = ["A1", "A2", "A3", "A4"];
+            const storageKey = "selectedAOption";
+
+            let selectedOptionIndex = localStorage.getItem(storageKey);
+
+            if (!selectedOptionIndex) {
+                selectedOptionIndex = Math.floor(Math.random() * options.length);
+                localStorage.setItem(storageKey, selectedOptionIndex);
+            }
+
+            const selectedOption = options[selectedOptionIndex];
+
+            document.getElementById(selectedOption).classList.remove("hidden");
+            document.getElementById(selectedOption).classList.add("visible");
+// Add event listener to the "Show All/Hide All" link
+const toggleLink = document.getElementById("toggle-visibility");
+            let isShowingAll = false; // Tracks whether all articles are visible
+
+            toggleLink.addEventListener("click", function (e) {
+                e.preventDefault(); // Prevent default anchor behavior
+
+                if (isShowingAll) {
+                    // Hide all articles except the selected one
+                    options.forEach(optionId => {
+                        if (optionId !== selectedOption) {
+                            const element = document.getElementById(optionId);
+                            element.classList.remove("visible");
+                            element.classList.add("hidden");
+                        }
+                    });
+                    toggleLink.innerHTML = "<h3>Show All</h3>";
+                } else {
+                    // Show all articles
+                    options.forEach(optionId => {
+                        const element = document.getElementById(optionId);
+                        element.classList.remove("hidden");
+                        element.classList.add("visible");
+                    });
+                    toggleLink.innerHTML = "<h3>Hide</h3>";
+                }
+
+                isShowingAll = !isShowingAll; // Toggle state
+            });
+        });
+
             const scrollWatcher = document.querySelector('.scrollwatcher');
         
             window.addEventListener('scroll', () => {
               const scrollTop = window.scrollY;
               const docHeight = document.documentElement.scrollHeight - window.innerHeight;
-              const progress = Math.min(scrollTop / docHeight, 1); // Clamp to [0, 1]
+              const progress = Math.min(scrollTop / docHeight, 1);
               scrollWatcher.style.transform = `scaleX(${progress})`;
             });
+
+
+            function myFunction() {
+        var x = document.getElementById("myLinks");
+        if (x.style.display === "block") {
+            x.style.display = "none";
+        } else {
+            x.style.display = "block";
+        }
+}
+
+document.querySelectorAll('.scroll div').forEach(div => {
+    const contentWidth = Array.from(div.children).reduce((total, child) => total + child.offsetWidth + 20, 0); 
+    div.style.width = `${contentWidth}px`;
+});
           </script>
     
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
