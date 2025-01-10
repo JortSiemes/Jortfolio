@@ -334,13 +334,6 @@ body {
     margin: 0 0 8px;
 }
 
-
-@media (max-width: 768px) {
-    .article-content h2 {
-        font-size: 6rem;
-    }
-}
-
 .grid-container {
     display: grid;
     gap: 32px;
@@ -670,3 +663,55 @@ a:active {
 .visible {
     display: block;
 }
+
+
+
+
+.Longread{
+        margin: 20px;
+}
+
+.Longread-Text{
+    margin-left: 15px;
+    margin-right: 15px;
+}
+
+.article-content h1 {
+    font-family: 'Euclid CircularA', sans-serif;
+    font-weight: 600;
+    font-size: 1.8vw;
+    margin: 0 0 8px;
+}
+
+@media (max-width: 768px) {
+    .article-content h1 {
+        font-size: 2rem;
+    }
+}
+
+.Longread-Text h4 {
+    font-family: 'Euclid CircularA', sans-serif;
+    font-weight: 500;
+    font-size: 1.8vw;
+    color: #C0C0C0;
+}
+
+@media (max-width: 768px) {
+    .Longread-Text h4 {
+        font-size: 1rem;
+    }
+}
+
+.longread-date{
+    color: #777;
+    padding-right: 90%;
+}
+
+@media (max-width: 1500px) {
+.longread-date {
+    padding-right: 50%;
+}}
+
+
+
+
