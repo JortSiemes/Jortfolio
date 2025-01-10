@@ -120,7 +120,6 @@
                         <img src="../Images/Peruse/nature-silhouette-sky-sunrise-sunset-sunlight-1129460-pxhere.com_.png" alt="Oil reserves" class="article-image">
                     </div>
                     <div class="article-body">
-                        
                         <div class="article-content">
                             <h2>Saudi’s running out of oil, Oil reserve data 3</h2>
                             <p>Recordings and interviews reveal he felt a growing discontent with american society and was increasingly isolated even with his local muslim community</p>
@@ -185,7 +184,7 @@
            
         </main>
         <footer class="footer">
-            <div class="footerdiv">
+            <div id="back-to-top" class="footerdiv">
                 <div class="scrollwatcher"></div>
                 <br>
                 <h4><a href="#top">BACK TO TOP</a></h4>
@@ -262,6 +261,31 @@ const toggleLink = document.getElementById("toggle-visibility");
 document.querySelectorAll('.scroll div').forEach(div => {
     const contentWidth = Array.from(div.children).reduce((total, child) => total + child.offsetWidth + 20, 0); 
     div.style.width = `${contentWidth}px`;
+});
+
+document.addEventListener("DOMContentLoaded", function () {
+  const backToTopButton = document.getElementById("back-to-top");
+
+  const toggleVisibility = () => {
+    const isScrollable = document.body.scrollHeight > window.innerHeight;
+    const isScrolled = window.scrollY > 0;
+
+    if (isScrollable && isScrolled) {
+      backToTopButton.classList.add("visible");
+    } else {
+      backToTopButton.classList.remove("visible");
+    }
+  };
+
+  backToTopButton.addEventListener("click", () => {
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  });
+
+  window.addEventListener("scroll", toggleVisibility);
+  window.addEventListener("resize", toggleVisibility);
+
+  // Initial check
+  toggleVisibility();
 });
           </script>
     
