@@ -1,0 +1,257 @@
+@font-face {
+    font-family: 'Euclid CircularA';
+    src: url('../fonts/CircularA/EuclidCircularA-Regular-WebXL.woff2') format('woff2');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Euclid CircularA';
+    src: url('../fonts/CircularA/EuclidCircularA-RegularItalic-WebXL.woff2') format('woff2');
+    font-weight: normal;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: 'Euclid CircularA';
+    src: url('../fonts/CircularA/EuclidCircularA-Light-WebXL.woff2') format('woff2');
+    font-weight: 300;
+    font-style: normal;
+}
+
+
+@font-face {
+    font-family: 'Euclid CircularA';
+    src: url('../fonts/CircularA/EuclidCircularA-LightItalic-WebXL.woff2') format('woff2');
+    font-weight: 300;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: 'Euclid CircularA';
+    src: url('../fonts/CircularA/EuclidCircularA-Medium-WebXL.woff2') format('woff2');
+    font-weight: 500;
+    font-style: normal;
+}
+
+
+@font-face {
+    font-family: 'Euclid CircularA';
+    src: url('../fonts/CircularA/EuclidCircularA-MediumItalic-WebXL.woff2') format('woff2');
+    font-weight: 500;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: 'Euclid CircularA';
+    src: url('../fonts/CircularA/EuclidCircularA-Semibold-WebXL.woff2') format('woff2');
+    font-weight: 600;
+    font-style: normal;
+}
+
+
+@font-face {
+    font-family: 'Euclid CircularA';
+    src: url('../fonts/CircularA/EuclidCircularA-SemiboldItalic-WebXL.woff2') format('woff2');
+    font-weight: 600;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: 'Euclid CircularA';
+    src: url('../fonts/CircularA/EuclidCircularA-Bold-WebXL.woff2') format('woff2');
+    font-weight: bold;
+    font-style: normal;
+}
+
+
+@font-face {
+    font-family: 'Euclid CircularA';
+    src: url('../fonts/CircularA/EuclidCircularA-BoldItalic-WebXL.woff2') format('woff2');
+    font-weight: bold;
+    font-style: italic;
+}
+
+/* Circular B */
+
+@font-face {
+    font-family: 'Euclid CircularB';
+    src: url('../fonts/CircularB/EuclidCircularB-Regular-WebXL.woff2') format('woff2');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Euclid CircularB';
+    src: url('../fonts/CircularB/EuclidCircularB-RegularItalic-WebXL.woff2') format('woff2');
+    font-weight: normal;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: 'Euclid CircularB';
+    src: url('../fonts/CircularB/EuclidCircularB-Light-WebXL.woff2') format('woff2');
+    font-weight: 300;
+    font-style: normal;
+}
+
+
+@font-face {
+    font-family: 'Euclid CircularB';
+    src: url('../fonts/CircularB/EuclidCircularB-LightItalic-WebXL.woff2') format('woff2');
+    font-weight: 300;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: 'Euclid CircularB';
+    src: url('../fonts/CircularB/EuclidCircularB-Medium-WebXL.woff2') format('woff2');
+    font-weight: 500;
+    font-style: normal;
+}
+
+
+@font-face {
+    font-family: 'Euclid CircularB';
+    src: url('../fonts/CircularB/EuclidCircularB-MediumItalic-WebXL.woff2') format('woff2');
+    font-weight: 500;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: 'Euclid CircularB';
+    src: url('../fonts/CircularB/EuclidCircularB-Semibold-WebXL.woff2') format('woff2');
+    font-weight: 600;
+    font-style: normal;
+}
+
+
+@font-face {
+    font-family: 'Euclid CircularB';
+    src: url('../fonts/CircularB/EuclidCircularB-SemiboldItalic-WebXL.woff2') format('woff2');
+    font-weight: 600;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: 'Euclid CircularB';
+    src: url('../fonts/CircularB/EuclidCircularB-Bold-WebXL.woff2') format('woff2');
+    font-weight: bold;
+    font-style: normal;
+}
+
+
+@font-face {
+    font-family: 'Euclid CircularB';
+    src: url('../fonts/CircularB/EuclidCircularB-BoldItalic-WebXL.woff2') format('woff2');
+    font-weight: bold;
+    font-style: italic;
+}
+
+/* Flex */
+
+@font-face {
+    font-family: 'Euclid Flex';
+    src: url('../fonts/Flex/EuclidFlex-Regular-WebXL.woff2') format('woff2');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Euclid Flex';
+    src: url('../fonts/Flex/EuclidFlex-RegularItalic-WebXL.woff2') format('woff2');
+    font-weight: normal;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: 'Euclid Flex';
+    src: url('../fonts/Flex/EuclidFlex-Thin-WebXL.woff2') format('woff2');
+    font-weight: 100;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Euclid Flex';
+    src: url('../fonts/Flex/EuclidFlex-ThinItalic-WebXL.woff2') format('woff2');
+    font-weight: 100;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: 'Euclid Flex';
+    src: url('../fonts/Flex/EuclidFlex-Ultralight-WebXL.woff2') format('woff2');
+    font-weight: 200;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: 'Euclid Flex';
+    src: url('../fonts/Flex/EuclidFlex-UltralightItalic-WebXL.woff2') format('woff2');
+    font-weight: 200;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: 'Euclid Flex';
+    src: url('../fonts/Flex/EuclidFlex-Light-WebXL.woff2') format('woff2');
+    font-weight: 300;
+    font-style: normal;
+}
+
+
+@font-face {
+    font-family: 'Euclid Flex';
+    src: url('../fonts/Flex/EuclidFlex-LightItalic-WebXL.woff2') format('woff2');
+    font-weight: 300;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: 'Euclid Flex';
+    src: url('../fonts/Flex/EuclidFlex-Medium-WebXL.woff2') format('woff2');
+    font-weight: 500;
+    font-style: normal;
+}
+
+
+@font-face {
+    font-family: 'Euclid Flex';
+    src: url('../fonts/Flex/EuclidFlex-MediumItalic-WebXL.woff2') format('woff2');
+    font-weight: 500;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: 'Euclid Flex';
+    src: url('../fonts/Flex/EuclidFlex-Semibold-WebXL.woff2') format('woff2');
+    font-weight: 600;
+    font-style: normal;
+}
+
+
+@font-face {
+    font-family: 'Euclid Flex';
+    src: url('../fonts/Flex/EuclidFlex-SemiboldItalic-WebXL.woff2') format('woff2');
+    font-weight: 600;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: 'Euclid Flex';
+    src: url('../fonts/Flex/EuclidFlex-Bold-WebXL.woff2') format('woff2');
+    font-weight: bold;
+    font-style: normal;
+}
+
+
+@font-face {
+    font-family: 'Euclid Flex';
+    src: url('../fonts/Flex/EuclidFlex-BoldItalic-WebXL.woff2') format('woff2');
+    font-weight: bold;
+    font-style: italic;
+}
+
+body {
+    font-family: 'Euclid CircularA';
+}
