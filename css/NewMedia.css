@@ -1,77 +1,3 @@
-/* fonts */
-@font-face {
-  font-family: 'EuclidCircularA';
-  src: url('../fonts/Euclid/EuclidCircularA-Bold-WebTrial.woff') format('woff');
-  font-weight: bold;
-  font-style: normal;
-}
-
-@font-face {
-  font-family: 'EuclidCircularA';
-  src: url('../fonts/Euclid/EuclidCircularA-BoldItalic-WebTrial.woff') format('woff');
-  font-weight: bold;
-  font-style: italic;
-}
-
-@font-face {
-  font-family: 'EuclidCircularA';
-  src: url('../fonts/Euclid/EuclidCircularA-Light-WebTrial.woff') format('woff');
-  font-weight: lighter;
-  font-style: normal;
-}
-
-@font-face {
-  font-family: 'EuclidCircularA';
-  src: url('../fonts/Euclid/EuclidCircularA-LightItalic-WebTrial.woff') format('woff');
-  font-weight: lighter;
-  font-style: italic;
-}
-
-@font-face {
-  font-family: 'EuclidCircularA';
-  src: url('../fonts/Euclid/EuclidCircularA-Regular-WebTrial.woff') format('woff');
-  font-weight: 400; /* Use the appropriate numerical value for medium weight */
-  font-style: normal;
-}
-
-@font-face {
-  font-family: 'EuclidCircularA';
-  src: url('../fonts/Euclid/EuclidCircularA-RegularItalic-WebTrial.woff') format('woff');
-  font-weight: 400; /* Use the appropriate numerical value for medium weight */
-  font-style: italic;
-}
-
-@font-face {
-  font-family: 'EuclidCircularA';
-  src: url('../fonts/Euclid/EuclidCircularA-Medium-WebTrial.woff') format('woff');
-  font-weight: 500; /* Use the appropriate numerical value for medium weight */
-  font-style: normal;
-}
-
-@font-face {
-  font-family: 'EuclidCircularA';
-  src: url('../fonts/Euclid/EuclidCircularA-MediumItalic-WebTrial.woff') format('woff');
-  font-weight: 500; /* Use the appropriate numerical value for medium weight */
-  font-style: italic;
-}
-
-@font-face {
-  font-family: 'EuclidCircularA';
-  src: url('../fonts/Euclid/EuclidCircularA-Semibold-WebTrial.woff') format('woff');
-  font-weight: 600; /* Use the appropriate numerical value for medium weight */
-  font-style: normal;
-}
-
-@font-face {
-  font-family: 'EuclidCircularA';
-  src: url('../fonts/Euclid/EuclidCircularA-SemiboldItalic-WebTrial.woff') format('woff');
-  font-weight: 600; /* Use the appropriate numerical value for medium weight */
-  font-style: italic;
-}
-
-
-/* Hide the scrollbar for Webkit browsers (Chrome, Safari) */
-/* Hide the scrollbar but still allow scrolling */
 body {
   overflow: hidden;  /* Hide scrollbars */
 }
@@ -182,21 +108,21 @@ body{
 }
 
 h1{
-  font-family: 'EuclidCircularA', sans-serif;
+  font-family: 'Euclid CircularA', sans-serif;
   font-weight: bold;
   font-style: normal;
   color: white;
 }
 
 h3 {
-  font-family: 'EuclidCircularA', sans-serif;
+  font-family: 'Euclid CircularA', sans-serif;
   font-weight: bold;
   font-style: normal;
   color: white;
 }
 
 h6{
-  font-family: 'EuclidCircularA', sans-serif;
+  font-family: 'Euclid CircularA', sans-serif;
   font-weight: bold;
   font-style: normal;
   color: #ccc;
@@ -245,7 +171,7 @@ h6{
 
 .art_title h2 {
   color: white;
-  font-family: 'EuclidCircularA', sans-serif;
+  font-family: 'Euclid CircularA', sans-serif;
   font-weight: 500;
   font-style: normal;
   font-size: 30px;
@@ -257,7 +183,7 @@ h6{
 
 .art_date h3 {
   color: white;
-  font-family: 'EuclidCircularA', sans-serif;
+  font-family: 'Euclid CircularA', sans-serif;
   font-weight: lighter;
   font-style: normal;
   font-size: 24px;
@@ -269,7 +195,7 @@ h6{
 
 .art_subject h3 {
   color: #ededed;
-  font-family: 'EuclidCircularA', sans-serif;
+  font-family: 'Euclid CircularA', sans-serif;
   font-weight: lighter;
   font-style: normal;
   font-size: 24px;
@@ -294,14 +220,14 @@ h6{
       }
 
       h6{
-        font-family: 'EuclidCircularA', sans-serif;
+        font-family: 'Euclid CircularA', sans-serif;
         font-weight: bold;
         font-style: normal;
         color: #ccc;
       }
 
     article h3 {
-      font-family: 'EuclidCircularA', sans-serif;
+      font-family: 'Euclid CircularA', sans-serif;
       font-weight: bold;
       font-style: normal;
         font-size: 1.5em;
