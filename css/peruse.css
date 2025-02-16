@@ -278,8 +278,7 @@ body {
     justify-content: center;
     align-items: center;
     position: relative;
-    padding: 16px;
-    margin-top: 20px;
+    padding: 36px;
 }
 
 .burger-menu {
@@ -622,14 +621,11 @@ a:active {
     transition: transform 0.1s ease-out;
 }
 
-
-
 .horizontalscroller{
     display: flex;
     justify-content: center;
     align-items: center;
 }
-
 
 .scroll {
     position: relative;
@@ -724,6 +720,11 @@ a:active {
         margin: 20px;
 }
 
+.Longread-Article{
+    z-index: -1;
+    background-color: #451212;
+}
+
 .Longread-Text{
     margin-left: 15px;
     margin-right: 15px;
@@ -782,6 +783,98 @@ a:active {
     cursor: pointer; /* Change cursor to pointer */
 }
 
+.Article-Header-Image{
+    background-image: 
+    linear-gradient(to bottom, rgba(69, 18, 18, 0) 10%, rgba(69, 18, 18, 1) 70%),
+    url('../Images/Peruse/nature-silhouette-sky-sunrise-sunset-sunlight-1129460-pxhere.com_.png');
+    background-size: 100%;
+    background-position: center top;
+    background-repeat: no-repeat;
+    width: 100%;
+    height: 40vh;
+    z-index: -1;
+    position: relative;
+    margin: 0;
+    padding: 0;
+
+}
+
+.Longread-ArticleB {
+    background-color: #451212;
+    width: 100%;
+    height: 400vh;
+    z-index: -1;
+    position: relative;
+    margin: 0;
+    padding: 0;
+    opacity: 1;
+    animation: fade-to-dark linear;
+    animation-timeline: view();
+    animation-range: 100% 20%; /* Adjust the range to control the fade-to-dark effect */
+}
+
+@keyframes fade-to-dark {
+    100% {
+        background-color: #451212; /* Start color */
+    }
+    20% {
+        background-color: #000000; /* End color (dark) */
+    }
+}
+
+.Longread-Content{
+    margin: 20px;
+    margin-top: 20vh;
+}
+
+.Longread-Content p{
+    color: #C0C0C0;
+}
+
+.parent {
+    display: grid;
+    grid-template-columns: 1fr;
+}
+
+.child {
+    grid-row-start: 1;
+    grid-column-start: 1;
+}
+
+.Longread-meta {
+    margin-top: 10px;
+    font-size: 12px;
+}
+
+.Longread-meta h4 {
+    color: white;
+    font-family: 'Euclid CircularA', sans-serif;
+    font-weight: 500;
+    font-size: 1vw;
+    margin: 0;
+}
+
+@media (max-width: 768px) {
+    .Longread-meta h4  {
+        font-size: 0.7rem;
+        font-weight: 700;
+    }
+}
+
+.Longread-meta p{
+    color: #C0C0C0;
+    font-family: 'Euclid CircularA', sans-serif;
+    font-weight: 300;
+    font-size: 1vw;
+    margin: 0;
+}
+
+@media (max-width: 768px) {
+    .Longread-meta p  {
+        font-size: 0.6rem;
+        font-weight: 300;
+    }
+}
 
 
 
