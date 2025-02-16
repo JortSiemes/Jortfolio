@@ -109,25 +109,26 @@
 
     <script>
         
-                document.addEventListener("scroll", function () {
-            const article = document.querySelector(".Longread-ArticleB");
-            const scrollY = window.scrollY;
-            const maxScroll = document.documentElement.scrollHeight - window.innerHeight;
-            const fadeStart = 0; // Start changing color immediately
-            const fadeEnd = maxScroll * 0.5; // Fully black at 50% scroll
+                    document.addEventListener("scroll", function () {
+                const article = document.querySelector(".Longread-ArticleB");
+                const scrollY = window.scrollY;
+                const maxScroll = document.documentElement.scrollHeight - window.innerHeight;
+                const fadeStart = maxScroll * 0.2; // Start fading at 20% scroll
+                const fadeEnd = maxScroll * 0.5;   // Fully black at 50% scroll
 
-            if (scrollY >= fadeStart && scrollY <= fadeEnd) {
-                let progress = (scrollY - fadeStart) / (fadeEnd - fadeStart);
-                let r = Math.round(69 * (1 - progress)); // 69 → 0
-                let g = Math.round(18 * (1 - progress)); // 18 → 0
-                let b = Math.round(18 * (1 - progress)); // 18 → 0
-                article.style.backgroundColor = `rgb(${r}, ${g}, ${b})`;
-            } else if (scrollY > fadeEnd) {
-                article.style.backgroundColor = "#000000"; // Fully black
-            } else {
-                article.style.backgroundColor = "#451212"; // Initial color
-            }
-        });
+                if (scrollY >= fadeStart && scrollY <= fadeEnd) {
+                    let progress = (scrollY - fadeStart) / (fadeEnd - fadeStart);
+                    let r = Math.round(69 * (1 - progress)); // 69 → 0
+                    let g = Math.round(18 * (1 - progress)); // 18 → 0
+                    let b = Math.round(18 * (1 - progress)); // 18 → 0
+                    article.style.backgroundColor = `rgb(${r}, ${g}, ${b})`;
+                } else if (scrollY > fadeEnd) {
+                    article.style.backgroundColor = "#000000"; // Fully black
+                } else {
+                    article.style.backgroundColor = "#451212"; // Initial color
+                }
+            });
+
 
         document.addEventListener("DOMContentLoaded", function () {
             const options = ["A1", "A2", "A3", "A4"];
