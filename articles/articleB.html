@@ -1,202 +1,190 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-
     <!-- Google tag (gtag.js) -->
-        <script async src="https://www.googletagmanager.com/gtag/js?id=G-H1EZT1Q9H0"></script>
-        <script>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-H1EZT1Q9H0"></script>
+    <script>
         window.dataLayer = window.dataLayer || [];
         function gtag(){dataLayer.push(arguments);}
         gtag('js', new Date());
-
         gtag('config', 'G-H1EZT1Q9H0');
-        </script>
+    </script>
 
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Peruse</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <link rel="stylesheet" href="../css/peruse.css">
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js"></script>
 </head>
-
 <body>
-
-    <body>
-        <header class="header">
-            <a href="../html/peruse.html">
+    <header class="header">
+        <a href="../html/peruse.html">
             <img src="../Images/Peruse/PERUSE.png" alt="Peruse Logo" class="logo">
-            </a>
-            
-                <button href="javascript:void(0);" class="icon burger-menu" onclick="myFunction()">☰</button>
-        </header>
+        </a>
+        <button href="javascript:void(0);" class="icon burger-menu" onclick="myFunction()">☰</button>
+    </header>
 
-        <div class="topnav">
-            <div id="myLinks">
-                <a href="#news" id="toggle-visibility"><h3>Unhide</h3></a>
-                <a href="#contact"><h3>Contact</h3></a>
-                <a href="#about"><h3>About</h3></a>
-            </div>
+    <div class="topnav">
+        <div id="myLinks">
+            <a href="#news" id="toggle-visibility"><h3>Unhide</h3></a>
+            <a href="#contact"><h3>Contact</h3></a>
+            <a href="#about"><h3>About</h3></a>
         </div>
+    </div>
 
-        <main class="Longread">
-            <div id="B" class="article">
-                        <img src="../Images/Peruse/nature-silhouette-sky-sunrise-sunset-sunlight-1129460-pxhere.com_.png" alt="Oil reserves" class="article-image">
-                    <div class="Longread-Text">
-                        <div class="metabubbles">
-                            <span class="longread-date">28 Sept 2024</span>
-                            <span class="tag finance">Finance</span>
-                            <span class="tag feature"><img src="../Images/Peruse/Map.png" alt=""></span>
-                        </div>
-                        <br>
-                        <div class="article-content">
-                            <h1>Saudi’s running out of oil, Oil reserve data</h1>
-                        </div>
-                        <h4>Recordings and interviews reveal he felt a growing discontent with american society and was increasingly isolated even with his local muslim community</p>
-                       
-                    </div>
-
-                    <label for="rangeSlider">Select a value:</label>
-                    <input type="range" id="rangeSlider" name="rangeSlider" min="0" max="100">
-                    <button id="submitButton">Submit</button>
-    
-            </div>
-           
-        </main>
-        <footer class="footer">
-            <div id="back-to-top" class="footerdiv">
-                <div class="scrollwatcher"></div>
+    <main class="Longread">
+        <div id="B" class="article">
+            <img src="../Images/Peruse/nature-silhouette-sky-sunrise-sunset-sunlight-1129460-pxhere.com_.png" alt="Oil reserves" class="article-image">
+            <div class="Longread-Text">
+                <div class="metabubbles">
+                    <span class="longread-date">28 Sept 2024</span>
+                    <span class="tag finance">Finance</span>
+                    <span class="tag feature"><img src="../Images/Peruse/Map.png" alt=""></span>
+                </div>
                 <br>
-                <h4><a href="#top">BACK TO TOP</a></h4>
+                <div class="article-content">
+                    <h1>Saudi’s running out of oil, Oil reserve data</h1>
+                </div>
+                <h4>Recordings and interviews reveal he felt a growing discontent with american society and was increasingly isolated even with his local muslim community</h4>
             </div>
-        </footer>
 
-        <script>
+            <label for="rangeSlider">Select a value:</label>
+            <input type="range" id="rangeSlider" name="rangeSlider" min="0" max="100">
+            <button id="submitButton">Submit</button>
+        </div>
+    </main>
 
-import { createClient } from '@supabase/supabase-js'
-const supabaseUrl = 'https://rgoydwojepkjbqzdldft.supabase.co'
-const supabaseKey = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InJnb3lkd29qZXBramJxemRsZGZ0Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3Mzk3MTMyMTYsImV4cCI6MjA1NTI4OTIxNn0.gjk1wM4DUaxAQV9H3zK3hzktav-Pjo40fEIDHR7DTWQ'
-const supabase = createClient(supabaseUrl, supabaseKey)
+    <footer class="footer">
+        <div id="back-to-top" class="footerdiv">
+            <div class="scrollwatcher"></div>
+            <br>
+            <h4><a href="#top">BACK TO TOP</a></h4>
+        </div>
+    </footer>
 
+    <script>
+        const { createClient } = supabase;
+        const supabaseUrl = 'https://rgoydwojepkjbqzdldft.supabase.co';
+        const supabaseKey = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InJnb3lkd29qZXBramJxemRsZGZ0Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3Mzk3MTMyMTYsImV4cCI6MjA1NTI4OTIxNn0.gjk1wM4DUaxAQV9H3zK3hzktav-Pjo40fEIDHR7DTWQ';
+        const supabase = createClient(supabaseUrl, supabaseKey);
 
-document.addEventListener("DOMContentLoaded", function () {
-    const options = ["A1", "A2", "A3", "A4"];
-    const storageKey = "selectedAOption";
+        document.addEventListener("DOMContentLoaded", function () {
+            const options = ["A1", "A2", "A3", "A4"];
+            const storageKey = "selectedAOption";
 
-    let selectedOptionIndex = localStorage.getItem(storageKey);
+            let selectedOptionIndex = localStorage.getItem(storageKey);
 
-    if (!selectedOptionIndex) {
-        selectedOptionIndex = Math.floor(Math.random() * options.length);
-        localStorage.setItem(storageKey, selectedOptionIndex);
-    }
+            if (!selectedOptionIndex) {
+                selectedOptionIndex = Math.floor(Math.random() * options.length);
+                localStorage.setItem(storageKey, selectedOptionIndex);
+            }
 
-    const selectedOption = options[selectedOptionIndex];
+            const selectedOption = options[selectedOptionIndex];
 
-    document.getElementById(selectedOption).classList.remove("hidden");
-    document.getElementById(selectedOption).classList.add("visible");
+            document.getElementById(selectedOption).classList.remove("hidden");
+            document.getElementById(selectedOption).classList.add("visible");
 
-    // Add event listener to the "Show All/Hide All" link
-    const toggleLink = document.getElementById("toggle-visibility");
-    let isShowingAll = false; // Tracks whether all articles are visible
+            // Add event listener to the "Show All/Hide All" link
+            const toggleLink = document.getElementById("toggle-visibility");
+            let isShowingAll = false; // Tracks whether all articles are visible
 
-    toggleLink.addEventListener("click", function (e) {
-        e.preventDefault(); // Prevent default anchor behavior
+            toggleLink.addEventListener("click", function (e) {
+                e.preventDefault(); // Prevent default anchor behavior
 
-        if (isShowingAll) {
-            // Hide all articles except the selected one
-            options.forEach(optionId => {
-                if (optionId !== selectedOption) {
-                    const element = document.getElementById(optionId);
-                    element.classList.remove("visible");
-                    element.classList.add("hidden");
+                if (isShowingAll) {
+                    // Hide all articles except the selected one
+                    options.forEach(optionId => {
+                        if (optionId !== selectedOption) {
+                            const element = document.getElementById(optionId);
+                            element.classList.remove("visible");
+                            element.classList.add("hidden");
+                        }
+                    });
+                    toggleLink.innerHTML = "<h3>Show All</h3>";
+                } else {
+                    // Show all articles
+                    options.forEach(optionId => {
+                        const element = document.getElementById(optionId);
+                        element.classList.remove("hidden");
+                        element.classList.add("visible");
+                    });
+                    toggleLink.innerHTML = "<h3>Hide</h3>";
+                }
+
+                isShowingAll = !isShowingAll; // Toggle state
+            });
+
+            // Add event listener to the submit button
+            document.getElementById('submitButton').addEventListener('click', async function() {
+                const sliderValue = document.getElementById('rangeSlider').value;
+
+                // Use the selected article from localStorage
+                const selectedArticle = options[localStorage.getItem(storageKey)];
+
+                const { data, error } = await supabase
+                    .from('user_interactions')
+                    .insert([{ slider_values: sliderValue, article_number: selectedArticle }]);
+
+                if (error) {
+                    console.error('Error inserting value:', error);
+                } else {
+                    console.log('Value inserted successfully:', data);
                 }
             });
-            toggleLink.innerHTML = "<h3>Show All</h3>";
-        } else {
-            // Show all articles
-            options.forEach(optionId => {
-                const element = document.getElementById(optionId);
-                element.classList.remove("hidden");
-                element.classList.add("visible");
+        });
+
+        const scrollWatcher = document.querySelector('.scrollwatcher');
+
+        window.addEventListener('scroll', () => {
+            const scrollTop = window.scrollY;
+            const docHeight = document.documentElement.scrollHeight - window.innerHeight;
+            const progress = Math.min(scrollTop / docHeight, 1);
+            scrollWatcher.style.transform = `scaleX(${progress})`;
+        });
+
+        function myFunction() {
+            var x = document.getElementById("myLinks");
+            if (x.style.display === "block") {
+                x.style.display = "none";
+            } else {
+                x.style.display = "block";
+            }
+        }
+
+        document.querySelectorAll('.scroll div').forEach(div => {
+            const contentWidth = Array.from(div.children).reduce((total, child) => total + child.offsetWidth + 20, 0);
+            div.style.width = `${contentWidth}px`;
+        });
+
+        document.addEventListener("DOMContentLoaded", function () {
+            const backToTopButton = document.getElementById("back-to-top");
+
+            const toggleVisibility = () => {
+                const isScrollable = document.body.scrollHeight > window.innerHeight;
+                const isScrolled = window.scrollY > 0;
+
+                if (isScrollable && isScrolled) {
+                    backToTopButton.classList.add("visible");
+                } else {
+                    backToTopButton.classList.remove("visible");
+                }
+            };
+
+            backToTopButton.addEventListener("click", () => {
+                window.scrollTo({ top: 0, behavior: "smooth" });
             });
-            toggleLink.innerHTML = "<h3>Hide</h3>";
-        }
 
-        isShowingAll = !isShowingAll; // Toggle state
-    });
+            window.addEventListener("scroll", toggleVisibility);
+            window.addEventListener("resize", toggleVisibility);
 
-    // Add event listener to the submit button
-    document.getElementById('submitButton').addEventListener('click', async function() {
-        const sliderValue = document.getElementById('rangeSlider').value;
+            // Initial check
+            toggleVisibility();
+        });
+    </script>
 
-        // Use the selected article from localStorage
-        const selectedArticle = options[localStorage.getItem(storageKey)];
-
-        const { data, error } = await supabase
-            .from('slider_values')
-            .insert([{ value: sliderValue, article: selectedArticle }]);
-
-        if (error) {
-            console.error('Error inserting value:', error);
-        } else {
-            console.log('Value inserted successfully:', data);
-        }
-    });
-});
-
-    const scrollWatcher = document.querySelector('.scrollwatcher');
-
-    window.addEventListener('scroll', () => {
-      const scrollTop = window.scrollY;
-      const docHeight = document.documentElement.scrollHeight - window.innerHeight;
-      const progress = Math.min(scrollTop / docHeight, 1);
-      scrollWatcher.style.transform = `scaleX(${progress})`;
-    });
-
-
-    function myFunction() {
-var x = document.getElementById("myLinks");
-if (x.style.display === "block") {
-    x.style.display = "none";
-} else {
-    x.style.display = "block";
-}
-}
-
-document.querySelectorAll('.scroll div').forEach(div => {
-const contentWidth = Array.from(div.children).reduce((total, child) => total + child.offsetWidth + 20, 0); 
-div.style.width = `${contentWidth}px`;
-});
-
-document.addEventListener("DOMContentLoaded", function () {
-const backToTopButton = document.getElementById("back-to-top");
-
-const toggleVisibility = () => {
-const isScrollable = document.body.scrollHeight > window.innerHeight;
-const isScrolled = window.scrollY > 0;
-
-if (isScrollable && isScrolled) {
-backToTopButton.classList.add("visible");
-} else {
-backToTopButton.classList.remove("visible");
-}
-};
-
-backToTopButton.addEventListener("click", () => {
-window.scrollTo({ top: 0, behavior: "smooth" });
-});
-
-window.addEventListener("scroll", toggleVisibility);
-window.addEventListener("resize", toggleVisibility);
-
-// Initial check
-toggleVisibility();
-});
-
-
-          </script>
-    
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.14.7/dist/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>    
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
 </body>
 </html>
