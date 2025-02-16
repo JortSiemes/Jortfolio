@@ -338,7 +338,6 @@ body {
     display: grid;
     gap: 32px;
     padding: 32px;
-    margin-bottom: 60px;
 }
 
 @media (min-width: 701px) {
@@ -355,36 +354,37 @@ body {
 
 .article {
     overflow: hidden;
+    background-image:
+        linear-gradient(to bottom, rgba(255, 255, 255, 0) 30%, rgba(69, 18, 18, 0.75) 70%),
+        url('../Images/Peruse/nature-silhouette-sky-sunrise-sunset-sunlight-1129460-pxhere.com_.png');
+    background-size: cover;
+    background-position: center;
+    padding: 20px;
+    padding-left: 4vw;
+    border-radius: 25px;
+    display:  flex;
+    align-items: flex-end;
+    height: 30vh;
+    transition: transform 1s ease; 
+    position: relative;
 }
 
-.article-image {
-    width: 100%;
-    min-height: 170px;
-    height: 20vw;
-    max-height: 500px; 
-    object-fit: cover; 
-    border-radius: 50px;
+.article:hover {
+    transform: scale(1.1); /* Slight zoom effect on hover */
 }
 
-.img-hover-zoom{
-    overflow: hidden;
-    border-radius: 50px;
-}
-
-.img-hover-zoom img{
-    transition: transform 1s ease;
-}
-
-.img-hover-zoom:hover img{
-    transform: scale(1.1);
-}
 
 .article-body {
+    width: 100%;
     display: flex;
-    padding: 3px;
-    padding-left: 20px;
-    gap: 10px; 
-    flex-wrap: wrap; 
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+}
+
+.article-content {
+    width: 100%;
+
 }
 
 @media {
@@ -398,7 +398,7 @@ body {
     }
 
     .meta {
-        flex: 0 0 20%; 
+        flex: 0 0 25%; 
         text-align: right; 
         padding: 8px 10px;
     }
@@ -407,18 +407,52 @@ body {
 
 .meta {
     display: flex;
+    text-align: right;
     flex-direction: column;
     align-items: flex-end;
-    gap: 8px;
+    gap: 1px;
     font-size: 12px;
-    padding-right: 10px;
+    padding: 0px;
+    margin-top: auto; /* Push to the bottom */
+}
+
+.meta h4 {
+    color: white;
+    font-family: 'Euclid CircularA', sans-serif;
+    font-weight: 500;
+    font-size: 1vw;
+    margin: 0;
+}
+
+@media (max-width: 768px) {
+    .meta h4  {
+        font-size: 0.7rem;
+        font-weight: 700;
+    }
+}
+
+.meta p{
+    color: #C0C0C0;
+    font-family: 'Euclid CircularA', sans-serif;
+    font-weight: 300;
+    font-size: 1vw;
+    margin: 0;
+}
+
+@media (max-width: 768px) {
+    .meta p  {
+        font-size: 0.6rem;
+        font-weight: 300;
+    }
 }
 
 .metabubbles {
     display: flex;
     flex-direction: row;
-    justify-content: flex-end;
+    justify-content: flex-start;
     gap: 4px; 
+    align-items: center;
+    margin-bottom: 5px;
 }
 
 .read-time,
@@ -428,16 +462,26 @@ body {
 }
 
 .tag {
-    padding: 4px 10px;
+    padding: 2px 8px;
     border-radius: 14px;
     font-size: 10px;
-    text-transform: uppercase;
+    font-weight: 600;
     color: #fff;
-    margin-bottom: 4px;
+}
+
+@media (max-width: 768px) {
+    .tag  {
+        font-size: 0.6rem;
+        padding: 2px 8px;
+        font-weight: 600;
+        border-radius: 14px;
+        font-size: 10px;
+        color: #fff;
+    }
 }
 
 .finance {
-    background-color: #e91e63;
+    background-color: #DF5F5F;
 }
 
 .feature {
@@ -445,7 +489,7 @@ body {
 }
 
 .feature img{
-    width: 15px;
+    width: 12px;
 }
 
 .tech {
@@ -473,23 +517,31 @@ body {
     margin: 0 0 8px;
 }
 
+ul {
+    padding: 0;
+    padding-left: 20px;
+    margin: 0;
+}
+
 @media (max-width: 768px) {
     .article-content h2 {
-        font-size: 1.1rem;
+        font-size: 1.3rem;
+        font-weight: 600;
+        font-style: normal;
     }
 }
 
-.article-content p {
+.article-content li {
     color: #aaa;
     font-family: 'Euclid CircularA', sans-serif;
-    font-weight: 300;
+    font-weight: 500;
     font-size: 1vw;
 }
 
 @media (max-width: 768px) {
-    .article-content p {
-        font-size: 0.8rem;
-        font-weight: 400;
+    .article-content li {
+        font-size: 0.7rem;
+        font-weight: 500;
     }
 }
 
@@ -660,8 +712,9 @@ a:active {
 .hidden {
     display: none;
 }
+
 .visible {
-    display: block;
+    display: flex;
 }
 
 
@@ -711,6 +764,23 @@ a:active {
 .longread-date {
     padding-right: 50%;
 }}
+
+.copyright p{
+    text-align: center;
+    margin: 0;
+    padding: 0;
+    font-size: 0.8rem;
+}
+
+.encasing{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1; /* Ensure it is above the content */
+    cursor: pointer; /* Change cursor to pointer */
+}
 
 
 
