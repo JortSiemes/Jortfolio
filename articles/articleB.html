@@ -54,6 +54,11 @@
                         <h4>Recordings and interviews reveal he felt a growing discontent with american society and was increasingly isolated even with his local muslim community</p>
                        
                     </div>
+
+                    <label for="rangeSlider">Select a value:</label>
+                    <input type="range" id="rangeSlider" name="rangeSlider" min="0" max="100">
+                    <button id="submitButton">Submit</button>
+    
             </div>
            
         </main>
@@ -67,100 +72,47 @@
 
         <script>
 
-document.addEventListener("DOMContentLoaded", function () {
-            const options = ["A1", "A2", "A3", "A4"];
-            const storageKey = "selectedAOption";
+const url = 'https://script.google.com/macros/s/AKfycbxC-N1v4VCHfSzgtn4-8rywUonQlh_TklgaBez8CjU9jQl8ArItm3wz1UIYO6LUPT2PiQ/exec'; // Replace with your FormEasy URL
+  const storageKey = "selectedAOption";
+  const userIdKey = "userId";
+  const options = ["A1", "A2", "A3", "A4"];
 
-            let selectedOptionIndex = localStorage.getItem(storageKey);
+  // Generate or retrieve user ID
+  let userId = localStorage.getItem(userIdKey);
+  if (!userId) {
+    userId = "user_" + Math.random().toString(36).substr(2, 9);
+    localStorage.setItem(userIdKey, userId);
+  }
 
-            if (!selectedOptionIndex) {
-                selectedOptionIndex = Math.floor(Math.random() * options.length);
-                localStorage.setItem(storageKey, selectedOptionIndex);
-            }
+  // Assign or retrieve article selection
+  let selectedOptionIndex = localStorage.getItem(storageKey);
+  if (!selectedOptionIndex) {
+    selectedOptionIndex = Math.floor(Math.random() * options.length);
+    localStorage.setItem(storageKey, selectedOptionIndex);
+  }
+  const selectedArticle = options[selectedOptionIndex];
 
-            const selectedOption = options[selectedOptionIndex];
-
-            document.getElementById(selectedOption).classList.remove("hidden");
-            document.getElementById(selectedOption).classList.add("visible");
-// Add event listener to the "Show All/Hide All" link
-const toggleLink = document.getElementById("toggle-visibility");
-            let isShowingAll = false; // Tracks whether all articles are visible
-
-            toggleLink.addEventListener("click", function (e) {
-                e.preventDefault(); // Prevent default anchor behavior
-
-                if (isShowingAll) {
-                    // Hide all articles except the selected one
-                    options.forEach(optionId => {
-                        if (optionId !== selectedOption) {
-                            const element = document.getElementById(optionId);
-                            element.classList.remove("visible");
-                            element.classList.add("hidden");
-                        }
-                    });
-                    toggleLink.innerHTML = "<h3>Show All</h3>";
-                } else {
-                    // Show all articles
-                    options.forEach(optionId => {
-                        const element = document.getElementById(optionId);
-                        element.classList.remove("hidden");
-                        element.classList.add("visible");
-                    });
-                    toggleLink.innerHTML = "<h3>Hide</h3>";
-                }
-
-                isShowingAll = !isShowingAll; // Toggle state
-            });
-        });
-
-            const scrollWatcher = document.querySelector('.scrollwatcher');
-        
-            window.addEventListener('scroll', () => {
-              const scrollTop = window.scrollY;
-              const docHeight = document.documentElement.scrollHeight - window.innerHeight;
-              const progress = Math.min(scrollTop / docHeight, 1);
-              scrollWatcher.style.transform = `scaleX(${progress})`;
-            });
-
-
-            function myFunction() {
-        var x = document.getElementById("myLinks");
-        if (x.style.display === "block") {
-            x.style.display = "none";
-        } else {
-            x.style.display = "block";
-        }
-}
-
-document.querySelectorAll('.scroll div').forEach(div => {
-    const contentWidth = Array.from(div.children).reduce((total, child) => total + child.offsetWidth + 20, 0); 
-    div.style.width = `${contentWidth}px`;
-});
-
-document.addEventListener("DOMContentLoaded", function () {
-  const backToTopButton = document.getElementById("back-to-top");
-
-  const toggleVisibility = () => {
-    const isScrollable = document.body.scrollHeight > window.innerHeight;
-    const isScrolled = window.scrollY > 0;
-
-    if (isScrollable && isScrolled) {
-      backToTopButton.classList.add("visible");
-    } else {
-      backToTopButton.classList.remove("visible");
-    }
-  };
-
-  backToTopButton.addEventListener("click", () => {
-    window.scrollTo({ top: 0, behavior: "smooth" });
+  // Update slider value display
+  document.getElementById("rating").addEventListener("input", function () {
+    document.getElementById("rating-value").innerText = this.value;
   });
 
-  window.addEventListener("scroll", toggleVisibility);
-  window.addEventListener("resize", toggleVisibility);
+  // Send data to Google Sheets
+  document.getElementById("submit-rating").addEventListener("click", function () {
+    const rating = document.getElementById("rating").value;
+    const data = { userId, article: selectedArticle, rating };
 
-  // Initial check
-  toggleVisibility();
-});
+    fetch(url, {
+      method: 'POST',
+      headers: { 'Content-Type': 'text/plain;charset=utf-8' },
+      body: JSON.stringify(data),
+    })
+    .then(response => response.json())
+    .then(data => console.log("Success:", data))
+    .catch(error => console.error("Error:", error));
+  });
+
+
           </script>
     
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>

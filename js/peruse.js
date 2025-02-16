@@ -1,3 +1,8 @@
+import { createClient } from '@supabase/supabase-js'
+const supabaseUrl = 'https://rgoydwojepkjbqzdldft.supabase.co'
+const supabaseKey = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InJnb3lkd29qZXBramJxemRsZGZ0Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3Mzk3MTMyMTYsImV4cCI6MjA1NTI4OTIxNn0.gjk1wM4DUaxAQV9H3zK3hzktav-Pjo40fEIDHR7DTWQ'
+const supabase = createClient(supabaseUrl, supabaseKey)
+
 
 document.addEventListener("DOMContentLoaded", function () {
     const options = ["A1", "A2", "A3", "A4"];
@@ -14,8 +19,9 @@ document.addEventListener("DOMContentLoaded", function () {
 
     document.getElementById(selectedOption).classList.remove("hidden");
     document.getElementById(selectedOption).classList.add("visible");
-// Add event listener to the "Show All/Hide All" link
-const toggleLink = document.getElementById("toggle-visibility");
+
+    // Add event listener to the "Show All/Hide All" link
+    const toggleLink = document.getElementById("toggle-visibility");
     let isShowingAll = false; // Tracks whether all articles are visible
 
     toggleLink.addEventListener("click", function (e) {
@@ -42,6 +48,24 @@ const toggleLink = document.getElementById("toggle-visibility");
         }
 
         isShowingAll = !isShowingAll; // Toggle state
+    });
+
+    // Add event listener to the submit button
+    document.getElementById('submitButton').addEventListener('click', async function() {
+        const sliderValue = document.getElementById('rangeSlider').value;
+
+        // Use the selected article from localStorage
+        const selectedArticle = options[localStorage.getItem(storageKey)];
+
+        const { data, error } = await supabase
+            .from('slider_values')
+            .insert([{ value: sliderValue, article: selectedArticle }]);
+
+        if (error) {
+            console.error('Error inserting value:', error);
+        } else {
+            console.log('Value inserted successfully:', data);
+        }
     });
 });
 
