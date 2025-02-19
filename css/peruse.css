@@ -613,18 +613,13 @@ a:active {
 
 .scrollwatcher {
     height: 8px;
-    position: fixed;
+    display: block;
+    position: relative;
     background-color: white;
     width: 100%;
     transform-origin: left;
     transform: scaleY(0);
     transition: transform 0.1s ease-out;
-}
-
-.horizontalscroller{
-    display: flex;
-    justify-content: center;
-    align-items: center;
 }
 
 .scroll {
@@ -710,7 +705,7 @@ a:active {
 }
 
 .visible {
-    display: flex;
+    display: block;
 }
 
 
