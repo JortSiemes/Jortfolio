@@ -785,19 +785,29 @@ a:active {
 
 .Article-Header-Image{
     background-image: 
-    linear-gradient(to bottom, rgba(69, 18, 18, 0) 10%, rgba(69, 18, 18, 1) 70%),
+    linear-gradient(to bottom, rgba(69, 18, 18, 0) 50%, rgba(69, 18, 18, 1) 80%),
     url('../Images/Peruse/nature-silhouette-sky-sunrise-sunset-sunlight-1129460-pxhere.com_.png');
     background-size: 100%;
     background-position: center top;
     background-repeat: no-repeat;
     width: 100%;
-    height: 40vh;
+    height: 100vh;
     z-index: -1;
     position: relative;
     margin: 0;
     padding: 0;
-
 }
+
+@media (max-width: 768px) {
+    .Article-Header-Image{
+        height: 40vh;
+        background-image: 
+    linear-gradient(to bottom, rgba(69, 18, 18, 0) 30%, rgba(69, 18, 18, 1) 70%),
+    url('../Images/Peruse/nature-silhouette-sky-sunrise-sunset-sunlight-1129460-pxhere.com_.png');
+    background-size: 100%;
+    }
+}
+
 
 .Longread-ArticleB {
     background-color: #451212;
@@ -824,8 +834,16 @@ a:active {
 
 .Longread-Content{
     margin: 20px;
-    margin-top: 20vh;
+    margin-top: 55vh;
 }
+
+@media (max-width: 768px) {
+    .Longread-Content{
+        margin: 20px;
+        margin-top: 25vh;
+    }
+}
+
 
 .Longread-Content p{
     color: #C0C0C0;
@@ -850,13 +868,13 @@ a:active {
     color: white;
     font-family: 'Euclid CircularA', sans-serif;
     font-weight: 500;
-    font-size: 1vw;
+    font-size: 0.9vw;
     margin: 0;
 }
 
 @media (max-width: 768px) {
     .Longread-meta h4  {
-        font-size: 0.7rem;
+        font-size: 0.9rem;
         font-weight: 700;
     }
 }
@@ -865,16 +883,102 @@ a:active {
     color: #C0C0C0;
     font-family: 'Euclid CircularA', sans-serif;
     font-weight: 300;
-    font-size: 1vw;
+    font-size: 0.8vw;
     margin: 0;
 }
 
 @media (max-width: 768px) {
     .Longread-meta p  {
-        font-size: 0.6rem;
+        font-size: 0.8rem;
         font-weight: 300;
     }
 }
 
+.Main-Longread, .Longread-Title p, .Longread-meta{
+    margin-left: 30vw;
+    margin-right: 30vw;
+}
+
+.metabubbles2{
+    margin-left: 5vw;
+    margin-right: 5vw;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    gap: 4px; 
+    align-items: center;
+    margin-bottom: 5px;
+}
+
+.tag2 {
+    padding: 4px 16px;
+    border-radius: 28px;
+    font-size: 20px;
+    font-weight: 600;
+    color: #fff;
+}
+
+@media (max-width: 768px) {
+    .tag2  {
+        font-size: 0.6rem;
+        padding: 2px 8px;
+        font-weight: 600;
+        border-radius: 14px;
+        font-size: 10px;
+        color: #fff;
+    }
+}
+
+.finance2 {
+    background-color: #DF5F5F;
+}
+
+.feature2 {
+    background-color: #4EBFAC;
+}
+
+.feature2 img{
+    width: 24px;
+}
+
+@media (max-width: 768px) {
+    .feature2 img{
+        width: 12px;
+    }
+}
+
+.tech2 {
+    background-color: #3f51b5; 
+}
+
+
+@media (max-width: 768px) {
+    .Main-Longread, .metabubbles2, .Longread-Title p, .Longread-meta{
+        margin-left: 3vw;
+        margin-right: 3vw;
+    }
+}
+
+.Longread-Title h2{
+    font-size: 5rem;
+    margin-left: 5vw;
+    margin-right: 5vw;
+}
+
+.Longread-Title p{
+    font-size: 1.5rem;
+}
+
+@media (max-width: 768px) {
+    .Longread-Title h2{
+        font-size: 2.5rem;
+        margin-left: 3vw;
+        margin-right: 3vw;
+    }
+    .Longread-Title p{
+        font-size: 1.2rem;
+        margin-top: 15px;
+    }
+}
 
 
