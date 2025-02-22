@@ -108,9 +108,15 @@
         </div>
         </div>
 
-        <div class="Rating">
-            <label for="customRange3" class="form-label">Example range</label>
-            <input type="range" class="form-range" min="0" max="10" step="1" id="customRange3">
+        <div class="Rating"> 
+            <h3>Beoordeling van geloofwaardigheid</h3>
+            <p>De mate waarin een artikel geloofwaardig is: <br> gebaseerd op factoren zoals de deskundigheid van de auteur, de betrouwbaarheid van de bronnen en de nauwkeurigheid van de gepresenteerde informatie.</p>
+            <label for="slider">Op een schaal van (1–10): </label>
+            <input type="range" id="slider" name="slider" min="1" max="10" value="5" />
+            <span id="sliderDisplay">5</span>
+            <div class="container">
+                <button id="submitBtn">Submit</button>
+            </div>
         </div>
 
 
@@ -128,193 +134,245 @@
         </footer>
     
 
-    <script>
-
-                const { createClient } = supabase;
-                const supabaseUrl = 'https://rgoydwojepkjbqzdldft.supabase.co'
-                const supabaseKey = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InJnb3lkd29qZXBramJxemRsZGZ0Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3Mzk3MTMyMTYsImV4cCI6MjA1NTI4OTIxNn0.gjk1wM4DUaxAQV9H3zK3hzktav-Pjo40fEIDHR7DTWQ'
-                const supabaseClient = supabase.createClient(supabaseUrl, supabaseKey)
-
-                function getUserIdFromLocalStorage() {
-		const userId = localStorage.getItem("userId");
-        
-		return userId;
-	}
-
-	function isUserIdInLocalStorage() {
-		return getUserIdFromLocalStorage() ? true : false;
-	}
-
-	function generateUUID() {
-		return "xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx".replace(
-			/[xy]/g,
-			function (c) {
-				const r = (Math.random() * 16) | 0,
-					v = c === "x" ? r : (r & 0x3) | 0x8;
-				return v.toString(16);
-			}
-		);
-	}
-
-	function setUserIdInLocalStorage() {
-        console.log(generateUUID());
-        
-		localStorage.setItem("userId", generateUUID());
-	}
-
-console.log(getUserIdFromLocalStorage())
-console.log(isUserIdInLocalStorage());
-
-
-	if (!isUserIdInLocalStorage()) setUserIdInLocalStorage();
-
-                async function insertScriptieVertrouwen() {
-                const { data, error } = await supabaseClient
-                    .from("scriptie_vertrouwen")
-                    .insert([{ slider_values: 5, article_number: "A2", user_id: getUserIdFromLocalStorage() }]);
-
-                if (error) {
-                    console.error("Error inserting into scriptie_vertrouwen:", error);
-                } else {
-                    console.log("Successfully inserted into scriptie_vertrouwen:", data);
-                }
-                }
-
-                insertScriptieVertrouwen();
-
-            document.addEventListener("scroll", function () {
-                const article = document.querySelector(".Longread-ArticleB");
-                const scrollY = window.scrollY;
-                const maxScroll = document.documentElement.scrollHeight - window.innerHeight;
-                const fadeStart = maxScroll * 0.3; // Start fading at 20% scroll
-                const fadeEnd = maxScroll * 0.5;   // Fully black at 50% scroll
-
-                if (scrollY >= fadeStart && scrollY <= fadeEnd) {
-                    let progress = (scrollY - fadeStart) / (fadeEnd - fadeStart);
-                    let r = Math.round(69 * (1 - progress)); // 69 → 0
-                    let g = Math.round(18 * (1 - progress)); // 18 → 0
-                    let b = Math.round(18 * (1 - progress)); // 18 → 0
-                    article.style.backgroundColor = `rgb(${r}, ${g}, ${b})`;
-                } else if (scrollY > fadeEnd) {
-                    article.style.backgroundColor = "#000000"; // Fully black
-                } else {
-                    article.style.backgroundColor = "#451212"; // Initial color
-                }
-            });
-
-
-        document.addEventListener("DOMContentLoaded", function () {
-            const options = ["A1", "A2", "A3", "A4"];
-            const storageKey = "selectedAOption";
-
-            let selectedOptionIndex = localStorage.getItem(storageKey);
-
-            if (!selectedOptionIndex) {
+        <script type="module">
+            import { createClient } from "https://cdn.jsdelivr.net/npm/@supabase/supabase-js/+esm";
+          
+            // Initialize Supabase client
+            const supabaseUrl = 'https://rgoydwojepkjbqzdldft.supabase.co';
+            const supabaseKey = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InJnb3lkd29qZXBramJxemRsZGZ0Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3Mzk3MTMyMTYsImV4cCI6MjA1NTI4OTIxNn0.gjk1wM4DUaxAQV9H3zK3hzktav-Pjo40fEIDHR7DTWQ';
+            const supabaseClient = createClient(supabaseUrl, supabaseKey);
+          
+            // User ID management functions
+            function getUserIdFromLocalStorage() {
+              return localStorage.getItem("userId");
+            }
+          
+            function isUserIdInLocalStorage() {
+              return !!getUserIdFromLocalStorage();
+            }
+          
+            function generateUUID() {
+              return "xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx".replace(/[xy]/g, function (c) {
+                const r = (Math.random() * 16) | 0,
+                      v = c === "x" ? r : (r & 0x3) | 0x8;
+                return v.toString(16);
+              });
+            }
+          
+            function setUserIdInLocalStorage() {
+              const newId = generateUUID();
+              console.log("Generated UserID:", newId);
+              localStorage.setItem("userId", newId);
+            }
+          
+            if (!isUserIdInLocalStorage()) {
+              setUserIdInLocalStorage();
+            }
+          
+            // Function to insert data into the "scriptie_vertrouwen" table
+            async function insertScriptieVertrouwen(sliderValue, timeSpent) {
+              const { data, error } = await supabaseClient
+                .from("scriptie_vertrouwen")
+                .insert([
+                  {
+                    slider_values: sliderValue,
+                    article_number: "B",
+                    // article_number: "A1", // article_number: "A2", // article_number: "A3", // article_number: "A4",
+                    user_id: getUserIdFromLocalStorage(),
+                    time_spent: timeSpent
+                  }
+                ]);
+          
+              if (error) {
+                console.error("Error inserting into scriptie_vertrouwen:", error);
+              } else {
+                console.log("Successfully inserted into scriptie_vertrouwen:", data);
+              }
+            }
+          
+            // All DOM-dependent code wrapped in DOMContentLoaded
+            document.addEventListener("DOMContentLoaded", function () {
+              // Record page load time (in milliseconds)
+              const pageLoadTime = Date.now();
+          
+              // === Slider Functionality ===
+              const slider = document.getElementById("slider");
+              const sliderDisplay = document.getElementById("sliderDisplay");
+              const submitBtn = document.getElementById("submitBtn");
+              let sliderChanged = false; // Flag to track if the slider was changed
+          
+              if (slider && sliderDisplay) {
+                // Set initial display value
+                sliderDisplay.textContent = slider.value;
+          
+                slider.addEventListener("input", (event) => {
+                  sliderDisplay.textContent = event.target.value;
+                  sliderChanged = true;
+                });
+              } else {
+                console.error("Slider or sliderDisplay element not found.");
+              }
+          
+              // === Submit Button, Confirmation & Redirect ===
+              if (submitBtn && slider) {
+                submitBtn.addEventListener("click", async () => {
+                  // If slider has not been changed from its default value, ask for confirmation
+                  if (!sliderChanged) {
+                    const proceed = confirm("You have not changed the slider value from its default. Do you want to submit this number?");
+                    if (!proceed) {
+                      return; // Abort submission if user cancels
+                    }
+                  }
+                  const sliderValue = Number(slider.value);
+                  // Calculate time spent on page in seconds
+                  const timeSpent = Math.floor((Date.now() - pageLoadTime) / 1000);
+                  console.log("Submit clicked. Slider value:", sliderValue, "Time spent (s):", timeSpent);
+                  await insertScriptieVertrouwen(sliderValue, timeSpent);
+                  // Redirect to articleB.html after submission
+                  window.location.href = "articleB.html";
+                });
+              } else {
+                console.error("Submit button element not found.");
+              }
+          
+              // === Article Visibility & Toggle ===
+              const options = ["A1", "A2", "A3", "A4"];
+              const storageKey = "selectedAOption";
+              let selectedOptionIndex = localStorage.getItem(storageKey);
+          
+              if (selectedOptionIndex === null) {
                 selectedOptionIndex = Math.floor(Math.random() * options.length);
                 localStorage.setItem(storageKey, selectedOptionIndex);
-            }
-
-            const selectedOption = options[selectedOptionIndex];
-
-            document.getElementById(selectedOption).classList.remove("hidden");
-            document.getElementById(selectedOption).classList.add("visible");
-
-            // Add event listener to the "Show All/Hide All" link
-            const toggleLink = document.getElementById("toggle-visibility");
-            let isShowingAll = false; // Tracks whether all articles are visible
-
-            toggleLink.addEventListener("click", function (e) {
-                e.preventDefault(); // Prevent default anchor behavior
-
-                if (isShowingAll) {
-                    // Hide all articles except the selected one
-                    options.forEach(optionId => {
+              } else {
+                selectedOptionIndex = Number(selectedOptionIndex);
+              }
+          
+              const selectedOption = options[selectedOptionIndex];
+              const selectedElement = document.getElementById(selectedOption);
+              if (selectedElement) {
+                selectedElement.classList.remove("hidden");
+                selectedElement.classList.add("visible");
+              } else {
+                console.error(`Element with id "${selectedOption}" not found.`);
+              }
+          
+              const toggleLink = document.getElementById("toggle-visibility");
+              if (toggleLink) {
+                let isShowingAll = false; // Tracks whether all articles are visible
+          
+                toggleLink.addEventListener("click", function (e) {
+                  e.preventDefault();
+          
+                  options.forEach(optionId => {
+                    const element = document.getElementById(optionId);
+                    if (element) {
+                      if (isShowingAll) {
+                        // Hide all articles except the selected one
                         if (optionId !== selectedOption) {
-                            const element = document.getElementById(optionId);
-                            element.classList.remove("visible");
-                            element.classList.add("hidden");
+                          element.classList.remove("visible");
+                          element.classList.add("hidden");
                         }
-                    });
-                    toggleLink.innerHTML = "<h3>Show All</h3>";
-                } else {
-                    // Show all articles
-                    options.forEach(optionId => {
-                        const element = document.getElementById(optionId);
+                      } else {
+                        // Show all articles
                         element.classList.remove("hidden");
                         element.classList.add("visible");
-                    });
-                    toggleLink.innerHTML = "<h3>Hide</h3>";
-                }
-
-                isShowingAll = !isShowingAll; // Toggle state
-            });
-
-        //     // Add event listener to the submit button
-        //     document.getElementById('submitButton').addEventListener('click', async function() {
-        //         const sliderValue = document.getElementById('rangeSlider').value;
-
-        //         // Use the selected article from localStorage
-        //         const selectedArticle = options[localStorage.getItem(storageKey)];
-
-        //         const { data, error } = await supabase
-        //             .from('user_interactions')
-        //             .insert([{ slider_values: sliderValue, article_number: selectedArticle }]);
-
-        //         if (error) {
-        //             console.error('Error inserting value:', error);
-        //         } else {
-        //             console.log('Value inserted successfully:', data);
-        //         }
-        //     });
-        });
-
-        const scrollWatcher = document.querySelector('.scrollwatcher');
-
-        window.addEventListener('scroll', () => {
-            const scrollTop = window.scrollY;
-            const docHeight = document.documentElement.scrollHeight - window.innerHeight;
-            const progress = Math.min(scrollTop / docHeight, 1);
-            scrollWatcher.style.transform = `scaleX(${progress})`;
-        });
-
-        function myFunction() {
-            var x = document.getElementById("myLinks");
-            if (x.style.display === "block") {
-                x.style.display = "none";
-            } else {
-                x.style.display = "block";
-            }
-        }
-
-        document.querySelectorAll('.scroll div').forEach(div => {
-            const contentWidth = Array.from(div.children).reduce((total, child) => total + child.offsetWidth + 20, 0);
-            div.style.width = `${contentWidth}px`;
-        });
-
-        document.addEventListener("DOMContentLoaded", function () {
-            const backToTopButton = document.getElementById("back-to-top");
-
-            const toggleVisibility = () => {
-                const isScrollable = document.body.scrollHeight > window.innerHeight;
-                const isScrolled = window.scrollY > 0;
-
-                if (isScrollable && isScrolled) {
+                      }
+                    } else {
+                      console.error(`Element with id "${optionId}" not found.`);
+                    }
+                  });
+          
+                  toggleLink.innerHTML = isShowingAll ? "<h3>Show All</h3>" : "<h3>Hide</h3>";
+                  isShowingAll = !isShowingAll;
+                });
+              } else {
+                console.error('Toggle link with id "toggle-visibility" not found.');
+              }
+          
+              // === Scroll-Dependent Article Background Color ===
+              const article = document.querySelector(".Longread-ArticleB");
+              if (article) {
+                document.addEventListener("scroll", function () {
+                  const scrollY = window.scrollY;
+                  const maxScroll = document.documentElement.scrollHeight - window.innerHeight;
+                  const fadeStart = maxScroll * 0.3; // Start fading at 30% scroll
+                  const fadeEnd = maxScroll * 0.5;   // Fully black at 50% scroll
+          
+                  if (scrollY >= fadeStart && scrollY <= fadeEnd) {
+                    let progress = (scrollY - fadeStart) / (fadeEnd - fadeStart);
+                    let r = Math.round(69 * (1 - progress));
+                    let g = Math.round(18 * (1 - progress));
+                    let b = Math.round(18 * (1 - progress));
+                    article.style.backgroundColor = `rgb(${r}, ${g}, ${b})`;
+                  } else if (scrollY > fadeEnd) {
+                    article.style.backgroundColor = "#000000"; // Fully black
+                  } else {
+                    article.style.backgroundColor = "#451212"; // Initial color
+                  }
+                });
+              } else {
+                console.error("Element with class 'Longread-ArticleB' not found.");
+              }
+          
+              // === Scroll Watcher Progress Bar ===
+              const scrollWatcher = document.querySelector('.scrollwatcher');
+              if (scrollWatcher) {
+                window.addEventListener('scroll', () => {
+                  const scrollTop = window.scrollY;
+                  const docHeight = document.documentElement.scrollHeight - window.innerHeight;
+                  const progress = Math.min(scrollTop / docHeight, 1);
+                  scrollWatcher.style.transform = `scaleX(${progress})`;
+                });
+              } else {
+                console.error("Element with class 'scrollwatcher' not found.");
+              }
+          
+              // === Back-to-Top Button ===
+              const backToTopButton = document.getElementById("back-to-top");
+              if (backToTopButton) {
+                const toggleVisibility = () => {
+                  const isScrollable = document.body.scrollHeight > window.innerHeight;
+                  const isScrolled = window.scrollY > 0;
+                  if (isScrollable && isScrolled) {
                     backToTopButton.classList.add("visible");
-                } else {
+                  } else {
                     backToTopButton.classList.remove("visible");
-                }
-            };
-
-            backToTopButton.addEventListener("click", () => {
-                window.scrollTo({ top: 0, behavior: "smooth" });
+                  }
+                };
+          
+                backToTopButton.addEventListener("click", () => {
+                  window.scrollTo({ top: 0, behavior: "smooth" });
+                });
+          
+                window.addEventListener("scroll", toggleVisibility);
+                window.addEventListener("resize", toggleVisibility);
+                toggleVisibility();
+              } else {
+                console.error("Back-to-top element not found.");
+              }
+          
+              // === Mobile Menu Toggle ===
+              const menuToggle = document.getElementById("menu-toggle");
+              if (menuToggle) {
+                menuToggle.addEventListener("click", function(){
+                  const links = document.getElementById("myLinks");
+                  if (links) {
+                    links.style.display = links.style.display === "block" ? "none" : "block";
+                  } else {
+                    console.error("Element with id 'myLinks' not found.");
+                  }
+                });
+              }
+          
+              // === Adjust Widths for .scroll divs ===
+              document.querySelectorAll('.scroll div').forEach(div => {
+                const contentWidth = Array.from(div.children).reduce((total, child) => total + child.offsetWidth + 20, 0);
+                div.style.width = `${contentWidth}px`;
+              });
             });
 
-            window.addEventListener("scroll", toggleVisibility);
-            window.addEventListener("resize", toggleVisibility);
 
-            // Initial check
-            toggleVisibility();
-        });
+          
     </script>
 
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
