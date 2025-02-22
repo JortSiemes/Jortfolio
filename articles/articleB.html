@@ -102,7 +102,17 @@
 
         </div>
         </div>
+
+        <div class="Rating">
+            <label for="customRange3" class="form-label">Example range</label>
+            <input type="range" class="form-range" min="0" max="10" step="1" id="customRange3">
+        </div>
+
+
+    <br><br><br><br>
+
     </main>
+
 
         <footer class="footer">
             <div id="back-to-top" class="footerdiv">
@@ -114,8 +124,60 @@
     
 
     <script>
+
+                const { createClient } = supabase;
+                const supabaseUrl = 'https://rgoydwojepkjbqzdldft.supabase.co'
+                const supabaseKey = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InJnb3lkd29qZXBramJxemRsZGZ0Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3Mzk3MTMyMTYsImV4cCI6MjA1NTI4OTIxNn0.gjk1wM4DUaxAQV9H3zK3hzktav-Pjo40fEIDHR7DTWQ'
+                const supabaseClient = supabase.createClient(supabaseUrl, supabaseKey)
+
+                function getUserIdFromLocalStorage() {
+		const userId = localStorage.getItem("userId");
         
-                    document.addEventListener("scroll", function () {
+		return userId;
+	}
+
+	function isUserIdInLocalStorage() {
+		return getUserIdFromLocalStorage() ? true : false;
+	}
+
+	function generateUUID() {
+		return "xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx".replace(
+			/[xy]/g,
+			function (c) {
+				const r = (Math.random() * 16) | 0,
+					v = c === "x" ? r : (r & 0x3) | 0x8;
+				return v.toString(16);
+			}
+		);
+	}
+
+	function setUserIdInLocalStorage() {
+        console.log(generateUUID());
+        
+		localStorage.setItem("userId", generateUUID());
+	}
+
+console.log(getUserIdFromLocalStorage())
+console.log(isUserIdInLocalStorage());
+
+
+	if (!isUserIdInLocalStorage()) setUserIdInLocalStorage();
+
+                async function insertScriptieVertrouwen() {
+                const { data, error } = await supabaseClient
+                    .from("scriptie_vertrouwen")
+                    .insert([{ slider_values: 5, article_number: "A2", user_id: getUserIdFromLocalStorage() }]);
+
+                if (error) {
+                    console.error("Error inserting into scriptie_vertrouwen:", error);
+                } else {
+                    console.log("Successfully inserted into scriptie_vertrouwen:", data);
+                }
+                }
+
+                insertScriptieVertrouwen();
+
+            document.addEventListener("scroll", function () {
                 const article = document.querySelector(".Longread-ArticleB");
                 const scrollY = window.scrollY;
                 const maxScroll = document.documentElement.scrollHeight - window.innerHeight;
@@ -182,23 +244,23 @@
                 isShowingAll = !isShowingAll; // Toggle state
             });
 
-            // Add event listener to the submit button
-            document.getElementById('submitButton').addEventListener('click', async function() {
-                const sliderValue = document.getElementById('rangeSlider').value;
+        //     // Add event listener to the submit button
+        //     document.getElementById('submitButton').addEventListener('click', async function() {
+        //         const sliderValue = document.getElementById('rangeSlider').value;
 
-                // Use the selected article from localStorage
-                const selectedArticle = options[localStorage.getItem(storageKey)];
+        //         // Use the selected article from localStorage
+        //         const selectedArticle = options[localStorage.getItem(storageKey)];
 
-                const { data, error } = await supabase
-                    .from('user_interactions')
-                    .insert([{ slider_values: sliderValue, article_number: selectedArticle }]);
+        //         const { data, error } = await supabase
+        //             .from('user_interactions')
+        //             .insert([{ slider_values: sliderValue, article_number: selectedArticle }]);
 
-                if (error) {
-                    console.error('Error inserting value:', error);
-                } else {
-                    console.log('Value inserted successfully:', data);
-                }
-            });
+        //         if (error) {
+        //             console.error('Error inserting value:', error);
+        //         } else {
+        //             console.log('Value inserted successfully:', data);
+        //         }
+        //     });
         });
 
         const scrollWatcher = document.querySelector('.scrollwatcher');
