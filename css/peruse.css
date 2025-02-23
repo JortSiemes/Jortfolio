@@ -849,12 +849,14 @@ a:active {
 .Longread-Content{
     margin: 20px;
     margin-top: 55vh;
+    margin-bottom: 50vh
 }
 
 @media (max-width: 768px) {
     .Longread-Content{
         margin: 20px;
         margin-top: 25vh;
+        margin-bottom: 55vh
     }
 }
 
@@ -995,14 +997,26 @@ a:active {
     }
 }
 
-.Rating{
+.Rating {
+    position: absolute;
+    width: 100%;
+    bottom: 0;
     margin-top: 7vh;
+    padding-top: 50px;
     padding-left: 25px;
     padding-right: 25px;
+    background-color: white;
+    padding-bottom: 10vh;
+  }
+
+.Rating h3{
+    color: black;
+    font-weight: 600;
+    font-family: 'Euclid CircularA';
 }
 
 .Rating p{
-    color: #C0C0C0;
+    color: #5a5a5a;
     font-family: 'Euclid CircularA';
 }
 
@@ -1134,19 +1148,19 @@ button {
 .range-slider_thumb {
 	width: 14vmin;
 	height: 14vmin;
-	border: 1.2vmin solid lightgray;
+	border: 1.2vmin solid #303030;
 	border-radius: 50%;
 	position: absolute;
 	left: 0;
 	top: 50%;
 	transform: translateY(-50%);
-	background-color: black;
+	background-color: white;
 	display: flex;
 	justify-content: center;
 	align-items: center;
 	font-weight: 700;
 	font-size: 4vmin;
-	color: white;
+	color: #303030;
 	z-index: 2;
 }
 
@@ -1165,5 +1179,5 @@ button {
 	position: absolute;
 	height: 1vmin;
 	width: 0;
-	background-color: #4EBFAC;
+    	background-color: #4EBFAC;
 }
