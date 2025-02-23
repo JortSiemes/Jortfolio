@@ -108,22 +108,32 @@
         </div>
         </div>
 
-        <div class="Rating"> 
-            <h3>Beoordeling van geloofwaardigheid</h3>
-            <p>De mate waarin een artikel geloofwaardig is: <br> gebaseerd op factoren zoals de deskundigheid van de auteur, de betrouwbaarheid van de bronnen en de nauwkeurigheid van de gepresenteerde informatie.</p>
-            <label for="slider">Op een schaal van (1–10): </label>
-            <input type="range" id="slider" name="slider" min="1" max="10" value="5" />
-            <span id="sliderDisplay">5</span>
-            <div class="container">
-                <button id="submitBtn">Submit</button>
-            </div>
-        </div>
+        
 
+        <div class="Rating"> 
+          <h3>Beoordeling van geloofwaardigheid</h3>
+          <p>
+            De mate waarin een artikel geloofwaardig is: <br>
+            gebaseerd op factoren zoals de deskundigheid van de auteur, de betrouwbaarheid van de bronnen en de nauwkeurigheid van de gepresenteerde informatie.
+          </p>
+          <label for="slider_input">Op een schaal van (1–100): </label> <br>
+          <div class="Range_container">
+            <div class="range-slider">
+              <div id="slider_thumb" class="range-slider_thumb"></div>
+              <div class="range-slider_line">
+                <div id="slider_line" class="range-slider_line-fill"></div>
+              </div>
+              <input id="slider_input" class="range-slider_input" type="range" value="50" min="0" max="100">
+            </div>
+          </div>
+          <div class="container">
+            <button id="submitBtn" class="btn inactive">Submit</button>
+          </div>
+        </div>
 
     <br><br><br><br>
 
     </main>
-
 
         <footer class="footer">
             <div id="back-to-top" class="footerdiv">
@@ -135,105 +145,125 @@
     
 
         <script type="module">
-            import { createClient } from "https://cdn.jsdelivr.net/npm/@supabase/supabase-js/+esm";
+           import { createClient } from "https://cdn.jsdelivr.net/npm/@supabase/supabase-js/+esm";
+
+// Initialize Supabase client
+const supabaseUrl = 'https://rgoydwojepkjbqzdldft.supabase.co';
+const supabaseKey = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InJnb3lkd29qZXBramJxemRsZGZ0Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3Mzk3MTMyMTYsImV4cCI6MjA1NTI4OTIxNn0.gjk1wM4DUaxAQV9H3zK3hzktav-Pjo40fEIDHR7DTWQ';
+const supabaseClient = createClient(supabaseUrl, supabaseKey);
+
+// User ID management functions
+function getUserIdFromLocalStorage() {
+  return localStorage.getItem("userId");
+}
+function isUserIdInLocalStorage() {
+  return !!getUserIdFromLocalStorage();
+}
+function generateUUID() {
+  return "xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx".replace(/[xy]/g, function (c) {
+    const r = (Math.random() * 16) | 0,
+          v = c === "x" ? r : (r & 0x3) | 0x8;
+    return v.toString(16);
+  });
+}
+function setUserIdInLocalStorage() {
+  const newId = generateUUID();
+  console.log("Generated UserID:", newId);
+  localStorage.setItem("userId", newId);
+}
+if (!isUserIdInLocalStorage()) {
+  setUserIdInLocalStorage();
+}
+
+// Function to insert data into the "scriptie_vertrouwen" table
+async function insertScriptieVertrouwen(sliderValue, timeSpent) {
+  const { data, error } = await supabaseClient
+    .from("scriptie_vertrouwen")
+    .insert([
+      {
+        slider_values: sliderValue,
+        article_number: "B",
+        user_id: getUserIdFromLocalStorage(),
+        time_spent: timeSpent
+      }
+    ]);
+
+  if (error) {
+    console.error("Error inserting into scriptie_vertrouwen:", error);
+  } else {
+    console.log("Successfully inserted into scriptie_vertrouwen:", data);
+  }
+}
+
+// Wait for the DOM to fully load
+document.addEventListener("DOMContentLoaded", function () {
+  // Record page load time (in milliseconds)
+  const pageLoadTime = Date.now();
+
+  // === New Slider Functionality ===
+  const slider_input = document.getElementById("slider_input");
+  const slider_thumb = document.getElementById("slider_thumb");
+  const slider_line = document.getElementById("slider_line");
+  const submitBtn = document.getElementById("submitBtn");
+  let sliderChanged = false; // Initially, the slider has not been changed
+
+  function showSliderValue() {
+    slider_thumb.innerHTML = slider_input.value;
+    const bulletPosition = slider_input.value / slider_input.max;
+    const space = slider_input.offsetWidth - slider_thumb.offsetWidth;
+    slider_thumb.style.left = (bulletPosition * space) + 'px';
+    slider_line.style.width = slider_input.value + '%';
+  }
+  // Call once to set up initial position (without marking as changed)
+  showSliderValue();
+  window.addEventListener("resize", showSliderValue);
+  slider_input.addEventListener('input', () => {
+    showSliderValue();
+    // Mark that the slider was changed by the user.
+    if (!sliderChanged) {
+      sliderChanged = true;
+      // Update button appearance from inactive (grey) to active (green)
+      submitBtn.classList.remove("inactive");
+      submitBtn.classList.add("active");
+    }
+  }, false);
+
+  // === Submit Button, Confirmation, Animation & Redirect ===
+  if (submitBtn && slider_input) {
+    submitBtn.addEventListener("click", async () => {
+      // If slider hasn't been changed from its default value, ask for confirmation
+      if (!sliderChanged) {
+        const proceed = confirm("You have not changed the slider value from its default. Do you want to submit this number?");
+        if (!proceed) {
+          return; // Abort submission if user cancels
+        }
+      }
+      const sliderValue = Number(slider_input.value);
+      // Calculate time spent on page in seconds
+      const timeSpent = Math.floor((Date.now() - pageLoadTime) / 1000);
+      console.log("Submit clicked. Slider value:", sliderValue, "Time spent (s):", timeSpent);
+
+      // Insert data into Supabase
+      await insertScriptieVertrouwen(sliderValue, timeSpent);
+
+      // Disable the button to prevent duplicate clicks and trigger animation using jQuery
+      submitBtn.disabled = true;
+      $(submitBtn).addClass('btn-progress');
+      setTimeout(() => {
+        $(submitBtn).addClass('btn-fill');
+      }, 500);
+      setTimeout(() => {
+        $(submitBtn).removeClass('btn-fill').addClass('btn-complete');
+      }, 4100);
+      // Redirect after the animation finishes
+      setTimeout(() => {
+        window.location.href = "articleB.html";
+      }, 4100);
+    });
+  } else {
+    console.error("Submit button or slider element not found.");
+  }
           
-            // Initialize Supabase client
-            const supabaseUrl = 'https://rgoydwojepkjbqzdldft.supabase.co';
-            const supabaseKey = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InJnb3lkd29qZXBramJxemRsZGZ0Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3Mzk3MTMyMTYsImV4cCI6MjA1NTI4OTIxNn0.gjk1wM4DUaxAQV9H3zK3hzktav-Pjo40fEIDHR7DTWQ';
-            const supabaseClient = createClient(supabaseUrl, supabaseKey);
-          
-            // User ID management functions
-            function getUserIdFromLocalStorage() {
-              return localStorage.getItem("userId");
-            }
-          
-            function isUserIdInLocalStorage() {
-              return !!getUserIdFromLocalStorage();
-            }
-          
-            function generateUUID() {
-              return "xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx".replace(/[xy]/g, function (c) {
-                const r = (Math.random() * 16) | 0,
-                      v = c === "x" ? r : (r & 0x3) | 0x8;
-                return v.toString(16);
-              });
-            }
-          
-            function setUserIdInLocalStorage() {
-              const newId = generateUUID();
-              console.log("Generated UserID:", newId);
-              localStorage.setItem("userId", newId);
-            }
-          
-            if (!isUserIdInLocalStorage()) {
-              setUserIdInLocalStorage();
-            }
-          
-            // Function to insert data into the "scriptie_vertrouwen" table
-            async function insertScriptieVertrouwen(sliderValue, timeSpent) {
-              const { data, error } = await supabaseClient
-                .from("scriptie_vertrouwen")
-                .insert([
-                  {
-                    slider_values: sliderValue,
-                    article_number: "B",
-                    // article_number: "A1", // article_number: "A2", // article_number: "A3", // article_number: "A4",
-                    user_id: getUserIdFromLocalStorage(),
-                    time_spent: timeSpent
-                  }
-                ]);
-          
-              if (error) {
-                console.error("Error inserting into scriptie_vertrouwen:", error);
-              } else {
-                console.log("Successfully inserted into scriptie_vertrouwen:", data);
-              }
-            }
-          
-            // All DOM-dependent code wrapped in DOMContentLoaded
-            document.addEventListener("DOMContentLoaded", function () {
-              // Record page load time (in milliseconds)
-              const pageLoadTime = Date.now();
-          
-              // === Slider Functionality ===
-              const slider = document.getElementById("slider");
-              const sliderDisplay = document.getElementById("sliderDisplay");
-              const submitBtn = document.getElementById("submitBtn");
-              let sliderChanged = false; // Flag to track if the slider was changed
-          
-              if (slider && sliderDisplay) {
-                // Set initial display value
-                sliderDisplay.textContent = slider.value;
-          
-                slider.addEventListener("input", (event) => {
-                  sliderDisplay.textContent = event.target.value;
-                  sliderChanged = true;
-                });
-              } else {
-                console.error("Slider or sliderDisplay element not found.");
-              }
-          
-              // === Submit Button, Confirmation & Redirect ===
-              if (submitBtn && slider) {
-                submitBtn.addEventListener("click", async () => {
-                  // If slider has not been changed from its default value, ask for confirmation
-                  if (!sliderChanged) {
-                    const proceed = confirm("You have not changed the slider value from its default. Do you want to submit this number?");
-                    if (!proceed) {
-                      return; // Abort submission if user cancels
-                    }
-                  }
-                  const sliderValue = Number(slider.value);
-                  // Calculate time spent on page in seconds
-                  const timeSpent = Math.floor((Date.now() - pageLoadTime) / 1000);
-                  console.log("Submit clicked. Slider value:", sliderValue, "Time spent (s):", timeSpent);
-                  await insertScriptieVertrouwen(sliderValue, timeSpent);
-                  // Redirect to articleB.html after submission
-                  window.location.href = "articleB.html";
-                });
-              } else {
-                console.error("Submit button element not found.");
-              }
           
               // === Article Visibility & Toggle ===
               const options = ["A1", "A2", "A3", "A4"];
@@ -370,6 +400,23 @@
                 div.style.width = `${contentWidth}px`;
               });
             });
+
+            const slider_input = document.getElementById('slider_input'),
+      slider_thumb = document.getElementById('slider_thumb'),
+      slider_line = document.getElementById('slider_line');
+
+function showSliderValue() {
+  slider_thumb.innerHTML = slider_input.value;
+  const bulletPosition = (slider_input.value /slider_input.max),
+        space = slider_input.offsetWidth - slider_thumb.offsetWidth;
+
+  slider_thumb.style.left = (bulletPosition * space) + 'px';
+  slider_line.style.width = slider_input.value + '%';
+}
+
+showSliderValue();
+window.addEventListener("resize",showSliderValue);
+slider_input.addEventListener('input', showSliderValue, false);
 
 
           
