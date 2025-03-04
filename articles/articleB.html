@@ -179,6 +179,9 @@ if (!isUserIdInLocalStorage()) {
 
 // Function to insert data into the "scriptie_vertrouwen" table
 async function insertScriptieVertrouwen(sliderValue, timeSpent) {
+  // Get the current date and time in ISO format
+  const submitDate = new Date().toISOString();
+  
   const { data, error } = await supabaseClient
     .from("scriptie_vertrouwen")
     .insert([
@@ -186,10 +189,11 @@ async function insertScriptieVertrouwen(sliderValue, timeSpent) {
         slider_values: sliderValue,
         article_number: "B",
         user_id: getUserIdFromLocalStorage(),
-        time_spent: timeSpent
+        time_spent: timeSpent,
+        submit_date: submitDate  // New field for the submit date
       }
     ]);
-
+    
   if (error) {
     console.error("Error inserting into scriptie_vertrouwen:", error);
   } else {
@@ -231,40 +235,39 @@ document.addEventListener("DOMContentLoaded", function () {
   }, false);
 
   // === Submit Button, Confirmation, Animation & Redirect ===
-  if (submitBtn && slider_input) {
-    submitBtn.addEventListener("click", async () => {
-      // If slider hasn't been changed from its default value, ask for confirmation
-      if (!sliderChanged) {
-        const proceed = confirm("You have not changed the slider value from its default. Do you want to submit this number?");
-        if (!proceed) {
-          return; // Abort submission if user cancels
-        }
-      }
-      const sliderValue = Number(slider_input.value);
-      // Calculate time spent on page in seconds
-      const timeSpent = Math.floor((Date.now() - pageLoadTime) / 1000);
-      console.log("Submit clicked. Slider value:", sliderValue, "Time spent (s):", timeSpent);
-
-      // Insert data into Supabase
-      await insertScriptieVertrouwen(sliderValue, timeSpent);
-
-      // Disable the button to prevent duplicate clicks and trigger animation using jQuery
-      submitBtn.disabled = true;
-      $(submitBtn).addClass('btn-progress');
-      setTimeout(() => {
-        $(submitBtn).addClass('btn-fill');
-      }, 500);
-      setTimeout(() => {
-        $(submitBtn).removeClass('btn-fill').addClass('btn-complete');
-      }, 4100);
-      // Redirect after the animation finishes
-      setTimeout(() => {
-        window.location.href = "articleB.html";
-      }, 4100);
-    });
-  } else {
-    console.error("Submit button or slider element not found.");
+  submitBtn.addEventListener("click", async () => {
+  // If slider hasn't been changed from its default value, ask for confirmation
+  if (!sliderChanged) {
+    const proceed = confirm("You have not changed the slider value from its default. Do you want to submit this number?");
+    if (!proceed) {
+      return; // Abort submission if user cancels
+    }
   }
+  const sliderValue = Number(slider_input.value);
+  // Calculate time spent on page in seconds
+  const timeSpent = Math.floor((Date.now() - pageLoadTime) / 1000);
+  console.log("Submit clicked. Slider value:", sliderValue, "Time spent (s):", timeSpent);
+
+  // Insert data into Supabase
+  await insertScriptieVertrouwen(sliderValue, timeSpent);
+
+  // Mark this article as read in localStorage (use a unique key, e.g., "articleB_read")
+  localStorage.setItem("articleB_read", "true");
+
+  // Disable the button to prevent duplicate clicks and trigger animation using jQuery
+  submitBtn.disabled = true;
+  $(submitBtn).addClass('btn-progress');
+  setTimeout(() => {
+    $(submitBtn).addClass('btn-fill');
+  }, 500);
+  setTimeout(() => {
+    $(submitBtn).removeClass('btn-fill').addClass('btn-complete');
+  }, 4100);
+  // Redirect after the animation finishes
+  setTimeout(() => {
+    window.location.href = "articleB.html";
+  }, 4100);
+});
           
           
               // === Article Visibility & Toggle ===
@@ -419,8 +422,6 @@ function showSliderValue() {
 showSliderValue();
 window.addEventListener("resize",showSliderValue);
 slider_input.addEventListener('input', showSliderValue, false);
-
-
           
     </script>
 
