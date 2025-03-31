@@ -701,11 +701,15 @@ a:active {
 }
 
 .hidden {
-    display: none;
+    display: none !important; /* The !important might be needed if other styles are overriding */
+    opacity: 0;
+    visibility: hidden;
 }
 
 .visible {
-    display: block;
+    display: block !important; /* The !important might be needed if other styles are overriding */
+    opacity: 1;
+    visibility: visible;
 }
 
 
