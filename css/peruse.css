@@ -354,8 +354,8 @@ body {
 .article {
     overflow: hidden;
     background-image:
-        linear-gradient(to bottom, rgba(255, 255, 255, 0) 30%, rgba(69, 18, 18, 0.75) 70%),
-        url('../Images/Peruse/nature-silhouette-sky-sunrise-sunset-sunlight-1129460-pxhere.com_.png');
+        linear-gradient(to bottom, rgba(0, 0, 0, 0.507) 20%, rgba(69, 18, 18, 0.75) 70%),
+        url('../Images/Peruse/Rheinische.png');
     background-size: cover;
     background-position: center;
     padding: 20px;
@@ -367,6 +367,39 @@ body {
     transition: transform 1s ease; 
     position: relative;
 }
+
+.Barticle{
+    background-image:
+        linear-gradient(to bottom, rgba(255, 255, 255, 0) 30%, rgba(87, 49, 7, 0.904) 70%),
+        url('../Images/Peruse/CafeExtraJoss.webp');
+}
+
+.A1article{
+    background-image:
+        linear-gradient(to bottom, rgba(255, 255, 255, 0) 30%, rgba(158, 62, 62, 0.904) 70%),
+        url('../Images/Peruse/AirCompany.webp');
+}
+
+.A2article{
+    background-image:
+        linear-gradient(to bottom, rgba(0, 0, 0, 0.507) 20%, rgba(69, 18, 18, 0.75) 70%),
+        url('../Images/Peruse/Rheinische.png');
+}
+
+.A3article{
+    background-image:
+        linear-gradient(to bottom, rgba(255, 255, 255, 0) 30%, rgba(107, 69, 55, 0.904) 70%),
+        url('../Images/Peruse/GeothermalBG.jpg');
+}
+
+.A4article{
+    background-image:
+        linear-gradient(to bottom, rgba(255, 255, 255, 0) 30%, rgba(26, 78, 48, 0.904) 70%),
+        url('../Images/Peruse/doncic.webp');
+}
+
+
+
 
 .article:hover {
     transform: scale(1.1); /* Slight zoom effect on hover */
@@ -707,7 +740,7 @@ a:active {
 }
 
 .visible {
-    display: block !important; /* The !important might be needed if other styles are overriding */
+    display: flex !important; /* The !important might be needed if other styles are overriding */
     opacity: 1;
     visibility: visible;
 }
