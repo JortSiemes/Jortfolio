@@ -856,6 +856,11 @@ a:active {
 
 .Image1{
     background-image: url('../Images/Peruse/ExtraJoss.avif');
+    margin-bottom: -20px;
+}
+
+.Imagebijschrift p{
+    font-size: 0.8rem;
 }
 
 @keyframes fade-to-dark {
