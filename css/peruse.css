@@ -382,6 +382,7 @@ body {
     position: relative; /* Ensure overlay is on top of content */
   }
   
+
 .Aarticle{
     background-image:
         linear-gradient(to bottom, rgba(255, 255, 255, 0) 30%, rgba(129, 50, 50, 0.904) 70%),
@@ -772,7 +773,7 @@ a:active {
 
 .Longread-ArticleB{
     z-index: -1;
-    background-color: #573107;
+    background-color: #573107e7;
 }
 
 
