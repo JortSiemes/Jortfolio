@@ -176,18 +176,22 @@ if (!isUserIdInLocalStorage()) {
   setUserIdInLocalStorage();
 }
 
+// Function to insert data into the "scriptie_vertrouwen" table
 async function insertScriptieVertrouwen(sliderValue, timeSpent) {
+  // Get the current date and time in ISO format
   const submitDate = new Date().toISOString();
   
   const { data, error } = await supabaseClient
     .from("scriptie_vertrouwen")
-    .insert([{
-      slider_values: sliderValue,
-      article_number: "B",  // Force article number to always be "B"
-      user_id: getUserIdFromLocalStorage(),
-      time_spent: timeSpent,
-      submit_date: submitDate
-    }]);
+    .insert([
+      {
+        slider_values: sliderValue,
+        article_number: "B",
+        user_id: getUserIdFromLocalStorage(),
+        time_spent: timeSpent,
+        submit_date: submitDate  // New field for the submit date
+      }
+    ]);
     
   if (error) {
     console.error("Error inserting into scriptie_vertrouwen:", error);

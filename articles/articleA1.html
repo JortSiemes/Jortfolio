@@ -216,7 +216,7 @@ async function insertScriptieVertrouwen(sliderValue, timeSpent) {
     .from("scriptie_vertrouwen")
     .insert([{
       slider_values: sliderValue,
-      article_number: "B",  // Force article number to always be "B"
+      article_number: "A1",  // Force article number to always be "B"
       user_id: getUserIdFromLocalStorage(),
       time_spent: timeSpent,
       submit_date: submitDate
