@@ -105,35 +105,37 @@
                           Het advies vanuit het merk Extra Joss is maximaal twee zakjes per dag. Blijft het daar in de praktijk bij? Nee, ‘er zijn soms wel gekken die tien zakjes op een avond drinken’, klinkt het onder studenten. Jaartsveld: ‘Ik denk dat de Nederlandse importeur hier héél goed aan verdient.’ <br><br> </p>
             
             </div>
+
+            <br><br><br><br>
+
+          
         </div>
         </div>
 
       </main>
 
-      <br><br><br><br>
-
-        <div class="Rating"> 
-          <h3>Beoordeling van geloofwaardigheid</h3>
-          <p>
-            De mate waarin een artikel geloofwaardig is: <br>
-            gebaseerd op factoren zoals de deskundigheid van de auteur, de betrouwbaarheid van de bronnen en de nauwkeurigheid van de gepresenteerde informatie.
-          </p>
-          <label for="slider_input"><p>Op een schaal van (1–100):</p> </label> <br>
-          <div class="Range_container">
-            <div class="range-slider">
-              <div id="slider_thumb" class="range-slider_thumb"></div>
-              <div class="range-slider_line">
-                <div id="slider_line" class="range-slider_line-fill"></div>
-              </div>
-              <input id="slider_input" class="range-slider_input" type="range" value="50" min="0" max="100">
+      <div class="Rating"> 
+        <h3>Beoordeling van geloofwaardigheid</h3>
+        <p>
+          De mate waarin een artikel geloofwaardig is: <br>
+          gebaseerd op factoren zoals de deskundigheid van de auteur, de betrouwbaarheid van de bronnen en de nauwkeurigheid van de gepresenteerde informatie.
+        </p>
+        <label for="slider_input"><p>Op een schaal van (1–100):</p> </label> <br>
+        <div class="Range_container">
+          <div class="range-slider">
+            <div id="slider_thumb" class="range-slider_thumb"></div>
+            <div class="range-slider_line">
+              <div id="slider_line" class="range-slider_line-fill"></div>
             </div>
-          </div>
-          <div class="container">
-            <button id="submitBtn" class="btn inactive">Verstuur</button>
+            <input id="slider_input" class="range-slider_input" type="range" value="50" min="0" max="100">
           </div>
         </div>
+        <div class="container">
+          <button id="submitBtn" class="btn inactive">Verstuur</button>
+        </div>
+      </div>
 
-    <br><br><br><br>
+      <br><br>
 
    
 
@@ -141,7 +143,6 @@
             <div id="back-to-top" class="footerdiv">
                 <div class="scrollwatcher"></div>
                 <br>
-                <h4><a href="#top">BACK TO TOP</a></h4>
             </div>
         </footer>
     
@@ -350,41 +351,58 @@ document.addEventListener("DOMContentLoaded", function () {
               }
           
               // === Scroll Watcher Progress Bar ===
-              const scrollWatcher = document.querySelector('.scrollwatcher');
-              if (scrollWatcher) {
-                window.addEventListener('scroll', () => {
-                  const scrollTop = window.scrollY;
-                  const docHeight = document.documentElement.scrollHeight - window.innerHeight;
-                  const progress = Math.min(scrollTop / docHeight, 1);
-                  scrollWatcher.style.transform = `scaleX(${progress})`;
-                });
-              } else {
-                console.error("Element with class 'scrollwatcher' not found.");
-              }
-          
-              // === Back-to-Top Button ===
-              const backToTopButton = document.getElementById("back-to-top");
-              if (backToTopButton) {
-                const toggleVisibility = () => {
-                  const isScrollable = document.body.scrollHeight > window.innerHeight;
-                  const isScrolled = window.scrollY > 0;
-                  if (isScrollable && isScrolled) {
-                    backToTopButton.classList.add("visible");
-                  } else {
-                    backToTopButton.classList.remove("visible");
-                  }
-                };
-          
-                backToTopButton.addEventListener("click", () => {
-                  window.scrollTo({ top: 0, behavior: "smooth" });
-                });
-          
-                window.addEventListener("scroll", toggleVisibility);
-                window.addEventListener("resize", toggleVisibility);
-                toggleVisibility();
-              } else {
-                console.error("Back-to-top element not found.");
-              }
+              const toggleVisibilityClass = (element, visibleClass) => {
+  const isScrollable = document.body.scrollHeight > window.innerHeight;
+  const isScrolled = window.scrollY > 0;
+  if (isScrollable && isScrolled) {
+    element.classList.add(visibleClass);
+  } else {
+    element.classList.remove(visibleClass);
+  }
+};
+
+// === Scroll Progress Bar ===
+const scrollWatcher = document.querySelector('.scrollwatcher');
+if (scrollWatcher) {
+  window.addEventListener('scroll', () => {
+    const scrollTop = window.scrollY;
+    const docHeight = document.documentElement.scrollHeight - window.innerHeight;
+    const progress = Math.min(scrollTop / docHeight, 1);
+    scrollWatcher.style.transform = `scaleX(${progress})`;
+  });
+} else {
+  console.error("Element with class 'scrollwatcher' not found.");
+}
+
+// === Back-to-Top Button ===
+const backToTopButton = document.getElementById("back-to-top");
+if (backToTopButton) {
+  const updateBackToTopVisibility = () => {
+    toggleVisibilityClass(backToTopButton, "visible");
+  };
+
+  backToTopButton.addEventListener("click", () => {
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  });
+
+  window.addEventListener("scroll", updateBackToTopVisibility);
+  window.addEventListener("resize", updateBackToTopVisibility);
+  updateBackToTopVisibility();
+} else {
+  console.error("Back-to-top element not found.");
+}
+
+// === Footer bar or scroll element ===
+const footerBar = document.getElementById("footer-bar"); // or .querySelector('.your-class')
+if (footerBar) {
+  const updateFooterVisibility = () => {
+    toggleVisibilityClass(footerBar, "visiblefooter");
+  };
+
+  window.addEventListener("scroll", updateFooterVisibility);
+  window.addEventListener("resize", updateFooterVisibility);
+  updateFooterVisibility();
+}
           
               // === Mobile Menu Toggle ===
               const menuToggle = document.getElementById("menu-toggle");

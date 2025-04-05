@@ -722,17 +722,23 @@ a:active {
 }
 
 .hidden {
-    display: none !important; /* The !important might be needed if other styles are overriding */
+    display: none !important; 
     opacity: 0;
     visibility: hidden;
+    transition: opacity 0.3s ease;
 }
 
 .visible {
-    display: flex !important; /* The !important might be needed if other styles are overriding */
+    display: flex !important;
     opacity: 1;
     visibility: visible;
-}
-
+  }
+  
+  .visiblefooter {
+    display: block !important;
+    opacity: 1;
+    visibility: visible;
+  }
 
 
 
@@ -832,7 +838,7 @@ a:active {
 .Longread-ArticleB {
     background-color: #451212;
     width: 100%;
-    height: 400vh;
+    height: 250vh;
     z-index: -1;
     position: relative;
     margin: 0;
@@ -841,6 +847,22 @@ a:active {
     animation: fade-to-dark linear;
     animation-timeline: view();
     animation-range: 100% 20%; /* Adjust the range to control the fade-to-dark effect */
+}
+
+@media (max-width: 768px) {
+    .Longread-ArticleB {
+        background-color: #451212;
+        width: 100%;
+        height: 400vh;
+        z-index: -1;
+        position: relative;
+        margin: 0;
+        padding: 0;
+        opacity: 1;
+        animation: fade-to-dark linear;
+        animation-timeline: view();
+        animation-range: 100% 20%; /* Adjust the range to control the fade-to-dark effect */
+    }
 }
 
 .Longform-Image{
@@ -889,7 +911,6 @@ a:active {
 .Longread-Content{
     margin: 20px;
     margin-top: 55vh;
-    margin-bottom: 50vh
 }
 
 @media (max-width: 768px) {
@@ -955,6 +976,7 @@ a:active {
     margin-right: 30vw;
 }
 
+
 .metabubbles2{
     margin-left: 5vw;
     margin-right: 5vw;
@@ -1016,7 +1038,7 @@ a:active {
 }
 
 .Longread-Title h2{
-    font-size: 8rem;
+    font-size: 5vw;
     margin-left: 5vw;
     margin-right: 5vw;
     margin-bottom: 50px;
@@ -1049,10 +1071,9 @@ a:active {
 }
 
 .Rating {
-    position: absolute;
+    position:static;
     width: 100%;
     bottom: 0;
-    margin-top: 7vh;
     padding-top: 50px;
     padding-left: 30vw;
     padding-right: 30vw;
@@ -1160,7 +1181,7 @@ button {
 .range-slider {
 	position: relative;
 	width: 80vmin;
-	height: 20vmin;
+	height: 12vmin;
 }
 
 .range-slider_input {
@@ -1196,9 +1217,9 @@ button {
 }
 
 .range-slider_thumb {
-	width: 11vmin;
-	height: 11vmin;
-	border: 1vmin solid #303030;
+	width: 9vmin;
+	height: 9vmin;
+	border: 0.9vmin solid #303030;
 	border-radius: 50%;
 	position: absolute;
 	left: 0;
@@ -1209,7 +1230,7 @@ button {
 	justify-content: center;
 	align-items: center;
 	font-weight: 700;
-	font-size: 3.4vmin;
+	font-size: 3.2vmin;
 	color: #303030;
 	z-index: 2;
 }
@@ -1237,7 +1258,7 @@ button {
         position: absolute;
         width: 100%;
         bottom: 0;
-        margin-top: 7vh;
+        margin-top: 2vh;
         padding-top: 50px;
         padding-left: 25px;
         padding-right: 25px;
