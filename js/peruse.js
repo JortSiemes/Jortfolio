@@ -80,10 +80,8 @@ document.addEventListener("DOMContentLoaded", function () {
       const articleScore = localStorage.getItem(`article_${articleId}_score`);
   
       if (articleRead === "true") {
-        // Apply grayscale to background image (for B articles)
-        if (article.classList.contains("Barticle")) {
-          article.style.filter = "grayscale(100%)";
-        }
+        // Apply an overlay for "read" articles
+        article.classList.add("read-article");
   
         // Add the green circle with the score for both A and B articles
         const scoreCircle = document.createElement("div");
@@ -93,6 +91,7 @@ document.addEventListener("DOMContentLoaded", function () {
       }
     });
   });
+  
 
 // Scroll progress bar logic
 const scrollWatcher = document.querySelector('.scrollwatcher');
