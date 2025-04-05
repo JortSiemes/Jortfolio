@@ -378,13 +378,31 @@ body {
     background-image:
         linear-gradient(to bottom, rgba(255, 255, 255, 0) 30%, rgba(87, 49, 7, 0.904) 70%),
         url('../Images/Peruse/CafeExtraJoss.webp');
+    transition: filter 0.3s ease;
 }
 
 .Aarticle{
     background-image:
         linear-gradient(to bottom, rgba(255, 255, 255, 0) 30%, rgba(129, 50, 50, 0.904) 70%),
         url('../Images/Peruse/HotelSunrise.jpg');
+    transition: filter 0.3s ease;
 }
+
+.score-circle {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background-color: rgb(94, 184, 94);
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: bold;
+    font-size: 20px;
+  }
 
 .article:hover {
     transform: scale(1.1); /* Slight zoom effect on hover */
@@ -1457,7 +1475,7 @@ button {
     .range-slider_thumb {
         width: 14vmin;
         height: 14vmin;
-        border: 1.2vmin solid #303030;
+        border: 1.6vmin solid #303030;
         border-radius: 50%;
         position: absolute;
         left: 0;
@@ -1468,7 +1486,7 @@ button {
         justify-content: center;
         align-items: center;
         font-weight: 700;
-        font-size: 4vmin;
+        font-size: 5vmin;
         color: #303030;
         z-index: 2;
     }

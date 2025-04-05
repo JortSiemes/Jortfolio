@@ -235,25 +235,29 @@ document.addEventListener("DOMContentLoaded", function () {
 
   // === Submit Button, Confirmation, Animation & Redirect ===
   submitBtn.addEventListener("click", async () => {
-  // If slider hasn't been changed from its default value, ask for confirmation
   if (!sliderChanged) {
     const proceed = confirm("You have not changed the slider value from its default. Do you want to submit this number?");
     if (!proceed) {
-      return; // Abort submission if user cancels
+      return;
     }
   }
+
   const sliderValue = Number(slider_input.value);
-  // Calculate time spent on page in seconds
   const timeSpent = Math.floor((Date.now() - pageLoadTime) / 1000);
+
   console.log("Submit clicked. Slider value:", sliderValue, "Time spent (s):", timeSpent);
+
+  // Store the article read state and score in localStorage
+  const articleKey = `article_${selectedOption}_read`;
+  const scoreKey = `article_${selectedOption}_score`;
+
+  localStorage.setItem(articleKey, "true");
+  localStorage.setItem(scoreKey, sliderValue);
 
   // Insert data into Supabase
   await insertScriptieVertrouwen(sliderValue, timeSpent);
 
-  // Mark this article as read in localStorage (use a unique key, e.g., "articleB_read")
-  localStorage.setItem("articleB_read", "true");
-
-  // Disable the button to prevent duplicate clicks and trigger animation using jQuery
+  // Disable the button to prevent duplicate clicks and trigger animation
   submitBtn.disabled = true;
   $(submitBtn).addClass('btn-progress');
   setTimeout(() => {
@@ -262,9 +266,10 @@ document.addEventListener("DOMContentLoaded", function () {
   setTimeout(() => {
     $(submitBtn).removeClass('btn-fill').addClass('btn-complete');
   }, 4100);
-  // Redirect after the animation finishes
+
+  // Redirect to the main page after submission and animation
   setTimeout(() => {
-    window.location.href = "articleB.html";
+    window.location.href = "../html/peruse.html";
   }, 4100);
 });
           
