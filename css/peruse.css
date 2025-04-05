@@ -633,7 +633,6 @@ a:active {
 }
 
 .scrollwatcher {
-    height: 8px;
     display: block;
     position: relative;
     background-color: white;
@@ -746,10 +745,17 @@ a:active {
         margin: 20px;
 }
 
-.Longread-Article{
+.Longread-ArticleA{
     z-index: -1;
     background-color: #451212;
 }
+
+.Longread-ArticleB{
+    z-index: -1;
+    background-color: #573107e7;
+}
+
+
 
 .Longread-Text{
     margin-left: 15px;
@@ -811,7 +817,7 @@ a:active {
 
 .Article-Header-Image{
     background-image: 
-    linear-gradient(to bottom, rgba(69, 18, 18, 0) 50%, rgba(69, 18, 18, 1) 80%),
+    linear-gradient(to bottom, rgba(69, 18, 18, 0) 50%, rgba(87, 49, 7, 1) 80%),
     url('../Images/Peruse/CafeExtraJoss.webp');
     background-size: 100%;
     background-position: center top;
@@ -828,14 +834,39 @@ a:active {
     .Article-Header-Image{
         height: 40vh;
         background-image: 
-    linear-gradient(to bottom, rgba(69, 18, 18, 0) 30%, rgba(69, 18, 18, 1) 70%),
+    linear-gradient(to bottom, rgba(69, 18, 18, 0) 30%, rgba(87, 49, 7, 1) 70%),
     url('../Images/Peruse/CafeExtraJoss.webp');
     background-size: 100%;
     }
 }
 
+.Article-Header-ImageA{
+    background-image: 
+    linear-gradient(to bottom, rgba(69, 18, 18, 0) 50%, rgba(69, 18, 18, 1) 80%),
+    url('../Images/Peruse/HotelSunrise.jpg');
+    background-size: 100%;
+    background-position: center top;
+    background-repeat: no-repeat;
+    width: 100%;
+    height: 100vh;
+    z-index: -1;
+    position: relative;
+    margin: 0;
+    padding: 0;
+}
 
-.Longread-ArticleB {
+@media (max-width: 768px) {
+    .Article-Header-ImageA{
+        height: 40vh;
+        background-image: 
+    linear-gradient(to bottom, rgba(69, 18, 18, 0) 30%, rgba(69, 18, 18, 1) 70%),
+    url('../Images/Peruse/HotelSunrise.jpg');
+    background-size: 100%;
+    }
+}
+
+
+.Longread-ArticleA {
     background-color: #451212;
     width: 100%;
     height: 250vh;
@@ -850,8 +881,38 @@ a:active {
 }
 
 @media (max-width: 768px) {
-    .Longread-ArticleB {
+    .Longread-ArticleA {
         background-color: #451212;
+        width: 100%;
+        height: 400vh;
+        z-index: -1;
+        position: relative;
+        margin: 0;
+        padding: 0;
+        opacity: 1;
+        animation: fade-to-dark linear;
+        animation-timeline: view();
+        animation-range: 100% 20%; /* Adjust the range to control the fade-to-dark effect */
+    }
+}
+
+.Longread-ArticleB {
+    background-color: #573107;
+    width: 100%;
+    height: 250vh;
+    z-index: -1;
+    position: relative;
+    margin: 0;
+    padding: 0;
+    opacity: 1;
+    animation: fade-to-dark linear;
+    animation-timeline: view();
+    animation-range: 100% 20%; /* Adjust the range to control the fade-to-dark effect */
+}
+
+@media (max-width: 768px) {
+    .Longread-ArticleB {
+        background-color: #573107;
         width: 100%;
         height: 400vh;
         z-index: -1;
@@ -897,15 +958,6 @@ a:active {
 
 .Imagebijschrift p{
     font-size: 0.8rem;
-}
-
-@keyframes fade-to-dark {
-    100% {
-        background-color: #451212; /* Start color */
-    }
-    20% {
-        background-color: #000000; /* End color (dark) */
-    }
 }
 
 .Longread-Content{
