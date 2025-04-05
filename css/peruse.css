@@ -500,6 +500,10 @@ body {
     background-color: #DF5F5F;
 }
 
+.culture {
+    background-color: #4EBFAC;
+}
+
 .feature {
     background-color: #4EBFAC;
 }
@@ -841,11 +845,22 @@ a:active {
 
 .Longform-Image{
     width: 100%;
-    height: 25vh;
+    height: 40vh;
     position: relative;
     background-size: 100%;
     background-position: center top;
     background-repeat: no-repeat;
+}
+
+@media (max-width: 768px) {
+    .Longform-Image{
+        width: 100%;
+        height: 25vh;
+        position: relative;
+        background-size: 100%;
+        background-position: center top;
+        background-repeat: no-repeat;
+    }
 }
 
 .Longform-Image p{
@@ -856,7 +871,6 @@ a:active {
 
 .Image1{
     background-image: url('../Images/Peruse/ExtraJoss.avif');
-    margin-bottom: -20px;
 }
 
 .Imagebijschrift p{
@@ -914,19 +928,19 @@ a:active {
     margin: 0;
 }
 
-@media (max-width: 768px) {
-    .Longread-meta h4  {
-        font-size: 0.9rem;
-        font-weight: 700;
-    }
-}
-
 .Longread-meta p{
     color: #C0C0C0;
     font-family: 'Euclid CircularA', sans-serif;
     font-weight: 300;
     font-size: 0.8vw;
     margin: 0;
+}
+
+@media (max-width: 768px) {
+    .Longread-meta h4  {
+        font-size: 0.9rem;
+        font-weight: 700;
+    }
 }
 
 @media (max-width: 768px) {
@@ -960,17 +974,6 @@ a:active {
     color: #fff;
 }
 
-@media (max-width: 768px) {
-    .tag2  {
-        font-size: 0.6rem;
-        padding: 2px 8px;
-        font-weight: 600;
-        border-radius: 14px;
-        font-size: 10px;
-        color: #fff;
-    }
-}
-
 .finance2 {
     background-color: #DF5F5F;
 }
@@ -981,6 +984,17 @@ a:active {
 
 .feature2 img{
     width: 24px;
+}
+
+@media (max-width: 768px) {
+    .tag2  {
+        font-size: 0.6rem;
+        padding: 2px 8px;
+        font-weight: 600;
+        border-radius: 14px;
+        font-size: 10px;
+        color: #fff;
+    }
 }
 
 @media (max-width: 768px) {
@@ -1005,6 +1019,16 @@ a:active {
     font-size: 8rem;
     margin-left: 5vw;
     margin-right: 5vw;
+    margin-bottom: 50px;
+}
+
+@media (max-width: 768px) {
+    .Longread-Title h2{
+        font-size: 5rem;
+        margin-left: 5vw;
+        margin-right: 5vw;
+        margin-bottom: 10px;
+    }
 }
 
 .Longread-Title p{
@@ -1030,8 +1054,8 @@ a:active {
     bottom: 0;
     margin-top: 7vh;
     padding-top: 50px;
-    padding-left: 25px;
-    padding-right: 25px;
+    padding-left: 30vw;
+    padding-right: 30vw;
     background-color: white;
     padding-bottom: 10vh;
   }
@@ -1080,7 +1104,7 @@ button {
   
   /* Animation classes remain the same */
   .btn-progress {
-    width: 80vw;
+    width: 40vw;
     color: transparent;
   }
   
@@ -1091,7 +1115,7 @@ button {
     top: 0;
     left: 0;
     height: 100%;
-    width: 100%;
+    width: 30vw;
     transform: scaleX(0);
     transform-origin: 0;
     display: block;
@@ -1128,7 +1152,6 @@ button {
   }
 
 .Range_container {
-
 	display: flex;
 	align-items: center;
 	justify-content: center;
@@ -1173,9 +1196,9 @@ button {
 }
 
 .range-slider_thumb {
-	width: 14vmin;
-	height: 14vmin;
-	border: 1.2vmin solid #303030;
+	width: 11vmin;
+	height: 11vmin;
+	border: 1vmin solid #303030;
 	border-radius: 50%;
 	position: absolute;
 	left: 0;
@@ -1186,7 +1209,7 @@ button {
 	justify-content: center;
 	align-items: center;
 	font-weight: 700;
-	font-size: 4vmin;
+	font-size: 3.4vmin;
 	color: #303030;
 	z-index: 2;
 }
@@ -1207,4 +1230,213 @@ button {
 	height: 1vmin;
 	width: 0;
     	background-color: #4EBFAC;
+}
+
+@media (max-width: 768px) {
+    .Rating {
+        position: absolute;
+        width: 100%;
+        bottom: 0;
+        margin-top: 7vh;
+        padding-top: 50px;
+        padding-left: 25px;
+        padding-right: 25px;
+        background-color: white;
+        padding-bottom: 10vh;
+      }
+    
+    .Rating h3{
+        color: black;
+        font-weight: 600;
+        font-family: 'Euclid CircularA';
+    }
+    
+    .Rating p{
+        color: #5a5a5a;
+        font-family: 'Euclid CircularA';
+    }
+    
+    button {
+        font-family: 'Euclid CircularA', sans-serif;
+      }
+      
+      .btn {
+        background: transparent;
+        width: 200px;
+        position: relative;
+        padding: 15px;
+        text-align: center;
+        text-transform: uppercase;
+        letter-spacing: 3px;
+        transition: all 500ms cubic-bezier(0.6, -0.28, 0.735, 0.045);
+        border-radius: 12px;
+        font-weight: 600;
+        overflow: hidden;
+        text-decoration: none;
+      }
+      
+      /* Initially inactive: grey */
+      .btn.inactive {
+        color: grey;
+        border: 4px solid grey;
+      }
+      
+      /* Active state: green */
+      .btn.active {
+        color: #4EBFAC;
+        border: 4px solid #4EBFAC;
+      }
+      
+      /* Animation classes remain the same */
+      .btn-progress {
+        width: 80vw;
+        color: transparent;
+      }
+      
+      .btn-fill:after {
+        content: '';
+        background: #4EBFAC;
+        position: absolute;
+        top: 0;
+        left: 0;
+        height: 100%;
+        width: 100%;
+        transform: scaleX(0);
+        transform-origin: 0;
+        display: block;
+        animation: fill 3.2s linear forwards;
+      }
+      
+      .btn-complete {
+        padding: 10px;
+        width: 50px;
+        color: #fff;
+        pointer-events: none;
+        position: relative; /* Ensure positioning context for pseudo-element */
+      }
+      
+      .btn-complete:after {
+        font-family: 'Euclid CircularA', sans-serif;
+        content: "\2713"; /* Unicode check mark */
+        color: #fff;
+        height: 100%;
+        padding-left: 3px;
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background: #4EBFAC;
+      }
+      
+      @keyframes fill {
+        from { transform: scaleX(0); }
+        to { transform: scaleX(1); }
+      }
+    
+    .Range_container {
+    
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    
+    .range-slider {
+        position: relative;
+        width: 80vmin;
+        height: 20vmin;
+    }
+    
+    .range-slider_input {
+        width: 100%;
+        position: absolute;
+        top: 50%;
+        z-index: 3;
+        transform: translateY(-50%);
+        -webkit-appearance: none;
+      appearance: none;
+      width: 100%;
+      height: 4px;
+      opacity: 0;
+        margin: 0;
+    }
+    
+    .range-slider_input::-webkit-slider-thumb {
+      -webkit-appearance: none;
+      appearance: none;
+      width: 100px;
+      height: 100px;
+      cursor: pointer;
+        border-radius: 50%;
+        opacity: 0;
+    }
+    
+    .range-slider_input::-moz-range-thumb {
+      width: 14vmin;
+      height: 14vmin;
+      cursor: pointer;
+        border-radius: 50%;
+        opacity: 0;
+    }
+    
+    .range-slider_thumb {
+        width: 14vmin;
+        height: 14vmin;
+        border: 1.2vmin solid #303030;
+        border-radius: 50%;
+        position: absolute;
+        left: 0;
+        top: 50%;
+        transform: translateY(-50%);
+        background-color: white;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-weight: 700;
+        font-size: 4vmin;
+        color: #303030;
+        z-index: 2;
+    }
+    
+    .range-slider_line {
+        height: 1vmin;
+        width: 100%;
+        background-color: #e1e1e1;
+        top: 50%;
+        transform: translateY(-50%);
+        left: 0;
+        position: absolute;
+        z-index: 1;
+    }
+    
+    .range-slider_line-fill {
+        position: absolute;
+        height: 1vmin;
+        width: 0;
+            background-color: #4EBFAC;
+    }
+}
+
+hr {
+    border: none;
+    height: 1px;
+    /* Set the hr color */
+    color: #fff;  /* old IE */
+    background-color: #fff; 
+    margin-left: 30vw;
+    margin-right: 30vw; /* Modern Browsers */
+  }
+
+  @media (max-width: 768px) {
+    hr {
+        border: none;
+        height: 1px;
+        /* Set the hr color */
+        color: #fff;  /* old IE */
+        background-color: #fff; 
+        margin-left: 4vw;
+        margin-right: 4vw; /* Modern Browsers */
+      }
 }
