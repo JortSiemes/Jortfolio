@@ -39,6 +39,24 @@ document.addEventListener("DOMContentLoaded", function () {
     document.getElementById(selectedB).classList.remove("hidden");
     document.getElementById(selectedB).classList.add("visible");
   
+    // Check if the B article has been read and display score
+    const articleBRead = localStorage.getItem("article_B_read");
+    const articleBScore = localStorage.getItem("article_B_score");
+
+    if (articleBRead === "true") {
+      const articleB = document.getElementById(selectedB);
+      if (articleB) {
+        // Apply grayscale filter if article is marked as read
+        articleB.classList.add("read-article");
+        
+        // Add the green circle with the score on the article
+        const scoreCircle = document.createElement("div");
+        scoreCircle.classList.add("score-circle");
+        scoreCircle.textContent = articleBScore;
+        articleB.appendChild(scoreCircle);
+      }
+    }
+
     // Toggle visibility logic for A articles
     const toggleLink = document.getElementById("toggle-visibility");
     let isShowingAll = false; // Tracks whether all articles are visible
@@ -69,21 +87,21 @@ document.addEventListener("DOMContentLoaded", function () {
       isShowingAll = !isShowingAll; // Toggle state
     });
   
-    // Now, handle the appearance of articles based on whether they've been read
     const articleElements = document.querySelectorAll(".article");  // Select all article elements
   
     articleElements.forEach((article) => {
       const articleId = article.id;  // Assume each article has an id like "A1", "A2", etc.
-  
+      const articleType = article.classList.contains("Barticle") ? 'B' : 'A';  // Determine if article is A or B
+      
       // Check if the article has been read from localStorage
       const articleRead = localStorage.getItem(`article_${articleId}_read`);
       const articleScore = localStorage.getItem(`article_${articleId}_score`);
-  
+    
       if (articleRead === "true") {
-        // Apply an overlay for "read" articles
+        // Apply grayscale filter if article is marked as read
         article.classList.add("read-article");
-  
-        // Add the green circle with the score for both A and B articles
+        
+        // Add the green circle with the score on the article
         const scoreCircle = document.createElement("div");
         scoreCircle.classList.add("score-circle");
         scoreCircle.textContent = articleScore;
@@ -91,7 +109,6 @@ document.addEventListener("DOMContentLoaded", function () {
       }
     });
   });
-  
 
 // Scroll progress bar logic
 const scrollWatcher = document.querySelector('.scrollwatcher');
@@ -143,15 +160,6 @@ document.addEventListener("DOMContentLoaded", function () {
     // Initial check
     toggleVisibility();
 });
-
-function myFunction() {
-    var x = document.getElementById("myLinks");
-    if (x.style.display === "block") {
-        x.style.display = "none";
-    } else {
-        x.style.display = "block";
-    }
-}
 
 // Add this code to connect the burger menu
 document.addEventListener("DOMContentLoaded", function() {

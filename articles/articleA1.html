@@ -22,7 +22,7 @@
 
     <main class="parent">
         <div class="child">
-            <div class="Longread-ArticleB"></div>
+            <div class="Longread-ArticleA"></div>
         </div>
 
         <div class="child">
@@ -178,7 +178,8 @@
     
 
         <script type="module">
-           import { createClient } from "https://cdn.jsdelivr.net/npm/@supabase/supabase-js/+esm";
+
+import { createClient } from "https://cdn.jsdelivr.net/npm/@supabase/supabase-js/+esm";
 
 // Initialize Supabase client
 const supabaseUrl = 'https://rgoydwojepkjbqzdldft.supabase.co';
@@ -208,22 +209,18 @@ if (!isUserIdInLocalStorage()) {
   setUserIdInLocalStorage();
 }
 
-// Function to insert data into the "scriptie_vertrouwen" table
 async function insertScriptieVertrouwen(sliderValue, timeSpent) {
-  // Get the current date and time in ISO format
   const submitDate = new Date().toISOString();
   
   const { data, error } = await supabaseClient
     .from("scriptie_vertrouwen")
-    .insert([
-      {
-        slider_values: sliderValue,
-        article_number: "B",
-        user_id: getUserIdFromLocalStorage(),
-        time_spent: timeSpent,
-        submit_date: submitDate  // New field for the submit date
-      }
-    ]);
+    .insert([{
+      slider_values: sliderValue,
+      article_number: "B",  // Force article number to always be "B"
+      user_id: getUserIdFromLocalStorage(),
+      time_spent: timeSpent,
+      submit_date: submitDate
+    }]);
     
   if (error) {
     console.error("Error inserting into scriptie_vertrouwen:", error);
@@ -256,10 +253,8 @@ document.addEventListener("DOMContentLoaded", function () {
   window.addEventListener("resize", showSliderValue);
   slider_input.addEventListener('input', () => {
     showSliderValue();
-    // Mark that the slider was changed by the user.
     if (!sliderChanged) {
       sliderChanged = true;
-      // Update button appearance from inactive (grey) to active (green)
       submitBtn.classList.remove("inactive");
       submitBtn.classList.add("active");
     }
@@ -267,96 +262,68 @@ document.addEventListener("DOMContentLoaded", function () {
 
   // === Submit Button, Confirmation, Animation & Redirect ===
   submitBtn.addEventListener("click", async () => {
-  // If slider hasn't been changed from its default value, ask for confirmation
-  if (!sliderChanged) {
-    const proceed = confirm("You have not changed the slider value from its default. Do you want to submit this number?");
-    if (!proceed) {
-      return; // Abort submission if user cancels
+    if (!sliderChanged) {
+      const proceed = confirm("You have not changed the slider value from its default. Do you want to submit this number?");
+      if (!proceed) {
+        return;
+      }
     }
+
+    const sliderValue = Number(slider_input.value);
+    const timeSpent = Math.floor((Date.now() - pageLoadTime) / 1000);
+
+    console.log("Submit clicked. Slider value:", sliderValue, "Time spent (s):", timeSpent);
+
+    // Store the article read state and score in localStorage
+    const articleKey = `article_B_read`;  // Force this to be "B"
+    const scoreKey = `article_B_score`;  // Force this to be "B"
+
+    localStorage.setItem(articleKey, "true");
+    localStorage.setItem(scoreKey, sliderValue);
+
+    // Insert data into Supabase with "B" as the article number
+    await insertScriptieVertrouwen(sliderValue, timeSpent);
+
+    // Disable the button to prevent duplicate clicks and trigger animation
+    submitBtn.disabled = true;
+    $(submitBtn).addClass('btn-progress');
+    setTimeout(() => {
+      $(submitBtn).addClass('btn-fill');
+    }, 500);
+    setTimeout(() => {
+      $(submitBtn).removeClass('btn-fill').addClass('btn-complete');
+    }, 4100);
+
+    // Redirect to the main page after submission and animation
+    setTimeout(() => {
+      window.location.href = "../html/peruse.html";
+    }, 4100);
+  });
+
+  // === Article Visibility & Toggle ===
+  const options = ["A1", "A2", "A3", "A4", "B1", "B2"];
+  const storageKey = "selectedAOption";
+  let selectedOptionIndex = localStorage.getItem(storageKey);
+
+  if (selectedOptionIndex === null) {
+    selectedOptionIndex = Math.floor(Math.random() * options.length);
+    localStorage.setItem(storageKey, selectedOptionIndex);
+  } else {
+    selectedOptionIndex = Number(selectedOptionIndex);
   }
-  const sliderValue = Number(slider_input.value);
-  // Calculate time spent on page in seconds
-  const timeSpent = Math.floor((Date.now() - pageLoadTime) / 1000);
-  console.log("Submit clicked. Slider value:", sliderValue, "Time spent (s):", timeSpent);
 
-  // Insert data into Supabase
-  await insertScriptieVertrouwen(sliderValue, timeSpent);
+  const selectedOption = options[selectedOptionIndex];
+  const selectedElement = document.getElementById(selectedOption);
+  if (selectedElement) {
+    selectedElement.classList.remove("hidden");
+    selectedElement.classList.add("visible");
+  } else {
+    console.error(`Element with id "${selectedOption}" not found.`);
+  }
 
-  // Mark this article as read in localStorage (use a unique key, e.g., "articleB_read")
-  localStorage.setItem("articleB_read", "true");
-
-  // Disable the button to prevent duplicate clicks and trigger animation using jQuery
-  submitBtn.disabled = true;
-  $(submitBtn).addClass('btn-progress');
-  setTimeout(() => {
-    $(submitBtn).addClass('btn-fill');
-  }, 500);
-  setTimeout(() => {
-    $(submitBtn).removeClass('btn-fill').addClass('btn-complete');
-  }, 4100);
-  // Redirect after the animation finishes
-  setTimeout(() => {
-    window.location.href = "../html/peruse.html";
-  }, 4100);
-});
-          
-          
-              // === Article Visibility & Toggle ===
-              const options = ["A1", "A2", "A3", "A4"];
-              const storageKey = "selectedAOption";
-              let selectedOptionIndex = localStorage.getItem(storageKey);
-          
-              if (selectedOptionIndex === null) {
-                selectedOptionIndex = Math.floor(Math.random() * options.length);
-                localStorage.setItem(storageKey, selectedOptionIndex);
-              } else {
-                selectedOptionIndex = Number(selectedOptionIndex);
-              }
-          
-              const selectedOption = options[selectedOptionIndex];
-              const selectedElement = document.getElementById(selectedOption);
-              if (selectedElement) {
-                selectedElement.classList.remove("hidden");
-                selectedElement.classList.add("visible");
-              } else {
-                console.error(`Element with id "${selectedOption}" not found.`);
-              }
-          
-              const toggleLink = document.getElementById("toggle-visibility");
-              if (toggleLink) {
-                let isShowingAll = false; // Tracks whether all articles are visible
-          
-                toggleLink.addEventListener("click", function (e) {
-                  e.preventDefault();
-          
-                  options.forEach(optionId => {
-                    const element = document.getElementById(optionId);
-                    if (element) {
-                      if (isShowingAll) {
-                        // Hide all articles except the selected one
-                        if (optionId !== selectedOption) {
-                          element.classList.remove("visible");
-                          element.classList.add("hidden");
-                        }
-                      } else {
-                        // Show all articles
-                        element.classList.remove("hidden");
-                        element.classList.add("visible");
-                      }
-                    } else {
-                      console.error(`Element with id "${optionId}" not found.`);
-                    }
-                  });
-          
-                  toggleLink.innerHTML = isShowingAll ? "<h3>Show All</h3>" : "<h3>Hide</h3>";
-                  isShowingAll = !isShowingAll;
-                });
-              } else {
-                console.error('Toggle link with id "toggle-visibility" not found.');
-              }
           
               // === Scroll-Dependent Article Background Color ===
-              const article = document.querySelector(".Longread-ArticleB");
+              const article = document.querySelector(".Longread-ArticleA");
               if (article) {
                 document.addEventListener("scroll", function () {
                   const scrollY = window.scrollY;
