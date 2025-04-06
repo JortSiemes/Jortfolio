@@ -566,6 +566,109 @@ body {
     color: #777;
 }
 
+button {
+    all: unset;
+    cursor: pointer;
+    display: inline-flex;
+    align-items: center;
+  }
+
+  button:focus {
+    outline: none;
+  }
+
+.rating-button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #fff;
+    color: #573107;
+    border-radius: 5px;
+    padding: 6px 6px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: width 0.3s ease, padding 1s ease;
+    overflow: hidden;
+    white-space: nowrap;
+    font-weight: 800;
+  }
+
+  @media (max-width: 768px) {
+    .rating-button {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        background-color: #fff;
+        color: #573107;
+        border-radius: 5px;
+        padding: 6px 6px;
+        font-size: 16px;
+        cursor: pointer;
+        transition: width 0.3s ease, padding 1s ease;
+        overflow: hidden;
+        white-space: nowrap;
+        font-weight: 800;
+      }
+}
+
+#aa-label h4{
+    color: #573107;
+    font-weight: 600;
+}
+
+#aa-slider {
+    $form-range-track-bg:             $gray-800;
+}
+
+  .rating-slider {
+    width: 80px;
+    margin-left: 8px;
+  }
+
+  .hidden {
+    display: none;
+  }
+
+  .compact {
+    padding: 6px;
+  }
+
+
+  .parent-container {
+    display: flex; /* Use flexbox to align children horizontally */
+    justify-content: flex-start; /* Align children to the left */
+    align-items: center;
+    gap: 4px; /* Vertically align content in the center */
+  }
+
+  .Longread-meta h4,
+  .Longread-meta p {
+    margin-right: 0px; /* Removes default margin from h4 and p */
+  }
+
+  .Longread-meta {
+    padding-right: 0px; /* Adds space between h4 and p */
+  }
+
+  @media (max-width: 768px) {
+    .Longread-meta {
+        padding-right: 40px; /* Adds space between h4 and p */
+      }
+}
+
+  .SettingsButtons {
+    text-align: center; /* Centers the button inside the div */
+  }
+
+  /* Styling the label */
+
+
+  #sample-text {
+    margin-top: 20px;
+    font-size: 16px;
+    transition: font-size 0.3s ease;
+  }
+
 .article-content {
     padding-left: 0vw;
     flex: 1; 
@@ -602,7 +705,7 @@ ul {
 
 @media (max-width: 768px) {
     .article-content li {
-        font-size: 0.7rem;
+        font-size: 0.75rem;
         font-weight: 500;
     }
 }
@@ -794,7 +897,7 @@ a:active {
 
 .Longread-ArticleB{
     z-index: -1;
-    background-color: #573107e7;
+    background-color: #573107;
 }
 
 
@@ -941,7 +1044,7 @@ a:active {
 .Longread-ArticleB {
     background-color: #573107;
     width: 100%;
-    height: 250vh;
+    height: 100%;
     z-index: -1;
     position: relative;
     margin: 0;
@@ -956,7 +1059,7 @@ a:active {
     .Longread-ArticleB {
         background-color: #573107;
         width: 100%;
-        height: 400vh;
+        height: 100%;
         z-index: -1;
         position: relative;
         margin: 0;
