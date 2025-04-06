@@ -165,7 +165,6 @@
         </div>
       </div>
 
-      <br><br>
 
    
 
@@ -275,8 +274,14 @@ document.addEventListener("DOMContentLoaded", function () {
     console.log("Submit clicked. Slider value:", sliderValue, "Time spent (s):", timeSpent);
 
     // Store the article read state and score in localStorage
-    const articleKey = `article_B_read`;  // Force this to be "B"
-    const scoreKey = `article_B_score`;  // Force this to be "B"
+  // Retrieve the correct A article ID
+const aOptions = ["A1", "A2", "A3", "A4"];
+const selectedAIndex = parseInt(localStorage.getItem("selectedAOption"), 10);
+const selectedA = aOptions[selectedAIndex];
+
+// Store the article read state and score in localStorage using the correct key
+const articleKey = `article_${selectedA}_read`;
+const scoreKey = `article_${selectedA}_score`;
 
     localStorage.setItem(articleKey, "true");
     localStorage.setItem(scoreKey, sliderValue);
@@ -321,31 +326,29 @@ document.addEventListener("DOMContentLoaded", function () {
     console.error(`Element with id "${selectedOption}" not found.`);
   }
 
-          
-              // === Scroll-Dependent Article Background Color ===
-              const article = document.querySelector(".Longread-ArticleA");
-              if (article) {
-                document.addEventListener("scroll", function () {
-                  const scrollY = window.scrollY;
-                  const maxScroll = document.documentElement.scrollHeight - window.innerHeight;
-                  const fadeStart = maxScroll * 0.3; // Start fading at 30% scroll
-                  const fadeEnd = maxScroll * 0.5;   // Fully black at 50% scroll
-          
-                  if (scrollY >= fadeStart && scrollY <= fadeEnd) {
-                    let progress = (scrollY - fadeStart) / (fadeEnd - fadeStart);
-                    let r = Math.round(69 * (1 - progress));
-                    let g = Math.round(18 * (1 - progress));
-                    let b = Math.round(18 * (1 - progress));
-                    article.style.backgroundColor = `rgb(${r}, ${g}, ${b})`;
-                  } else if (scrollY > fadeEnd) {
-                    article.style.backgroundColor = "#000000"; // Fully black
-                  } else {
-                    article.style.backgroundColor = "#451212"; // Initial color
-                  }
-                });
-              } else {
-                console.error("Element with class 'Longread-ArticleB' not found.");
-              }
+  const article = document.querySelector(".Longread-ArticleA");
+if (article) {
+  window.addEventListener("scroll", function () {
+    const scrollY = window.scrollY;
+    const maxScroll = document.documentElement.scrollHeight - window.innerHeight;
+    const fadeStart = maxScroll * 0.3;
+    const fadeEnd = maxScroll * 0.5;
+
+    if (scrollY >= fadeStart && scrollY <= fadeEnd) {
+      let progress = (scrollY - fadeStart) / (fadeEnd - fadeStart);
+      let r = Math.round(69 * (1 - progress));
+      let g = Math.round(18 * (1 - progress));
+      let b = Math.round(18 * (1 - progress));
+      article.style.backgroundColor = `rgb(${r}, ${g}, ${b})`;
+    } else if (scrollY > fadeEnd) {
+      article.style.backgroundColor = "#000000";
+    } else {
+      article.style.backgroundColor = "#451212";
+    }
+  });
+} else {
+  console.error("Element with class 'Longread-ArticleA' not found.");
+}
           
               // === Scroll Watcher Progress Bar ===
               const toggleVisibilityClass = (element, visibleClass) => {

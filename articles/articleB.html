@@ -293,41 +293,37 @@ document.addEventListener("DOMContentLoaded", function () {
   }
 
           
-              // === Scroll-Dependent Article Background Color ===
-              const article = document.querySelector(".Longread-ArticleB");
-              if (article) {
-                document.addEventListener("scroll", function () {
-                  const scrollY = window.scrollY;
-                  const maxScroll = document.documentElement.scrollHeight - window.innerHeight;
-                  const fadeStart = maxScroll * 0.3; // Start fading at 30% scroll
-                  const fadeEnd = maxScroll * 0.5;   // Fully black at 50% scroll
-          
-                  if (scrollY >= fadeStart && scrollY <= fadeEnd) {
-                    let progress = (scrollY - fadeStart) / (fadeEnd - fadeStart);
-                    let r = Math.round(69 * (1 - progress));
-                    let g = Math.round(18 * (1 - progress));
-                    let b = Math.round(18 * (1 - progress));
-                    article.style.backgroundColor = `rgb(${r}, ${g}, ${b})`;
-                  } else if (scrollY > fadeEnd) {
-                    article.style.backgroundColor = "#000000"; // Fully black
-                  } else {
-                    article.style.backgroundColor = "#573107"; // Initial color
-                  }
-                });
-              } else {
-                console.error("Element with class 'Longread-ArticleB' not found.");
-              }
-          
-              // === Scroll Watcher Progress Bar ===
-              const toggleVisibilityClass = (element, visibleClass) => {
-  const isScrollable = document.body.scrollHeight > window.innerHeight;
-  const isScrolled = window.scrollY > 0;
-  if (isScrollable && isScrolled) {
-    element.classList.add(visibleClass);
-  } else {
-    element.classList.remove(visibleClass);
-  }
-};
+  const article = document.querySelector(".Longread-ArticleB");
+
+if (article) {
+  document.addEventListener("scroll", function () {
+    const scrollY = window.scrollY;
+    const maxScroll = document.documentElement.scrollHeight - window.innerHeight;
+    const fadeStart = maxScroll * 0.5;
+    const fadeEnd = maxScroll * 0.7;
+
+    // Original RGB values for #573107
+    const rStart = 87;
+    const gStart = 49;
+    const bStart = 7;
+
+    if (scrollY >= fadeStart && scrollY <= fadeEnd) {
+      const progress = (scrollY - fadeStart) / (fadeEnd - fadeStart);
+
+      const r = Math.round(rStart * (1 - progress));
+      const g = Math.round(gStart * (1 - progress));
+      const b = Math.round(bStart * (1 - progress));
+
+      article.style.backgroundColor = `rgb(${r}, ${g}, ${b})`;
+    } else if (scrollY > fadeEnd) {
+      article.style.backgroundColor = "#000000"; // fully black
+    } else {
+      article.style.backgroundColor = "#573107"; // your original warm yellowish tone
+    }
+  });
+} else {
+  console.error("Element with class 'Longread-ArticleB' not found.");
+}
 
 // === Scroll Progress Bar ===
 const scrollWatcher = document.querySelector('.scrollwatcher');

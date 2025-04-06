@@ -379,7 +379,9 @@ body {
       linear-gradient(to bottom, rgba(255, 255, 255, 0) 30%, rgba(87, 49, 7, 0.904) 70%),
       url('../Images/Peruse/CafeExtraJoss.webp');
     transition: filter 0.3s ease;
-    position: relative; /* Ensure overlay is on top of content */
+    position: relative;
+    z-index: 0; /* Establish stacking context but stay below score-circle */
+    overflow: hidden; /* optional: to clip overlay if needed */ /* Ensure overlay is on top of content */
   }
   
 
@@ -388,8 +390,29 @@ body {
         linear-gradient(to bottom, rgba(255, 255, 255, 0) 30%, rgba(129, 50, 50, 0.904) 70%),
         url('../Images/Peruse/HotelSunrise.jpg');
     transition: filter 0.3s ease;
+    position: relative;
+    z-index: 0; /* Establish stacking context but stay below score-circle */
+    overflow: hidden; /* optional: to clip overlay if needed */
 }
 
+.Aarticle.read-article,
+.Barticle.read-article {
+    filter: grayscale(100%);
+}
+
+/* Overlay effect */
+.Aarticle.read-article::before,
+.Barticle.read-article::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.3);
+    z-index: 1;
+    pointer-events: none;
+    border-radius: inherit;
+}
+
+/* Score circle always on top */
 .score-circle {
     position: absolute;
     top: 10px;
@@ -397,16 +420,15 @@ body {
     width: 50px;
     height: 50px;
     border-radius: 50%;
-    background-color: rgb(94, 184, 94);
-    color: white;
+    background-color: rgb(255, 255, 255);
+    color: rgb(0, 0, 0);
     display: flex;
     justify-content: center;
     align-items: center;
     font-weight: bold;
     font-size: 20px;
-    z-index: 2;
-  }
-
+    z-index: 10; /* Higher than overlay */
+}
 .article:hover {
     transform: scale(1.1); /* Slight zoom effect on hover */
 }
@@ -421,7 +443,6 @@ body {
 
 .article-content {
     width: 100%;
-
 }
 
 @media {
