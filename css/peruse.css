@@ -1722,10 +1722,7 @@ hr {
     gap: 25px; /* Gap between columns */
     padding: 20px;
     background-color: #fff; /* White background */
-    border: 2px solid #e0e0e0; /* Light grey border */
-    border-radius: 8px;
     max-width: 950px; /* Max width of the box */
-    margin: 20px auto; /* Center the box on the page */
     position: relative; /* Needed if using pseudo-elements for separator */
 }
 
@@ -1867,12 +1864,36 @@ hr {
     font-weight: 500;
 }
 
+.room-presentation {
+    max-width: 100%; /* Max width of the entire component */
+    margin: 20px auto; /* Center the component */
+    border: 2px solid #e0e0e0; /* Border around the whole thing */
+    border-radius: 8px; /* Rounded corners for the whole thing */
+    overflow: hidden; /* Ensures inner elements respect the border-radius */
+}
+
+/* --- Image Container --- */
+.room-image-container {
+    width: 100%;
+    /* Adjust aspect ratio as needed (width / height) */
+    /* Examples: 16/9, 21/9, 3/1 */
+    aspect-ratio: 21 / 7; /* Wide aspect ratio like the screenshot */
+    overflow: hidden; /* Hide parts of image that overflow */
+    background-color: #eee; /* Placeholder background */
+}
+
+.room-image-container img {
+    display: block; /* Remove extra space below image */
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Cover the area, crop if needed, maintain aspect ratio */
+}
 
 /* --- Responsive Adjustments --- */
 @media (max-width: 768px) { /* Adjust breakpoint as needed */
     .room-offer-box {
         grid-template-columns: 1fr; /* Stack columns */
-        gap: 15px; /* Reduce gap for stacked layout */
+        gap: 1px; /* Reduce gap for stacked layout */
         padding: 15px;
     }
     .room-offer-box::before {
