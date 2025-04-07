@@ -78,8 +78,9 @@
                   Mogelijk kan het Amsterdamse Conservatorium Hotel, uit 2011, zich zo kwalificeren. Het Waldorf Astoria valt er zeker onder. Dat hotel opende in 2014 de deuren en is onderdeel van Hilton Worldwide. </p>
                   
 
-                  <div class="Animation-content-container">
+                  <div class="Animation-content-container" id="teleport">
                     <div class="text-content">
+                      
                       <p id="article-text">
                         Wat ze gemeen hebben met het nieuwe Rosewood Hotel, dat op 1 mei zijn deuren opent aan de Prinsengracht, is dat hun tweepersoonskamers beginnen bij: 
                         </p>
@@ -92,7 +93,7 @@
                         </div>
                   </div>
                  
-                  <p id="article-text"> Maar het Rosewood heeft ook een suite van 210 vierkante meter, die vijftien keer zoveel kost. Die heeft een slaapkamer, een woonkamer en een eetkamer en uitzicht op de toren van de Westerkerk. </p>
+                  <p id="article-text"> Maar het Rosewood heeft ook een suite van 141 vierkante meter, die vijftien keer zoveel kost. Die heeft een slaapkamer, een woonkamer en een eetkamer en uitzicht op de toren van de Westerkerk. </p>
 
                   <div class="room-presentation">
                     <div class="room-image-container">
@@ -132,23 +133,19 @@
                   
                            <p id="article-text">
                             Sonia Cheng, kleindochter van de pater familias, Henry Cheng, leidt het bedrijf. In 2011 nam de familie de van oorsprong Amerikaanse Rosewood-keten over. <br><br>Sindsdien is Sonia Cheng bezig de hotels onder de Rosewood-vlag (de groep heeft ook nog andere merken) in een straf tempo uit te breiden. Op de site van het bedrijf wordt het merk omschreven als ultra-luxury.                   
-                            
                           </p>
-                  
                   </div>                
-                      
-                  
-                 
                   <p id="article-text">
-
                     Wat betekent dat? Wat omvat die fameuze zessterrenservice? Dat probeert Thomas Harlander, directeur van het Amsterdamse Rosewood, die voorafgaand aan de opening al tweeënhalf jaar op zijn post zit, zo goed mogelijk uit te leggen. ‘Elk luxehotel heeft zijn eigen credo en missie’, zegt Harlander. ‘In het Rosewood geven we iedere gast een tailormade behandeling. Waarom zou je iedereen hetzelfde behandelen? Er is geen script.’<br><br>
                     
                     Een voorbeeld van zo’n persoonlijke benadering kan hij wel geven. ‘De butler heeft ontdekt dat jouw favoriete parfum bijna op is. Kan gebeuren toch? Als je uitcheckt staat er een fris flesje, mooi verpakt. Dan hoef je niet zelf naar de winkel te gaan.’ <br><br>  
-                  
-                    Niet iedereen krijgt een cadeautje bij het afscheid. Een gast die van kunst houdt kan ook een app krijgen over de kunstcollectie van het hotel. Bijvoorbeeld. ‘We moeten de gast echt lezen en begrijpen. Dat is hard werken. Het gaat erom hoe ik je laat voelen. En dat voelen is iets dat je niet kunt beschrijven. Je voelt het. Het maakt je blij. We willen eigenlijk — ik hou van deze term — een irrationele loyaliteit creëren. Dat je niet meer denkt: is het een Rosewood, of een Hilton of een Four Seasons? Dat is hoe ik die zes sterren zou willen beschrijven.’
                   </p>
 
                   <h4>Niet in het reisprogramma</h4>
+
+                  <div id="app1">
+                    <div unfold-map-root></div>
+                </div>
     
                   <p id="article-text">
                     Het is nog niet zo lang dat Amsterdam meedraait in de wereld van de exclusieve service voor een select gezelschap reizigers. Natuurlijk bezat de hoofdstad altijd al heel fraaie hotels waar de rich and famous neerstreken als ze hier waren uitgenodigd. Denk aan het Amstel Hotel. Maar voor een bepaalde groep welgestelde kosmopolieten zat Amsterdam tot voor kort eenvoudigweg niet in het reisprogramma. <br><br>
@@ -621,7 +618,7 @@ document.addEventListener('DOMContentLoaded', () => {
     // --- Animation State ---
     let currentAnimationFrameId = null;
 
-    // --- Reusable Animation Function ---
+    // --- Reusable Animation Function (Keep as is) ---
     function animateCounter(element, targetValue, duration) {
         if (currentAnimationFrameId) {
             cancelAnimationFrame(currentAnimationFrameId);
@@ -657,7 +654,7 @@ document.addEventListener('DOMContentLoaded', () => {
         currentAnimationFrameId = requestAnimationFrame(step);
     }
 
-    // --- Intersection Observer for Initial Animation ---
+    // --- Intersection Observer for Initial Animation (Keep as is) ---
     const observerOptions = {
         root: null,
         rootMargin: "-40% 0px -40% 0px",
@@ -665,10 +662,12 @@ document.addEventListener('DOMContentLoaded', () => {
     };
     const startAnimationCallback = (entries, observer) => {
         entries.forEach(entry => {
-            if (entry.isIntersecting && currentAnimationFrameId === null) {
+             // Using currentAnimationFrameId === null as a simple flag to run once
+            if (entry.isIntersecting && currentAnimationFrameId === null && !numberElement.dataset.initialAnimationDone) {
                  const initialTarget = parseInt(numberElement.getAttribute('data-target'), 10) || 1000;
                  const initialDuration = 2000;
                  animateCounter(numberElement, initialTarget, initialDuration);
+                 numberElement.dataset.initialAnimationDone = 'true'; // Set flag on number element
                  observer.unobserve(entry.target);
             }
         });
@@ -679,32 +678,49 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
 
-    // --- Button Click Listener ---
+    // --- Button Click Listener (MODIFIED) ---
     if(orderButton) { // Add listener only if button exists
         orderButton.addEventListener('click', () => {
-             const newTarget = 15605;
-             const clickDuration = 2500;
+            // Existing values (Note: Target changed in your provided code)
+            const newTarget = 15605; // Using the value from your latest code snippet
+            const clickDuration = 2500;
 
-             console.log("Order button clicked, animating and updating style."); // For debugging
+            console.log("Order button clicked, scrolling, animating and updating style."); // Updated log
 
-             // 1. Trigger the number animation
-             animateCounter(numberElement, newTarget, clickDuration);
+            // ***** ADD THIS SECTION *****
+            // --- Scroll to Teleport Target ---
+            const teleportTarget = document.getElementById('teleport');
+            if (teleportTarget) {
+                teleportTarget.scrollIntoView({
+                    behavior: 'smooth', // Smooth scroll
+                    block: 'start'      // Align target's top with viewport's top
+                });
+            } else {
+                console.warn('Element with id="teleport" not found for scrolling.');
+            }
+            // --- End Scroll ---
+            // ***** END OF ADDED SECTION *****
 
-             // --- Style and State Updates for Button ---
-             // 2. Change button color class
-             orderButton.classList.remove('btn-primary'); // Remove blue
-             orderButton.classList.add('btn-success');   // Add green
 
-             // 3. Change button text
-             orderButton.textContent = 'Gereserveerd';
+            // 1. Trigger the number animation (Existing)
+            animateCounter(numberElement, newTarget, clickDuration);
 
-             // 4. Disable the button
-             orderButton.disabled = true;
-             // --- End Style Updates ---
+            // --- Style and State Updates for Button (Existing) ---
+            // 2. Change button color class
+            orderButton.classList.remove('btn-primary'); // Remove blue
+            orderButton.classList.add('btn-success');   // Add green
+
+            // 3. Change button text
+            orderButton.textContent = 'Gereserveerd';
+
+            // 4. Disable the button
+            orderButton.disabled = true;
+            // --- End Style Updates ---
         });
     }
 
-}); // End DOMContentLoaded // End DOMContentLoaded // End DOMContentLoaded
+}); 
+
           
     </script>
 
