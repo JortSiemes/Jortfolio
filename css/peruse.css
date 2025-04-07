@@ -1910,3 +1910,59 @@ hr {
         text-align: left; /* Align disclaimer left */
     }
 }
+
+.image-text-split {
+    display: grid; /* Enable CSS Grid */
+    
+    /* Create two columns of equal width (1 fraction each) */
+    grid-template-columns: 1fr 1fr; 
+    
+    /* Optional: Add a gap between the text and image columns */
+    gap: 25px; 
+    
+    /* Vertically align items at the start (top) of their grid area */
+    align-items: start; 
+    
+    /* Optional: Add some margin above/below the whole container */
+    margin: 30px 0; 
+    
+    /* Optional: Add padding within the container if needed */
+    /* padding: 15px; */ 
+}
+
+.text-wrap-container {
+    /* Use flow-root to establish a new block formatting context, 
+       which contains the float without needing extra clearing elements */
+    display: flow-root; 
+    
+    /* Optional: Add margin/padding/max-width to the container *
+}
+
+/* --- Styling for the Floated Image --- */
+.wrapped-image {
+    float: left; /* Float the image to the left */
+    
+    /* Define width - percentage allows responsiveness */
+    width: 35%; /* Adjust percentage as needed */
+    max-width: 250px; /* Prevent image getting too large */
+    height: auto; /* Maintain aspect ratio */
+    
+    /* Add space between image and text/borders */
+    /* top, right, bottom, left */
+    margin: 5px 20px 10px 0; 
+    
+    /* Optional: Add rounded corners */
+    /* border-radius: 8px; */
+}
+
+/* --- Styling for the Text --- */
+/* Target the paragraph using its existing ID or general paragraphs */
+#article-text, 
+.text-wrap-container p { /* Apply to all paragraphs in the container */
+    margin-top: 0; /* Adjust top margin for first paragraph */
+    margin-bottom: 1em; /* Space between paragraphs */
+    line-height: 1.7; /* Readability */
+    /* Text color, font size etc. */
+    /* color: #333; */
+    /* font-size: 1rem; */
+}
