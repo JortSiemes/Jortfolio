@@ -68,16 +68,10 @@
                   <div class="SettingsButtons"> 
                     <button id="aa-button" class="rating-button compact">
                       <span id="aa-label"><h4>Aa</h4></span>
-                      <input type="range" min="0" max="30" value="10" step="10" class="rating-slider hidden form-range" id="aa-slider">
+                      <input type="range" min="0" max="30" value="10" step="10" class="rating-slider visible form-range" id="aa-slider">
                     </button>
                   </div>
-                  <div class="SettingsButtons">
-                    <button id="aa-button" class="rating-button compact">
-                      <span id="aa-label"><h4>Peruse</h4></span>
-                    </button>
-                    </button>
-                  </div>
-                </div>
+                 </div>
             <br>
 
             <hr />
@@ -425,39 +419,107 @@ showSliderValue();
 window.addEventListener("resize",showSliderValue);
 slider_input.addEventListener('input', showSliderValue, false);
 
+document.addEventListener('DOMContentLoaded', function () {
+
 const button = document.getElementById('aa-button');
-const label = document.getElementById('aa-label');
+const label = document.getElementById('aa-label'); // Although not used in logic, keep if needed elsewhere
 const slider = document.getElementById('aa-slider');
+
+// Key for storing the slider value in localStorage
+const storageKey = 'userFontSizeSliderValue';
+
+// Font size values corresponding to the slider steps
+const fontSizes = [14, 18, 22, 28]; // 4 sizes for the 4 steps (0, 10, 20, 30)
 
 // To store whether the button is expanded or not
 let expanded = false;
 
+// --- Helper Functions ---
+
+// Function to apply the font size based on the slider value
+function applyFontSize(sliderValue) {
+    // Ensure sliderValue is treated as a number
+    const value = parseInt(sliderValue, 10);
+    // Calculate index, ensuring it's within bounds
+    const index = Math.min(Math.max(value / 10, 0), fontSizes.length - 1);
+    const fontSize = fontSizes[index];
+
+    // Apply this font size to all relevant <p> elements
+    // Note: IDs should be unique. If you have multiple paragraphs, consider using a class instead, e.g., '.article-text'
+    const articleTextElements = document.querySelectorAll('#article-text');
+    articleTextElements.forEach(p => {
+        p.style.fontSize = `${fontSize}px`;
+    });
+
+    // Ensure the slider visually matches the applied value
+    slider.value = value;
+}
+
+// Function to save the current slider value to localStorage
+function saveSetting() {
+    localStorage.setItem(storageKey, slider.value);
+}
+
+// Function to load the setting from localStorage and apply it
+function loadAndApplySetting() {
+    const savedValue = localStorage.getItem(storageKey);
+    let initialSliderValue;
+
+    // Check if a value was found in localStorage
+    if (savedValue !== null) {
+        initialSliderValue = parseInt(savedValue, 10);
+        // Basic validation: ensure it's a number within the slider's range and steps
+        if (isNaN(initialSliderValue) || initialSliderValue < slider.min || initialSliderValue > slider.max || initialSliderValue % slider.step !== 0) {
+            console.warn('Invalid font size value found in localStorage. Using default.');
+            initialSliderValue = 10; // Use default (matches HTML value="10")
+            localStorage.removeItem(storageKey); // Optional: Remove the invalid value
+        }
+    } else {
+        // No saved value, use the default from the HTML slider element
+        initialSliderValue = parseInt(slider.value, 10); // Default is 10 based on your HTML
+    }
+
+    // Apply the loaded or default font size
+    applyFontSize(initialSliderValue);
+}
+
+// --- Event Listeners ---
+
 button.addEventListener('click', function () {
-  // Toggle visibility of the slider
-  if (!expanded) {
-    slider.classList.remove('hidden');
-    button.classList.remove('compact');
-    expanded = true;
-  } else {
-    slider.classList.add('hidden');
-    button.classList.add('compact');
-    expanded = false;
-  }
+    // Toggle visibility of the slider
+    if (!expanded) {
+        slider.classList.remove('hidden'); // Assuming you have CSS rules for .hidden
+        button.classList.remove('compact'); // Assuming you have CSS rules for .compact
+        expanded = true;
+    } else {
+        slider.classList.add('hidden');
+        button.classList.add('compact');
+        expanded = false;
+    }
+    // Ensure initial state of slider visibility matches 'expanded' status if needed
+    // e.g., if slider starts hidden:
+    // if (!expanded) slider.classList.add('hidden');
 });
 
 slider.addEventListener('input', function () {
-  // Font size values corresponding to the 4 steps
-  const fontSizes = [14, 18, 22, 28]; // 4 sizes for the 4 steps
-  
-  // Get the current slider value and map it to the appropriate font size
-  const fontSize = fontSizes[slider.value / 10]; // slider.value is in multiples of 10
-
-  // Apply this font size to all <p> elements with the ID 'article-text'
-  const articleText = document.querySelectorAll('#article-text');
-  articleText.forEach(p => {
-    p.style.fontSize = `${fontSize}px`;
-  });
+    // Apply the font size based on the current slider value
+    applyFontSize(this.value);
+    // Save the new setting to localStorage immediately
+    saveSetting();
 });
+
+// --- Initialization ---
+
+// Load the saved setting (or default) when the page loads
+loadAndApplySetting();
+
+// Initial setup for button/slider visibility (assuming it starts compact and hidden)
+if (!expanded) {
+    slider.classList.add('hidden');
+    button.classList.add('compact');
+}
+
+}); // End of DOMContentLoaded listener
 
 
     </script>

@@ -652,7 +652,7 @@ button {
 
   @media (max-width: 768px) {
     .Longread-meta {
-        padding-right: 40px; /* Adds space between h4 and p */
+        padding-right: 29vw; /* Adds space between h4 and p */
       }
 }
 
@@ -1014,7 +1014,7 @@ a:active {
 .Longread-ArticleA {
     background-color: #451212;
     width: 100%;
-    height: 250vh;
+    height: 100%;
     z-index: -1;
     position: relative;
     margin: 0;
@@ -1029,7 +1029,7 @@ a:active {
     .Longread-ArticleA {
         background-color: #451212;
         width: 100%;
-        height: 400vh;
+        height: 100%;
         z-index: -1;
         position: relative;
         margin: 0;
@@ -1657,4 +1657,235 @@ hr {
         margin-left: 4vw;
         margin-right: 4vw; /* Modern Browsers */
       }
+}
+
+.Number-Animation h2 {
+    text-align: right;
+  }
+
+
+
+/* Grid Container for Layout */
+.Animation-content-container {
+    display: grid;
+    gap: 30px;
+    /* Create two columns: first takes available space, second takes content width (or set specific widths like 1fr 1fr or 60% 40%) */
+    grid-template-columns: 1fr auto; /* Adjust as needed */
+}
+
+@media (max-width: 768px) { 
+    .Animation-content-container {
+        display: block;
+        gap: 10px;
+        /* Create two columns: first takes available space, second takes content width (or set specific widths like 1fr 1fr or 60% 40%) */
+        grid-template-columns: 1fr auto; /* Adjust as needed */
+    }
+}
+
+.text-content p{
+    width: 490px;
+}
+
+@media (max-width: 768px) { 
+    .text-content p{
+        width: 100%;
+    }
+}
+
+
+/* Existing CSS for the number animation part */
+.Number-Animation h2 {
+  text-align: right;
+  margin: 0; 
+}
+
+.Number-Animation h4 {
+    color: #C0C0C0;
+    text-align: right;
+    margin: 0;
+    margin-bottom: 20px;
+  }
+
+
+#countup-number {
+    display: inline-block; /* Keeps € and number together */
+    font-weight: bold; /* Make number stand out */
+    font-size: 1.1em; /* Example: make number larger */
+    color: #ffffff; /* Example: give number a color */
+}
+
+
+.room-offer-box {
+    display: grid;
+    /* Adjust column ratio as needed (e.g., 3fr 2fr makes left wider) */
+    grid-template-columns: 2fr 2fr; 
+    gap: 25px; /* Gap between columns */
+    padding: 20px;
+    background-color: #fff; /* White background */
+    border: 2px solid #e0e0e0; /* Light grey border */
+    border-radius: 8px;
+    max-width: 950px; /* Max width of the box */
+    margin: 20px auto; /* Center the box on the page */
+    position: relative; /* Needed if using pseudo-elements for separator */
+}
+
+/* Optional: Add explicit vertical separator */
+.room-offer-box::before {
+    content: "";
+    position: absolute;
+    top: 20px; /* Match padding */
+    bottom: 20px; /* Match padding */
+    left: calc(45% + 12.5px); /* Position based on grid ratio (3fr/(3fr+2fr)=60%) + half of gap */
+    width: 1px;
+    background-color: #e0e0e0; /* Separator color */
+}
+
+
+/* --- Left Column: Offer Details --- */
+.offer-details {
+    /* Styles for the left side content */
+    font-size: 0.9rem;
+    color: #333;
+}
+.offer-details h4 {
+    margin-top: 0;
+    margin-bottom: 5px;
+    font-size: 1.2rem;
+}
+.offer-details h5 {
+    margin-top: 15px;
+    margin-bottom: 5px;
+    font-size: 0.9rem;
+    font-weight: 600;
+}
+.offer-details ul {
+    margin-top: 5px;
+}
+.offer-details li {
+    margin-bottom: 8px;
+    display: flex; /* Align icon and text */
+    align-items: center;
+    gap: 8px; /* Space between icon and text */
+}
+/* Example icon styling (if using Font Awesome) */
+/* .offer-details li i { color: #008009; width: 16px; text-align: center; } */
+/* .offer-details li i.fa-times { color: #dc3545; } */
+
+.subtle-text {
+    color: #333333;
+    font-size: 0.85rem;
+    margin-top: 0;
+    margin-bottom: 10px;
+}
+.urgency-text {
+    color: #dc3545; /* Red color for urgency */
+    font-weight: 600;
+    font-size: 0.9rem;
+    margin-top: 15px;
+}
+
+
+/* --- Right Column: Offer Actions --- */
+.offer-actions {
+    display: flex;
+    flex-direction: column;
+    text-align: right; /* Align text elements to the right */
+}
+.occupancy-summary {
+    font-size: 0.85rem;
+    color: #555;
+    margin: 0 0 5px 0;
+}
+.price-display {
+    margin-bottom: 2px; /* Space below the number */
+}
+#countup-number { /* Styles for the animated number */
+    font-size: 1.6em; /* Adjust size */
+    font-weight: 700; /* Bold */
+    color: #ffffff;
+    line-height: 1.2;
+    display: inline-block; /* Keep inline with € */
+}
+.price-info { /* "Inclusief..." text */
+    font-size: 0.85rem;
+    color: #555;
+    margin: 0 0 15px 0; /* Space below it, before button */
+}
+
+/* --- Button Styles (Keep existing .btn styles) --- */
+.btn {
+    display: block; /* Make button a block element */
+    width: 100%; /* Full width */
+    box-sizing: border-box;
+    padding: 12px 15px;
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: #fff;
+    text-align: center;
+    vertical-align: middle;
+    cursor: pointer;
+    background-color: transparent;
+    border: 1px solid transparent;
+    border-radius: 4px;
+    text-decoration: none;
+    transition: background-color 0.3s ease, border-color 0.3s ease, opacity 0.3s ease;
+    margin-top: auto; /* Push button towards bottom if container has extra space */
+}
+.btn-primary { /* Blue */
+    background-color: #006ce4;
+    border-color: #006ce4;
+}
+.btn-primary:not(:disabled):hover {
+    background-color: #0050b3;
+    border-color: #0050b3;
+}
+.btn-success { /* Green */
+    background-color: #008009;
+    border-color: #008009;
+}
+.btn-success:not(:disabled):hover {
+    background-color: #006007;
+    border-color: #006007;
+}
+.btn:disabled { /* Disabled state */
+    opacity: 0.65;
+    cursor: not-allowed;
+}
+
+
+/* --- Disclaimer Text --- */
+.disclaimer {
+    font-size: 0.8em;
+    color: #6c757d;
+    text-align: right; /* Align right */
+    margin-top: 10px;
+    margin-bottom: 0;
+}
+
+.room-offer-box p {
+    color: #747474;
+    font-weight: 500;
+}
+
+
+/* --- Responsive Adjustments --- */
+@media (max-width: 768px) { /* Adjust breakpoint as needed */
+    .room-offer-box {
+        grid-template-columns: 1fr; /* Stack columns */
+        gap: 15px; /* Reduce gap for stacked layout */
+        padding: 15px;
+    }
+    .room-offer-box::before {
+        display: none; /* Hide vertical separator */
+    }
+    .offer-actions {
+        text-align: left; /* Align text left when stacked */
+        margin-top: 15px; /* Add space above actions block */
+    }
+    .price-display {
+        text-align: left; /* Align price left */
+    }
+     .disclaimer {
+        text-align: left; /* Align disclaimer left */
+    }
 }
