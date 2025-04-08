@@ -1930,6 +1930,14 @@ hr {
     /* padding: 15px; */ 
 }
 
+.text-wrap-container {
+    /* Use flow-root to establish a new block formatting context, 
+       which contains the float without needing extra clearing elements */
+    display: flow-root; 
+    
+    /* Optional: Add margin/padding/max-width to the container *
+}
+
 /* --- Styling for the Floated Image --- */
 .wrapped-image {
     float: left; /* Float the image to the left */
@@ -1959,61 +1967,29 @@ hr {
     /* font-size: 1rem; */
 }
 
-/* --- Style the #map element directly --- */
 #map {
-    height: 450px; /* <-- Add !important */
-    width: 40vw;
+    height: 900px !important; /* <-- Add !important */
+    width: 80vw; 
+    margin: 20px auto; /* Centering based on viewport width */
+    border: 1px solid #ccc; 
+    background-color: lightblue; 
+    z-index: 5;/* Keep temporary background */
 }
 
-@media (max-width: 768px) {
-    #map {
-        height: 300px; /* <-- Add !important */
-        width: 100%;;
-    }
-  }
+.map-section-child { 
+    position: relative; /* Creates stacking context */
+    z-index: 2;         /* Give it a base level slightly above default */
+    /* IMPORTANT: Ensure this container does NOT have overflow: hidden/auto/scroll 
+       if that might clip the absolutely/relatively positioned map later */
+}
 
 
-.legend {
-    display: flex; /* Use flexbox to arrange items in a row */
-    align-items: center; /* Vertically center items within the container */
-    gap: 20px; /* Creates space BETWEEN the legend items (adjust as needed) */
-    padding: 10px 15px; /* Add some padding around the legend */
-    background-color: #222; /* Dark background similar to the image */
-    color: #eee; /* Light text color */
-    font-family: sans-serif; /* Example font */
-    border-radius: 4px; /* Optional: slightly rounded corners */
-  }
-  
-  /* Style each individual legend item (dot + text) */
-  .legend-item {
-    display: flex; /* Use flexbox also *within* the item */
-    align-items: center; /* Vertically center the dot and text relative to each other */
-  }
-  
-  /* Style the colored dots */
-  .legend-dot {
-    display: inline-block; /* Needed to apply width/height */
-    width: 14px;         /* Set the width of the dot */
-    height: 14px;        /* Set the height of the dot */
-    border-radius: 50%;  /* Make it a perfect circle */
-    margin-right: 6px;   /* Add space between the dot and the text */
-  }
-  
-  /* Define the specific colors for the dots */
-  .legend-dot.color-1 {
-    background-color: #f7c7bb; /* Light Pinkish color */
-  }
-  
-  .legend-dot.color-2 {
-    background-color: #e65a44; /* Orange-Red color */
-  }
-  
-  .legend-dot.color-3 {
-    background-color: #a32a2a; /* Dark Red color */
-  }
-  
-  /* Optional: Style the text specifically if needed */
-  .legend-text {
-    /* Add any specific text styles here if necessary */
-    font-size: 14px;
-  }
+/* --- Style the #map element directly --- */
+#map {
+    height: 900px !important; /* <-- Add !important */
+    width: 80vw; 
+    margin: 20px auto; /* Centering based on viewport width */
+    border: 1px solid #ccc; 
+    background-color: lightblue; 
+    z-index: 5; /* Ensure map background isn't transparent */
+}

@@ -16,6 +16,8 @@
     <link rel="icon" type="image/x-icon" href="../Images/Icon_Large_m.png">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <link rel="stylesheet" href="../css/peruse.css">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin="" />
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
     <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js"></script>
 </head>
 <body>
@@ -54,8 +56,10 @@
                 </div>
                 <div class="Longread-Title">
                 <h2>Vijf sterren is passé: Het Amsterdamse zessterrenhotel</h2>
+                <div class="Longread-SubTitle">
                 <p>In Amsterdam opent volgende maand het Rosewood Hotel zijn deuren, een zogenoemd zessterrenhotel, dat zich richt op de reiziger die luxe gewend is. Maar wat moeten we ons voorstellen bij zes sterren? Hoe ziet die service eruit? We gingen te rade bij experts in de wereld van de haute hôtellerie.</p>
-                </div>
+              </div>
+            </div>
                 <div class="parent-container">
                   <div class="Longread-meta">
                     <h4>3 min read</h4>
@@ -83,8 +87,8 @@
                       
                       <p id="article-text">
                         Wat ze gemeen hebben met het nieuwe Rosewood Hotel, dat op 1 mei zijn deuren opent aan de Prinsengracht, is dat hun tweepersoonskamers beginnen bij: 
-                        </p>
-                        </div>
+                      </p>
+                    </div>
                         <div class="Number-Animation">
                           <h2>
                             <div id="countup-number" data-target="1000">€0</div>
@@ -111,7 +115,7 @@
                       </div>
                         <div class="offer-actions">
                             <div class="Interactive-RoomPick">
-                              <button id="order-button" class="btn btn-primary">Reserveren</button>
+                              <button id="order-button" class="btn btn-primary">Check de prijs</button>
                           </div>
                             
                             <p class="disclaimer">Geen zorgen er zijn geen kosten als je op deze knop drukt!</p>
@@ -120,32 +124,54 @@
                   </div>
                   <br>
                     
-                  <h4>Geen script</h4>
-                        
-                  <p id="article-text">
-                    De Rosewood Hotel Group is een hotelketen met 55 hotels in 24 landen, eigendom van de steenrijke Hongkongse vastgoedfamilie Cheng. <br></p>
+                  
                     
                     <div class="text-wrap-container">
 
-                      <img src="../Images/Peruse/SoniaCheng.webp" 
+                      <img src="../Images/Peruse/SoniaCheng.png" 
                            alt="Sonia Cheng or related visual" 
                            class="wrapped-image">
+
+                           <h4>Geen script</h4>
+                        
+                  <p id="article-text">
+                    De Rosewood Hotel Group is een hotelketen met 55 hotels in 24 landen, eigendom van de steenrijke Hongkongse vastgoedfamilie Cheng. <br></p>
                   
                            <p id="article-text">
                             Sonia Cheng, kleindochter van de pater familias, Henry Cheng, leidt het bedrijf. In 2011 nam de familie de van oorsprong Amerikaanse Rosewood-keten over. <br><br>Sindsdien is Sonia Cheng bezig de hotels onder de Rosewood-vlag (de groep heeft ook nog andere merken) in een straf tempo uit te breiden. Op de site van het bedrijf wordt het merk omschreven als ultra-luxury.                   
-                          </p>
-                  </div>                
-                  <p id="article-text">
+                          <br><br>
                     Wat betekent dat? Wat omvat die fameuze zessterrenservice? Dat probeert Thomas Harlander, directeur van het Amsterdamse Rosewood, die voorafgaand aan de opening al tweeënhalf jaar op zijn post zit, zo goed mogelijk uit te leggen. ‘Elk luxehotel heeft zijn eigen credo en missie’, zegt Harlander. ‘In het Rosewood geven we iedere gast een tailormade behandeling. Waarom zou je iedereen hetzelfde behandelen? Er is geen script.’<br><br>
                     
                     Een voorbeeld van zo’n persoonlijke benadering kan hij wel geven. ‘De butler heeft ontdekt dat jouw favoriete parfum bijna op is. Kan gebeuren toch? Als je uitcheckt staat er een fris flesje, mooi verpakt. Dan hoef je niet zelf naar de winkel te gaan.’ <br><br>  
                   </p>
 
-                  <h4>Niet in het reisprogramma</h4>
+                </div>  
 
-                  <div id="app1">
-                    <div unfold-map-root></div>
-                </div>
+                  <h4>Steeds meer luxe hotels in de hoofdstad</h4>
+                  <h6>Luxe-/vijfsterrenhotels in Amsterdam</h6>
+
+                  <div class="legend">
+                    <div class="legend-item">
+                      <span class="legend-dot color-1"></span>
+                      <span class="legend-text">Voor 1980</span>
+                    </div>
+                    <div class="legend-item">
+                      <span class="legend-dot color-2"></span>
+                      <span class="legend-text">1980-2010</span>
+                    </div>
+                    <div class="legend-item">
+                      <span class="legend-dot color-3"></span>
+                      <span class="legend-text">Vanaf 2010</span>
+                    </div>
+                  </div>
+
+                    <div id="map"></div>
+                    
+                <br>
+
+                  
+
+                <h4>Niet in het reisprogramma</h4>
     
                   <p id="article-text">
                     Het is nog niet zo lang dat Amsterdam meedraait in de wereld van de exclusieve service voor een select gezelschap reizigers. Natuurlijk bezat de hoofdstad altijd al heel fraaie hotels waar de rich and famous neerstreken als ze hier waren uitgenodigd. Denk aan het Amstel Hotel. Maar voor een bepaalde groep welgestelde kosmopolieten zat Amsterdam tot voor kort eenvoudigweg niet in het reisprogramma. <br><br>
@@ -193,13 +219,18 @@
             
             </div>
 
+            
+
             <br><br><br><br>
 
-          
-        </div>
-        </div>
+     
 
+        </div>
+        </div>
+        
       </main>
+
+      
 
       <div class="Rating"> 
         <h3>Beoordeling van geloofwaardigheid</h3>
@@ -721,7 +752,96 @@ document.addEventListener('DOMContentLoaded', () => {
 
 }); 
 
-          
+document.addEventListener('DOMContentLoaded', function() {
+    const mapElement = document.getElementById('map');
+    if (mapElement) {
+        const amsterdamCoords = [52.372, 4.894];
+        const initialZoom = 13;
+        const map = L.map('map').setView(amsterdamCoords, initialZoom);
+
+        // --- MODIFIED: Use Stadia Alidade Smooth Dark Tile Layer ---
+        const stadiaApiKey = "5d435b73-b110-4bdd-b9ae-c090462b328e"; // <-- PASTE YOUR API KEY HERE!
+
+        if (stadiaApiKey === "5d435b73-b110-4bdd-b9ae-c090462b328e" || stadiaApiKey === "") {
+             console.warn("Stadia Maps API Key missing. Map tiles may not load.");
+             // Optional: Fallback to standard OSM or show an error message on map?
+        }
+
+        L.tileLayer('https://tiles.stadiamaps.com/tiles/alidade_smooth_dark/{z}/{x}/{y}{r}.png?api_key={apiKey}', {
+            apiKey: stadiaApiKey, // Pass API key securely (Leaflet handles substitution)
+            maxZoom: 20, // Stadia supports high zoom
+            // Update attribution for Stadia, Stamen (original style creator), and OSM
+            attribution: '<a href="https://openmaptiles.org/" target="_blank">OpenMapTiles</a> &copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+        }).addTo(map);
+        // --- END MODIFIED ---
+
+
+        // --- Hotel Data (Keep as before) ---
+        const hotelData = [ /* ... Your hotel data array ... */
+            { name: "Amstel Hotel", lat: 52.359984, lng: 4.905243, category: "Voor 1980" },
+            { name: "Hotel De L'Europe", lat: 52.367644, lng: 4.894466, category: "Voor 1980" },
+            { name: "Doelen Hotel", lat: 52.36825, lng: 4.895859, category: "Voor 1980" },
+            { name: "Grand Hotel Krasnapolsky", lat: 52.372729, lng: 4.894385, category: "Voor 1980" },
+            { name: "Hilton Hotel", lat: 52.35143, lng: 4.872012, category: "Voor 1980" },
+            { name: "Pulitzer Amsterdam", lat: 52.372823, lng: 4.883399, category: "Voor 1980" },
+            { name: "Hotel Okura Amsterdam", lat: 52.348585, lng: 4.893625, category: "Voor 1980" },
+            { name: "Marriott Hotel", lat: 52.362549, lng: 4.880125, category: "Voor 1980" },
+            { name: "Renaissance Hotel", lat: 52.378156, lng: 4.894397, category: "Voor 1980" },
+            { name: "Garden Hotel", lat: 52.35118, lng: 4.874002, category: "1980-2010" },
+            { name: "Barbizon Palace", lat: 52.376486, lng: 4.900472, category: "1980-2010" },
+            { name: "The Grand", lat: 52.370945, lng: 4.895604, category: "1980-2010" },
+            { name: "Hotel 717", lat: 52.364791, lng: 4.885341, category: "1980-2010" },
+            { name: "The Dylan Amsterdam", lat: 52.369279, lng: 4.883983, category: "1980-2010" },
+            { name: "The College Hotel", lat: 52.352776, lng: 4.883686, category: "1980-2010" },
+            { name: "Grand Hotel Amrâth Amsterdam", lat: 52.374647, lng: 4.903879, category: "1980-2010" },
+            { name: "Conservatorium Hotel", lat: 52.358605, lng: 4.878526, category: "Vanaf 2010" },
+            { name: "Andaz Amsterdam Prinsengracht", lat: 52.367908, lng: 4.882883, category: "Vanaf 2010" },
+            { name: "Waldorf Astoria", lat: 52.364671, lng: 4.89694, category: "Vanaf 2010" },
+            { name: "W Amsterdam", lat: 52.3728, lng: 4.889758, category: "Vanaf 2010" },
+            { name: "Hotel TwentySeven", lat: 52.37251, lng: 4.893336, category: "Vanaf 2010" },
+            { name: "Kimpton De Witt Hotel", lat: 52.377234, lng: 4.895533, category: "Vanaf 2010" },
+            { name: "Hyatt Regency Amsterdam Hotel", lat: 52.361778, lng: 4.911721, category: "Vanaf 2010" },
+            { name: "Amsterdam Riverside Hotel", lat: 52.353377, lng: 4.907169, category: "Vanaf 2010" },
+            { name: "Grand Boutique Hotel Maurits at the Park", lat: 52.362199, lng: 4.91965, category: "Vanaf 2010" },
+            { name: "The Diamond Amsterdam", lat: 52.363776, lng: 4.883282, category: "Vanaf 2010" },
+            { name: "Rosewood Amsterdam", lat: 52.365751, lng: 4.882848, category: "Vanaf 2010" }
+        ];
+
+        // --- Define Colors for Categories (Keep as before) ---
+        const categoryColors = { /* ... Your category colors ... */
+             "Voor 1980": "#ffbeaa", "1980-2010": "#f05031", "Vanaf 2010": "#dc3545", "default": "#6c757d"
+        };
+        function getColor(category) { /* ... Your getColor function ... */
+             return categoryColors[category] || categoryColors.default;
+         }
+
+        // --- Add Markers (Keep lighter border color) ---
+        console.log(`Adding ${hotelData.length} hotel markers...`);
+        hotelData.forEach(hotel => {
+            const lat = parseFloat(hotel.lat);
+            const lng = parseFloat(hotel.lng);
+            const category = hotel.category;
+            if (!isNaN(lat) && !isNaN(lng) && hotel.name) {
+                const markerOptions = {
+                    radius: 7,
+                    fillColor: getColor(category),
+                    color: "#CCCCCC", // Lighter border color good for dark maps
+                    weight: 1,
+                    opacity: 1,
+                    fillOpacity: 0.85
+                };
+                const marker = L.circleMarker([lat, lng], markerOptions).addTo(map);
+                marker.bindPopup(`<b>${hotel.name}</b><br><i>${category}</i>`);
+            } else { /* ... warning ... */ }
+        });
+
+        console.log("Leaflet map initialized with Stadia dark theme and markers.");
+
+    } else { /* ... warning ... */ }
+}); // End DOMContentLoaded listener
+
+
+ 
     </script>
 
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
