@@ -988,7 +988,7 @@ a:active {
 .Article-Header-ImageA{
     background-image: 
     linear-gradient(to bottom, rgba(69, 18, 18, 0) 50%, rgba(69, 18, 18, 1) 80%),
-    url('../Images/Peruse/HotelSunrise.jpg');
+    url('../Images/Peruse/Hotel_EstablishingShot_CompressedLightest.gif');
     background-size: 100%;
     background-position: center top;
     background-repeat: no-repeat;
@@ -1005,7 +1005,7 @@ a:active {
         height: 40vh;
         background-image: 
     linear-gradient(to bottom, rgba(69, 18, 18, 0) 30%, rgba(69, 18, 18, 1) 70%),
-    url('../Images/Peruse/HotelSunrise.jpg');
+    url('../Images/Peruse/Hotel_EstablishingShot_CompressedLightest.gif');
     background-size: 100%;
     }
 }
@@ -1981,7 +1981,8 @@ hr {
     background-color: #222; /* Dark background similar to the image */
     color: #eee; /* Light text color */
     font-family: sans-serif; /* Example font */
-    border-radius: 4px; /* Optional: slightly rounded corners */
+    border-radius: 4px;
+    margin-top: 20px;
   }
   
   /* Style each individual legend item (dot + text) */
