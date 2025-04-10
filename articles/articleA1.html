@@ -192,17 +192,48 @@
                      <p id="article-text"> ‘Vijf eetgelegenheden? Dan wens ik ze veel sterkte’, reageert Krooswijk, die nog wel een tip heeft voor het Rosewood. ‘Toen we bij hotel De l’Europe na een ingrijpende verbouwing opengingen, hebben we ervoor gezorgd dat het restaurant binnen een jaar weer twee Michelin-sterren kreeg. Dat is heel belangrijk voor de Amerikaanse markt.’ <br><br>
                         
                       Hoe denkt Thomas Harlander van het Rosewood daarover? ‘Er zijn hotels die hun pink afhakken voor een ster, maar als mijn gasten een Michelin-sterrenervaring willen, stuur ik ze wel door naar mijn vrienden in De l’Europe en het Waldorf’, zegt hij. ‘Het is heel moeilijk met een Michelin-sterrenrestaurant geld te verdienen. In Azië, vooral in Japan, zie je dat chefs geen ster meer willen. Ze hebben ze niet nodig. We zeggen er geen nee tegen, maar een Michelin-ster is niet hetzelfde als succes. Wij gaan onze restaurants vanaf dag één zo opzetten dat ze financieel succesvol zijn.’<br><br>
+                      </p>
+
+                      
+                    
+                    <br><br>
                         
                        <h4>Armenhuis</h4>
     
-                        <p id="article-text">De ingewikkelde en ingrijpende verbouwing van het monumentale pand aan de Prinsengracht vormt een van de redenen waarom de oplevering van het Rosewood zo lang op zich heeft laten wachten. De basis is een 17de-eeuws armenhuis. Tussen 1666 en 1829 woonden hier duizenden vondelingen, wezen en verstoten kinderen.<br><br>
-    
-                          Daarna werd het gebouw radicaal verbouwd in strengclassicistische stijl. Het moest macht uitstralen. Tot 2013 zat hier het gerechtshof Amsterdam. In 2015 gaf de gemeente groen licht voor de omvorming van het paleis van justitie tot een ‘zeer onderscheidend hotel’, maar door lange bezwaarprocedures kon de renovatie pas in 2020 van start.  <br><br>
-                            
-                          Studio Piet Boon heeft het hotel een Amsterdams uiterlijk gegeven, onder meer met Amsterdamse kunst. Denk aan foto’s van Herman Brood en Candy Dulfer van de hand van Anton Corbijn, werk van Erwin Olaf en van Streetart Frankey. <br><br>
-                            
-                          Die laatste is een kunstenaar die gevraagd en ongevraagd beelden toevoegt aan de openbare ruimte in Amsterdam. Boon is een groot fan. ‘Alle hotels van de Rosewood-groep hebben een sense of place’, verklaart Boon. ‘In het Rosewood in het Italiaanse Montalcino voel je: dit is Toscane. Als je binnenkomt op de Prinsengracht, moet je direct weten: dit is Amsterdam. Dat vind ik heel goed gelukt.’<br><br> 
+                       <p id="article-text">
+                        De ingewikkelde en ingrijpende verbouwing van het monumentale pand aan de Prinsengracht vormt een van de redenen waarom de oplevering van het Rosewood zo lang op zich heeft laten wachten. De basis is een 17de-eeuws armenhuis. Tussen 1666 en 1829 woonden hier duizenden vondelingen, wezen en verstoten kinderen.<br><br>
                         
+                        Daarna werd het gebouw radicaal verbouwd in strengclassicistische stijl. Het moest macht uitstralen. Tot 2013 zat hier het gerechtshof Amsterdam. In 2015 gaf de gemeente groen licht voor de omvorming van het paleis van justitie tot een ‘zeer onderscheidend hotel’, maar door lange bezwaarprocedures kon de renovatie pas in 2020 van start. <br><br>
+                                
+                        Studio Piet Boon heeft het hotel een Amsterdams uiterlijk gegeven, onder meer met Amsterdamse kunst. Denk aan foto’s van Herman Brood en Candy Dulfer van de hand van Anton Corbijn, werk van Erwin Olaf en van Streetart Frankey. <br><br>
+                    
+                        Die laatste is een kunstenaar die gevraagd en ongevraagd beelden toevoegt aan de openbare ruimte in Amsterdam. Boon is een groot fan. ‘Alle hotels van de Rosewood-groep hebben een sense of place’, verklaart Boon. ‘In het 
+                        
+                        <span class="inline-reveal-trigger" 
+                              id="cdb-trigger" 
+                              aria-expanded="false" 
+                              aria-controls="cdb-audiovisual"
+                              role="button" 
+                              tabindex="0">
+                            Rosewood Castiglion del Bosco 
+                            <span class="trigger-icon"></span> 
+                        </span>
+                        in het Italiaanse Montalcino voel je: dit is Toscane. Als je binnenkomt op de Prinsengracht, moet je direct weten: dit is Amsterdam. Dat vind ik heel goed gelukt.’ 
+                    </p>
+                    
+                    <div class="Audiovisual_Wrapper collapsible-content" id="cdb-audiovisual">
+                        <video src="../Images/Peruse/Rosewood Castiglion del Bosco estate.mp4" no-controls autoplay loop muted playsinline></video> 
+                        <div class="Parallax_Text">
+                            <h2>Rosewood</h2>
+                            <p>Castiglion del Bosco</p>
+                            <img src="../Images/Peruse/italy.svg" alt="Italy map icon"> 
+                            </div>
+                    </div>
+  
+
+                        <p id="article-text">
+                      
+                       
                           Het Rosewood is superhigh-end, maar dat is niet hetzelfde als overdreven luxe, vindt Boon. ‘Het Rosewood wil ook een hotel zijn voor de buurt. Dat je er, als je daar om de hoek woont, lekker in de tuin gaat zitten en een kop koffie gaat drinken.’
                         </p>
             
@@ -826,6 +857,96 @@ document.addEventListener('DOMContentLoaded', function() {
     } else {
          // More specific error message
          console.error("Map container element with ID 'map' not found in the DOM.");
+    }
+});
+
+document.addEventListener('DOMContentLoaded', () => {
+    // --- Reveal/Collapse Logic ---
+    const trigger = document.getElementById('cdb-trigger'); 
+    const content = document.getElementById('cdb-audiovisual');
+
+    if (trigger && content) {
+        const toggleContent = () => {
+            const isVisible = content.classList.contains('visible');
+            if (isVisible) {
+                content.classList.remove('visible');
+                trigger.classList.remove('active');
+                trigger.setAttribute('aria-expanded', 'false');
+            } else {
+                content.classList.add('visible');
+                trigger.classList.add('active');
+                trigger.setAttribute('aria-expanded', 'true');
+                // Optional: Scroll the content into view slightly after opening
+                // setTimeout(() => {
+                //    content.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+                // }, 700); // Delay matches transition time
+            }
+        };
+
+        // Click event
+        trigger.addEventListener('click', toggleContent);
+
+        // Keyboard event (Enter/Space) for accessibility
+        trigger.addEventListener('keydown', (event) => {
+            if (event.key === 'Enter' || event.key === ' ') {
+                event.preventDefault(); // Prevent page scroll on Space
+                toggleContent();
+            }
+        });
+
+    } else {
+        console.error("Inline trigger or collapsible content element not found. Check IDs: #cdb-trigger, #cdb-audiovisual");
+    }
+
+    // --- Parallax Scroll Logic (Keep from previous step) ---
+    const wrapper = content; // Use the 'content' variable which refers to the wrapper
+    const parallaxText = wrapper ? wrapper.querySelector('.Parallax_Text') : null;
+
+    if (wrapper && parallaxText) {
+        const speedFactor = 1.2; 
+        let isTicking = false;
+
+        function updateParallax() {
+            // Only run if wrapper is visible
+            if (!wrapper.classList.contains('visible')) {
+                isTicking = false;
+                return; 
+            }
+
+            const rect = wrapper.getBoundingClientRect();
+             // Avoid calculations if not in viewport
+            if (rect.bottom < 0 || rect.top > window.innerHeight) {
+                 isTicking = false;
+                 return;
+            }
+
+            const wrapperHeight = wrapper.offsetHeight;
+            const viewportHeight = window.innerHeight;
+            const wrapperCenterY = rect.top + wrapperHeight / 2;
+            const screenCenterY = viewportHeight / 2;
+            const diff = screenCenterY - wrapperCenterY; 
+            const translateY = -diff * speedFactor; 
+
+            parallaxText.style.transform = `translateX(-50%) translateY(${translateY}px)`;
+            isTicking = false;
+        }
+
+        function onScroll() {
+            if (!isTicking) {
+                window.requestAnimationFrame(updateParallax);
+                isTicking = true;
+            }
+        }
+
+        window.addEventListener('scroll', onScroll);
+        window.addEventListener('resize', () => {
+           if (!isTicking) {
+               window.requestAnimationFrame(updateParallax);
+               isTicking = true;
+           }
+        });
+    } else {
+         console.error("Parallax elements not found within #cdb-audiovisual.");
     }
 });
 

@@ -988,7 +988,7 @@ a:active {
 .Article-Header-ImageA{
     background-image: 
     linear-gradient(to bottom, rgba(69, 18, 18, 0) 50%, rgba(69, 18, 18, 1) 80%),
-    url('../Images/Peruse/HighQuality_DELETE.webp');
+    url('../Images/Peruse/Hotel_EstablishingShot_CompressedLightest.gif');
     background-size: 100%;
     background-position: center top;
     background-repeat: no-repeat;
@@ -1005,7 +1005,7 @@ a:active {
         height: 40vh;
         background-image: 
     linear-gradient(to bottom, rgba(69, 18, 18, 0) 30%, rgba(69, 18, 18, 1) 70%),
-    url('../Images/Peruse/HighQuality_DELETE.webp');
+    url('../Images/Peruse/Hotel_EstablishingShot_CompressedLightest.gif');
     background-size: 100%;
     }
 }
@@ -2018,3 +2018,195 @@ hr {
     /* Add any specific text styles here if necessary */
     font-size: 14px;
   }
+
+
+  .Audiovisual_Wrapper {
+    position: relative; /* Crucial for positioning children absolutely */
+    height: 400px;      /* Example: Make it full viewport height */
+    width: 100%;
+    overflow: hidden;   /* Hide anything that moves outside the bounds */
+    background-color: #333; /* Fallback background color */
+}
+
+.Audiovisual_Wrapper video {
+    position: absolute; /* Position it within the relative parent */
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    object-fit: cover; /* Cover the area, potentially cropping */
+    z-index: 1;        /* Put video behind text */
+}
+
+.Parallax_Text {
+    position: absolute; /* Position it within the relative parent */
+    /* Start position: Centered horizontally, near the bottom */
+    left: 50%;
+    bottom: 10%;      /* Adjust starting vertical position */
+    transform: translateX(-50%); /* Center horizontally precisely */
+    
+    /* Styling */
+    color: white;      /* Make text visible */
+    text-align: center;
+    padding: 20px;
+    width: 80%;       /* Limit width */
+    max-width: 600px; /* Optional max width */
+    z-index: 2;        /* Ensure text is above the video */
+
+    /* We will control vertical movement with JS using transform: translateY */
+    /* Initial translateY will be implicitly 0 or set by JS */
+}
+
+/* Basic text styling (optional) */
+.Parallax_Text h2 {
+    font-size: 3rem;
+    margin-bottom: 10px;
+}
+
+.Parallax_Text p {
+    font-size: 2rem;
+    font-weight: 600;
+    margin-bottom: 0; /* Control space below paragraph */
+}
+
+.Parallax_Text {
+    position: absolute; 
+    left: 50%;
+    
+    /* === ADJUST THIS IF NEEDED === */
+    /* Increase this % if the added SVG makes the block too tall */
+    /* Pushes the whole block slightly higher initially */
+    bottom: 15%; /* Example: Increased slightly from 10% */ 
+    
+    transform: translateX(-50%); 
+    color: white;      
+    text-align: center;
+    padding: 20px;
+    width: 80%;       
+    max-width: 600px; 
+    z-index: 2;        
+}
+
+/* Basic text styling */
+
+
+.Parallax_Text img {
+    display: block; /* Allows margin auto to work for centering */
+    margin-left: auto;
+    margin-right: auto;
+    width: 10vw; /* Full width of the container */
+}
+
+@media (max-width: 768px) {
+    .Parallax_Text img {
+        display: block; /* Allows margin auto to work for centering */
+        margin-left: auto;
+        margin-right: auto;
+        width: auto; /* Full width of the container */
+    }
+  }
+
+  .inline-reveal-trigger {
+    display: inline-block; /* Allow padding, etc., while staying inline */
+    background-color: #D2B48C; /* Example: Tan color */
+    color: #000000; /* Darker text for contrast */
+    padding: 4px 8px; /* Adjust padding */
+    padding-right: 28px; /* Extra space on the right for the icon */
+    border-radius: 4px;
+    margin-right: 5px;
+    cursor: pointer;
+    position: relative; /* Needed for absolute positioning of the icon */
+    transition: background-color 0.3s ease;
+    white-space: nowrap; /* Prevent text wrapping within the trigger */
+    font-weight: bold; /* Make it stand out a bit */
+}
+
+.inline-reveal-trigger:hover,
+.inline-reveal-trigger:focus { /* Style focus for keyboard navigation */
+    background-color: #C1A074; /* Slightly darker on hover/focus */
+    outline: none; /* Remove default focus outline if custom styling */
+}
+
+/* === Icon Styling (+/X) within Inline Trigger === */
+.inline-reveal-trigger .trigger-icon {
+    position: absolute;
+    right: 8px;  /* Position from the right edge of the trigger */
+    top: 50%;   /* Center vertically */
+    transform: translateY(-50%);
+    width: 12px;  /* Size of the icon area */
+    height: 12px;
+}
+
+/* Create the + sign using ::before and ::after on the icon span */
+.inline-reveal-trigger .trigger-icon::before,
+.inline-reveal-trigger .trigger-icon::after {
+    content: '';
+    position: absolute;
+    background-color: #333; /* Icon color (matches text) */
+    transition: transform 0.3s ease; /* Animation for rotation */
+}
+
+/* Horizontal bar of the + */
+.inline-reveal-trigger .trigger-icon::before {
+    left: 0;
+    top: 50%;
+    width: 100%; /* 12px */
+    height: 4px; /* Thickness */
+    margin-top: -2px; /* Center vertically */
+}
+
+/* Vertical bar of the + */
+.inline-reveal-trigger .trigger-icon::after {
+    top: 0;
+    left: 50%;
+    width: 4px; /* Thickness */
+    height: 100%; /* 12px */
+    margin-left: -2px; /* Center horizontally */
+}
+
+/* === Icon Animation (when trigger is active) === */
+/* Rotate bars to form an 'X' when trigger has 'active' class */
+.inline-reveal-trigger.active .trigger-icon::before {
+    transform: rotate(45deg);
+}
+
+.inline-reveal-trigger.active .trigger-icon::after {
+    transform: rotate(-45deg);
+}
+
+
+/* === Collapsible Content Styling === */
+.collapsible-content {
+    /* Start hidden */
+    max-height: 0; 
+    overflow: hidden;
+    opacity: 0;
+    visibility: hidden;
+    margin-top: 15px; /* Add some space below the paragraph */
+    
+    /* Smooth transition */
+    transition: max-height 0.7s ease-in-out, 
+                opacity 0.5s ease-in-out 0.1s,
+                visibility 0s linear 0.7s,
+                margin-top 0.7s ease-in-out; /* Transition margin too */
+
+    /* Keep original styles */
+    position: relative; 
+    height: 400px; 
+    width: 100%;
+    margin-bottom: 0px;
+}
+
+/* State when VISIBLE */
+.collapsible-content.visible {
+    max-height: 400px; /* Adjust if content could be taller */
+    opacity: 1;
+    visibility: visible;
+    margin-top: 15px; /* Ensure margin is present when visible */
+     transition: max-height 0.7s ease-in-out, 
+                opacity 0.5s ease-in-out,
+                visibility 0s linear 0s,
+                margin-top 0.7s ease-in-out;
+}
+
+
