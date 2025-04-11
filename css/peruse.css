@@ -2117,7 +2117,6 @@ hr {
     cursor: pointer;
     position: relative; /* Needed for absolute positioning of the icon */
     transition: background-color 0.3s ease;
-    white-space: nowrap; /* Prevent text wrapping within the trigger */
     font-weight: bold; /* Make it stand out a bit */
 }
 
