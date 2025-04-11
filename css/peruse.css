@@ -2203,9 +2203,101 @@ hr {
     visibility: visible;
     margin-top: 15px; /* Ensure margin is present when visible */
      transition: max-height 0.7s ease-in-out, 
-                opacity 0.5s ease-in-out,
+                opacity 0.5s ease-in-out 0.1s,
                 visibility 0s linear 0s,
                 margin-top 0.7s ease-in-out;
 }
 
 
+.Scroll-HandImage {
+    width: 80%;
+    height: 2px;
+    /* Ensure overflow doesn't clip the moving image if margin is negative */
+    /* overflow: hidden; */ /* Remove or comment out if it exists */
+    /* Remove view-timeline-name */
+}
+
+@media (max-width: 768px) {
+    .Scroll-HandImage {
+        width: 100%;
+        height: 220px;
+        /* Ensure overflow doesn't clip the moving image if margin is negative */
+        /* overflow: hidden; */ /* Remove or comment out if it exists */
+        /* Remove view-timeline-name */
+    }
+  }
+
+/* Modify image rule */
+.HandImage-Left img {
+    float: left;
+    margin-left: -31vw; /* Keep for final layout */
+    margin-top: -250px;
+    width: 70%;
+    margin-bottom: 30px;
+
+    /* --- JS Controlled Styles --- */
+    /* Initial state set by JS, but CSS can be a fallback */
+    opacity: 0;
+    transform: translateX(-80%); /* Start off-screen left */
+
+    /* Performance hint */
+    will-change: transform, opacity;
+
+    /* --- REMOVE CSS Animation/Transition --- */
+    /* animation: ... ; */
+    /* animation-timeline: ... ; */
+    /* animation-range: ... ; */
+    /* transition: ... ; */
+}
+
+@media (max-width: 768px) {
+    .HandImage-Left img {
+        float: left;
+        margin-left: -9vw; /* Keep for final layout */
+        margin-top: 0px;
+        width: 70%;
+        margin-bottom: 30px;
+    
+        /* --- JS Controlled Styles --- */
+        /* Initial state set by JS, but CSS can be a fallback */
+        opacity: 0;
+        transform: translateX(-80%); /* Start off-screen left */
+    
+        /* Performance hint */
+        will-change: transform, opacity;
+    
+        /* --- REMOVE CSS Animation/Transition --- */
+        /* animation: ... ; */
+        /* animation-timeline: ... ; */
+        /* animation-range: ... ; */
+        /* transition: ... ; */
+    }
+  }
+
+  .HandImage-Right img {
+    float: right;       /* Float to the right */
+    margin-right: -38vw; /* Negative right margin */
+    margin-top: -200px;
+    width: 70%;         /* Same width */
+    margin-bottom: 30px;/* Same margin */
+
+    /* Initial state for JS animation */
+    opacity: 0;
+    transform: translateX(80%); /* Start Off-screen RIGHT */
+    will-change: transform, opacity;
+}
+
+@media (max-width: 768px) {
+    .HandImage-Right img {
+        float: right;       /* Float to the right */
+        margin-right: -9vw; /* Negative right margin */
+        margin-top: 0px;
+        width: 70%;         /* Same width */
+        margin-bottom: 30px;/* Same margin */
+    
+        /* Initial state for JS animation */
+        opacity: 0;
+        transform: translateX(80%); /* Start Off-screen RIGHT */
+        will-change: transform, opacity;
+    }
+  }
