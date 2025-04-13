@@ -2308,14 +2308,14 @@ hr {
     }
   }
 
-        .michelin-rating-container {
+ .michelin-rating-container {
             padding: 10px;
             /* display: inline-block; */ /* Verwijderd om text-align te laten werken */
             margin-bottom: 20px;
             text-align: center; /* NIEUW: Centreert de inline(-block) elementen (de sterren) */
         }
 
-        .michelin-star {
+.michelin-star {
             width: 45px;  /* NIEUW: 30px * 1.5 = 45px */
             height: 45px; /* NIEUW: 30px * 1.5 = 45px */
             margin: 0 5px; /* Aangepast voor centreren, 0 boven/onder, 5 links/rechts */
@@ -2324,26 +2324,48 @@ hr {
             display: inline-block; /* Zorg ervoor dat het inline-block is voor text-align */
         }
 
-        .michelin-star:hover {
+.michelin-star:hover {
             transform: scale(1.1);
             transition: transform 0.1s ease-in-out;
         }
 
-        #current-rating-display {
+#current-rating-display {
             font-size: 1.5rem;
             text-align: center;
         }
 
         /* Styling voor de grafiek container */
-        #chart-container {
+#chart-container {
             width: 100%;
             max-width: 800px;
             height: 400px;
             margin: auto;
         }
 
-        .noto-color-emoji-regular {
+.noto-color-emoji-regular {
             font-family: "Noto Color Emoji", sans-serif;
             font-weight: 400;
             font-style: normal;
           }
+
+          @keyframes blink-animation {
+            50% {
+              opacity: 0.5; /* Fade out slightly */
+            }
+            /* Optional: Add a slight scale effect too */
+            /*
+            50% {
+              opacity: 0.7;
+              transform: scale(1.05);
+            }
+            */
+          }
+          
+          /* Class to apply the blinking animation */
+.blinking-stars {
+            animation-name: blink-animation;
+            animation-duration: 1.5s; /* Speed of one blink cycle */
+            animation-timing-function: ease-in-out; /* Smoothness */
+            animation-iteration-count: infinite; /* Keep blinking */
+            cursor: pointer; /* Reinforce that it's clickable */
+          }        

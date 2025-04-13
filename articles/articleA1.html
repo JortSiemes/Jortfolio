@@ -215,7 +215,7 @@
                           <img src="../Images/Peruse/Michelin_Empty.png" class="michelin-star" alt="Rate 2 stars" data-value="2">
                           <img src="../Images/Peruse/Michelin_Empty.png" class="michelin-star" alt="Rate 3 stars" data-value="3">
                       </div>
-
+                      <br>
 
                        <p id="article-text">
                       Hoe denkt Thomas Harlander van het Rosewood daarover? ‘Er zijn hotels die hun pink afhakken voor een ster, maar als mijn gasten een Michelin-sterrenervaring willen, stuur ik ze wel door naar mijn vrienden in De l’Europe en het Waldorf’, zegt hij. ‘Het is heel moeilijk met een Michelin-sterrenrestaurant geld te verdienen. In Azië, vooral in Japan, zie je dat chefs geen ster meer willen. Ze hebben ze niet nodig. We zeggen er geen nee tegen, maar een Michelin-ster is niet hetzelfde als succes. Wij gaan onze restaurants vanaf dag één zo opzetten dat ze financieel succesvol zijn.’<br><br>
@@ -1064,6 +1064,14 @@ document.addEventListener('DOMContentLoaded', function() {
     const fullStarSrc = '../Images/Peruse/MichelinStar_Full.png'; // Jouw pad
     let currentRating = 1;
 
+    // *** NEW: Flag to track if initial blinking is active ***
+    let initialBlinkActive = true;
+
+    // *** NEW: Add blinking class on page load ***
+    stars.forEach(star => {
+        star.classList.add('blinking-stars');
+    });
+
     function updateStarsVisual(rating) {
         stars.forEach((star, index) => {
             const starValue = index + 1;
@@ -1087,8 +1095,9 @@ document.addEventListener('DOMContentLoaded', function() {
     const ctx = document.getElementById('michelinBarChart').getContext('2d');
     let barChart = null;
 
+    // Note: Updated Dutch labels are used here
     const chartRawData = {
-        labels: ['Netherlands', 'Belgium', 'France', 'Germany', 'UK', 'Switzerland'],
+        labels: ['Nederland', 'België', 'Frankrijk', 'Duitsland', 'Verenigd Koninkrijk', 'Zwitserland'],
         datasets: {
             '1': [102, 128, 534, 280, 170, 108],
             '2': [19, 23, 75, 50, 27, 26],
@@ -1103,10 +1112,22 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     };
 
+    // Note: flagMap keys need to match chartRawData.labels for flags to show
+    // Using English keys here based on previous code. Adjust if needed.
     const flagMap = {
-        'Netherlands': '🇳🇱', 'Belgium': '🇧🇪', 'France': '🇫🇷',
-        'Germany': '🇩🇪', 'UK': '🇬🇧', 'Switzerland': '🇨🇭'
+        'Nederland': '🇳🇱',           // Key matches label
+        'België': '🇧🇪',              // Key matches label
+        'Frankrijk': '🇫🇷',           // Key matches label
+        'Duitsland': '🇩🇪',           // Key matches label
+        'Verenigd Koninkrijk': '🇬🇧', // Key matches label
+        'Zwitserland': '🇨🇭'          // Key matches label
     };
+    // If you used English labels before:
+    // const flagMap = {
+    //     'Netherlands': '🇳🇱', 'Belgium': '🇧🇪', 'France': '🇫🇷',
+    //     'Germany': '🇩🇪', 'UK': '🇬🇧', 'Switzerland': '🇨🇭'
+    // };
+
 
     function renderOrUpdateChart(rating) {
         if (rating < 1 || rating > 3) {
@@ -1131,29 +1152,27 @@ document.addEventListener('DOMContentLoaded', function() {
                     title: { display: true, text: 'Aantal Restaurants' }
                 },
                 x: {
-                    title: { display: true, text: 'Land' },
+                    // Updated title to use Dutch source text
+                    title: { display: true, text: 'bron: Michelin, 2024' },
                     grid: {
                         display: false
                     },
                     ticks: {
                          display: true,
-                         color: '#333', // Visible color
+                         color: '#a1a1a1',
                          font: {
                              size: 12,
-                             // *** UPDATED FONT FAMILY ***
-                             // Use Noto Color Emoji first, then system fallbacks
                              family: "'Noto Color Emoji', 'Segoe UI Emoji', 'Apple Color Emoji', sans-serif"
                          },
                          callback: function(value, index, ticks) {
-                            const label = this.getLabelForValue(value);
-                            const flag = flagMap[label] || '?';
-                            // console.log(`Tick Callback - Index: ${index}, Label: "${label}", Flag: ${flag}`); // Keep for debugging if needed
-                            return [flag, label]; // Return array for multi-line
+                            const label = this.getLabelForValue(value); // Gets the label from chartRawData.labels
+                            const flag = flagMap[label] || '?'; // Looks up based on that label
+                            // console.log(`Tick Callback - Index: ${index}, Label: "${label}", Flag: ${flag}`);
+                            return [flag, label];
                         }
                     },
-                    // Keep afterFit to ensure enough vertical space for two lines
                     afterFit: function(scaleInstance) {
-                        scaleInstance.height = scaleInstance.height + 20; // Adjust height if needed
+                        scaleInstance.height = scaleInstance.height + 20;
                     }
                 }
             }
@@ -1173,13 +1192,13 @@ document.addEventListener('DOMContentLoaded', function() {
             barChart = new Chart(ctx, {
                 type: 'bar',
                 data: {
-                    labels: chartRawData.labels,
+                    labels: chartRawData.labels, // Use the Dutch labels here
                     datasets: [{
                         label: 'Aantal Restaurants', data: dataToShow,
                         backgroundColor: colorToShow, borderColor: borderColorToShow, borderWidth: 1
                     }]
                 },
-                options: chartOptions // Use the options with updated font
+                options: chartOptions
             });
         }
     }
@@ -1187,18 +1206,33 @@ document.addEventListener('DOMContentLoaded', function() {
     // --- Event Listeners Sterren ---
     stars.forEach(star => {
         star.addEventListener('click', function() {
+            // *** NEW: Stop blinking on first click ***
+            if (initialBlinkActive) {
+                stars.forEach(s => s.classList.remove('blinking-stars')); // Remove from all stars
+                initialBlinkActive = false; // Stop blinking permanently
+            }
+
+            // --- Original click logic ---
             const clickedValue = parseInt(this.getAttribute('data-value'));
             if (currentRating !== clickedValue) {
                 currentRating = clickedValue;
                 updateStarsVisual(currentRating);
                 renderOrUpdateChart(currentRating);
             }
+             // No console log here in original code, removed
         });
+
         star.addEventListener('mouseover', function() {
-            const hoverValue = parseInt(this.getAttribute('data-value'));
-            updateStarsVisual(hoverValue);
+             // Original hover logic: Preview rating
+             const hoverValue = parseInt(this.getAttribute('data-value'));
+             // Temporarily show fill state up to the hovered star (Different from updateStarsVisual)
+             stars.forEach((s, index) => {
+                 s.src = (index < hoverValue) ? fullStarSrc : emptyStarSrc;
+             });
         });
+
         star.addEventListener('mouseout', function() {
+            // Original mouseout logic: Restore visual based on currentRating
             updateStarsVisual(currentRating);
         });
     });
