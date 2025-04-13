@@ -252,6 +252,12 @@
     font-style: italic;
 }
 
+html, body {
+    overflow-x: hidden; /* Hides horizontal overflow */
+    width: 100%;        /* Optional: Ensures body takes full viewport width */
+    max-width: 100%;    /* Optional: Prevents body from exceeding viewport width */
+}
+
 body {
     margin: 0;
     padding: 0;
