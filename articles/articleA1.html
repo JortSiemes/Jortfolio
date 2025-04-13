@@ -17,8 +17,11 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <link rel="stylesheet" href="../css/peruse.css">
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin="" />
+    <link   rel="stylesheet"   href="https://cdn.jsdelivr.net/gh/lipis/flag-icons@7.2.3/css/flag-icons.min.css" 
+/>
     <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
     <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 </head>
 <body>
 
@@ -202,6 +205,21 @@
                       Hoe denkt Thomas Harlander van het Rosewood daarover? ‘Er zijn hotels die hun pink afhakken voor een ster, maar als mijn gasten een Michelin-sterrenervaring willen, stuur ik ze wel door naar mijn vrienden in De l’Europe en het Waldorf’, zegt hij. ‘Het is heel moeilijk met een Michelin-sterrenrestaurant geld te verdienen. In Azië, vooral in Japan, zie je dat chefs geen ster meer willen. Ze hebben ze niet nodig. We zeggen er geen nee tegen, maar een Michelin-ster is niet hetzelfde als succes. Wij gaan onze restaurants vanaf dag één zo opzetten dat ze financieel succesvol zijn.’<br><br>
                       </p>
 
+                      <h4 id="current-rating-display">Michelin 0-Ster restaurant per land</h4>
+
+                      <div id="chart-container">
+                        <canvas id="michelinBarChart"></canvas>
+                      </div>
+
+                      
+
+                      <div class="michelin-rating-container" id="michelin-rating">
+                          <img src="../Images/Peruse/Michelin_Empty.png" class="michelin-star" alt="Rate 1 star" data-value="1">
+                          <img src="../Images/Peruse/Michelin_Empty.png" class="michelin-star" alt="Rate 2 stars" data-value="2">
+                          <img src="../Images/Peruse/Michelin_Empty.png" class="michelin-star" alt="Rate 3 stars" data-value="3">
+                      </div>
+
+
                        <h4>Armenhuis</h4>
     
                        <p id="article-text">
@@ -254,8 +272,6 @@
         </div>
         
       </main>
-
-      
 
       <div class="Rating"> 
         <h3>Beoordeling van geloofwaardigheid</h3>
@@ -1035,7 +1051,159 @@ console.log(`Scroll animations initialized for ${animatedImages.length} elements
 
 });
 
+document.addEventListener('DOMContentLoaded', function() {
+    // --- Sterren Selector Setup ---
+    const ratingContainer = document.getElementById('michelin-rating');
+    const stars = ratingContainer.querySelectorAll('.michelin-star');
+    const ratingDisplay = document.getElementById('current-rating-display');
+    const emptyStarSrc = '../Images/Peruse/Michelin_Empty.png'; // Jouw pad
+    const fullStarSrc = '../Images/Peruse/MichelinStar_Full.png'; // Jouw pad
+    let currentRating = 1;
 
+    function updateStarsVisual(rating) {
+        stars.forEach((star, index) => {
+            const starValue = index + 1;
+            if (starValue <= rating) {
+                star.src = fullStarSrc;
+                star.alt = `Rating: ${starValue} ster(ren)`;
+            } else {
+                star.src = emptyStarSrc;
+                star.alt = `Rate ${starValue} ster(ren)`;
+            }
+        });
+        if (ratingDisplay) {
+            ratingDisplay.textContent = `Aantal Michelin ${rating}-ster restaurants`;
+            if (rating === 0) {
+                 ratingDisplay.textContent = `Selecteer een sterren-niveau`;
+            }
+        }
+    }
+
+    // --- Chart.js Setup ---
+    const ctx = document.getElementById('michelinBarChart').getContext('2d');
+    let barChart = null;
+
+    const chartRawData = {
+        labels: ['Netherlands', 'Belgium', 'France', 'Germany', 'UK', 'Switzerland'],
+        datasets: {
+            '1': [102, 128, 534, 280, 170, 108],
+            '2': [19, 23, 75, 50, 27, 26],
+            '3': [1, 2, 30, 10, 9, 4]
+        },
+        titles: { '1': '', '2': '', '3': '' },
+        colors: {
+            '1': 'rgba(173, 221, 142, 0.6)', '2': 'rgba(254, 217, 118, 0.6)', '3': 'rgba(228, 26, 28, 0.6)'
+        },
+        borderColors: {
+           '1': 'rgba(173, 221, 142, 1)', '2': 'rgba(254, 217, 118, 1)', '3': 'rgba(228, 26, 28, 1)'
+        }
+    };
+
+    const flagMap = {
+        'Netherlands': '🇳🇱', 'Belgium': '🇧🇪', 'France': '🇫🇷',
+        'Germany': '🇩🇪', 'UK': '🇬🇧', 'Switzerland': '🇨🇭'
+    };
+
+    function renderOrUpdateChart(rating) {
+        if (rating < 1 || rating > 3) {
+             if (barChart) { barChart.destroy(); barChart = null; }
+            return;
+        }
+        const ratingStr = rating.toString();
+        const dataToShow = chartRawData.datasets[ratingStr];
+        const titleToShow = chartRawData.titles[ratingStr];
+        const colorToShow = chartRawData.colors[ratingStr];
+        const borderColorToShow = chartRawData.borderColors[ratingStr];
+
+        const chartOptions = {
+            responsive: true, maintainAspectRatio: false,
+            plugins: {
+                title: { display: true, text: titleToShow, font: { size: 16 } },
+                legend: { display: false },
+            },
+            scales: {
+                y: {
+                    beginAtZero: true,
+                    title: { display: true, text: 'Aantal Restaurants' }
+                },
+                x: {
+                    title: { display: true, text: 'Land' },
+                    grid: {
+                        display: false
+                    },
+                    ticks: {
+                         display: true,
+                         color: '#333', // Visible color
+                         font: {
+                             size: 12,
+                             // *** UPDATED FONT FAMILY ***
+                             // Use Noto Color Emoji first, then system fallbacks
+                             family: "'Noto Color Emoji', 'Segoe UI Emoji', 'Apple Color Emoji', sans-serif"
+                         },
+                         callback: function(value, index, ticks) {
+                            const label = this.getLabelForValue(value);
+                            const flag = flagMap[label] || '?';
+                            // console.log(`Tick Callback - Index: ${index}, Label: "${label}", Flag: ${flag}`); // Keep for debugging if needed
+                            return [flag, label]; // Return array for multi-line
+                        }
+                    },
+                    // Keep afterFit to ensure enough vertical space for two lines
+                    afterFit: function(scaleInstance) {
+                        scaleInstance.height = scaleInstance.height + 20; // Adjust height if needed
+                    }
+                }
+            }
+        };
+
+        if (barChart) {
+            barChart.data.datasets[0].data = dataToShow;
+            barChart.data.datasets[0].backgroundColor = colorToShow;
+            barChart.data.datasets[0].borderColor = borderColorToShow;
+            barChart.options.plugins.title.text = titleToShow;
+            // Ensure options using the new font are applied on update
+            barChart.options.scales.x.ticks.font.family = chartOptions.scales.x.ticks.font.family;
+            barChart.options.scales.x.afterFit = chartOptions.scales.x.afterFit; // Re-apply afterFit too
+            barChart.options.scales.x.ticks.callback = chartOptions.scales.x.ticks.callback; // Re-apply callback
+            barChart.update();
+        } else {
+            barChart = new Chart(ctx, {
+                type: 'bar',
+                data: {
+                    labels: chartRawData.labels,
+                    datasets: [{
+                        label: 'Aantal Restaurants', data: dataToShow,
+                        backgroundColor: colorToShow, borderColor: borderColorToShow, borderWidth: 1
+                    }]
+                },
+                options: chartOptions // Use the options with updated font
+            });
+        }
+    }
+
+    // --- Event Listeners Sterren ---
+    stars.forEach(star => {
+        star.addEventListener('click', function() {
+            const clickedValue = parseInt(this.getAttribute('data-value'));
+            if (currentRating !== clickedValue) {
+                currentRating = clickedValue;
+                updateStarsVisual(currentRating);
+                renderOrUpdateChart(currentRating);
+            }
+        });
+        star.addEventListener('mouseover', function() {
+            const hoverValue = parseInt(this.getAttribute('data-value'));
+            updateStarsVisual(hoverValue);
+        });
+        star.addEventListener('mouseout', function() {
+            updateStarsVisual(currentRating);
+        });
+    });
+
+     // --- Initialisatie bij laden ---
+     updateStarsVisual(currentRating);
+     renderOrUpdateChart(currentRating);
+
+});
  
     </script>
 

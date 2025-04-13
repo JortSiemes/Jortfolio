@@ -2301,3 +2301,43 @@ hr {
         will-change: transform, opacity;
     }
   }
+
+        .michelin-rating-container {
+            padding: 10px;
+            /* display: inline-block; */ /* Verwijderd om text-align te laten werken */
+            margin-bottom: 20px;
+            text-align: center; /* NIEUW: Centreert de inline(-block) elementen (de sterren) */
+        }
+
+        .michelin-star {
+            width: 45px;  /* NIEUW: 30px * 1.5 = 45px */
+            height: 45px; /* NIEUW: 30px * 1.5 = 45px */
+            margin: 0 5px; /* Aangepast voor centreren, 0 boven/onder, 5 links/rechts */
+            cursor: pointer;
+            vertical-align: middle;
+            display: inline-block; /* Zorg ervoor dat het inline-block is voor text-align */
+        }
+
+        .michelin-star:hover {
+            transform: scale(1.1);
+            transition: transform 0.1s ease-in-out;
+        }
+
+        #current-rating-display {
+            font-size: 1.5rem;
+            text-align: center;
+        }
+
+        /* Styling voor de grafiek container */
+        #chart-container {
+            width: 100%;
+            max-width: 800px;
+            height: 400px;
+            margin: auto;
+        }
+
+        .noto-color-emoji-regular {
+            font-family: "Noto Color Emoji", sans-serif;
+            font-weight: 400;
+            font-style: normal;
+          }
