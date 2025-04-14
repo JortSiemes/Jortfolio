@@ -106,7 +106,7 @@ document.addEventListener("DOMContentLoaded", function () {
   const articleARead = localStorage.getItem(`article_${selectedA}_read`);
   if (articleARead === "true" && articleBRead === "true") {
     if (!localStorage.getItem("thank_you_shown")) {
-      alert("Bedankt voor je deelname! Je antwoorden zijn verzonden.");
+      alert("Bedankt voor je deelname aan mijn onderzoek! De antwoorden zijn opgeslagen. -Jort");
       localStorage.setItem("thank_you_shown", "true");
     }
   }

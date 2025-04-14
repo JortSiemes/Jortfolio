@@ -1479,7 +1479,8 @@ button {
         color: #5a5a5a;
         font-family: 'Euclid CircularA';
     }
-    
+
+   
     button {
         font-family: 'Euclid CircularA', sans-serif;
       }
@@ -1642,6 +1643,23 @@ button {
             background-color: #4EBFAC;
     }
 }
+
+.schaalinfo {
+    display: flex;              /* Arrange children (the p tags) in a row */
+    justify-content: space-between; /* Push first child left, last child right */
+    /* Optional: Add width to match your slider, or padding/margin */
+    width: 100%; /* Or set a specific width like 300px */
+    margin-bottom: 5px; /* Add some space below it before the slider */
+    gap: 100px;
+  }
+  
+  /* Optional: Remove default margins from paragraphs if needed */
+  .schaalinfo p {
+    margin: 0; 
+    text-align: center;
+    font-weight: 800;
+    font-size: 1rem;
+  }
 
 hr {
     border: none;
@@ -2065,12 +2083,12 @@ hr {
 
 /* Basic text styling (optional) */
 .Parallax_Text h2 {
-    font-size: 3rem;
+    font-size: 2rem;
     margin-bottom: 10px;
 }
 
 .Parallax_Text p {
-    font-size: 2rem;
+    font-size: 1.2rem;
     font-weight: 600;
     margin-bottom: 0; /* Control space below paragraph */
 }
@@ -2108,7 +2126,7 @@ hr {
         display: block; /* Allows margin auto to work for centering */
         margin-left: auto;
         margin-right: auto;
-        width: auto; /* Full width of the container */
+        width: 40vw; /* Full width of the container */
     }
   }
 
