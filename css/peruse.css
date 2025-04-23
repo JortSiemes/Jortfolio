@@ -1089,7 +1089,7 @@ a:active {
 @media (max-width: 768px) {
     .Longform-Image{
         width: 100%;
-        height: 25vh;
+        height: 20vh;
         position: relative;
         background-size: 100%;
         background-position: center top;
@@ -1105,6 +1105,10 @@ a:active {
 
 .Image1{
     background-image: url('../Images/Peruse/ExtraJoss.avif');
+}
+
+.Image2{
+    background-image: url('../Images/Peruse/GrafiekExtraJoss.png');
 }
 
 .Imagebijschrift p{
