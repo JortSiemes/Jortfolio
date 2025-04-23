@@ -370,14 +370,19 @@ body {
     display:  flex;
     align-items: flex-end;
     height: 50vh;
-    transition: transform 1s ease; 
     position: relative;
+    transition: transform 3s ease-out;
+     will-change: transform; 
 }
 
 @media (max-width: 700px) {
     .article {
         height: 30vh;
     }
+}
+
+.article:hover {
+    transform: scale(1.02); /* Slight zoom effect on hover */
 }
 
 .Barticle {
@@ -435,9 +440,8 @@ body {
     font-size: 20px;
     z-index: 10; /* Higher than overlay */
 }
-.article:hover {
-    transform: scale(1.1); /* Slight zoom effect on hover */
-}
+
+
 
 .article-body {
     width: 100%;
@@ -1097,19 +1101,37 @@ a:active {
     }
 }
 
+.Image1{
+    background-image: url('../Images/Peruse/ExtraJoss.avif');
+}
+
 .Longform-Image p{
     position: relative;
     z-index: 2;
     bottom: 0;
 }
 
-.Image1{
-    background-image: url('../Images/Peruse/ExtraJoss.avif');
+.Longform-Image-Container picture img { /* Target the img tag */
+    display: block;     /* Good practice, helps with centering/margins */
+    width: auto;        /* Use the image's intrinsic width */
+    max-width: 100%;    /* IMPORTANT: Prevent overflow if image is wider than container */
+    height: auto;       /* Maintain the image's aspect ratio */
+    
+    /* Optional: Center the image horizontally if container is wider */
+    margin-left: auto;
+    margin-right: auto; 
+
+    /* Add other styles like border-radius etc. if needed */
+    /* border-radius: 8px; */
 }
 
-.Image2{
-    background-image: url('../Images/Peruse/GrafiekExtraJoss.png');
-    height: 22vh;
+/* --- Ensure Container Allows Centering --- */
+/* You might need to adjust the container if it's using flex/grid */
+.Longform-Image-Container {
+    width: 100%; 
+    margin: 20px 0; 
+    /* If using flex on container, add: justify-content: center; */
+    /* If using text-align on container (and img was inline-block): text-align: center; */
 }
 
 .Imagebijschrift p{
