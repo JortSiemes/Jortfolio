@@ -192,3 +192,48 @@ if (resetLink) {
     location.reload(); // Refresh to apply reset state
   });
 }
+
+const popupOverlay = document.getElementById('welcome-overlay');
+const popupBox = document.getElementById('welcome-popup');
+const closeBtn = document.getElementById('close-popup-btn');
+const okBtn = document.getElementById('ok-popup-btn');
+const popupShownKey = 'masterResearchPopupShown'; // Key for localStorage
+
+// Function to hide the popup and set the flag
+const hidePopup = () => {
+    if (popupOverlay) {
+        popupOverlay.classList.add('is-hidden');
+    }
+    localStorage.setItem(popupShownKey, 'true'); // Mark as shown
+    console.log("Welcome popup hidden and flagged as shown.");
+};
+
+// Check if elements exist before proceeding
+if (popupOverlay && popupBox && closeBtn && okBtn) {
+    
+    // Check if the popup has been shown before
+    if (localStorage.getItem(popupShownKey) !== 'true') {
+        // If not shown, display the popup
+        console.log("First visit detected. Showing welcome popup.");
+        popupOverlay.classList.remove('is-hidden'); // Make overlay visible
+
+        // Add event listeners to close buttons
+        closeBtn.addEventListener('click', hidePopup);
+        okBtn.addEventListener('click', hidePopup);
+
+        // Optional: Close if clicking outside the box (on the overlay)
+        popupOverlay.addEventListener('click', (event) => {
+             // Only close if the direct click target is the overlay itself
+             if (event.target === popupOverlay) {
+                 hidePopup();
+             }
+        });
+
+    } else {
+        console.log("Popup already shown previously.");
+        // Ensure it's hidden if already shown (belt and braces)
+        popupOverlay.classList.add('is-hidden'); 
+    }
+} else {
+    console.warn("One or more popup elements not found. Popup functionality disabled.");
+}

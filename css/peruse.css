@@ -2468,4 +2468,92 @@ hr {
             animation-timing-function: ease-in-out; /* Smoothness */
             animation-iteration-count: infinite; /* Keep blinking */
             cursor: pointer; /* Reinforce that it's clickable */
-          }        
+          }    
+          
+          
+
+          .popup-overlay {
+            position: fixed; /* Cover the entire screen */
+            inset: 0; /* Equivalent to top: 0; right: 0; bottom: 0; left: 0; */
+            background-color: rgba(0, 0, 0, 0.65); /* Semi-transparent black background */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 2000; /* Ensure it's on top of other content */
+            opacity: 1;
+            visibility: visible;
+            transition: opacity 0.3s ease, visibility 0s linear 0s; /* Transition for fade out */
+        }
+        
+        .popup-box {
+            background-color: #fff; /* White box */
+            color: #333; /* Dark text */
+            padding: 30px 40px;
+            border-radius: 8px;
+            max-width: 550px; /* Max width of the popup */
+            width: 90%; /* Responsive width */
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+            position: relative; /* For positioning close button */
+            text-align: center;
+            transform: scale(1);
+            transition: transform 0.3s ease; /* Transition for scale effect */
+        }
+        
+        /* Hidden State */
+        .popup-overlay.is-hidden {
+            opacity: 0;
+            visibility: hidden;
+            transition: opacity 0.3s ease, visibility 0s linear 0.3s; /* Delay visibility change */
+        }
+        
+        .popup-overlay.is-hidden .popup-box {
+             transform: scale(0.9); /* Optional: slight scale down when hiding */
+        }
+        
+        /* Popup Content Styling */
+        .popup-box h4 {
+            margin-top: 0;
+            margin-bottom: 15px;
+            color: #000;
+             font-weight: 600;
+        }
+        
+        .popup-box p {
+            margin-bottom: 25px;
+            line-height: 1.6;
+            color: #555;
+        }
+        
+        /* Close Button (Top Right X) */
+        .popup-close-btn {
+            position: absolute;
+            top: 8px;
+            right: 12px;
+            background: none;
+            border: none;
+            font-size: 2rem;
+            line-height: 1;
+            color: #aaa;
+            cursor: pointer;
+            padding: 5px;
+        }
+        .popup-close-btn:hover {
+            color: #333;
+        }
+        
+        /* OK Button */
+        .popup-ok-btn {
+            display: inline-block;
+            background-color: #007bff; /* Or your theme's primary color */
+            color: white;
+            border: none;
+            padding: 10px 25px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-weight: 500;
+            transition: background-color 0.2s ease;
+        }
+        
+        .popup-ok-btn:hover {
+            background-color: #0056b3; /* Darker shade on hover */
+        }
