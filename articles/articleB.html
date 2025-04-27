@@ -267,42 +267,64 @@ document.addEventListener("DOMContentLoaded", function () {
 
   // === Submit Button, Confirmation, Animation & Redirect ===
   submitBtn.addEventListener("click", async () => {
+    // Keep the check if the slider value was changed
     if (!sliderChanged) {
       const proceed = confirm("You have not changed the slider value from its default. Do you want to submit this number?");
       if (!proceed) {
-        return;
+        return; // Stop if the user cancels
       }
     }
 
+    // Get the final slider value and time spent
     const sliderValue = Number(slider_input.value);
-    const timeSpent = Math.floor((Date.now() - pageLoadTime) / 1000);
+    const timeSpent = Math.floor((Date.now() - pageLoadTime) / 1000); // Time in seconds
 
     console.log("Submit clicked. Slider value:", sliderValue, "Time spent (s):", timeSpent);
 
-    // Store the article read state and score in localStorage
-    const articleKey = `article_B_read`;  // Force this to be "B"
-    const scoreKey = `article_B_score`;  // Force this to be "B"
+    // ----- APPLY GENERIC B LOGIC -----
+    // Use generic keys for ALL B-type articles
+    const genericArticleBReadKey = "article_B_read";
+    const genericArticleBScoreKey = "article_B_score";
 
-    localStorage.setItem(articleKey, "true");
-    localStorage.setItem(scoreKey, sliderValue);
+    // Store the read status and score using the generic keys
+    // Reading any B article will now overwrite these keys
+    localStorage.setItem(genericArticleBReadKey, "true");
+    localStorage.setItem(genericArticleBScoreKey, sliderValue);
+    // ----- END GENERIC B LOGIC -----
 
     // Insert data into Supabase with "B" as the article number
+    // Your 'insertScriptieVertrouwen' function in the B article file already sends "B",
+    // which matches this generic approach.
     await insertScriptieVertrouwen(sliderValue, timeSpent);
 
-    // Disable the button to prevent duplicate clicks and trigger animation
+    // Disable the button, trigger animation, and redirect (keep this logic)
     submitBtn.disabled = true;
-    $(submitBtn).addClass('btn-progress');
-    setTimeout(() => {
-      $(submitBtn).addClass('btn-fill');
-    }, 500);
-    setTimeout(() => {
-      $(submitBtn).removeClass('btn-fill').addClass('btn-complete');
-    }, 4100);
+    // Make sure you have jQuery loaded if usingaddClass, otherwise use classList.add
+    if (typeof $ === 'function') { // Basic check for jQuery
+        $(submitBtn).addClass('btn-progress');
+        setTimeout(() => {
+            $(submitBtn).addClass('btn-fill');
+        }, 500);
+        setTimeout(() => {
+            $(submitBtn).removeClass('btn-fill').addClass('btn-complete');
+        }, 4100);
+    } else {
+        // Fallback if jQuery isn't loaded (adjust CSS accordingly)
+        submitBtn.classList.add('btn-progress'); // You'll need CSS rules for these classes
+         setTimeout(() => {
+            submitBtn.classList.add('btn-fill');
+        }, 500);
+        setTimeout(() => {
+             submitBtn.classList.remove('btn-fill');
+             submitBtn.classList.add('btn-complete');
+        }, 4100);
+    }
 
-    // Redirect to the main page after submission and animation
+
+    // Redirect back to the main page after the animation completes
     setTimeout(() => {
-      window.location.href = "../html/peruse.html";
-    }, 4100);
+      window.location.href = "../html/peruse.html"; // Adjust path if needed
+    }, 4100); // Should match the end of the animation
   });
 
   // === Article Visibility & Toggle ===

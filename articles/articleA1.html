@@ -357,49 +357,57 @@ document.addEventListener("DOMContentLoaded", function () {
 
   // === Submit Button, Confirmation, Animation & Redirect ===
   submitBtn.addEventListener("click", async () => {
+    // Keep the check if the slider value was changed
     if (!sliderChanged) {
       const proceed = confirm("You have not changed the slider value from its default. Do you want to submit this number?");
       if (!proceed) {
-        return;
+        return; // Stop if the user cancels
       }
     }
 
+    // Get the final slider value and time spent
     const sliderValue = Number(slider_input.value);
-    const timeSpent = Math.floor((Date.now() - pageLoadTime) / 1000);
+    const timeSpent = Math.floor((Date.now() - pageLoadTime) / 1000); // Time in seconds
 
     console.log("Submit clicked. Slider value:", sliderValue, "Time spent (s):", timeSpent);
 
-    // Store the article read state and score in localStorage
-  // Retrieve the correct A article ID
-const aOptions = ["A1", "A2", "A3", "A4"];
-const selectedAIndex = parseInt(localStorage.getItem("selectedAOption"), 10);
-const selectedA = aOptions[selectedAIndex];
+    // ----- START FIX -----
+    // Define the specific ID for THIS article page (a1.html)
+    const currentArticleId = "A1";
 
-// Store the article read state and score in localStorage using the correct key
-const articleKey = `article_${selectedA}_read`;
-const scoreKey = `article_${selectedA}_score`;
+    // Create the correct localStorage keys using this page's specific ID
+    const articleKey = `article_${currentArticleId}_read`; // Creates "article_A1_read"
+    const scoreKey = `article_${currentArticleId}_score`;   // Creates "article_A1_score"
 
+    // Store the read status and score in localStorage using the correct keys
     localStorage.setItem(articleKey, "true");
     localStorage.setItem(scoreKey, sliderValue);
+    // ----- END FIX -----
 
-    // Insert data into Supabase with "B" as the article number
+    // Insert data into Supabase
+    // Note: Your 'insertScriptieVertrouwen' function already seems to correctly
+    // hardcode 'article_number: "A1"' inside its definition for this page,
+    // so it should send the correct article identifier.
     await insertScriptieVertrouwen(sliderValue, timeSpent);
 
-    // Disable the button to prevent duplicate clicks and trigger animation
+    // Disable the button, trigger animation, and redirect (keep this logic)
     submitBtn.disabled = true;
-    $(submitBtn).addClass('btn-progress');
+    $(submitBtn).addClass('btn-progress'); // Assuming you are using jQuery for this animation class
+
     setTimeout(() => {
       $(submitBtn).addClass('btn-fill');
-    }, 500);
+    }, 500); // Animation timing
+
     setTimeout(() => {
       $(submitBtn).removeClass('btn-fill').addClass('btn-complete');
-    }, 4100);
+    }, 4100); // Animation timing
 
-    // Redirect to the main page after submission and animation
+    // Redirect back to the main page after the animation completes
     setTimeout(() => {
+      // Make sure this path is correct relative to your a1.html file
       window.location.href = "../html/peruse.html";
-    }, 4100);
-  });
+    }, 4100); // Should match the end of the animation
+});
 
   // === Article Visibility & Toggle ===
   const options = ["A1", "A2", "A3", "A4", "B1", "B2"];

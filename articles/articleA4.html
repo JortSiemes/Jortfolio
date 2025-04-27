@@ -282,49 +282,58 @@ document.addEventListener("DOMContentLoaded", function () {
 
   // === Submit Button, Confirmation, Animation & Redirect ===
   submitBtn.addEventListener("click", async () => {
+    // Keep the check if the slider value was changed
     if (!sliderChanged) {
       const proceed = confirm("You have not changed the slider value from its default. Do you want to submit this number?");
       if (!proceed) {
-        return;
+        return; // Stop if the user cancels
       }
     }
 
+    // Get the final slider value and time spent
     const sliderValue = Number(slider_input.value);
-    const timeSpent = Math.floor((Date.now() - pageLoadTime) / 1000);
+    const timeSpent = Math.floor((Date.now() - pageLoadTime) / 1000); // Time in seconds
 
     console.log("Submit clicked. Slider value:", sliderValue, "Time spent (s):", timeSpent);
 
-    // Store the article read state and score in localStorage
-  // Retrieve the correct A article ID
-const aOptions = ["A1", "A2", "A3", "A4"];
-const selectedAIndex = parseInt(localStorage.getItem("selectedAOption"), 10);
-const selectedA = aOptions[selectedAIndex];
+    // ----- NEW SIMPLIFIED LOGIC -----
+    // Use generic keys for ALL A-type articles
+    const genericArticleAReadKey = "article_A_read";
+    const genericArticleAScoreKey = "article_A_score";
 
-// Store the article read state and score in localStorage using the correct key
-const articleKey = `article_${selectedA}_read`;
-const scoreKey = `article_${selectedA}_score`;
+    // Store the read status and score using the generic keys
+    // Reading any A article will now overwrite these keys
+    localStorage.setItem(genericArticleAReadKey, "true");
+    localStorage.setItem(genericArticleAScoreKey, sliderValue);
+    // ----- END NEW SIMPLIFIED LOGIC -----
 
-    localStorage.setItem(articleKey, "true");
-    localStorage.setItem(scoreKey, sliderValue);
-
-    // Insert data into Supabase with "B" as the article number
+    // --- Supabase Data ---
+    // IMPORTANT: Even though localStorage is generic, your database likely
+    // still needs the SPECIFIC article ID (A1, A2, etc.).
+    // Your 'insertScriptieVertrouwen' function *might* already handle this
+    // if it's defined differently in each file (e.g., hardcoding "A1" inside
+    // the function in a1.html). Double-check how that function gets the article_number.
+    // Assuming it handles the specific ID correctly internally:
     await insertScriptieVertrouwen(sliderValue, timeSpent);
 
-    // Disable the button to prevent duplicate clicks and trigger animation
+
+    // Disable the button, trigger animation, and redirect (keep this logic)
     submitBtn.disabled = true;
-    $(submitBtn).addClass('btn-progress');
+    $(submitBtn).addClass('btn-progress'); // Assuming jQuery animation class
+
     setTimeout(() => {
       $(submitBtn).addClass('btn-fill');
-    }, 500);
+    }, 500); // Animation timing
+
     setTimeout(() => {
       $(submitBtn).removeClass('btn-fill').addClass('btn-complete');
-    }, 4100);
+    }, 4100); // Animation timing
 
-    // Redirect to the main page after submission and animation
+    // Redirect back to the main page after the animation completes
     setTimeout(() => {
-      window.location.href = "../html/peruse.html";
-    }, 4100);
-  });
+      window.location.href = "../html/peruse.html"; // Adjust path if needed
+    }, 4100); // Should match the end of the animation
+});
 
   // === Article Visibility & Toggle ===
   const options = ["A1", "A2", "A3", "A4", "B1", "B2"];
