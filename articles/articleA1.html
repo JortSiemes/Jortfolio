@@ -371,28 +371,30 @@ document.addEventListener("DOMContentLoaded", function () {
 
     console.log("Submit clicked. Slider value:", sliderValue, "Time spent (s):", timeSpent);
 
-    // ----- START FIX -----
-    // Define the specific ID for THIS article page (a1.html)
-    const currentArticleId = "A1";
+    // ----- NEW SIMPLIFIED LOGIC -----
+    // Use generic keys for ALL A-type articles
+    const genericArticleAReadKey = "article_A_read";
+    const genericArticleAScoreKey = "article_A_score";
 
-    // Create the correct localStorage keys using this page's specific ID
-    const articleKey = `article_${currentArticleId}_read`; // Creates "article_A1_read"
-    const scoreKey = `article_${currentArticleId}_score`;   // Creates "article_A1_score"
+    // Store the read status and score using the generic keys
+    // Reading any A article will now overwrite these keys
+    localStorage.setItem(genericArticleAReadKey, "true");
+    localStorage.setItem(genericArticleAScoreKey, sliderValue);
+    // ----- END NEW SIMPLIFIED LOGIC -----
 
-    // Store the read status and score in localStorage using the correct keys
-    localStorage.setItem(articleKey, "true");
-    localStorage.setItem(scoreKey, sliderValue);
-    // ----- END FIX -----
-
-    // Insert data into Supabase
-    // Note: Your 'insertScriptieVertrouwen' function already seems to correctly
-    // hardcode 'article_number: "A1"' inside its definition for this page,
-    // so it should send the correct article identifier.
+    // --- Supabase Data ---
+    // IMPORTANT: Even though localStorage is generic, your database likely
+    // still needs the SPECIFIC article ID (A1, A2, etc.).
+    // Your 'insertScriptieVertrouwen' function *might* already handle this
+    // if it's defined differently in each file (e.g., hardcoding "A1" inside
+    // the function in a1.html). Double-check how that function gets the article_number.
+    // Assuming it handles the specific ID correctly internally:
     await insertScriptieVertrouwen(sliderValue, timeSpent);
+
 
     // Disable the button, trigger animation, and redirect (keep this logic)
     submitBtn.disabled = true;
-    $(submitBtn).addClass('btn-progress'); // Assuming you are using jQuery for this animation class
+    $(submitBtn).addClass('btn-progress'); // Assuming jQuery animation class
 
     setTimeout(() => {
       $(submitBtn).addClass('btn-fill');
@@ -404,8 +406,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
     // Redirect back to the main page after the animation completes
     setTimeout(() => {
-      // Make sure this path is correct relative to your a1.html file
-      window.location.href = "../html/peruse.html";
+      window.location.href = "../html/peruse.html"; // Adjust path if needed
     }, 4100); // Should match the end of the animation
 });
 
