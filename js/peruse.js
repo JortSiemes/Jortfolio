@@ -143,7 +143,7 @@ document.addEventListener("DOMContentLoaded", function () {
   if (checkArticleARead === "true" && checkArticleBRead === "true") {
     // Check if the popup hasn't been shown yet in this session/storage lifetime
     if (!localStorage.getItem("thank_you_shown")) {
-      alert("Bedankt voor je deelname aan mijn onderzoek! De antwoorden zijn opgeslagen. -Jort");
+      alert("Bedankt voor je deelname aan mijn onderzoek! De antwoorden zijn opgeslagen. -Jort, voor surveycircle: Redeem Survey Code with one click: https://www.surveycircle.com/FZYW-GF9J-X66U-PTZ6/");
       // Mark the popup as shown to prevent it from appearing again on refresh
       localStorage.setItem("thank_you_shown", "true");
     }
