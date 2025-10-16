@@ -131,6 +131,11 @@ p{
   height: 0;
 }
 
+.galleryvidIMG {
+  position: relative;
+  height: 0;
+}
+
 .galleryvid iframe {
   position: absolute;
   top: 0;
