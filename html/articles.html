@@ -12,296 +12,432 @@
 </head>
 <body>
 
-    <div class="header-left">
+<body>
+
+     <div class="header-left">
         <div class="navcontact">
             <a href="../index.html"><h1>BACK</h1></a>
         </div>
     </div>
-
 
     <div class="contactlist">
         <h1>Articles</h1>
     </div>
 
     <div class="filter-buttons">
-      <button class="btn btn-primary" onclick="filterArticles('all')">Alles</button>
-      <button class="btn btn-onderzoeksjournalistiek" onclick="filterArticles('onderzoeksjournalistiek')"><i class="fas fa-search"></i>Onderzoek</button>
-      <button class="btn btn-nieuwsartikel" onclick="filterArticles('nieuwsartikel')"><i class="fas fa-newspaper"></i>Nieuws</button>
-      <button class="btn btn-interview" onclick="filterArticles('interview')"><i class="fas fa-microphone"></i>Interview</button>
-  </div>
+        <button class="btn btn-primary" onclick="filterArticles('all')">Alles</button>
+        <button class="btn btn-onderzoeksjournalistiek" onclick="filterArticles('onderzoeksjournalistiek')"><i class="fas fa-search"></i>Onderzoek</button>
+        <button class="btn btn-nieuwsartikel" onclick="filterArticles('nieuwsartikel')"><i class="fas fa-newspaper"></i>Nieuws</button>
+        <button class="btn btn-interview" onclick="filterArticles('interview')"><i class="fas fa-microphone"></i>Interview</button>
+    </div>
 
-  <div class="flexbox" data-category="nieuwsartikel">
-    <div class="art art_content9">
-        <div class="art_title">
-            <h2>Hoe populisme het kabinet drijft,<br> en waarom campagnevoeren nooit stopt</h2>
+    <div class="articles-container">
+        <!-- Article 1 -->
+
+    <div class="article-wrapper visible" data-category="onderzoeksjournalistiek">
+            <div class="art" style="background-image: url('../Images/FD_VerticalFarm.avif');">
+                <div class="art-content">
+                    <div class="art-header">
+                        <div class="art-title">
+                            <h2>De ene na de andere verticale boerderij viel om, <br> zijn de overblijvers de hype voorbij?</h2>
+                        </div>
+                    </div>
+                    <div class="art-footer">
+                        <div class="art-date">
+                            <h3>27 Augustus 2025</h3>
+                        </div>
+                        <div class="art-subject">
+                            <h3>Het Financieele Dagblad</h3>
+                        </div>
+                    </div>
+                </div>
+                <div class="art-button-group">
+                    <a href="https://fd.nl/bedrijfsleven/1566351/de-ene-na-de-andere-verticale-boerderij-viel-om-zijn-de-overblijvers-de-hype-voorbij" target="_blank">
+                        <button type="button" class="art-button btn btn-outline-secondary">Lees Artikel</button>
+                    </a>
+                    <button type="button" class="art-button btn btn-outline-secondary" onclick="downloadPDF('../pdf/FD_VerticalFarming_Jort.pdf')">Download PDF</button>
+                </div>
+            </div>
         </div>
-        <br>
-        <div class="art_date">
-            <h3>10 December 2024</h3>
+
+        <div class="article-wrapper visible" data-category="interview">
+            <div class="art" style="background-image: url('../Images/FD_GTA6.jpg');">
+                <div class="art-content">
+                    <div class="art-header">
+                        <div class="art-title">
+                            <h2>Grand Theft Auto 6 is de grote afwezige, <br> maar domineert toch op Gamescom</h2>
+                        </div>
+                    </div>
+                    <div class="art-footer">
+                        <div class="art-date">
+                            <h3>23 Augustus 2025</h3>
+                        </div>
+                        <div class="art-subject">
+                            <h3>Het Financieele Dagblad</h3>
+                        </div>
+                    </div>
+                </div>
+                <div class="art-button-group">
+                    <a href="https://fd.nl/tech-en-innovatie/1566806/grand-theft-auto-6-is-de-grote-afwezige-maar-domineert-toch-op-gamescom" target="_blank">
+                        <button type="button" class="art-button btn btn-outline-secondary">Lees Artikel</button>
+                    </a>
+                    <button type="button" class="art-button btn btn-outline-secondary" onclick="downloadPDF('../pdf/FD_Gamescom_Jort.pdf')">Download PDF</button>
+                </div>
+            </div>
         </div>
-        <br>
-        <div class="art_subject">
-            <h3>Master Journalistiek en Nieuwe Media</h3>
+
+        <div class="article-wrapper visible" data-category="onderzoeksjournalistiek">
+            <div class="art" style="background-image: url('../Images/FD_Hyllus.webp');">
+                <div class="art-content">
+                    <div class="art-header">
+                        <div class="art-title">
+                            <h2>Regelrecht uit een Enschedese huiskamer: <br> glasvezeldrones voor het Oekraïense front</h2>
+                        </div>
+                    </div>
+                    <div class="art-footer">
+                        <div class="art-date">
+                            <h3>28 Juli 2025</h3>
+                        </div>
+                        <div class="art-subject">
+                            <h3>Het Financieele Dagblad</h3>
+                        </div>
+                    </div>
+                </div>
+                <div class="art-button-group">
+                    <a href="https://fd.nl/bedrijfsleven/1563346/regelrecht-uit-een-enschedese-huiskamer-glasvezeldrones-voor-het-oekraiense-front" target="_blank">
+                        <button type="button" class="art-button btn btn-outline-secondary">Lees Artikel</button>
+                    </a>
+                    <button type="button" class="art-button btn btn-outline-secondary" onclick="downloadPDF('../pdf/FD_Glasvezeldrones_Jort.pdf')">Download PDF</button>
+                </div>
+            </div>
         </div>
-        <a href="NewMedia.html" target="_blank">
-            <button type="button" class="btn btn-outline-secondary" style="font-size: 20px;   font-family: 'EuclidCircularA', sans-serif;  font-weight: 500; font-style: normal; color: white; border-radius: 25px; border-color:  #ededed;">Lees Artikel</button></a>
-    </div>
-    </div>
-    <br>
 
-    <div class="flexbox" data-category="interview">
-        <div class="art art_content8">
-            <div class="art_title">
-                <h2>Xenotransplantatie: EEN DIER ALS DONOR</h2>
+        <div class="article-wrapper visible" data-category="nieuwsartikel">
+            <div class="art" style="background-image: url('../Images/FD_RobinHood_Cursors.jpg');">
+                <div class="art-content">
+                    <div class="art-header">
+                        <div class="art-title">
+                            <h2>Robinhood veroorzaakt grote controverse <br>met nieuwe vorm van aandelenhandel</h2>
+                        </div>
+                    </div>
+                    <div class="art-footer">
+                        <div class="art-date">
+                            <h3>13 Juli 2025</h3>
+                        </div>
+                        <div class="art-subject">
+                            <h3>Het Financieele Dagblad</h3>
+                        </div>
+                    </div>
+                </div>
+                <div class="art-button-group">
+                    <a href="https://fd.nl/economie/1561939/robinhood-veroorzaakt-grote-controverse-met-nieuwe-vorm-van-aandelenhandel" target="_blank">
+                        <button type="button" class="art-button btn btn-outline-secondary">Lees Artikel</button>
+                    </a>
+                    <button type="button" class="art-button btn btn-outline-secondary" onclick="downloadPDF('../pdf/FD_RobinhoodTokens_Jort.pdf')">Download PDF</button>
+                </div>
             </div>
-            <br>
-            <div class="art_date">
-                <h3>6 Mei 2024</h3>
+        </div>
+
+        <div class="article-wrapper visible" data-category="interview">
+            <div class="art" style="background-image: url('../Images/FD_WB_Pic.jpg');">
+                <div class="art-content">
+                    <div class="art-header">
+                        <div class="art-title">
+                            <h2>Waarom ‘de meest gehate man van Hollywood’ <br> Warners megafusie terugdraait </h2>
+                        </div>
+                    </div>
+                    <div class="art-footer">
+                        <div class="art-date">
+                            <h3>26 Juni 2025</h3>
+                        </div>
+                        <div class="art-subject">
+                            <h3>Het Financieele Dagblad</h3>
+                        </div>
+                    </div>
+                </div>
+                <div class="art-button-group">
+                    <a href="https://fd.nl/economie/1559570/waarom-de-meest-gehate-man-van-hollywood-warners-megafusie-terugdraait" target="_blank">
+                        <button type="button" class="art-button btn btn-outline-secondary">Lees Artikel</button>
+                    </a>
+                    <button type="button" class="art-button btn btn-outline-secondary" onclick="downloadPDF('../pdf/FD_WarnerBrosFusie_Jort.pdf')">Download PDF</button>
+                </div>
             </div>
-            <br>
-            <div class="art_subject">
-                <h3>Pre-master Journalistiek en Nieuwe Media</h3>
+        </div>
+
+        <div class="article-wrapper visible" data-category="interview">
+            <div class="art" style="background-image: url('../Images/FD_StartersAI.jpg');">
+                <div class="art-content">
+                    <div class="art-header">
+                        <div class="art-title">
+                            <h2>Hoe AI de carrière van starters op <br> de arbeidsmarkt bedreigt</h2>
+                        </div>
+                    </div>
+                    <div class="art-footer">
+                        <div class="art-date">
+                            <h3>11 Juni 2025</h3>
+                        </div>
+                        <div class="art-subject">
+                            <h3>Het Financieele Dagblad</h3>
+                        </div>
+                    </div>
+                </div>
+                <div class="art-button-group">
+                    <a href="https://fd.nl/bedrijfsleven/1559829/hoe-ai-de-carrieres-van-starters-op-de-arbeidsmarkt-bedreigt" target="_blank">
+                        <button type="button" class="art-button btn btn-outline-secondary">Lees Artikel</button>
+                    </a>
+                    <button type="button" class="art-button btn btn-outline-secondary" onclick="downloadPDF('../pdf/FD_AI_Starters.pdf')">Download PDF</button>
+                </div>
             </div>
-            <button type="button" id="downloadButton6" class="btn btn-outline-secondary" style="font-size: 20px; font-family: 'EuclidCircularA', sans-serif; font-weight: 500; font-style: normal; color: white; border-radius: 25px; border-color: #ededed;">Download PDF</button>
+        </div>
+        
+        <div class="article-wrapper visible" data-category="nieuwsartikel">
+            <div class="art" style="background-image: url('../Images/FD_Visa.avif');">
+                <div class="art-content">
+                    <div class="art-header">
+                        <div class="art-title">
+                            <h2>Trump legt visumaanvragen stil</h2>
+                        </div>
+                    </div>
+                    <div class="art-footer">
+                        <div class="art-date">
+                            <h3>4 Juni 2025</h3>
+                        </div>
+                        <div class="art-subject">
+                            <h3>Het Financieele Dagblad</h3>
+                        </div>
+                    </div>
+                </div>
+                <div class="art-button-group">
+                    <a href="https://fd.nl/politiek/1557825/trump-legt-visumaanvragen-stil-studenten-in-grote-onzekerheid-over-vertrek-naar-vs" target="_blank">
+                        <button type="button" class="art-button btn btn-outline-secondary">Lees Artikel</button>
+                    </a>
+                    <button type="button" class="art-button btn btn-outline-secondary" onclick="downloadPDF('../pdf/FD_Visa.pdf')">Download PDF</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Article 2 -->
+        <div class="article-wrapper visible" data-category="nieuwsartikel">
+            <div class="art" style="background-image: url('../Images/MaccabiSupporters_Crop.png');">
+                <div class="art-content">
+                    <div class="art-header">
+                        <div class="art-title">
+                            <h2>Hoe populisme het kabinet drijft, en waarom campagnevoeren nooit stopt</h2>
+                        </div>
+                    </div>
+                    <div class="art-footer">
+                        <div class="art-date">
+                            <h3>10 December 2024</h3>
+                        </div>
+                        <div class="art-subject">
+                            <h3>Master Journalistiek en Nieuwe Media</h3>
+                        </div>
+                    </div>
+                </div>
+                <div class="art-button-group">
+                    <a href="NewMedia.html" target="_blank">
+                        <button type="button" class="art-button btn btn-outline-secondary">Lees Artikel</button>
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Article 3 -->
+        <div class="article-wrapper visible" data-category="interview">
+            <div class="art" style="background-image: url('../Images/Pigheart2.png');">
+                <div class="art-content">
+                    <div class="art-header">
+                        <div class="art-title">
+                            <h2>Xenotransplantatie: EEN DIER ALS DONOR</h2>
+                        </div>
+                    </div>
+                    <div class="art-footer">
+                        <div class="art-date">
+                            <h3>6 Mei 2024</h3>
+                        </div>
+                        <div class="art-subject">
+                            <h3>Pre-master Journalistiek en Nieuwe Media</h3>
+                        </div>
+                    </div>
+                </div>
+                <button type="button" class="art-button btn btn-outline-secondary" onclick="downloadPDF('../pdf/xenotransplantatie.pdf')">Download PDF</button>
+            </div>
+        </div>
+
+        <!-- Article 4 -->
+        <div class="article-wrapper visible" data-category="onderzoeksjournalistiek">
+            <div class="art" style="background-image: url('../Images/Evergrande.png');">
+                <div class="art-content">
+                    <div class="art-header">
+                        <div class="art-title">
+                            <h2>De vastgoedavonturen van de ingestorte Chinese gigant Evergrande in kaart gebracht</h2>
+                        </div>
+                    </div>
+                    <div class="art-footer">
+                        <div class="art-date">
+                            <h3>25 April 2024</h3>
+                        </div>
+                        <div class="art-subject">
+                            <h3>Pre-master Journalistiek en Nieuwe Media</h3>
+                        </div>
+                    </div>
+                </div>
+                <div class="art-button-group">
+                    <a href="https://journalistiekennieuwemedia.nl/jnm/2024/04/15/de-chinese-huizenmarkt-is-ingestort-hoe-ziet-dit-er-uit/" target="_blank">
+                        <button type="button" class="art-button btn btn-outline-secondary">Open article</button>
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Article 5 -->
+        <div class="article-wrapper visible" data-category="onderzoeksjournalistiek">
+            <div class="art" style="background-image: url('../Images/HighresPurple.jpg');">
+                <div class="art-content">
+                    <div class="art-header">
+                        <div class="art-title">
+                            <h2>Heeft Nederland een troef met <br> nieuwe supersnelle computerchips?</h2>
+                        </div>
+                    </div>
+                    <div class="art-footer">
+                        <div class="art-date">
+                            <h3>15 April 2024</h3>
+                        </div>
+                        <div class="art-subject">
+                            <h3>Pre-master Journalistiek en Nieuwe Media</h3>
+                        </div>
+                    </div>
+                </div>
+                <div class="art-button-group">
+                    <a href="http://www.kijkopkennis.nl/wp/2024/04/heeft-nederland-een-troef-met-nieuwe-supersnelle-computerchips/" target="_blank">
+                        <button type="button" class="art-button btn btn-outline-secondary">Open article</button>
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Article 6 -->
+        <div class="article-wrapper visible" data-category="nieuwsartikel">
+            <div class="art" style="background-image: url('../Images/UfoSS.png');">
+                <div class="art-content">
+                    <div class="art-header">
+                        <div class="art-title">
+                            <h2>Geen UFO 'close encounters' concludeert Pentagon</h2>
+                        </div>
+                    </div>
+                    <div class="art-footer">
+                        <div class="art-date">
+                            <h3>8 April 2024</h3>
+                        </div>
+                        <div class="art-subject">
+                            <h3>Pre-master Journalistiek en Nieuwe Media</h3>
+                        </div>
+                    </div>
+                </div>
+                <button type="button" class="art-button btn btn-outline-secondary" onclick="downloadPDF('../pdf/Nieuwsbericht_Definitief_JortSiemes_4028198_Pentagon.pdf')">Download PDF</button>
+            </div>
+        </div>
+
+        <!-- Article 7 -->
+        <div class="article-wrapper visible" data-category="nieuwsartikel">
+            <div class="art" style="background-image: url('../Images/Unsplash_Sergio Alves Santos_HALFTONE.png');">
+                <div class="art-content">
+                    <div class="art-header">
+                        <div class="art-title">
+                            <h2>De nieuwe vrijdagavond: <br>alcoholvrij bier wordt langzaam maar zeker de nieuwe standaard</h2>
+                        </div>
+                    </div>
+                    <div class="art-footer">
+                        <div class="art-date">
+                            <h3>12 February 2024</h3>
+                        </div>
+                        <div class="art-subject">
+                            <h3>Pre-master Journalistiek en Nieuwe Media</h3>
+                        </div>
+                    </div>
+                </div>
+                <div class="art-button-group">
+                    <a href="https://journalistiekennieuwemedia.nl/jnm/2024/02/12/de-nieuwe-vrijdagavond-alcoholvrij-bier-wordt-langzaam-maar-zeker-de-nieuwe-standaard/" target="_blank">
+                        <button type="button" class="art-button btn btn-outline-secondary">Open article</button>
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Article 8 -->
+        <div class="article-wrapper visible" data-category="onderzoeksjournalistiek">
+            <div class="art" style="background-image: url('../Images/ECBbuilding2_PIXELATED.png');">
+                <div class="art-content">
+                    <div class="art-header">
+                        <div class="art-title">
+                            <h2>Inflatie in de supermarkt: <br>Hoe is het prijspeil in de soep gelopen?</h2>
+                        </div>
+                    </div>
+                    <div class="art-footer">
+                        <div class="art-date">
+                            <h3>14 December 2023</h3>
+                        </div>
+                        <div class="art-subject">
+                            <h3>Pre-master Journalistiek en Nieuwe Media</h3>
+                        </div>
+                    </div>
+                </div>
+                <button type="button" class="art-button btn btn-outline-secondary" onclick="downloadPDF('../pdf/Achtergrondartikel_JortSiemes_4028198_104_InflatieInDeSupermarkt.pdf')">Download PDF</button>
+            </div>
+        </div>
+
+        <!-- Article 9 -->
+        <div class="article-wrapper visible" data-category="interview">
+            <div class="art" style="background-image: url('../Images/Hubble.jpg');">
+                <div class="art-content">
+                    <div class="art-header">
+                        <div class="art-title">
+                            <h2>Interview Vincent Icke</h2>
+                        </div>
+                    </div>
+                    <div class="art-footer">
+                        <div class="art-date">
+                            <h3>25 Oktober 2023</h3>
+                        </div>
+                        <div class="art-subject">
+                            <h3>Pre-master Journalistiek en Nieuwe Media</h3>
+                        </div>
+                    </div>
+                </div>
+                <button type="button" class="art-button btn btn-outline-secondary" onclick="downloadPDF('../pdf/V2_JortSiemes_4028198_Artikel_Wetenschapper_Opmaak.pdf')">Download PDF</button>
+            </div>
         </div>
     </div>
-    <br>
-
-    <div class="flexbox" data-category="onderzoeksjournalistiek">
-            <div class="art art_content7">
-              <div class="art_title">
-                <h2>De vastgoedavonturen van de ingestorte Chinese gigant Evergrande in kaart gebracht</h2>
-              </div>
-              <br>
-              <div class="art_date">
-                <h3>25 April 2024</h3>
-              </div>
-              <br>
-              <div class="art_subject">
-                <h3>Pre-master Journalistiek en Nieuwe Media</h3>
-              </div>
-              <a href="https://journalistiekennieuwemedia.nl/jnm/2024/04/15/de-chinese-huizenmarkt-is-ingestort-hoe-ziet-dit-er-uit/" target="_blank">
-              <button type="button" class="btn btn-outline-secondary" style="font-size: 20px;   font-family: 'EuclidCircularA', sans-serif;  font-weight: 500; font-style: normal; color: white; border-radius: 25px; border-color:  #ededed;">Open article</button></a>
-              </div>
-
-          </div>
-  <br>
-
-    <div class="flexbox" data-category="onderzoeksjournalistiek">
-            <div class="art art_content6">
-              <div class="art_title">
-                <h2>Heeft Nederland een troef met nieuwe supersnelle computerchips?</h2>
-              </div>
-              <br>
-              <div class="art_date">
-                <h3>15 April 2024</h3>
-              </div>
-              <br>
-              <div class="art_subject">
-                <h3>Pre-master Journalistiek en Nieuwe Media</h3>
-              </div>
-              <a href="http://www.kijkopkennis.nl/wp/2024/04/heeft-nederland-een-troef-met-nieuwe-supersnelle-computerchips/" target="_blank">
-              <button type="button" class="btn btn-outline-secondary" style="font-size: 20px;   font-family: 'EuclidCircularA', sans-serif;  font-weight: 500; font-style: normal; color: white; border-radius: 25px; border-color:  #ededed;">Open article</button></a>
-              </div>
-
-          </div>
-  <br>
-
-    <div class="flexbox" data-category="nieuwsartikel">
-            <div class="art art_content5">
-              <div class="art_title">
-                <h2>Geen UFO ‘close encounters' concludeert Pentagon</h2>
-              </div>
-              <br>
-              <div class="art_date">
-                <h3>8 April 2024</h3>
-              </div>
-              <br>
-              <div class="art_subject">
-                <h3>Pre-master Journalistiek en Nieuwe Media</h3>
-              </div>
-
-                <button type="button" id="downloadButton4" class="btn btn-outline-secondary" style="font-size: 20px;   font-family: 'EuclidCircularA', sans-serif;  font-weight: 500; font-style: normal; color: white; border-radius: 25px; border-color:  #ededed;">Download PDF</button>
-              </div>
-
-          </div>
-  <br>
 
 
-        <div class="flexbox" data-category="nieuwsartikel">
+   
 
-            <div class="art art_content4">
-              <div class="art_title">
-                <h2>De nieuwe vrijdagavond:<br>alcoholvrij bier wordt langzaam maar zeker de nieuwe standaard</h2>
-              </div>
-              <br>
-              <div class="art_date">
-                <h3>12 February 2024</h3>
-              </div>
-              <br>
-              <div class="art_subject">
-                <h3>Pre-master Journalistiek en Nieuwe Media</h3>
-              </div>
-              <a href="https://journalistiekennieuwemedia.nl/jnm/2024/02/12/de-nieuwe-vrijdagavond-alcoholvrij-bier-wordt-langzaam-maar-zeker-de-nieuwe-standaard/" target="_blank">
-              <button type="button" class="btn btn-outline-secondary" style="font-size: 20px;   font-family: 'EuclidCircularA', sans-serif;  font-weight: 500; font-style: normal; color: white; border-radius: 25px; border-color:  #ededed;">Open article</button></a>
-            </div>
-    </div>
-<br>
-
-    <div class="flexbox" data-category="onderzoeksjournalistiek">
-            <div class="art art_content3">
-              <div class="art_title">
-                <h2>Inflatie in de supermarkt<br>Hoe is het prijspeil in de soep gelopen?</h2>
-              </div>
-              <br>
-              <div class="art_date">
-                <h3>14 December 2023</h3>
-              </div>
-              <br>
-              <div class="art_subject">
-                <h3>Pre-master Journalistiek en Nieuwe Media</h3>
-              </div>
-
-              <button type="button" id="downloadButton3" class="btn btn-outline-secondary" style="font-size: 20px;   font-family: 'EuclidCircularA', sans-serif;  font-weight: 500; font-style: normal; color: white; border-radius: 25px; border-color:  #ededed;">Download PDF</button>
-            </div>
-
-    </div>
-<br>
-
-    <div class="flexbox" data-category="nieuwsartikel">
-        <div class="art art_content1">
-            <div class="art_title">
-                <h2>Nieuwsbericht Gemeente Leiden</h2>
-            </div>
-            <br>
-            <div class="art_date">
-                <h3>07 November 2023</h3>
-            </div>
-            <br>
-            <div class="art_subject">
-                <h3>Pre-master Journalistiek en Nieuwe Media</h3>
-            </div>
-            <button type="button" id="downloadButton1" class="btn btn-outline-secondary" style="font-size: 20px; font-family: 'EuclidCircularA', sans-serif; font-weight: 500; font-style: normal; color: white; border-radius: 25px; border-color: #ededed;">Download PDF</button>
-        </div>
-    </div>
-    <br>
-
-    <div class="flexbox" data-category="interview">
-        <div class="art art_content2">
-            <div class="art_title">
-                <h2>Interview Vincent Icke</h2>
-            </div>
-            <br>
-            <div class="art_date">
-                <h3>25 Oktober 2023</h3>
-            </div>
-            <br>
-            <div class="art_subject">
-                <h3>Pre-master Journalistiek en Nieuwe Media</h3>
-            </div>
-            <button type="button" id="downloadButton2" class="btn btn-outline-secondary" style="font-size: 20px; font-family: 'EuclidCircularA', sans-serif; font-weight: 500; font-style: normal; color: white; border-radius: 25px; border-color: #ededed;">Download PDF</button>
-        </div>
-    </div>
-    <br>
-
-    <!-- Repeat for each article, adding appropriate data-category -->
-
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.min.js" integrity="sha384-QJHtvGhmr9XOIpI6YVutG+2QOK9T+ZnN4kzFN1RtK3zEFEIsxhlmWl5/YESvpZ13" crossorigin="anonymous"></script>
+ <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.min.js" integrity="sha384-QJHtvGhmr9XOIpI6YVutG+2QOK9T+ZnN4kzFN1RtK3zEFEIsxhlmWl5/YESvpZ13" crossorigin="anonymous"></script>
 
     <script>
-    function filterArticles(category) {
-        const articles = document.querySelectorAll('.flexbox');
-
-        articles.forEach(article => {
-            if (category === 'all') {
-                article.style.display = 'flex';
-            } else {
-                if (article.getAttribute('data-category') === category) {
-                    article.style.display = 'flex';
+        function filterArticles(category) {
+            const articles = document.querySelectorAll('.article-wrapper');
+            articles.forEach(article => {
+                if (category === 'all') {
+                    article.classList.add('visible');
                 } else {
-                    article.style.display = 'none';
+                    if (article.getAttribute('data-category') === category) {
+                        article.classList.add('visible');
+                    } else {
+                        article.classList.remove('visible');
+                    }
                 }
-            }
-        });
-    }
-
-    document.getElementById("downloadButton6").addEventListener("click", function() {
-        var pdfPath = '../pdf/xenotransplantatie.pdf';
-        var link = document.createElement('a');
-        link.href = pdfPath;
-        link.target = '_blank';
-        link.download = '../pdf/xenotransplantatie.pdf';
-        if (document.createEvent) {
-            var event = document.createEvent('MouseEvents');
-            event.initEvent('click', true, true);
-            link.dispatchEvent(event);
-        } else {
-            link.click();
+            });
         }
-    });
 
-    document.getElementById("downloadButton4").addEventListener("click", function() {
-        var pdfPath = '../pdf/Nieuwsbericht_Definitief_JortSiemes_4028198_Pentagon.pdf';
-        var link = document.createElement('a');
-        link.href = pdfPath;
-        link.target = '_blank';
-        link.download = '../pdf/Nieuwsbericht_Definitief_JortSiemes_4028198_Pentagon.pdf';
-        if (document.createEvent) {
-            var event = document.createEvent('MouseEvents');
-            event.initEvent('click', true, true);
-            link.dispatchEvent(event);
-        } else {
+        function downloadPDF(pdfPath) {
+            const link = document.createElement('a');
+            link.href = pdfPath;
+            link.download = pdfPath.split('/').pop();
+            document.body.appendChild(link);
             link.click();
+            document.body.removeChild(link);
         }
-    });
-
-    document.getElementById("downloadButton3").addEventListener("click", function() {
-        var pdfPath = '../pdf/Achtergrondartikel_JortSiemes_4028198_104_InflatieInDeSupermarkt.pdf';
-        var link = document.createElement('a');
-        link.href = pdfPath;
-        link.target = '_blank';
-        link.download = '../pdf/Achtergrondartikel_JortSiemes_4028198_104_InflatieInDeSupermarkt.pdf';
-        if (document.createEvent) {
-            var event = document.createEvent('MouseEvents');
-            event.initEvent('click', true, true);
-            link.dispatchEvent(event);
-        } else {
-            link.click();
-        }
-    });
-
-    document.getElementById("downloadButton2").addEventListener("click", function() {
-        var pdfPath = '../pdf/V2_JortSiemes_4028198_Artikel_Wetenschapper_Opmaak.pdf';
-        var link = document.createElement('a');
-        link.href = pdfPath;
-        link.target = '_blank';
-        link.download = '../pdf/V2_JortSiemes_4028198_Artikel_Wetenschapper_Opmaak.pdf';
-        if (document.createEvent) {
-            var event = document.createEvent('MouseEvents');
-            event.initEvent('click', true, true);
-            link.dispatchEvent(event);
-        } else {
-            link.click();
-        }
-    });
-
-    document.getElementById("downloadButton1").addEventListener("click", function() {
-        var pdfPath = '../pdf/Nieuwbericht_Jort Siemes_4028198.pdf';
-        var link = document.createElement('a');
-        link.href = pdfPath;
-        link.target = '_blank';
-        link.download = '../pdf/Nieuwbericht_Jort Siemes_4028198.pdf';
-        if (document.createEvent) {
-            var event = document.createEvent('MouseEvents');
-            event.initEvent('click', true, true);
-            link.dispatchEvent(event);
-        } else {
-            link.click();
-        }
-    });
-
-    // Add similar event listeners for other download buttons as shown in your original code
-
     </script>
 </body>
 </html>

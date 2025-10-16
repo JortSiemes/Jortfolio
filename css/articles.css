@@ -1,169 +1,344 @@
+   * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background-color: white;
+            overflow-x: hidden;
+            font-family: 'EuclidCircularA', sans-serif;
+        }
+
+        h1 {
+            font-family: 'Euclid CircularA', sans-serif;
+            font-weight: bold;
+            font-style: normal;
+        }
+
+        h6 {
+            font-family: 'Euclid CircularA', sans-serif;
+            font-weight: bold;
+            font-style: normal;
+        }
+
+        /* Header & Navigation */
+        .header-left {
+            position: fixed;
+            z-index: 4;
+            top: 0;
+            left: 0;
+        }
+
+        .navcontact a {
+            display: block;
+            color: black;
+            text-decoration: none;
+            margin: 1vw;
+            line-height: normal;
+        }
+
+        .navcontact a:hover {
+            text-decoration: underline;
+            text-decoration-thickness: 15px;
+        }
+
+        .navcontact h1 {
+            font-size: 1.5rem;
+        }
+
+        /* Page Title */
+        .contactlist {
+            padding-top: 5%;
+            padding-bottom: 3%;
+        }
+
+        .contactlist h1 {
+            text-align: center;
+            font-size: calc(4vh + 5vw);
+        }
+
+        /* Filter Buttons */
+        .filter-buttons {
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+            margin-bottom: 40px;
+            flex-wrap: wrap;
+        }
+
+        .filter-buttons .btn {
+            border: none;
+            border-radius: 25px;
+            padding: 10px 20px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+
+        .filter-buttons .btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+        }
+
+        .filter-buttons .btn i {
+            margin-right: 8px;
+        }
+
+        .btn-primary {
+            background-color: #0C0F0A;
+            color: white;
+        }
+
+        .btn-primary:hover {
+            background-color: #0C0F0A;
+            color: white;
+        }
+
+        .btn-onderzoeksjournalistiek {
+            background-color: #FF206E;
+            color: white;
+        }
+
+        .btn-onderzoeksjournalistiek:hover {
+            background-color: #FF206E;
+            color: white;
+        }
+
+        .btn-nieuwsartikel {
+            background-color: #FBFF12;
+            color: black;
+        }
+
+        .btn-nieuwsartikel:hover {
+            background-color: #FBFF12;
+            color: black;
+        }
+
+        .btn-interview {
+            background-color: #41EAD4;
+            color: black;
+        }
+
+        .btn-interview:hover {
+            background-color: #41EAD4;
+            color: black;
+        }
+
+        /* Articles Container */
+        .articles-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 30px;
+            padding: 20px;
+        }
+
+        .article-wrapper {
+            width: 70vw;
+            transition: transform 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+        }
+
+        .article-wrapper:hover {
+            transform: scale(1.05);
+        }
+
+        .art {
+            width: 100%;
+            aspect-ratio: 3 / 1;
+            border-radius: 25px;
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-position: center;
+            background-color: black;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            padding: 40px;
+            position: relative;
+            overflow: hidden;
+            cursor: pointer;
+        }
+
+        .art::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: var(--gradient-overlay);
+            pointer-events: none;
+            opacity: 0.15;
+            transition: opacity 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+        }
+
+        .article-wrapper:hover .art::after {
+            opacity: 0.25;
+        }
+
+        /* Category color gradients */
+        .art[data-gradient="onderzoeksjournalistiek"] {
+            --gradient-overlay: linear-gradient(135deg, rgba(255, 255, 255, 0.3) 0%, rgba(255, 32, 110, 0.4) 100%);
+        }
+
+        .art[data-gradient="nieuwsartikel"] {
+            --gradient-overlay: linear-gradient(135deg, rgba(255, 255, 255, 0.3) 0%, rgba(251, 255, 18, 0.4) 100%);
+        }
+
+        .art[data-gradient="interview"] {
+            --gradient-overlay: linear-gradient(135deg, rgba(255, 255, 255, 0.3) 0%, rgba(65, 234, 212, 0.4) 100%);
+        }
+
+        .art-content {
+            position: relative;
+            z-index: 2;
+            display: flex;
+            flex-direction: column;
+            height: 100%;
+            justify-content: space-between;
+        }
+
+        .art-header {
+            display: flex;
+            flex-direction: column;
+            gap: 0;
+        }
+
+        .art-title h2 {
+            color: white;
+            font-weight: 500;
+            font-size: 36px;
+            line-height: 1.3;
+            margin: 0;
+            text-shadow: 0 2px 8px rgba(0, 0, 0, 0.4);
+        }
+
+        .art-footer {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+            align-items: flex-start;
+        }
+
+        .art-date h3,
+        .art-subject h3 {
+            font-size: 18px;
+            font-weight: 300;
+            margin: 0;
+            line-height: 1.2;
+        }
+
+        .art-date h3 {
+            color: white;
+        }
+
+        .art-subject h3 {
+            color: #ededed;
+            font-size: 16px;
+        }
+
+        .art-button {
+            position: absolute;
+            bottom: 40px;
+            right: 40px;
+            z-index: 3;
+            padding: 12px 28px;
+            font-size: 18px;
+            font-family: 'EuclidCircularA', sans-serif;
+            font-weight: 700;
+            border-radius: 25px;
+            border: 2.5px solid #ededed;
+            color: white;
+            background: linear-gradient(135deg, rgba(255, 255, 255, 0.15) 0%, rgba(128, 128, 128, 0.1) 50%, rgba(255, 255, 255, 0.15) 100%);
+            background-size: 200% 200%;
+            transition: all 0.4s ease;
+            cursor: pointer;
+            opacity: 0.9;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+        }
+
+        .art-button:hover {
+            border-color: white;
+            opacity: 1;
+            background-position: 100% 100%;
+            box-shadow: 0 6px 20px rgba(255, 255, 255, 0.2);
+        }
+
+        .article-wrapper:hover .art-button {
+            opacity: 1;
+        }
+
+        .art-button-group {
+            position: absolute;
+            bottom: 40px;
+            right: 40px;
+            z-index: 3;
+            display: flex;
+            gap: 15px;
+            align-items: center;
+        }
+
+        .art-button-group .art-button {
+            position: static;
+        }
+
+        /* Hide articles by default */
+        .article-wrapper {
+            display: none;
+        }
+
+        .article-wrapper.visible {
+            display: flex;
+        }
+
+        /* Responsive */
+        @media (max-width: 1200px) {
+            .article-wrapper {
+                width: 85vw;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .article-wrapper {
+                width: 85vw;
+            }
+
+            .art {
+                aspect-ratio: 1 / 0.55;
+                padding: 20px 15px;
+            }
+
+            .art-title h2 {
+                font-size: 18px;
+                margin-bottom: 10vh !important;
+            }
+
+            .art-date h3,
+            .art-subject h3 {
+                font-size: 14px;
+            }
+
+            .art-button {
+                bottom: 15px;
+                right: 15px;
+                padding: 8px 16px;
+                font-size: 12px;
+            }
+
+            .filter-buttons {
+                margin-bottom: 30px;
+            }
+
+            .header-left {
+                margin-top: 5vh;
+            }
+
+            .contactlist {
+                padding-top: 8%;
+            }
 
 
-/* kopieer dit hele stuk voor niew artikel */
-
-.art_content1 {
-  background-image: url('../Images/Leiden.jpg'); /* Replace 'path/to/your/image.jpg' with the actual path to your image */
-  background-size: cover; /* Cover the entire div with the background image */
-  background-repeat: no-repeat; /* Prevent the image from repeating */
-  background-position: center center; /* Center the background image both horizontally and vertically */
-  width: 70vw;
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  justify-content: space-between;
-  border-radius: 25px;
-  padding: 1%;
-  position: relative;
-}
-
-/* einde van de artikel kopie */
-
-/* kopieer dit hele stuk voor niew artikel */
-
-.art_content2 {
-  background-image: url('../Images/Hubble.jpg'); /* Replace 'path/to/your/image.jpg' with the actual path to your image */
-  background-size: cover; /* Cover the entire div with the background image */
-  background-repeat: no-repeat; /* Prevent the image from repeating */
-  background-position: center center; /* Center the background image both horizontally and vertically */
-  width: 70vw;
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  justify-content: space-between;
-  border-radius: 25px;
-  padding: 1%;
-  position: relative;
-}
-
-.art_content3 {
-  background-image: url('../Images/ECBbuilding2_PIXELATED.png'); /* Replace 'path/to/your/image.jpg' with the actual path to your image */
-  background-size: cover; /* Cover the entire div with the background image */
-  background-repeat: no-repeat; /* Prevent the image from repeating */
-  background-position: center center; /* Center the background image both horizontally and vertically */
-  width: 70vw;
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  justify-content: space-between;
-  border-radius: 25px;
-  padding: 1%;
-  position: relative;
-}
-
-.art_content4 {
-  background-image: url('../Images/Unsplash_Sergio Alves Santos_HALFTONE.png'); /* Replace 'path/to/your/image.jpg' with the actual path to your image */
-  background-size: cover; /* Cover the entire div with the background image */
-  background-repeat: no-repeat; /* Prevent the image from repeating */
-  background-position: center center; /* Center the background image both horizontally and vertically */
-  width: 70vw;
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  justify-content: space-between;
-  border-radius: 25px;
-  padding: 1%;
-  position: relative;
-}
-
-.art_content5 {
-  background-image: url('../Images/UfoSS.png'); /* Replace 'path/to/your/image.jpg' with the actual path to your image */
-  background-size: cover; /* Cover the entire div with the background image */
-  background-repeat: no-repeat; /* Prevent the image from repeating */
-  background-position: center center; /* Center the background image both horizontally and vertically */
-  width: 70vw;
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  justify-content: space-between;
-  border-radius: 25px;
-  padding: 1%;
-  position: relative;
-  background-color: black;
-}
-
-.art_content6 {
-  background-image: url('../Images/HighresPurple.jpg'); /* Replace 'path/to/your/image.jpg' with the actual path to your image */
-  background-size: cover; /* Cover the entire div with the background image */
-  background-repeat: no-repeat; /* Prevent the image from repeating */
-  background-position: center center; /* Center the background image both horizontally and vertically */
-  width: 70vw;
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  justify-content: space-between;
-  border-radius: 25px;
-  padding: 1%;
-  position: relative;
-  background-color: black;
-}
-
-.art_content7 {
-  background-image: url('../Images/Evergrande.png'); /* Replace 'path/to/your/image.jpg' with the actual path to your image */
-  background-size: cover; /* Cover the entire div with the background image */
-  background-repeat: no-repeat; /* Prevent the image from repeating */
-  background-position: center center; /* Center the background image both horizontally and vertically */
-  width: 70vw;
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  justify-content: space-between;
-  border-radius: 25px;
-  padding: 1%;
-  position: relative;
-  background-color: black;
-}
-
-.art_content8 {
-  background-image: url('../Images/Pigheart2.png'); /* Replace 'path/to/your/image.jpg' with the actual path to your image */
-  background-size: cover; /* Cover the entire div with the background image */
-  background-repeat: no-repeat; /* Prevent the image from repeating */
-  background-position: center center; /* Center the background image both horizontally and vertically */
-  width: 70vw;
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  justify-content: space-between;
-  border-radius: 25px;
-  padding: 1%;
-  position: relative;
-  background-color: black;
-}
-
-.art_content9 {
-  background-image: url('../Images/MaccabiSupporters_Crop.png'); /* Replace 'path/to/your/image.jpg' with the actual path to your image */
-  background-size: cover; /* Cover the entire div with the background image */
-  background-repeat: no-repeat; /* Prevent the image from repeating */
-  background-position: center center; /* Center the background image both horizontally and vertically */
-  width: 70vw;
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  justify-content: space-between;
-  border-radius: 25px;
-  padding: 1%;
-  position: relative;
-  background-color: black;
-}
-
-
-.art button {
-  position: absolute; /* Position absolutely within the parent div */
-  bottom: 20px; /* Adjust the distance from the bottom */
-  right: 50px; /* Adjust the distance from the right */
-  padding: 10px 20px; /* Add padding to increase button size */
-  font-size: 16px; /* Increase the font size */
-}
-
-
-
-/* einde van de artikel kopie */
-
-body{
-  height: 200vh;
-  background-color: white;
-  overflow-x: hidden;
-}
 
 h1{
   font-family: 'Euclid CircularA', sans-serif;
@@ -197,128 +372,4 @@ h6{
   margin: 1vw;
   line-height: normal;
 }
-
-.contactlist{
-  padding-top: 2%;
-}
-
-.contactlist h1{
-  text-align: center;
-  font-size: calc(4vh + 5vw);
-  padding: 1vh 0vh
-}
-
-.contactlist a{
-  text-decoration: none;
-  color: black;
-}
-
-.contactlist a:hover{
-  text-decoration: line-through;
-  text-decoration-thickness: 25px;
-}
-
-.art_title h2 {
-  color: white;
-  font-family: 'Euclid CircularA', sans-serif;
-  font-weight: 500;
-  font-style: normal;
-  font-size: 30px;
-  margin: 0; /* Remove default margin for h2 */
-  margin-left: 30px; /* Add margin to the left */
-  margin-top: 5px;
-  margin-bottom: 20vh;
-}
-
-.art_date h3 {
-  color: white;
-  font-family: 'Euclid CircularA', sans-serif;
-  font-weight: lighter;
-  font-style: normal;
-  font-size: 24px;
-  margin: 0; /* Remove default margin for h3 */
-  margin-left: 30px; /* Add margin to the left */
-  margin-top: auto; /* Align to the bottom */
-  padding-top: 5px; /* Adjust the spacing between the two h3 elements */
-}
-
-.art_subject h3 {
-  color: #ededed;
-  font-family: 'Euclid CircularA', sans-serif;
-  font-weight: lighter;
-  font-style: normal;
-  font-size: 24px;
-  margin: 0; /* Remove default margin for h3 */
-  margin-left: 30px; /* Add margin to the left */
-  margin-top: -20%; /* Align to the bottom */
-  padding-top: 5px; /* Adjust the spacing between the two h3 elements */
-}
-
-
-.btn {
-    padding: 10px 20px;
-    font-size: 16px;
-}
-
-.filter-buttons {
-    display: flex;
-    justify-content: center;
-    gap: 10px;
-    margin-bottom: 20px;
-}
-
-.filter-buttons .btn {
-    margin-bottom: 0;
-}
-
-.filter-buttons .btn i {
-       margin-right: 8px; /* Adjust the margin to control the space */
-   }
-
-.btn-primary {
-    background-color: #007bff;
-    color: white;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-}
-
-.btn-primary:hover {
-    background-color: #0056b3;
-}
-
-.flexbox {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    margin: 0 auto;
-}
-
-.art_content {
-    width: 100%;
-    max-width: 600px;
-    margin-bottom: 20px;
-}
-
-.btn-primary {
-            background-color: #0C0F0A;
-            font-weight: bold;
-        }
-
-        .btn-onderzoeksjournalistiek {
-            background-color: #FF206E; /* Vibrant orange */
-                font-weight: bold;
-
-        }
-
-        .btn-nieuwsartikel {
-            background-color: #FBFF12; /* Vibrant blue */
-                font-weight: bold;
-        }
-
-        .btn-interview {
-            background-color: #41EAD4; /* Vibrant green */
-    font-weight: bold;
-        }
 
